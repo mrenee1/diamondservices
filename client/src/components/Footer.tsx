@@ -18,15 +18,15 @@ export default function Footer() {
                 <Leaf className="w-5 h-5" style={{ color: "oklch(0.18 0.01 60)" }} />
               </div>
               <div className="flex flex-col leading-tight">
-                <span className="font-display font-bold text-base text-white" style={{ fontFamily: "'Lora', serif" }}>
+                <span className="font-bold text-base text-white" style={{ fontFamily: "'Lora', serif" }}>
                   Tributary
                 </span>
-                <span className="font-body text-xs font-600 tracking-widest uppercase" style={{ color: "oklch(0.72 0.15 75)", fontFamily: "'Nunito Sans', sans-serif" }}>
+                <span className="text-xs font-semibold tracking-widest uppercase" style={{ color: "oklch(0.72 0.15 75)", fontFamily: "'Nunito Sans', sans-serif" }}>
                   Lawn & Landscape
                 </span>
               </div>
             </div>
-            <p className="font-body text-sm leading-relaxed mb-5" style={{ color: "oklch(0.80 0.03 145)", fontFamily: "'Nunito Sans', sans-serif" }}>
+            <p className="text-sm leading-relaxed mb-5" style={{ color: "oklch(0.80 0.03 145)", fontFamily: "'Nunito Sans', sans-serif" }}>
               Your trusted lawn care and landscaping specialists proudly serving the Tributary community in Yulee, Florida.
             </p>
             <div className="flex gap-3">
@@ -51,7 +51,7 @@ export default function Footer() {
 
           {/* Services */}
           <div>
-            <h4 className="font-display font-bold text-white mb-4 text-base" style={{ fontFamily: "'Lora', serif" }}>Our Services</h4>
+            <h4 className="font-bold text-white mb-4 text-base" style={{ fontFamily: "'Lora', serif" }}>Our Services</h4>
             <ul className="space-y-2.5">
               {[
                 "Lawn Mowing & Edging",
@@ -66,7 +66,7 @@ export default function Footer() {
                 <li key={s}>
                   <Link
                     href="/services"
-                    className="font-body text-sm transition-colors hover:text-white"
+                    className="text-sm transition-colors hover:text-white"
                     style={{ color: "oklch(0.80 0.03 145)", fontFamily: "'Nunito Sans', sans-serif" }}
                   >
                     {s}
@@ -78,7 +78,7 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h4 className="font-display font-bold text-white mb-4 text-base" style={{ fontFamily: "'Lora', serif" }}>Quick Links</h4>
+            <h4 className="font-bold text-white mb-4 text-base" style={{ fontFamily: "'Lora', serif" }}>Quick Links</h4>
             <ul className="space-y-2.5">
               {[
                 { label: "Book a Service", href: "/book" },
@@ -91,7 +91,7 @@ export default function Footer() {
                 <li key={link.label}>
                   <a
                     href={link.href}
-                    className="font-body text-sm transition-colors hover:text-white"
+                    className="text-sm transition-colors hover:text-white"
                     style={{ color: "oklch(0.80 0.03 145)", fontFamily: "'Nunito Sans', sans-serif" }}
                   >
                     {link.label}
@@ -103,11 +103,11 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <h4 className="font-display font-bold text-white mb-4 text-base" style={{ fontFamily: "'Lora', serif" }}>Contact Us</h4>
+            <h4 className="font-bold text-white mb-4 text-base" style={{ fontFamily: "'Lora', serif" }}>Contact Us</h4>
             <ul className="space-y-3.5">
               <li className="flex items-start gap-3">
                 <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: "oklch(0.72 0.15 75)" }} />
-                <span className="font-body text-sm" style={{ color: "oklch(0.80 0.03 145)", fontFamily: "'Nunito Sans', sans-serif" }}>
+                <span className="text-sm" style={{ color: "oklch(0.80 0.03 145)", fontFamily: "'Nunito Sans', sans-serif" }}>
                   Tributary Community<br />
                   Yulee, FL 32097
                 </span>
@@ -116,7 +116,7 @@ export default function Footer() {
                 <Phone className="w-4 h-4 flex-shrink-0" style={{ color: "oklch(0.72 0.15 75)" }} />
                 <a
                   href="tel:+19045550123"
-                  className="font-body text-sm transition-colors hover:text-white"
+                  className="text-sm transition-colors hover:text-white"
                   style={{ color: "oklch(0.80 0.03 145)", fontFamily: "'Nunito Sans', sans-serif" }}
                 >
                   (904) 555-0123
@@ -126,7 +126,7 @@ export default function Footer() {
                 <Mail className="w-4 h-4 flex-shrink-0" style={{ color: "oklch(0.72 0.15 75)" }} />
                 <a
                   href="mailto:hello@tributarylawn.com"
-                  className="font-body text-sm transition-colors hover:text-white"
+                  className="text-sm transition-colors hover:text-white"
                   style={{ color: "oklch(0.80 0.03 145)", fontFamily: "'Nunito Sans', sans-serif" }}
                 >
                   hello@tributarylawn.com
@@ -134,10 +134,10 @@ export default function Footer() {
               </li>
             </ul>
             <div className="mt-5 p-3 rounded-lg" style={{ backgroundColor: "oklch(0.28 0.09 145)" }}>
-              <p className="font-body text-xs font-700 uppercase tracking-wide mb-1" style={{ color: "oklch(0.72 0.15 75)", fontFamily: "'Nunito Sans', sans-serif" }}>
+              <p className="text-xs font-bold uppercase tracking-wide mb-1" style={{ color: "oklch(0.72 0.15 75)", fontFamily: "'Nunito Sans', sans-serif" }}>
                 Business Hours
               </p>
-              <p className="font-body text-sm" style={{ color: "oklch(0.80 0.03 145)", fontFamily: "'Nunito Sans', sans-serif" }}>
+              <p className="text-sm" style={{ color: "oklch(0.80 0.03 145)", fontFamily: "'Nunito Sans', sans-serif" }}>
                 Mon–Fri: 7:00 AM – 6:00 PM<br />
                 Sat: 8:00 AM – 4:00 PM<br />
                 Sun: Closed
@@ -148,14 +148,14 @@ export default function Footer() {
 
         {/* Bottom Bar */}
         <div className="mt-12 pt-6 border-t flex flex-col md:flex-row items-center justify-between gap-3" style={{ borderColor: "oklch(0.30 0.09 145)" }}>
-          <p className="font-body text-xs" style={{ color: "oklch(0.65 0.04 145)", fontFamily: "'Nunito Sans', sans-serif" }}>
+          <p className="text-xs" style={{ color: "oklch(0.65 0.04 145)", fontFamily: "'Nunito Sans', sans-serif" }}>
             © {new Date().getFullYear()} Tributary Lawn & Landscape. All rights reserved. · Yulee, FL 32097
           </p>
           <div className="flex items-center gap-1">
             {[1,2,3,4,5].map(i => (
               <Star key={i} className="w-3.5 h-3.5 fill-current" style={{ color: "oklch(0.72 0.15 75)" }} />
             ))}
-            <span className="font-body text-xs ml-1.5" style={{ color: "oklch(0.65 0.04 145)", fontFamily: "'Nunito Sans', sans-serif" }}>
+            <span className="text-xs ml-1.5" style={{ color: "oklch(0.65 0.04 145)", fontFamily: "'Nunito Sans', sans-serif" }}>
               5.0 · Licensed & Insured
             </span>
           </div>

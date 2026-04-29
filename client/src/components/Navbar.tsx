@@ -56,13 +56,13 @@ export default function Navbar() {
             </div>
             <div className="flex flex-col leading-tight">
               <span
-                className="font-display font-bold text-base leading-tight"
+                className="font-bold text-base leading-tight"
                 style={{ color: scrolled ? "oklch(0.18 0.01 60)" : "white", fontFamily: "'Lora', serif" }}
               >
                 Tributary
               </span>
               <span
-                className="font-body text-xs font-600 tracking-widest uppercase"
+                className="text-xs font-semibold tracking-widest uppercase"
                 style={{ color: scrolled ? "oklch(0.35 0.10 145)" : "oklch(0.82 0.12 80)", fontFamily: "'Nunito Sans', sans-serif" }}
               >
                 Lawn & Landscape
@@ -82,7 +82,7 @@ export default function Navbar() {
                     handleAnchorClick(link.href);
                   }
                 }}
-                className={`font-body text-sm font-600 transition-colors duration-200 hover:opacity-80 ${
+                className={`text-sm font-semibold transition-colors duration-200 hover:opacity-80 ${
                   location === link.href && !link.href.startsWith("/#")
                     ? "border-b-2"
                     : ""
@@ -102,7 +102,7 @@ export default function Navbar() {
           <div className="flex items-center gap-3">
             <a
               href="tel:+19045550123"
-              className="hidden md:flex items-center gap-1.5 text-sm font-body font-700"
+              className="hidden md:flex items-center gap-1.5 text-sm font-bold"
               style={{ color: scrolled ? "oklch(0.35 0.10 145)" : "oklch(0.82 0.12 80)", fontFamily: "'Nunito Sans', sans-serif" }}
             >
               <Phone className="w-4 h-4" />
@@ -110,7 +110,7 @@ export default function Navbar() {
             </a>
             <Link
               href="/book"
-              className="hidden md:inline-flex items-center px-4 py-2 rounded-md text-sm font-body font-700 transition-all duration-200 hover:shadow-md hover:-translate-y-0.5"
+              className="hidden md:inline-flex items-center px-4 py-2 rounded-md text-sm font-bold transition-all duration-200 hover:shadow-md hover:-translate-y-0.5"
               style={{
                 backgroundColor: "oklch(0.72 0.15 75)",
                 color: "oklch(0.18 0.01 60)",
@@ -147,7 +147,7 @@ export default function Navbar() {
                     setOpen(false);
                   }
                 }}
-                className="font-body font-600 text-sm py-2.5 px-3 rounded-md transition-colors hover:bg-secondary"
+                className="font-semibold text-sm py-2.5 px-3 rounded-md transition-colors hover:bg-secondary"
                 style={{ color: "oklch(0.18 0.01 60)", fontFamily: "'Nunito Sans', sans-serif" }}
               >
                 {link.label}
@@ -156,7 +156,7 @@ export default function Navbar() {
             <div className="pt-3 border-t border-border flex flex-col gap-2">
               <a
                 href="tel:+19045550123"
-                className="flex items-center gap-2 font-body font-700 text-sm py-2 px-3"
+                className="flex items-center gap-2 font-bold text-sm py-2 px-3"
                 style={{ color: "oklch(0.35 0.10 145)", fontFamily: "'Nunito Sans', sans-serif" }}
               >
                 <Phone className="w-4 h-4" />
@@ -165,7 +165,7 @@ export default function Navbar() {
               <Link
                 href="/book"
                 onClick={() => setOpen(false)}
-                className="flex items-center justify-center py-2.5 px-4 rounded-md font-body font-700 text-sm"
+                className="flex items-center justify-center py-2.5 px-4 rounded-md font-bold text-sm"
                 style={{
                   backgroundColor: "oklch(0.72 0.15 75)",
                   color: "oklch(0.18 0.01 60)",

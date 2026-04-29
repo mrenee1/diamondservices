@@ -118,7 +118,7 @@ export default function BookingPage() {
           <div className="flex flex-col sm:flex-row gap-3">
             <a
               href="/"
-              className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-md font-body font-700 text-base transition-all duration-200 hover:shadow-lg hover:-translate-y-0.5"
+              className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-md font-bold text-base transition-all duration-200 hover:shadow-lg hover:-translate-y-0.5"
               style={{
                 backgroundColor: "oklch(0.35 0.10 145)",
                 color: "oklch(0.97 0.02 90)",
@@ -136,7 +136,7 @@ export default function BookingPage() {
                   firstName: "", lastName: "", email: "", phone: "", address: "", notes: "",
                 });
               }}
-              className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-md font-body font-700 text-base transition-all duration-200 hover:-translate-y-0.5"
+              className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-md font-bold text-base transition-all duration-200 hover:-translate-y-0.5"
               style={{
                 backgroundColor: "white",
                 color: "oklch(0.35 0.10 145)",
@@ -166,7 +166,7 @@ export default function BookingPage() {
           <div className="flex items-center justify-center gap-2 mb-3">
             <CalendarDays className="w-5 h-5" style={{ color: "oklch(0.82 0.12 80)" }} />
             <span
-              className="text-xs font-body font-700 uppercase tracking-widest"
+              className="text-xs font-bold uppercase tracking-widest"
               style={{ color: "oklch(0.82 0.12 80)", fontFamily: "'Nunito Sans', sans-serif" }}
             >
               Online Booking
@@ -195,7 +195,7 @@ export default function BookingPage() {
               <div key={s} className="flex items-center">
                 <div className="flex items-center gap-2">
                   <div
-                    className="w-7 h-7 rounded-full flex items-center justify-center text-xs font-700 transition-all"
+                    className="w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold transition-all"
                     style={{
                       backgroundColor: i <= step ? "oklch(0.35 0.10 145)" : "oklch(0.88 0.03 85)",
                       color: i <= step ? "white" : "oklch(0.55 0.04 80)",
@@ -205,7 +205,7 @@ export default function BookingPage() {
                     {i < step ? <CheckCircle2 className="w-4 h-4" /> : i + 1}
                   </div>
                   <span
-                    className="text-xs font-600 hidden sm:block"
+                    className="text-xs font-semibold hidden sm:block"
                     style={{
                       color: i <= step ? "oklch(0.35 0.10 145)" : "oklch(0.55 0.04 80)",
                       fontFamily: "'Nunito Sans', sans-serif",
@@ -261,7 +261,7 @@ export default function BookingPage() {
                     >
                       {service.popular && (
                         <span
-                          className="absolute top-2 right-2 text-xs font-700 px-1.5 py-0.5 rounded-full"
+                          className="absolute top-2 right-2 text-xs font-bold px-1.5 py-0.5 rounded-full"
                           style={{
                             backgroundColor: "oklch(0.72 0.15 75)",
                             color: "oklch(0.18 0.01 60)",
@@ -325,7 +325,7 @@ export default function BookingPage() {
                 {/* Calendar */}
                 <div>
                   <p
-                    className="text-xs font-700 uppercase tracking-wide mb-3"
+                    className="text-xs font-bold uppercase tracking-wide mb-3"
                     style={{ color: "oklch(0.35 0.04 70)", fontFamily: "'Nunito Sans', sans-serif" }}
                   >
                     Select Date
@@ -362,7 +362,7 @@ export default function BookingPage() {
                 {/* Time Slots */}
                 <div>
                   <p
-                    className="text-xs font-700 uppercase tracking-wide mb-3"
+                    className="text-xs font-bold uppercase tracking-wide mb-3"
                     style={{ color: "oklch(0.35 0.04 70)", fontFamily: "'Nunito Sans', sans-serif" }}
                   >
                     Select Time
@@ -375,7 +375,7 @@ export default function BookingPage() {
                           <button
                             key={slot}
                             onClick={() => setBooking({ ...booking, time: slot })}
-                            className="py-3 px-4 rounded-xl border-2 text-sm font-700 transition-all duration-200 hover:shadow-sm"
+                            className="py-3 px-4 rounded-xl border-2 text-sm font-bold transition-all duration-200 hover:shadow-sm"
                             style={{
                               borderColor: isSelected ? "oklch(0.35 0.10 145)" : "oklch(0.88 0.03 85)",
                               backgroundColor: isSelected ? "oklch(0.35 0.10 145)" : "white",
@@ -408,7 +408,7 @@ export default function BookingPage() {
                       style={{ backgroundColor: "oklch(0.35 0.10 145 / 0.08)" }}
                     >
                       <p
-                        className="text-xs font-600"
+                        className="text-xs font-semibold"
                         style={{ color: "oklch(0.35 0.10 145)", fontFamily: "'Nunito Sans', sans-serif" }}
                       >
                         📅 {booking.date.toLocaleDateString("en-US", { weekday: "long", month: "long", day: "numeric", year: "numeric" })}
@@ -440,7 +440,7 @@ export default function BookingPage() {
               <div className="bg-white rounded-2xl border border-border p-6 shadow-sm space-y-4">
                 <div className="grid grid-cols-2 gap-4">
                   <div>
-                    <label className="flex items-center gap-1.5 text-xs font-700 uppercase tracking-wide mb-1.5" style={{ color: "oklch(0.35 0.04 70)", fontFamily: "'Nunito Sans', sans-serif" }}>
+                    <label className="flex items-center gap-1.5 text-xs font-bold uppercase tracking-wide mb-1.5" style={{ color: "oklch(0.35 0.04 70)", fontFamily: "'Nunito Sans', sans-serif" }}>
                       <User className="w-3.5 h-3.5" /> First Name *
                     </label>
                     <input
@@ -454,7 +454,7 @@ export default function BookingPage() {
                     />
                   </div>
                   <div>
-                    <label className="flex items-center gap-1.5 text-xs font-700 uppercase tracking-wide mb-1.5" style={{ color: "oklch(0.35 0.04 70)", fontFamily: "'Nunito Sans', sans-serif" }}>
+                    <label className="flex items-center gap-1.5 text-xs font-bold uppercase tracking-wide mb-1.5" style={{ color: "oklch(0.35 0.04 70)", fontFamily: "'Nunito Sans', sans-serif" }}>
                       Last Name *
                     </label>
                     <input
@@ -469,7 +469,7 @@ export default function BookingPage() {
                   </div>
                 </div>
                 <div>
-                  <label className="flex items-center gap-1.5 text-xs font-700 uppercase tracking-wide mb-1.5" style={{ color: "oklch(0.35 0.04 70)", fontFamily: "'Nunito Sans', sans-serif" }}>
+                  <label className="flex items-center gap-1.5 text-xs font-bold uppercase tracking-wide mb-1.5" style={{ color: "oklch(0.35 0.04 70)", fontFamily: "'Nunito Sans', sans-serif" }}>
                     <Mail className="w-3.5 h-3.5" /> Email Address *
                   </label>
                   <input
@@ -483,7 +483,7 @@ export default function BookingPage() {
                   />
                 </div>
                 <div>
-                  <label className="flex items-center gap-1.5 text-xs font-700 uppercase tracking-wide mb-1.5" style={{ color: "oklch(0.35 0.04 70)", fontFamily: "'Nunito Sans', sans-serif" }}>
+                  <label className="flex items-center gap-1.5 text-xs font-bold uppercase tracking-wide mb-1.5" style={{ color: "oklch(0.35 0.04 70)", fontFamily: "'Nunito Sans', sans-serif" }}>
                     <Phone className="w-3.5 h-3.5" /> Phone Number *
                   </label>
                   <input
@@ -497,7 +497,7 @@ export default function BookingPage() {
                   />
                 </div>
                 <div>
-                  <label className="flex items-center gap-1.5 text-xs font-700 uppercase tracking-wide mb-1.5" style={{ color: "oklch(0.35 0.04 70)", fontFamily: "'Nunito Sans', sans-serif" }}>
+                  <label className="flex items-center gap-1.5 text-xs font-bold uppercase tracking-wide mb-1.5" style={{ color: "oklch(0.35 0.04 70)", fontFamily: "'Nunito Sans', sans-serif" }}>
                     <Home className="w-3.5 h-3.5" /> Property Address (Tributary)
                   </label>
                   <input
@@ -510,7 +510,7 @@ export default function BookingPage() {
                   />
                 </div>
                 <div>
-                  <label className="text-xs font-700 uppercase tracking-wide mb-1.5 block" style={{ color: "oklch(0.35 0.04 70)", fontFamily: "'Nunito Sans', sans-serif" }}>
+                  <label className="text-xs font-bold uppercase tracking-wide mb-1.5 block" style={{ color: "oklch(0.35 0.04 70)", fontFamily: "'Nunito Sans', sans-serif" }}>
                     Special Notes or Requests (Optional)
                   </label>
                   <textarea
@@ -579,27 +579,27 @@ export default function BookingPage() {
                   </div>
                   <div className="grid grid-cols-2 gap-3 text-sm" style={{ fontFamily: "'Nunito Sans', sans-serif" }}>
                     <div>
-                      <span className="text-xs font-700 uppercase tracking-wide block mb-0.5" style={{ color: "oklch(0.55 0.04 80)" }}>Name</span>
+                      <span className="text-xs font-bold uppercase tracking-wide block mb-0.5" style={{ color: "oklch(0.55 0.04 80)" }}>Name</span>
                       <span style={{ color: "oklch(0.18 0.01 60)" }}>{booking.firstName} {booking.lastName}</span>
                     </div>
                     <div>
-                      <span className="text-xs font-700 uppercase tracking-wide block mb-0.5" style={{ color: "oklch(0.55 0.04 80)" }}>Phone</span>
+                      <span className="text-xs font-bold uppercase tracking-wide block mb-0.5" style={{ color: "oklch(0.55 0.04 80)" }}>Phone</span>
                       <span style={{ color: "oklch(0.18 0.01 60)" }}>{booking.phone}</span>
                     </div>
                     <div>
-                      <span className="text-xs font-700 uppercase tracking-wide block mb-0.5" style={{ color: "oklch(0.55 0.04 80)" }}>Email</span>
+                      <span className="text-xs font-bold uppercase tracking-wide block mb-0.5" style={{ color: "oklch(0.55 0.04 80)" }}>Email</span>
                       <span style={{ color: "oklch(0.18 0.01 60)" }}>{booking.email}</span>
                     </div>
                     {booking.address && (
                       <div>
-                        <span className="text-xs font-700 uppercase tracking-wide block mb-0.5" style={{ color: "oklch(0.55 0.04 80)" }}>Address</span>
+                        <span className="text-xs font-bold uppercase tracking-wide block mb-0.5" style={{ color: "oklch(0.55 0.04 80)" }}>Address</span>
                         <span style={{ color: "oklch(0.18 0.01 60)" }}>{booking.address}</span>
                       </div>
                     )}
                   </div>
                   {booking.notes && (
                     <div className="mt-3">
-                      <span className="text-xs font-700 uppercase tracking-wide block mb-0.5" style={{ color: "oklch(0.55 0.04 80)", fontFamily: "'Nunito Sans', sans-serif" }}>Notes</span>
+                      <span className="text-xs font-bold uppercase tracking-wide block mb-0.5" style={{ color: "oklch(0.55 0.04 80)", fontFamily: "'Nunito Sans', sans-serif" }}>Notes</span>
                       <span className="text-sm" style={{ color: "oklch(0.18 0.01 60)", fontFamily: "'Nunito Sans', sans-serif" }}>{booking.notes}</span>
                     </div>
                   )}
@@ -625,7 +625,7 @@ export default function BookingPage() {
             <button
               onClick={() => setStep(Math.max(0, step - 1))}
               disabled={step === 0}
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-md font-body font-700 text-sm transition-all duration-200 disabled:opacity-40 disabled:cursor-not-allowed hover:shadow-sm"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-md font-bold text-sm transition-all duration-200 disabled:opacity-40 disabled:cursor-not-allowed hover:shadow-sm"
               style={{
                 backgroundColor: "white",
                 color: "oklch(0.35 0.10 145)",
@@ -641,7 +641,7 @@ export default function BookingPage() {
               <button
                 onClick={() => setStep(step + 1)}
                 disabled={!canProceed()}
-                className="inline-flex items-center gap-2 px-6 py-2.5 rounded-md font-body font-700 text-sm transition-all duration-200 disabled:opacity-40 disabled:cursor-not-allowed hover:shadow-md hover:-translate-y-0.5"
+                className="inline-flex items-center gap-2 px-6 py-2.5 rounded-md font-bold text-sm transition-all duration-200 disabled:opacity-40 disabled:cursor-not-allowed hover:shadow-md hover:-translate-y-0.5"
                 style={{
                   backgroundColor: canProceed() ? "oklch(0.35 0.10 145)" : "oklch(0.75 0.04 145)",
                   color: "oklch(0.97 0.02 90)",
@@ -654,7 +654,7 @@ export default function BookingPage() {
             ) : (
               <button
                 onClick={handleSubmit}
-                className="inline-flex items-center gap-2 px-7 py-2.5 rounded-md font-body font-700 text-sm transition-all duration-200 hover:shadow-lg hover:-translate-y-0.5"
+                className="inline-flex items-center gap-2 px-7 py-2.5 rounded-md font-bold text-sm transition-all duration-200 hover:shadow-lg hover:-translate-y-0.5"
                 style={{
                   backgroundColor: "oklch(0.72 0.15 75)",
                   color: "oklch(0.18 0.01 60)",

@@ -118,7 +118,7 @@ export default function ServicesPage() {
         <div className="absolute inset-0" style={{ background: "linear-gradient(to bottom, oklch(0.25 0.10 145 / 0.9), oklch(0.25 0.10 145 / 0.95))" }} />
         <div className="container relative z-10 text-center">
           <span
-            className="inline-block text-xs font-body font-700 uppercase tracking-widest mb-4 px-3 py-1 rounded-full"
+            className="inline-block text-xs font-bold uppercase tracking-widest mb-4 px-3 py-1 rounded-full"
             style={{
               backgroundColor: "oklch(0.72 0.15 75 / 0.2)",
               color: "oklch(0.82 0.12 80)",
@@ -163,7 +163,7 @@ export default function ServicesPage() {
                       </div>
                       {service.badge && (
                         <span
-                          className="text-xs font-body font-700 px-2.5 py-0.5 rounded-full uppercase tracking-wide"
+                          className="text-xs font-bold px-2.5 py-0.5 rounded-full uppercase tracking-wide"
                           style={{
                             backgroundColor: "oklch(0.72 0.15 75)",
                             color: "oklch(0.18 0.01 60)",
@@ -191,7 +191,7 @@ export default function ServicesPage() {
                         <div key={item} className="flex items-center gap-2">
                           <CheckCircle2 className="w-4 h-4 flex-shrink-0" style={{ color: "oklch(0.35 0.10 145)" }} />
                           <span
-                            className="text-xs font-600"
+                            className="text-xs font-semibold"
                             style={{ color: "oklch(0.35 0.04 70)", fontFamily: "'Nunito Sans', sans-serif" }}
                           >
                             {item}
@@ -200,7 +200,7 @@ export default function ServicesPage() {
                       ))}
                     </div>
                     <div
-                      className="inline-flex items-center gap-1.5 text-xs font-700 px-2.5 py-1 rounded-full"
+                      className="inline-flex items-center gap-1.5 text-xs font-bold px-2.5 py-1 rounded-full"
                       style={{
                         backgroundColor: "oklch(0.35 0.10 145 / 0.08)",
                         color: "oklch(0.35 0.10 145)",
@@ -213,7 +213,7 @@ export default function ServicesPage() {
                   <div className="px-6 pb-6">
                     <Link
                       href="/book"
-                      className="w-full flex items-center justify-center gap-2 py-2.5 rounded-md font-body font-700 text-sm transition-all duration-200 hover:shadow-md"
+                      className="w-full flex items-center justify-center gap-2 py-2.5 rounded-md font-bold text-sm transition-all duration-200 hover:shadow-md"
                       style={{
                         backgroundColor: "oklch(0.35 0.10 145)",
                         color: "oklch(0.97 0.02 90)",
@@ -249,7 +249,7 @@ export default function ServicesPage() {
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <Link
               href="/book"
-              className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-md font-body font-700 text-base transition-all duration-200 hover:shadow-lg hover:-translate-y-0.5"
+              className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-md font-bold text-base transition-all duration-200 hover:shadow-lg hover:-translate-y-0.5"
               style={{
                 backgroundColor: "oklch(0.35 0.10 145)",
                 color: "oklch(0.97 0.02 90)",
@@ -261,7 +261,7 @@ export default function ServicesPage() {
             </Link>
             <a
               href="tel:+19045550123"
-              className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-md font-body font-700 text-base transition-all duration-200 hover:-translate-y-0.5"
+              className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-md font-bold text-base transition-all duration-200 hover:-translate-y-0.5"
               style={{
                 backgroundColor: "white",
                 color: "oklch(0.35 0.10 145)",

@@ -144,7 +144,7 @@ export default function Home() {
           <div className="max-w-2xl">
             {/* Badge */}
             <div
-              className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-body font-700 uppercase tracking-widest mb-6"
+              className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest mb-6"
               style={{
                 backgroundColor: "oklch(0.72 0.15 75 / 0.2)",
                 color: "oklch(0.82 0.12 80)",
@@ -176,7 +176,7 @@ export default function Home() {
             <div className="flex flex-col sm:flex-row gap-3">
               <Link
                 href="/book"
-                className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-md font-body font-700 text-base transition-all duration-200 hover:shadow-xl hover:-translate-y-0.5"
+                className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-md font-bold text-base transition-all duration-200 hover:shadow-xl hover:-translate-y-0.5"
                 style={{
                   backgroundColor: "oklch(0.72 0.15 75)",
                   color: "oklch(0.18 0.01 60)",
@@ -188,7 +188,7 @@ export default function Home() {
               </Link>
               <a
                 href="tel:+19045550123"
-                className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-md font-body font-700 text-base transition-all duration-200 hover:-translate-y-0.5"
+                className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-md font-bold text-base transition-all duration-200 hover:-translate-y-0.5"
                 style={{
                   backgroundColor: "oklch(1 0 0 / 0.12)",
                   color: "white",
@@ -243,7 +243,7 @@ export default function Home() {
                   {stat.num}
                 </p>
                 <p
-                  className="text-sm font-600 uppercase tracking-wide"
+                  className="text-sm font-semibold uppercase tracking-wide"
                   style={{ color: "oklch(0.80 0.04 145)", fontFamily: "'Nunito Sans', sans-serif" }}
                 >
                   {stat.label}
@@ -259,7 +259,7 @@ export default function Home() {
         <div className="container">
           <div className="text-center mb-14 fade-up">
             <span
-              className="inline-block text-xs font-body font-700 uppercase tracking-widest mb-3 px-3 py-1 rounded-full"
+              className="inline-block text-xs font-bold uppercase tracking-widest mb-3 px-3 py-1 rounded-full"
               style={{
                 backgroundColor: "oklch(0.35 0.10 145 / 0.1)",
                 color: "oklch(0.35 0.10 145)",
@@ -316,7 +316,7 @@ export default function Home() {
                   </p>
                   <Link
                     href="/services"
-                    className="inline-flex items-center gap-1 text-sm font-700 transition-colors"
+                    className="inline-flex items-center gap-1 text-sm font-bold transition-colors"
                     style={{ color: "oklch(0.35 0.10 145)", fontFamily: "'Nunito Sans', sans-serif" }}
                   >
                     Learn more <ChevronRight className="w-4 h-4" />
@@ -329,7 +329,7 @@ export default function Home() {
           <div className="text-center mt-10 fade-up">
             <Link
               href="/services"
-              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-md font-body font-700 text-base transition-all duration-200 hover:shadow-lg hover:-translate-y-0.5"
+              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-md font-bold text-base transition-all duration-200 hover:shadow-lg hover:-translate-y-0.5"
               style={{
                 backgroundColor: "oklch(0.35 0.10 145)",
                 color: "oklch(0.97 0.02 90)",
@@ -374,7 +374,7 @@ export default function Home() {
             {/* Text */}
             <div className="fade-up">
               <span
-                className="inline-block text-xs font-body font-700 uppercase tracking-widest mb-3 px-3 py-1 rounded-full"
+                className="inline-block text-xs font-bold uppercase tracking-widest mb-3 px-3 py-1 rounded-full"
                 style={{
                   backgroundColor: "oklch(0.35 0.10 145 / 0.1)",
                   color: "oklch(0.35 0.10 145)",
@@ -412,7 +412,7 @@ export default function Home() {
                   <li key={item} className="flex items-center gap-3">
                     <CheckCircle2 className="w-5 h-5 flex-shrink-0" style={{ color: "oklch(0.35 0.10 145)" }} />
                     <span
-                      className="text-sm font-600"
+                      className="text-sm font-semibold"
                       style={{ color: "oklch(0.25 0.04 70)", fontFamily: "'Nunito Sans', sans-serif" }}
                     >
                       {item}
@@ -423,7 +423,7 @@ export default function Home() {
 
               <Link
                 href="/book"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-md font-body font-700 text-sm transition-all duration-200 hover:shadow-lg hover:-translate-y-0.5"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-md font-bold text-sm transition-all duration-200 hover:shadow-lg hover:-translate-y-0.5"
                 style={{
                   backgroundColor: "oklch(0.72 0.15 75)",
                   color: "oklch(0.18 0.01 60)",
@@ -472,7 +472,7 @@ export default function Home() {
         <div className="container">
           <div className="text-center mb-14 fade-up">
             <span
-              className="inline-block text-xs font-body font-700 uppercase tracking-widest mb-3 px-3 py-1 rounded-full"
+              className="inline-block text-xs font-bold uppercase tracking-widest mb-3 px-3 py-1 rounded-full"
               style={{
                 backgroundColor: "oklch(0.72 0.15 75 / 0.2)",
                 color: "oklch(0.82 0.12 80)",
@@ -508,7 +508,7 @@ export default function Home() {
                   "{t.text}"
                 </p>
                 <div>
-                  <p className="font-body font-700 text-white text-sm" style={{ fontFamily: "'Nunito Sans', sans-serif" }}>
+                  <p className="font-body font-bold text-white text-sm" style={{ fontFamily: "'Nunito Sans', sans-serif" }}>
                     {t.name}
                   </p>
                   <p className="font-body text-xs" style={{ color: "oklch(0.75 0.04 145)", fontFamily: "'Nunito Sans', sans-serif" }}>
@@ -534,7 +534,7 @@ export default function Home() {
             }}
           >
             <span
-              className="inline-block text-xs font-body font-700 uppercase tracking-widest mb-4 px-3 py-1 rounded-full"
+              className="inline-block text-xs font-bold uppercase tracking-widest mb-4 px-3 py-1 rounded-full"
               style={{
                 backgroundColor: "oklch(0.72 0.15 75 / 0.2)",
                 color: "oklch(0.82 0.12 80)",
@@ -558,7 +558,7 @@ export default function Home() {
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <Link
                 href="/book"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-md font-body font-700 text-base transition-all duration-200 hover:shadow-xl hover:-translate-y-0.5"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-md font-bold text-base transition-all duration-200 hover:shadow-xl hover:-translate-y-0.5"
                 style={{
                   backgroundColor: "oklch(0.72 0.15 75)",
                   color: "oklch(0.18 0.01 60)",
@@ -570,7 +570,7 @@ export default function Home() {
               </Link>
               <a
                 href="tel:+19045550123"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-md font-body font-700 text-base transition-all duration-200 hover:-translate-y-0.5"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-md font-bold text-base transition-all duration-200 hover:-translate-y-0.5"
                 style={{
                   backgroundColor: "oklch(1 0 0 / 0.12)",
                   color: "white",
@@ -597,7 +597,7 @@ export default function Home() {
             {/* Contact Info */}
             <div className="fade-up">
               <span
-                className="inline-block text-xs font-body font-700 uppercase tracking-widest mb-3 px-3 py-1 rounded-full"
+                className="inline-block text-xs font-bold uppercase tracking-widest mb-3 px-3 py-1 rounded-full"
                 style={{
                   backgroundColor: "oklch(0.35 0.10 145 / 0.1)",
                   color: "oklch(0.35 0.10 145)",
@@ -628,8 +628,8 @@ export default function Home() {
                     <Phone className="w-5 h-5 text-white" />
                   </div>
                   <div>
-                    <p className="font-body text-xs font-700 uppercase tracking-wide mb-0.5" style={{ color: "oklch(0.50 0.04 80)", fontFamily: "'Nunito Sans', sans-serif" }}>Phone</p>
-                    <a href="tel:+19045550123" className="font-body font-700 text-base" style={{ color: "oklch(0.18 0.01 60)", fontFamily: "'Nunito Sans', sans-serif" }}>
+                    <p className="font-body text-xs font-bold uppercase tracking-wide mb-0.5" style={{ color: "oklch(0.50 0.04 80)", fontFamily: "'Nunito Sans', sans-serif" }}>Phone</p>
+                    <a href="tel:+19045550123" className="font-body font-bold text-base" style={{ color: "oklch(0.18 0.01 60)", fontFamily: "'Nunito Sans', sans-serif" }}>
                       (904) 555-0123
                     </a>
                   </div>
@@ -642,8 +642,8 @@ export default function Home() {
                     <Mail className="w-5 h-5 text-white" />
                   </div>
                   <div>
-                    <p className="font-body text-xs font-700 uppercase tracking-wide mb-0.5" style={{ color: "oklch(0.50 0.04 80)", fontFamily: "'Nunito Sans', sans-serif" }}>Email</p>
-                    <a href="mailto:hello@tributarylawn.com" className="font-body font-700 text-base" style={{ color: "oklch(0.18 0.01 60)", fontFamily: "'Nunito Sans', sans-serif" }}>
+                    <p className="font-body text-xs font-bold uppercase tracking-wide mb-0.5" style={{ color: "oklch(0.50 0.04 80)", fontFamily: "'Nunito Sans', sans-serif" }}>Email</p>
+                    <a href="mailto:hello@tributarylawn.com" className="font-body font-bold text-base" style={{ color: "oklch(0.18 0.01 60)", fontFamily: "'Nunito Sans', sans-serif" }}>
                       hello@tributarylawn.com
                     </a>
                   </div>
@@ -656,8 +656,8 @@ export default function Home() {
                     <MapPin className="w-5 h-5 text-white" />
                   </div>
                   <div>
-                    <p className="font-body text-xs font-700 uppercase tracking-wide mb-0.5" style={{ color: "oklch(0.50 0.04 80)", fontFamily: "'Nunito Sans', sans-serif" }}>Service Area</p>
-                    <p className="font-body font-700 text-base" style={{ color: "oklch(0.18 0.01 60)", fontFamily: "'Nunito Sans', sans-serif" }}>
+                    <p className="font-body text-xs font-bold uppercase tracking-wide mb-0.5" style={{ color: "oklch(0.50 0.04 80)", fontFamily: "'Nunito Sans', sans-serif" }}>Service Area</p>
+                    <p className="font-body font-bold text-base" style={{ color: "oklch(0.18 0.01 60)", fontFamily: "'Nunito Sans', sans-serif" }}>
                       Tributary Community, Yulee, FL 32097
                     </p>
                   </div>
@@ -683,7 +683,7 @@ export default function Home() {
                 >
                   <div className="grid grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-xs font-700 uppercase tracking-wide mb-1.5" style={{ color: "oklch(0.35 0.04 70)", fontFamily: "'Nunito Sans', sans-serif" }}>
+                      <label className="block text-xs font-bold uppercase tracking-wide mb-1.5" style={{ color: "oklch(0.35 0.04 70)", fontFamily: "'Nunito Sans', sans-serif" }}>
                         First Name
                       </label>
                       <input
@@ -699,7 +699,7 @@ export default function Home() {
                       />
                     </div>
                     <div>
-                      <label className="block text-xs font-700 uppercase tracking-wide mb-1.5" style={{ color: "oklch(0.35 0.04 70)", fontFamily: "'Nunito Sans', sans-serif" }}>
+                      <label className="block text-xs font-bold uppercase tracking-wide mb-1.5" style={{ color: "oklch(0.35 0.04 70)", fontFamily: "'Nunito Sans', sans-serif" }}>
                         Last Name
                       </label>
                       <input
@@ -712,7 +712,7 @@ export default function Home() {
                     </div>
                   </div>
                   <div>
-                    <label className="block text-xs font-700 uppercase tracking-wide mb-1.5" style={{ color: "oklch(0.35 0.04 70)", fontFamily: "'Nunito Sans', sans-serif" }}>
+                    <label className="block text-xs font-bold uppercase tracking-wide mb-1.5" style={{ color: "oklch(0.35 0.04 70)", fontFamily: "'Nunito Sans', sans-serif" }}>
                       Email
                     </label>
                     <input
@@ -724,7 +724,7 @@ export default function Home() {
                     />
                   </div>
                   <div>
-                    <label className="block text-xs font-700 uppercase tracking-wide mb-1.5" style={{ color: "oklch(0.35 0.04 70)", fontFamily: "'Nunito Sans', sans-serif" }}>
+                    <label className="block text-xs font-bold uppercase tracking-wide mb-1.5" style={{ color: "oklch(0.35 0.04 70)", fontFamily: "'Nunito Sans', sans-serif" }}>
                       Phone
                     </label>
                     <input
@@ -735,7 +735,7 @@ export default function Home() {
                     />
                   </div>
                   <div>
-                    <label className="block text-xs font-700 uppercase tracking-wide mb-1.5" style={{ color: "oklch(0.35 0.04 70)", fontFamily: "'Nunito Sans', sans-serif" }}>
+                    <label className="block text-xs font-bold uppercase tracking-wide mb-1.5" style={{ color: "oklch(0.35 0.04 70)", fontFamily: "'Nunito Sans', sans-serif" }}>
                       Service Needed
                     </label>
                     <select
@@ -752,7 +752,7 @@ export default function Home() {
                     </select>
                   </div>
                   <div>
-                    <label className="block text-xs font-700 uppercase tracking-wide mb-1.5" style={{ color: "oklch(0.35 0.04 70)", fontFamily: "'Nunito Sans', sans-serif" }}>
+                    <label className="block text-xs font-bold uppercase tracking-wide mb-1.5" style={{ color: "oklch(0.35 0.04 70)", fontFamily: "'Nunito Sans', sans-serif" }}>
                       Message (Optional)
                     </label>
                     <textarea
@@ -764,7 +764,7 @@ export default function Home() {
                   </div>
                   <button
                     type="submit"
-                    className="w-full py-3 rounded-md font-body font-700 text-base transition-all duration-200 hover:shadow-lg hover:-translate-y-0.5"
+                    className="w-full py-3 rounded-md font-bold text-base transition-all duration-200 hover:shadow-lg hover:-translate-y-0.5"
                     style={{
                       backgroundColor: "oklch(0.35 0.10 145)",
                       color: "oklch(0.97 0.02 90)",

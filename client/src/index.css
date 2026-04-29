@@ -150,14 +150,6 @@
   }
 
   /* Brand-specific utilities */
-  .font-display {
-    font-family: 'Lora', serif;
-  }
-
-  .font-body {
-    font-family: 'Nunito Sans', sans-serif;
-  }
-
   .section-divider-down {
     clip-path: polygon(0 0, 100% 0, 100% 88%, 0 100%);
     padding-bottom: 6rem;
@@ -170,13 +162,13 @@
   }
 
   .btn-primary {
-    @apply bg-primary text-primary-foreground font-body font-700 px-6 py-3 rounded-md transition-all duration-200 hover:bg-[oklch(0.30_0.10_145)] hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0;
+    @apply bg-primary text-primary-foreground font-bold px-6 py-3 rounded-md transition-all duration-200 hover:bg-[oklch(0.30_0.10_145)] hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0;
   }
 
   .btn-amber {
     background-color: oklch(0.72 0.15 75);
     color: oklch(0.18 0.01 60);
-    @apply font-body font-700 px-6 py-3 rounded-md transition-all duration-200 hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0;
+    @apply font-bold px-6 py-3 rounded-md transition-all duration-200 hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0;
   }
   .btn-amber:hover {
     background-color: oklch(0.65 0.15 75);
@@ -189,7 +181,7 @@
   .badge-amber {
     background-color: oklch(0.72 0.15 75);
     color: oklch(0.18 0.01 60);
-    @apply text-xs font-body font-700 px-2.5 py-0.5 rounded-full uppercase tracking-wide;
+    @apply text-xs font-bold px-2.5 py-0.5 rounded-full uppercase tracking-wide;
   }
 
   /* Scroll animations */
