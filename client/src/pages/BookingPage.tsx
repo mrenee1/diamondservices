@@ -1,5 +1,5 @@
 /* ============================================================
-   Booking Page — Tributary Lawn & Landscape
+   Booking Page — Diamond Cutz Lawn and Landscaping
    Design: "Tributary Roots" — multi-step booking with calendar
    Steps: 1. Select Service → 2. Choose Date & Time → 3. Your Info → 4. Confirm
    ============================================================ */
@@ -491,7 +491,7 @@ export default function BookingPage() {
                     required
                     value={booking.phone}
                     onChange={(e) => setBooking({ ...booking, phone: e.target.value })}
-                    placeholder="(904) 555-0000"
+                    placeholder="(856) 000-0000"
                     className="w-full px-3 py-2.5 rounded-lg border text-sm focus:outline-none focus:ring-2 focus:ring-primary transition-all"
                     style={{ borderColor: "oklch(0.88 0.03 85)", fontFamily: "'Nunito Sans', sans-serif" }}
                   />

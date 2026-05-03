@@ -1,5 +1,5 @@
 /* ============================================================
-   Services Page — Tributary Lawn & Landscape
+   Services Page — Diamond Cutz Lawn and Landscaping
    Design: "Tributary Roots" — detailed service cards with pricing
    ============================================================ */
 
@@ -137,7 +137,7 @@ export default function ServicesPage() {
             className="text-lg max-w-xl mx-auto"
             style={{ color: "oklch(0.85 0.04 145)", fontFamily: "'Nunito Sans', sans-serif" }}
           >
-            Everything your Tributary lawn and landscape needs — handled by local professionals who care about your community.
+            Everything your Tributary lawn and landscape needs — handled by Mike and his team, your neighbors right here in Yulee, FL.
           </p>
         </div>
       </section>
@@ -260,7 +260,7 @@ export default function ServicesPage() {
               <ArrowRight className="w-4 h-4" />
             </Link>
             <a
-              href="tel:+19045550123"
+              href="tel:+18563713971"
               className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-md font-bold text-base transition-all duration-200 hover:-translate-y-0.5"
               style={{
                 backgroundColor: "white",
@@ -269,7 +269,7 @@ export default function ServicesPage() {
                 fontFamily: "'Nunito Sans', sans-serif",
               }}
             >
-              Call (904) 555-0123
+              Call 856-371-3971
             </a>
           </div>
         </div>

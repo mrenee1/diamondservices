@@ -1,10 +1,15 @@
 /* ============================================================
-   Footer — Tributary Lawn & Landscape
+   Footer — Diamond Cutz Lawn and Landscaping
    Design: "Tributary Roots" — dark moss green, warm accents
+   Real business: Mike Petrutz | 856-371-3971 | mpetrutz@yahoo.com
+   Sister business: A Diamond Girl Home Cleaning Service | 856-981-0930
    ============================================================ */
 
-import { Leaf, Phone, Mail, MapPin, Facebook, Instagram, Star } from "lucide-react";
+import { Phone, Mail, MapPin, Facebook, Instagram, Star } from "lucide-react";
 import { Link } from "wouter";
+
+const DIAMOND_CUTZ_LOGO = "/manus-storage/diamond-cutz-logo_7523a9b6.png";
+const DIAMOND_GIRL_LOGO = "/manus-storage/diamond-girl-logo_26e7435d.png";
 
 export default function Footer() {
   return (
@@ -13,21 +18,15 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Brand */}
           <div className="lg:col-span-1">
-            <div className="flex items-center gap-2.5 mb-4">
-              <div className="w-9 h-9 rounded-full flex items-center justify-center" style={{ backgroundColor: "oklch(0.72 0.15 75)" }}>
-                <Leaf className="w-5 h-5" style={{ color: "oklch(0.18 0.01 60)" }} />
-              </div>
-              <div className="flex flex-col leading-tight">
-                <span className="font-bold text-base text-white" style={{ fontFamily: "'Lora', serif" }}>
-                  Tributary
-                </span>
-                <span className="text-xs font-semibold tracking-widest uppercase" style={{ color: "oklch(0.72 0.15 75)", fontFamily: "'Nunito Sans', sans-serif" }}>
-                  Lawn & Landscape
-                </span>
-              </div>
+            <div className="mb-4">
+              <img
+                src={DIAMOND_CUTZ_LOGO}
+                alt="Diamond Cutz Lawn and Landscaping"
+                className="h-20 w-auto object-contain"
+              />
             </div>
             <p className="text-sm leading-relaxed mb-5" style={{ color: "oklch(0.80 0.03 145)", fontFamily: "'Nunito Sans', sans-serif" }}>
-              Your trusted lawn care and landscaping specialists proudly serving the Tributary community in Yulee, Florida.
+              Your trusted lawn care and landscaping specialists proudly serving the Tributary community in Yulee, Florida. Family-owned and operated.
             </p>
             <div className="flex gap-3">
               <a
@@ -62,6 +61,7 @@ export default function Footer() {
                 "Mulching & Bed Care",
                 "Irrigation Services",
                 "Seasonal Clean-Up",
+                "Handyman Services",
               ].map((s) => (
                 <li key={s}>
                   <Link
@@ -79,14 +79,13 @@ export default function Footer() {
           {/* Quick Links */}
           <div>
             <h4 className="font-bold text-white mb-4 text-base" style={{ fontFamily: "'Lora', serif" }}>Quick Links</h4>
-            <ul className="space-y-2.5">
+            <ul className="space-y-2.5 mb-6">
               {[
                 { label: "Book a Service", href: "/book" },
                 { label: "All Services", href: "/services" },
                 { label: "About Us", href: "/#about" },
                 { label: "Customer Reviews", href: "/#testimonials" },
                 { label: "Contact Us", href: "/#contact" },
-                { label: "Service Area", href: "/#about" },
               ].map((link) => (
                 <li key={link.label}>
                   <a
@@ -99,6 +98,26 @@ export default function Footer() {
                 </li>
               ))}
             </ul>
+
+            {/* Sister Business */}
+            <div className="p-3 rounded-xl" style={{ backgroundColor: "oklch(0.28 0.09 145)" }}>
+              <p className="text-xs font-bold uppercase tracking-wide mb-2" style={{ color: "oklch(0.72 0.15 75)", fontFamily: "'Nunito Sans', sans-serif" }}>
+                Sister Business
+              </p>
+              <img
+                src={DIAMOND_GIRL_LOGO}
+                alt="A Diamond Girl Home Cleaning Service"
+                className="h-14 w-auto object-contain mb-2"
+              />
+              <a
+                href="tel:+18569810930"
+                className="flex items-center gap-1.5 text-sm font-bold transition-colors hover:text-white"
+                style={{ color: "oklch(0.82 0.12 80)", fontFamily: "'Nunito Sans', sans-serif" }}
+              >
+                <Phone className="w-3.5 h-3.5" />
+                856-981-0930
+              </a>
+            </div>
           </div>
 
           {/* Contact */}
@@ -108,28 +127,28 @@ export default function Footer() {
               <li className="flex items-start gap-3">
                 <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: "oklch(0.72 0.15 75)" }} />
                 <span className="text-sm" style={{ color: "oklch(0.80 0.03 145)", fontFamily: "'Nunito Sans', sans-serif" }}>
-                  Tributary Community<br />
+                  75307 Plumbago Trace<br />
                   Yulee, FL 32097
                 </span>
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="w-4 h-4 flex-shrink-0" style={{ color: "oklch(0.72 0.15 75)" }} />
                 <a
-                  href="tel:+19045550123"
+                  href="tel:+18563713971"
                   className="text-sm transition-colors hover:text-white"
                   style={{ color: "oklch(0.80 0.03 145)", fontFamily: "'Nunito Sans', sans-serif" }}
                 >
-                  (904) 555-0123
+                  856-371-3971
                 </a>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="w-4 h-4 flex-shrink-0" style={{ color: "oklch(0.72 0.15 75)" }} />
                 <a
-                  href="mailto:hello@tributarylawn.com"
+                  href="mailto:mpetrutz@yahoo.com"
                   className="text-sm transition-colors hover:text-white"
                   style={{ color: "oklch(0.80 0.03 145)", fontFamily: "'Nunito Sans', sans-serif" }}
                 >
-                  hello@tributarylawn.com
+                  mpetrutz@yahoo.com
                 </a>
               </li>
             </ul>
@@ -149,7 +168,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="mt-12 pt-6 border-t flex flex-col md:flex-row items-center justify-between gap-3" style={{ borderColor: "oklch(0.30 0.09 145)" }}>
           <p className="text-xs" style={{ color: "oklch(0.65 0.04 145)", fontFamily: "'Nunito Sans', sans-serif" }}>
-            © {new Date().getFullYear()} Tributary Lawn & Landscape. All rights reserved. · Yulee, FL 32097
+            © {new Date().getFullYear()} Diamond Cutz Lawn and Landscaping. All rights reserved. · Yulee, FL 32097
           </p>
           <div className="flex items-center gap-1">
             {[1,2,3,4,5].map(i => (

@@ -1,7 +1,8 @@
 /* ============================================================
-   Home Page — Tributary Lawn & Landscape
+   Home Page — Diamond Cutz Lawn and Landscaping
    Design: "Tributary Roots" — asymmetric hero, editorial layout
-   Sections: Hero, Stats, Services, About, Testimonials, CTA, Contact
+   Real business: Mike Petrutz | 856-371-3971 | mpetrutz@yahoo.com
+   Address: 75307 Plumbago Trace, Yulee, FL 32097
    ============================================================ */
 
 import { useEffect, useRef } from "react";
@@ -160,9 +161,9 @@ export default function Home() {
               className="text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.05] mb-6"
               style={{ fontFamily: "'Lora', serif" }}
             >
-              Your Lawn,{" "}
+              Diamond Cutz{" "}
               <span style={{ color: "oklch(0.82 0.12 80)" }}>
-                Our Craft.
+                Lawn & Landscaping
               </span>
             </h1>
 
@@ -170,7 +171,7 @@ export default function Home() {
               className="text-lg md:text-xl leading-relaxed mb-8 max-w-lg"
               style={{ color: "oklch(0.88 0.03 90)", fontFamily: "'Nunito Sans', sans-serif" }}
             >
-              Professional lawn care and landscaping tailored for the Tributary community. From weekly mowing to complete landscape transformations — we keep your home looking resort-ready.
+              Professional lawn care and landscaping tailored for the Tributary community. From weekly mowing to complete landscape transformations — we keep your home looking resort-ready. Family-owned and operated by Mike & his wife, right here in Yulee, FL.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3">
@@ -187,7 +188,7 @@ export default function Home() {
                 <ArrowRight className="w-4 h-4" />
               </Link>
               <a
-                href="tel:+19045550123"
+                href="tel:+18563713971"
                 className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-md font-bold text-base transition-all duration-200 hover:-translate-y-0.5"
                 style={{
                   backgroundColor: "oklch(1 0 0 / 0.12)",
@@ -197,7 +198,7 @@ export default function Home() {
                 }}
               >
                 <Phone className="w-4 h-4" />
-                (904) 555-0123
+                856-371-3971
               </a>
             </div>
 
@@ -206,7 +207,7 @@ export default function Home() {
               {["Licensed & Insured", "Free Estimates", "Satisfaction Guaranteed", "Locally Owned"].map((badge) => (
                 <div key={badge} className="flex items-center gap-1.5">
                   <CheckCircle2 className="w-4 h-4" style={{ color: "oklch(0.72 0.15 75)" }} />
-                  <span className="font-body text-sm" style={{ color: "oklch(0.88 0.03 90)", fontFamily: "'Nunito Sans', sans-serif" }}>
+                  <span className="text-sm" style={{ color: "oklch(0.88 0.03 90)", fontFamily: "'Nunito Sans', sans-serif" }}>
                     {badge}
                   </span>
                 </div>
@@ -387,26 +388,26 @@ export default function Home() {
                 className="text-4xl font-bold mb-5 leading-tight"
                 style={{ color: "oklch(0.18 0.01 60)", fontFamily: "'Lora', serif" }}
               >
-                Rooted in the Tributary Community
+                Built from the Ground Up — Right Here in Yulee
               </h2>
               <p
                 className="text-base leading-relaxed mb-4"
                 style={{ color: "oklch(0.35 0.04 70)", fontFamily: "'Nunito Sans', sans-serif" }}
               >
-                We're your neighbors. As residents and lawn care professionals serving the Tributary master-planned community in Yulee, FL, we understand what it takes to maintain the resort-style curb appeal this beautiful neighborhood deserves.
+                We're a hardworking husband-and-wife team who brought our family from South Jersey down to the Yulee, Florida area with one goal in mind: to give our youngest son a better opportunity for his future. What started on a whim with just a lawnmower and a single house to clean quickly turned into something much bigger than we ever imagined.
               </p>
               <p
                 className="text-base leading-relaxed mb-6"
                 style={{ color: "oklch(0.35 0.04 70)", fontFamily: "'Nunito Sans', sans-serif" }}
               >
-                From the lakefront homes near The Lookout Amenity Center to the wooded lots along the nature trails, we tailor our services to the unique landscape of every Tributary property.
+                Through dedication, word of mouth, and a commitment to doing every job right, our small start has grown rapidly throughout the Tributary community. We truly enjoy helping our neighbors and take pride in making our community a cleaner, more beautiful place to live. This has been a true American Dream!
               </p>
 
               <ul className="space-y-3 mb-8">
                 {[
-                  "Exclusively serving the Tributary community",
-                  "Florida-certified lawn care professionals",
-                  "Eco-friendly fertilization programs",
+                  "Family-owned & operated by Mike & his wife",
+                  "Serving the Tributary community in Yulee, FL",
+                  "Every budget — tailored to the individual homeowner",
                   "Flexible weekly, bi-weekly & monthly plans",
                 ].map((item) => (
                   <li key={item} className="flex items-center gap-3">
@@ -508,10 +509,10 @@ export default function Home() {
                   "{t.text}"
                 </p>
                 <div>
-                  <p className="font-body font-bold text-white text-sm" style={{ fontFamily: "'Nunito Sans', sans-serif" }}>
+                  <p className="font-bold text-white text-sm" style={{ fontFamily: "'Nunito Sans', sans-serif" }}>
                     {t.name}
                   </p>
-                  <p className="font-body text-xs" style={{ color: "oklch(0.75 0.04 145)", fontFamily: "'Nunito Sans', sans-serif" }}>
+                  <p className="text-xs" style={{ color: "oklch(0.75 0.04 145)", fontFamily: "'Nunito Sans', sans-serif" }}>
                     {t.location}
                   </p>
                 </div>
@@ -569,7 +570,7 @@ export default function Home() {
                 <ArrowRight className="w-5 h-5" />
               </Link>
               <a
-                href="tel:+19045550123"
+                href="tel:+18563713971"
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-md font-bold text-base transition-all duration-200 hover:-translate-y-0.5"
                 style={{
                   backgroundColor: "oklch(1 0 0 / 0.12)",
@@ -628,9 +629,9 @@ export default function Home() {
                     <Phone className="w-5 h-5 text-white" />
                   </div>
                   <div>
-                    <p className="font-body text-xs font-bold uppercase tracking-wide mb-0.5" style={{ color: "oklch(0.50 0.04 80)", fontFamily: "'Nunito Sans', sans-serif" }}>Phone</p>
-                    <a href="tel:+19045550123" className="font-body font-bold text-base" style={{ color: "oklch(0.18 0.01 60)", fontFamily: "'Nunito Sans', sans-serif" }}>
-                      (904) 555-0123
+                    <p className="text-xs font-bold uppercase tracking-wide mb-0.5" style={{ color: "oklch(0.50 0.04 80)", fontFamily: "'Nunito Sans', sans-serif" }}>Phone</p>
+                    <a href="tel:+18563713971" className="font-bold text-base" style={{ color: "oklch(0.18 0.01 60)", fontFamily: "'Nunito Sans', sans-serif" }}>
+                      856-371-3971
                     </a>
                   </div>
                 </div>
@@ -642,9 +643,9 @@ export default function Home() {
                     <Mail className="w-5 h-5 text-white" />
                   </div>
                   <div>
-                    <p className="font-body text-xs font-bold uppercase tracking-wide mb-0.5" style={{ color: "oklch(0.50 0.04 80)", fontFamily: "'Nunito Sans', sans-serif" }}>Email</p>
-                    <a href="mailto:hello@tributarylawn.com" className="font-body font-bold text-base" style={{ color: "oklch(0.18 0.01 60)", fontFamily: "'Nunito Sans', sans-serif" }}>
-                      hello@tributarylawn.com
+                    <p className="text-xs font-bold uppercase tracking-wide mb-0.5" style={{ color: "oklch(0.50 0.04 80)", fontFamily: "'Nunito Sans', sans-serif" }}>Email</p>
+                    <a href="mailto:mpetrutz@yahoo.com" className="font-bold text-base" style={{ color: "oklch(0.18 0.01 60)", fontFamily: "'Nunito Sans', sans-serif" }}>
+                      mpetrutz@yahoo.com
                     </a>
                   </div>
                 </div>
@@ -656,9 +657,9 @@ export default function Home() {
                     <MapPin className="w-5 h-5 text-white" />
                   </div>
                   <div>
-                    <p className="font-body text-xs font-bold uppercase tracking-wide mb-0.5" style={{ color: "oklch(0.50 0.04 80)", fontFamily: "'Nunito Sans', sans-serif" }}>Service Area</p>
-                    <p className="font-body font-bold text-base" style={{ color: "oklch(0.18 0.01 60)", fontFamily: "'Nunito Sans', sans-serif" }}>
-                      Tributary Community, Yulee, FL 32097
+                    <p className="text-xs font-bold uppercase tracking-wide mb-0.5" style={{ color: "oklch(0.50 0.04 80)", fontFamily: "'Nunito Sans', sans-serif" }}>Service Area</p>
+                    <p className="font-bold text-base" style={{ color: "oklch(0.18 0.01 60)", fontFamily: "'Nunito Sans', sans-serif" }}>
+                      75307 Plumbago Trace, Yulee, FL 32097
                     </p>
                   </div>
                 </div>
@@ -729,7 +730,7 @@ export default function Home() {
                     </label>
                     <input
                       type="tel"
-                      placeholder="(904) 555-0000"
+                      placeholder="(856) 000-0000"
                       className="w-full px-3 py-2.5 rounded-md border text-sm focus:outline-none focus:ring-2 transition-all"
                       style={{ borderColor: "oklch(0.88 0.03 85)", fontFamily: "'Nunito Sans', sans-serif" }}
                     />
@@ -748,6 +749,7 @@ export default function Home() {
                       <option value="sod">Sod Installation</option>
                       <option value="irrigation">Irrigation Services</option>
                       <option value="cleanup">Seasonal Clean-Up</option>
+                      <option value="handyman">Handyman Services</option>
                       <option value="other">Other / Not Sure</option>
                     </select>
                   </div>

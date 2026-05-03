@@ -1,11 +1,15 @@
 /* ============================================================
-   Navbar — Tributary Lawn & Landscape
+   Navbar — Diamond Cutz Lawn and Landscaping
    Design: "Tributary Roots" — sticky top nav, moss green brand
+   Real business: Diamond Cutz Lawn and Landscaping
+   Phone: 856-371-3971 | Owner: Mike Petrutz
    ============================================================ */
 
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
-import { Menu, X, Leaf, Phone } from "lucide-react";
+import { Menu, X, Phone } from "lucide-react";
+
+const DIAMOND_CUTZ_LOGO = "/manus-storage/diamond-cutz-logo_7523a9b6.png";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -50,24 +54,13 @@ export default function Navbar() {
       <div className="container">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2.5 group">
-            <div className="w-9 h-9 rounded-full flex items-center justify-center" style={{ backgroundColor: "oklch(0.35 0.10 145)" }}>
-              <Leaf className="w-5 h-5 text-white" />
-            </div>
-            <div className="flex flex-col leading-tight">
-              <span
-                className="font-bold text-base leading-tight"
-                style={{ color: scrolled ? "oklch(0.18 0.01 60)" : "white", fontFamily: "'Lora', serif" }}
-              >
-                Tributary
-              </span>
-              <span
-                className="text-xs font-semibold tracking-widest uppercase"
-                style={{ color: scrolled ? "oklch(0.35 0.10 145)" : "oklch(0.82 0.12 80)", fontFamily: "'Nunito Sans', sans-serif" }}
-              >
-                Lawn & Landscape
-              </span>
-            </div>
+          <Link href="/" className="flex items-center gap-2 group">
+            <img
+              src={DIAMOND_CUTZ_LOGO}
+              alt="Diamond Cutz Lawn and Landscaping"
+              className="h-12 md:h-14 w-auto object-contain"
+              style={{ filter: scrolled ? "none" : "drop-shadow(0 2px 8px rgba(0,0,0,0.4))" }}
+            />
           </Link>
 
           {/* Desktop Nav */}
@@ -101,12 +94,12 @@ export default function Navbar() {
           {/* CTA + Mobile Toggle */}
           <div className="flex items-center gap-3">
             <a
-              href="tel:+19045550123"
+              href="tel:+18563713971"
               className="hidden md:flex items-center gap-1.5 text-sm font-bold"
               style={{ color: scrolled ? "oklch(0.35 0.10 145)" : "oklch(0.82 0.12 80)", fontFamily: "'Nunito Sans', sans-serif" }}
             >
               <Phone className="w-4 h-4" />
-              (904) 555-0123
+              856-371-3971
             </a>
             <Link
               href="/book"
@@ -155,12 +148,12 @@ export default function Navbar() {
             ))}
             <div className="pt-3 border-t border-border flex flex-col gap-2">
               <a
-                href="tel:+19045550123"
+                href="tel:+18563713971"
                 className="flex items-center gap-2 font-bold text-sm py-2 px-3"
                 style={{ color: "oklch(0.35 0.10 145)", fontFamily: "'Nunito Sans', sans-serif" }}
               >
                 <Phone className="w-4 h-4" />
-                (904) 555-0123
+                856-371-3971
               </a>
               <Link
                 href="/book"
