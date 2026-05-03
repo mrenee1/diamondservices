@@ -1,8 +1,9 @@
 /* ============================================================
    Footer — Diamond Home Services LLC
-   5-page site: no social media, no booking
+   6-page site: no social media, no booking
    Phone: 856-371-3971 (lawn) | 856-981-0930 (cleaning)
    Email: mpetrutz@yahoo.com
+   Nassau County, FL — no home address
    ============================================================ */
 
 import { Phone, Mail, MapPin, Star } from "lucide-react";
@@ -24,7 +25,7 @@ export default function Footer() {
               <img src={DIAMOND_GIRL_LOGO} alt="A Diamond Girl Home Cleaning Service" className="h-16 w-auto object-contain" />
             </div>
             <p className="text-sm leading-relaxed mt-4" style={{ color: "oklch(0.80 0.03 145)", fontFamily: "'Nunito Sans', sans-serif" }}>
-              Family-owned and operated home services proudly serving Yulee, Amelia Island, and surrounding Northeast Florida communities.
+              Family-owned and operated home services proudly serving Nassau County, Florida — rooted right here in the Tributary community of Yulee.
             </p>
           </div>
 
@@ -45,7 +46,7 @@ export default function Footer() {
               <li className="pt-2">
                 <p className="text-xs font-bold uppercase tracking-wide mb-1.5" style={{ color: "oklch(0.82 0.12 340)", fontFamily: "'Nunito Sans', sans-serif" }}>A Diamond Girl</p>
               </li>
-              {["Standard Home Cleaning", "Deep Cleaning", "Move-In / Move-Out", "Recurring Maintenance"].map((s) => (
+              {["Diamond Deep Clean", "Recurring Diamond Shine", "Move-In / Move-Out", "Post-Construction Clean"].map((s) => (
                 <li key={s}>
                   <Link href="/diamond-girl" className="text-sm transition-colors hover:text-white" style={{ color: "oklch(0.80 0.03 145)", fontFamily: "'Nunito Sans', sans-serif" }}>
                     {s}
@@ -65,6 +66,7 @@ export default function Footer() {
                 { label: "A Diamond Girl", href: "/diamond-girl" },
                 { label: "About Us", href: "/about" },
                 { label: "Photo Gallery", href: "/gallery" },
+                { label: "Testimonials", href: "/testimonials" },
               ].map((link) => (
                 <li key={link.label}>
                   <Link href={link.href} className="text-sm transition-colors hover:text-white" style={{ color: "oklch(0.80 0.03 145)", fontFamily: "'Nunito Sans', sans-serif" }}>
@@ -82,7 +84,7 @@ export default function Footer() {
               <li className="flex items-start gap-3">
                 <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: "oklch(0.72 0.15 75)" }} />
                 <span className="text-sm" style={{ color: "oklch(0.80 0.03 145)", fontFamily: "'Nunito Sans', sans-serif" }}>
-                  75307 Plumbago Trace<br />Yulee, FL 32097
+                  Nassau County, FL<br /><span style={{ color: "oklch(0.65 0.04 145)" }}>Rooted in the Tributary Community, Yulee</span>
                 </span>
               </li>
               <li className="flex items-start gap-3">
@@ -119,7 +121,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="mt-12 pt-6 border-t flex flex-col md:flex-row items-center justify-between gap-3" style={{ borderColor: "oklch(0.30 0.09 145)" }}>
           <p className="text-xs" style={{ color: "oklch(0.65 0.04 145)", fontFamily: "'Nunito Sans', sans-serif" }}>
-            © {new Date().getFullYear()} Diamond Home Services LLC. All rights reserved. · Yulee, FL 32097
+            © {new Date().getFullYear()} Diamond Home Services LLC. All rights reserved. · Nassau County, FL
           </p>
           <div className="flex items-center gap-1">
             {[1,2,3,4,5].map(i => (

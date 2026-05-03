@@ -1,6 +1,6 @@
 /* ============================================================
    Navbar — Diamond Home Services LLC
-   5-page nav: Home | Diamond Cutz | A Diamond Girl | About Us | Gallery
+   6-page nav: Home | Diamond Cutz | A Diamond Girl | About Us | Gallery | Testimonials
    Phone: 856-371-3971 (lawn) | 856-981-0930 (cleaning)
    ============================================================ */
 
@@ -16,6 +16,7 @@ const navLinks = [
   { href: "/diamond-girl", label: "A Diamond Girl" },
   { href: "/about", label: "About Us" },
   { href: "/gallery", label: "Gallery" },
+  { href: "/testimonials", label: "Testimonials" },
 ];
 
 export default function Navbar() {
@@ -48,7 +49,7 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop Nav */}
-          <div className="hidden lg:flex items-center gap-5">
+          <div className="hidden xl:flex items-center gap-4">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
@@ -71,7 +72,7 @@ export default function Navbar() {
           <div className="flex items-center gap-3">
             <a
               href="tel:+18563713971"
-              className="hidden lg:flex items-center gap-1.5 text-sm font-bold"
+              className="hidden xl:flex items-center gap-1.5 text-sm font-bold"
               style={{
                 color: scrolled ? "oklch(0.35 0.10 145)" : "oklch(0.82 0.12 80)",
                 fontFamily: "'Nunito Sans', sans-serif",
@@ -81,7 +82,7 @@ export default function Navbar() {
               856-371-3971
             </a>
             <button
-              className="lg:hidden p-2 rounded-md"
+              className="xl:hidden p-2 rounded-md"
               style={{ color: scrolled ? "oklch(0.18 0.01 60)" : "white" }}
               onClick={() => setOpen(!open)}
               aria-label="Toggle menu"
@@ -94,7 +95,7 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {open && (
-        <div className="lg:hidden bg-white border-t border-border shadow-lg">
+        <div className="xl:hidden bg-white border-t border-border shadow-lg">
           <div className="container py-4 flex flex-col gap-1">
             {navLinks.map((link) => (
               <Link

@@ -1,7 +1,7 @@
 /* ============================================================
    Home Page — Diamond Home Services LLC
-   Umbrella brand page: lawn + cleaning services
-   Service area: Yulee, Amelia Island & surrounding areas
+   Umbrella brand: lawn + cleaning services
+   Service area: Nassau County, rooted in the Tributary community
    Phone: 856-371-3971 | Email: mpetrutz@yahoo.com
    ============================================================ */
 
@@ -20,7 +20,6 @@ const HERO_IMAGE = "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=
 const LAWN_IMAGE = "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=800&q=80";
 const CLEAN_IMAGE = "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=800&q=80";
 
-// Scroll-reveal hook
 function useFadeUp() {
   const ref = useRef<HTMLDivElement>(null);
   useEffect(() => {
@@ -44,7 +43,7 @@ const services = [
     icon: Scissors,
     title: "Diamond Cutz",
     subtitle: "Lawn & Landscaping",
-    description: "Professional lawn mowing, edging, landscape design, fertilization, sod installation, and more. We keep your outdoor spaces looking resort-ready year-round.",
+    description: "Professional lawn mowing, edging, landscape design, fertilization, sod installation, and more. Mike keeps your outdoor spaces looking resort-ready year-round throughout Nassau County.",
     href: "/diamond-cutz",
     logo: DIAMOND_CUTZ_LOGO,
     phone: "856-371-3971",
@@ -56,7 +55,7 @@ const services = [
     icon: Sparkles,
     title: "A Diamond Girl",
     subtitle: "Home Cleaning Service",
-    description: "Thorough, reliable home cleaning services tailored to your schedule. From routine maintenance cleans to deep cleans, we make your home shine.",
+    description: "Lidone delivers a diamond-level deep clean every time. From top-to-bottom deep cleans to move-in/move-out services — she makes every home shine like new.",
     href: "/diamond-girl",
     logo: DIAMOND_GIRL_LOGO,
     phone: "856-981-0930",
@@ -100,7 +99,7 @@ export default function Home() {
               style={{ backgroundColor: "oklch(0.72 0.15 75 / 0.2)", color: "oklch(0.88 0.12 80)", fontFamily: "'Nunito Sans', sans-serif", border: "1px solid oklch(0.72 0.15 75 / 0.3)" }}
             >
               <MapPin className="w-3.5 h-3.5" />
-              Yulee · Amelia Island · Surrounding Areas
+              Nassau County · Rooted in the Tributary Community
             </div>
 
             <h1
@@ -116,7 +115,7 @@ export default function Home() {
               className="text-lg md:text-xl leading-relaxed mb-8 max-w-lg"
               style={{ color: "oklch(0.88 0.03 90)", fontFamily: "'Nunito Sans', sans-serif" }}
             >
-              Your trusted family-owned home services team. From a perfectly manicured lawn to a spotlessly clean home — we handle it all with pride, right here in Northeast Florida.
+              Your trusted family-owned home services team. From a perfectly manicured lawn to a spotlessly clean home — Mike and Lidone handle it all with pride, right here in Nassau County, Florida.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3 mb-10">
@@ -161,7 +160,7 @@ export default function Home() {
               Two Businesses, One Family
             </h2>
             <p className="text-base mt-3 max-w-xl mx-auto" style={{ color: "oklch(0.40 0.04 70)", fontFamily: "'Nunito Sans', sans-serif" }}>
-              Mike handles the outdoors. His wife handles the indoors. Together, they've built something special for the Yulee and Amelia Island community.
+              Mike handles the outdoors. Lidone handles the indoors. Together, they've built something special for the Nassau County community.
             </p>
           </div>
 
@@ -213,10 +212,7 @@ export default function Home() {
       </section>
 
       {/* ── BUSINESS CLIENT CALLOUT ── */}
-      <section
-        className="py-16"
-        style={{ backgroundColor: "oklch(0.25 0.10 145)" }}
-      >
+      <section className="py-16" style={{ backgroundColor: "oklch(0.25 0.10 145)" }}>
         <div className="container">
           <div ref={s4} className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
             <div className="flex-shrink-0 w-16 h-16 rounded-2xl flex items-center justify-center" style={{ backgroundColor: "oklch(0.72 0.15 75)" }}>
@@ -230,7 +226,7 @@ export default function Home() {
                 We Also Work With Businesses
               </h3>
               <p className="text-base" style={{ color: "oklch(0.82 0.05 145)", fontFamily: "'Nunito Sans', sans-serif" }}>
-                Offices, retail spaces, commercial properties, and more. Whether it's regular lawn maintenance or recurring cleaning contracts — we'd love to partner with your business. Call or text us for a custom quote.
+                Offices, retail spaces, commercial properties, and more throughout Nassau County. Whether it's regular lawn maintenance or recurring cleaning contracts — we'd love to partner with your business. Call or text us for a custom quote.
               </p>
             </div>
             <div className="flex-shrink-0 flex flex-col gap-3">
@@ -264,13 +260,13 @@ export default function Home() {
                 Where We Serve
               </span>
               <h2 className="text-4xl font-bold mb-5 leading-tight" style={{ color: "oklch(0.18 0.01 60)", fontFamily: "'Lora', serif" }}>
-                Proudly Serving Northeast Florida
+                Proudly Serving Nassau County, Florida
               </h2>
               <p className="text-base leading-relaxed mb-6" style={{ color: "oklch(0.35 0.04 70)", fontFamily: "'Nunito Sans', sans-serif" }}>
-                Based right here in the Tributary community of Yulee, we serve homeowners and businesses throughout the greater Nassau County area. If you're not sure whether we cover your area, just give us a call — we're always happy to help.
+                Based right here in the Tributary community of Yulee, Mike and Lidone serve homeowners and businesses throughout Nassau County. If you're not sure whether we cover your area, just give us a call — we're always happy to help.
               </p>
               <div className="grid grid-cols-2 gap-3">
-                {["Yulee, FL 32097", "Amelia Island", "Fernandina Beach", "Callahan", "Nassau County", "Surrounding Areas"].map((area) => (
+                {["Tributary Community", "Yulee, FL 32097", "Fernandina Beach", "Callahan", "Nassau County", "Surrounding Areas"].map((area) => (
                   <div key={area} className="flex items-center gap-2">
                     <MapPin className="w-4 h-4 flex-shrink-0" style={{ color: "oklch(0.35 0.10 145)" }} />
                     <span className="text-sm font-semibold" style={{ color: "oklch(0.25 0.04 70)", fontFamily: "'Nunito Sans', sans-serif" }}>{area}</span>
@@ -286,7 +282,7 @@ export default function Home() {
                     <Phone className="w-5 h-5 text-white" />
                   </div>
                   <div>
-                    <p className="text-xs font-bold uppercase tracking-wide mb-0.5" style={{ color: "oklch(0.50 0.04 80)", fontFamily: "'Nunito Sans', sans-serif" }}>Lawn & Landscaping</p>
+                    <p className="text-xs font-bold uppercase tracking-wide mb-0.5" style={{ color: "oklch(0.50 0.04 80)", fontFamily: "'Nunito Sans', sans-serif" }}>Lawn & Landscaping (Mike)</p>
                     <a href="tel:+18563713971" className="font-bold text-base" style={{ color: "oklch(0.18 0.01 60)", fontFamily: "'Nunito Sans', sans-serif" }}>856-371-3971</a>
                   </div>
                 </div>
@@ -295,7 +291,7 @@ export default function Home() {
                     <Phone className="w-5 h-5 text-white" />
                   </div>
                   <div>
-                    <p className="text-xs font-bold uppercase tracking-wide mb-0.5" style={{ color: "oklch(0.50 0.04 80)", fontFamily: "'Nunito Sans', sans-serif" }}>Home Cleaning</p>
+                    <p className="text-xs font-bold uppercase tracking-wide mb-0.5" style={{ color: "oklch(0.50 0.04 80)", fontFamily: "'Nunito Sans', sans-serif" }}>Home Cleaning (Lidone)</p>
                     <a href="tel:+18569810930" className="font-bold text-base" style={{ color: "oklch(0.18 0.01 60)", fontFamily: "'Nunito Sans', sans-serif" }}>856-981-0930</a>
                   </div>
                 </div>
@@ -313,8 +309,8 @@ export default function Home() {
                     <MapPin className="w-5 h-5 text-white" />
                   </div>
                   <div>
-                    <p className="text-xs font-bold uppercase tracking-wide mb-0.5" style={{ color: "oklch(0.50 0.04 80)", fontFamily: "'Nunito Sans', sans-serif" }}>Address</p>
-                    <p className="font-bold text-base" style={{ color: "oklch(0.18 0.01 60)", fontFamily: "'Nunito Sans', sans-serif" }}>75307 Plumbago Trace<br />Yulee, FL 32097</p>
+                    <p className="text-xs font-bold uppercase tracking-wide mb-0.5" style={{ color: "oklch(0.50 0.04 80)", fontFamily: "'Nunito Sans', sans-serif" }}>Service Area</p>
+                    <p className="font-bold text-base" style={{ color: "oklch(0.18 0.01 60)", fontFamily: "'Nunito Sans', sans-serif" }}>Nassau County, FL<br />Rooted in Tributary, Yulee</p>
                   </div>
                 </div>
               </div>

@@ -1,10 +1,10 @@
 /* ============================================================
    Gallery Page — Diamond Home Services LLC
-   Before/After photo placeholders for Diamond Cutz & A Diamond Girl
+   Before/After mock photos for Diamond Cutz & A Diamond Girl
    ============================================================ */
 
 import { useState } from "react";
-import { Camera, Scissors, Sparkles } from "lucide-react";
+import { Camera, Scissors, Sparkles, Phone } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
@@ -13,48 +13,70 @@ type Category = "all" | "lawn" | "cleaning";
 const DIAMOND_CUTZ_LOGO = "/manus-storage/diamond-cutz-logo_7523a9b6.png";
 const DIAMOND_GIRL_LOGO = "/manus-storage/diamond-girl-logo_26e7435d.png";
 
-// Placeholder gallery items — replace src values with real photos
 const galleryItems = [
-  // Diamond Cutz — Lawn
-  { id: 1, category: "lawn" as Category, label: "Lawn Mowing", location: "Tributary, Yulee FL", beforeSrc: null, afterSrc: null },
-  { id: 2, category: "lawn" as Category, label: "Landscape Design", location: "Amelia Island, FL", beforeSrc: null, afterSrc: null },
-  { id: 3, category: "lawn" as Category, label: "Sod Installation", location: "Yulee, FL", beforeSrc: null, afterSrc: null },
-  { id: 4, category: "lawn" as Category, label: "Mulching & Bed Care", location: "Fernandina Beach, FL", beforeSrc: null, afterSrc: null },
-  { id: 5, category: "lawn" as Category, label: "Shrub Trimming", location: "Tributary, Yulee FL", beforeSrc: null, afterSrc: null },
-  { id: 6, category: "lawn" as Category, label: "Seasonal Clean-Up", location: "Yulee, FL", beforeSrc: null, afterSrc: null },
-  // A Diamond Girl — Cleaning
-  { id: 7, category: "cleaning" as Category, label: "Deep Clean", location: "Tributary, Yulee FL", beforeSrc: null, afterSrc: null },
-  { id: 8, category: "cleaning" as Category, label: "Kitchen Cleaning", location: "Amelia Island, FL", beforeSrc: null, afterSrc: null },
-  { id: 9, category: "cleaning" as Category, label: "Bathroom Cleaning", location: "Yulee, FL", beforeSrc: null, afterSrc: null },
-  { id: 10, category: "cleaning" as Category, label: "Move-In Clean", location: "Fernandina Beach, FL", beforeSrc: null, afterSrc: null },
-  { id: 11, category: "cleaning" as Category, label: "Living Room Clean", location: "Tributary, Yulee FL", beforeSrc: null, afterSrc: null },
-  { id: 12, category: "cleaning" as Category, label: "Post-Construction", location: "Yulee, FL", beforeSrc: null, afterSrc: null },
+  // ── Diamond Cutz — Lawn ──
+  {
+    id: 1, category: "lawn" as Category, label: "Lawn Mowing & Edging", location: "Tributary, Yulee FL",
+    beforeSrc: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=75",
+    afterSrc: "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=600&q=75",
+  },
+  {
+    id: 2, category: "lawn" as Category, label: "Landscape Design", location: "Yulee, FL",
+    beforeSrc: "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=600&q=75",
+    afterSrc: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=75",
+  },
+  {
+    id: 3, category: "lawn" as Category, label: "Sod Installation", location: "Nassau County, FL",
+    beforeSrc: "https://images.unsplash.com/photo-1564419320461-6870880221ad?w=600&q=75",
+    afterSrc: "https://images.unsplash.com/photo-1558904541-efa843a96f01?w=600&q=75",
+  },
+  {
+    id: 4, category: "lawn" as Category, label: "Mulching & Bed Care", location: "Fernandina Beach, FL",
+    beforeSrc: "https://images.unsplash.com/photo-1591857177580-dc82b9ac4e1e?w=600&q=75",
+    afterSrc: "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=600&q=75",
+  },
+  {
+    id: 5, category: "lawn" as Category, label: "Shrub Trimming", location: "Tributary, Yulee FL",
+    beforeSrc: "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=600&q=75",
+    afterSrc: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=75",
+  },
+  {
+    id: 6, category: "lawn" as Category, label: "Seasonal Clean-Up", location: "Callahan, FL",
+    beforeSrc: "https://images.unsplash.com/photo-1564419320461-6870880221ad?w=600&q=75",
+    afterSrc: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=75",
+  },
+  // ── A Diamond Girl — Cleaning ──
+  {
+    id: 7, category: "cleaning" as Category, label: "Diamond Deep Clean — Kitchen", location: "Tributary, Yulee FL",
+    beforeSrc: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&q=75",
+    afterSrc: "https://images.unsplash.com/photo-1556909172-54557c7e4fb7?w=600&q=75",
+  },
+  {
+    id: 8, category: "cleaning" as Category, label: "Bathroom Deep Scrub", location: "Nassau County, FL",
+    beforeSrc: "https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=600&q=75",
+    afterSrc: "https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=600&q=75",
+  },
+  {
+    id: 9, category: "cleaning" as Category, label: "Move-In Clean", location: "Yulee, FL",
+    beforeSrc: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=75",
+    afterSrc: "https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=600&q=75",
+  },
+  {
+    id: 10, category: "cleaning" as Category, label: "Living Room Refresh", location: "Fernandina Beach, FL",
+    beforeSrc: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=600&q=75",
+    afterSrc: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=600&q=75",
+  },
+  {
+    id: 11, category: "cleaning" as Category, label: "Post-Construction Clean", location: "Tributary, Yulee FL",
+    beforeSrc: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&q=75",
+    afterSrc: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=75",
+  },
+  {
+    id: 12, category: "cleaning" as Category, label: "Full Home Diamond Shine", location: "Nassau County, FL",
+    beforeSrc: "https://images.unsplash.com/photo-1484154218962-a197022b5858?w=600&q=75",
+    afterSrc: "https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?w=600&q=75",
+  },
 ];
-
-function PlaceholderImage({ label, type, category }: { label: string; type: "before" | "after"; category: Category }) {
-  const isLawn = category === "lawn";
-  const bg = type === "before"
-    ? "oklch(0.88 0.03 85)"
-    : isLawn ? "oklch(0.88 0.05 145)" : "oklch(0.92 0.04 340)";
-  const iconColor = type === "before"
-    ? "oklch(0.60 0.03 80)"
-    : isLawn ? "oklch(0.35 0.10 145)" : "oklch(0.45 0.15 340)";
-
-  return (
-    <div
-      className="w-full h-44 rounded-xl flex flex-col items-center justify-center gap-2 border-2 border-dashed"
-      style={{ backgroundColor: bg, borderColor: iconColor + "60" }}
-    >
-      <Camera className="w-8 h-8" style={{ color: iconColor }} />
-      <span className="text-xs font-bold uppercase tracking-wide" style={{ color: iconColor, fontFamily: "'Nunito Sans', sans-serif" }}>
-        {type === "before" ? "Before Photo" : "After Photo"}
-      </span>
-      <span className="text-xs" style={{ color: iconColor + "99", fontFamily: "'Nunito Sans', sans-serif" }}>
-        {label}
-      </span>
-    </div>
-  );
-}
 
 export default function GalleryPage() {
   const [active, setActive] = useState<Category>("all");
@@ -81,13 +103,13 @@ export default function GalleryPage() {
             Before & After Gallery
           </h1>
           <p className="text-lg max-w-xl mx-auto" style={{ color: "oklch(0.85 0.04 145)", fontFamily: "'Nunito Sans', sans-serif" }}>
-            See the Diamond difference. Real results from real jobs across Yulee, Amelia Island, and surrounding Northeast Florida communities.
+            See the Diamond difference. Real results from real jobs across Nassau County, Florida — rooted in the Tributary community.
           </p>
         </div>
       </section>
 
       {/* Logos */}
-      <section className="py-10" style={{ backgroundColor: "oklch(0.93 0.03 85)" }}>
+      <section className="py-8" style={{ backgroundColor: "oklch(0.93 0.03 85)" }}>
         <div className="container">
           <div className="flex flex-col sm:flex-row items-center justify-center gap-8">
             <div className="flex items-center gap-3">
@@ -109,8 +131,8 @@ export default function GalleryPage() {
         </div>
       </section>
 
-      {/* Filter Tabs */}
-      <section className="py-10">
+      {/* Filter Tabs + Grid */}
+      <section className="py-14">
         <div className="container">
           <div className="flex flex-wrap justify-center gap-3 mb-12">
             {tabs.map((tab) => {
@@ -136,7 +158,6 @@ export default function GalleryPage() {
             })}
           </div>
 
-          {/* Gallery Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filtered.map((item) => (
               <div
@@ -164,40 +185,56 @@ export default function GalleryPage() {
                   <div className="grid grid-cols-2 gap-3">
                     <div>
                       <p className="text-xs font-bold uppercase tracking-wide mb-1.5 text-center" style={{ color: "oklch(0.55 0.03 80)", fontFamily: "'Nunito Sans', sans-serif" }}>Before</p>
-                      {item.beforeSrc ? (
-                        <img src={item.beforeSrc} alt={`Before - ${item.label}`} className="w-full h-44 object-cover rounded-xl" />
-                      ) : (
-                        <PlaceholderImage label={item.label} type="before" category={item.category} />
-                      )}
+                      <img
+                        src={item.beforeSrc}
+                        alt={`Before - ${item.label}`}
+                        className="w-full h-40 object-cover rounded-xl"
+                        loading="lazy"
+                      />
                     </div>
                     <div>
                       <p className="text-xs font-bold uppercase tracking-wide mb-1.5 text-center" style={{ color: "oklch(0.55 0.03 80)", fontFamily: "'Nunito Sans', sans-serif" }}>After</p>
-                      {item.afterSrc ? (
-                        <img src={item.afterSrc} alt={`After - ${item.label}`} className="w-full h-44 object-cover rounded-xl" />
-                      ) : (
-                        <PlaceholderImage label={item.label} type="after" category={item.category} />
-                      )}
+                      <img
+                        src={item.afterSrc}
+                        alt={`After - ${item.label}`}
+                        className="w-full h-40 object-cover rounded-xl"
+                        loading="lazy"
+                      />
                     </div>
                   </div>
                 </div>
               </div>
             ))}
           </div>
+        </div>
+      </section>
 
-          {/* Upload CTA */}
-          <div className="mt-16 text-center">
-            <div
-              className="inline-block rounded-2xl px-8 py-6 max-w-lg"
-              style={{ backgroundColor: "oklch(0.35 0.10 145 / 0.08)", border: "2px dashed oklch(0.35 0.10 145 / 0.3)" }}
+      {/* CTA */}
+      <section className="py-14" style={{ backgroundColor: "oklch(0.25 0.10 145)" }}>
+        <div className="container text-center">
+          <h2 className="text-3xl font-bold text-white mb-3" style={{ fontFamily: "'Lora', serif" }}>
+            Ready for Your Own Diamond Transformation?
+          </h2>
+          <p className="text-base mb-6" style={{ color: "oklch(0.82 0.05 145)", fontFamily: "'Nunito Sans', sans-serif" }}>
+            Call or text us today for a free estimate. Nassau County's trusted family home services team.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-3 justify-center">
+            <a
+              href="tel:+18563713971"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-md font-bold text-sm transition-all duration-200 hover:shadow-lg hover:-translate-y-0.5"
+              style={{ backgroundColor: "oklch(0.72 0.15 75)", color: "oklch(0.18 0.01 60)", fontFamily: "'Nunito Sans', sans-serif" }}
             >
-              <Camera className="w-10 h-10 mx-auto mb-3" style={{ color: "oklch(0.35 0.10 145)" }} />
-              <h3 className="font-bold text-lg mb-2" style={{ color: "oklch(0.18 0.01 60)", fontFamily: "'Lora', serif" }}>
-                Photos Coming Soon
-              </h3>
-              <p className="text-sm" style={{ color: "oklch(0.45 0.03 80)", fontFamily: "'Nunito Sans', sans-serif" }}>
-                We're building our gallery with real before & after photos from jobs across Yulee, Amelia Island, and surrounding areas. Check back soon!
-              </p>
-            </div>
+              <Phone className="w-4 h-4" />
+              Lawn: 856-371-3971
+            </a>
+            <a
+              href="tel:+18569810930"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-md font-bold text-sm transition-all duration-200 hover:-translate-y-0.5"
+              style={{ backgroundColor: "oklch(1 0 0 / 0.12)", color: "white", border: "1px solid oklch(1 0 0 / 0.3)", fontFamily: "'Nunito Sans', sans-serif" }}
+            >
+              <Phone className="w-4 h-4" />
+              Cleaning: 856-981-0930
+            </a>
           </div>
         </div>
       </section>
