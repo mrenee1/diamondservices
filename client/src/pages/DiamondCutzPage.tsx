@@ -84,7 +84,7 @@ const services = [
 
 export default function DiamondCutzPage() {
   return (
-    <div className="min-h-screen" style={{ backgroundColor: "oklch(0.97 0.02 90)" }}>
+    <div className="min-h-screen" style={{ backgroundColor: "oklch(0.97 0.01 255)" }}>
       <Navbar />
 
       {/* Hero */}
@@ -98,14 +98,14 @@ export default function DiamondCutzPage() {
           <h1 className="text-5xl font-bold text-white mb-4" style={{ fontFamily: "'Lora', serif" }}>
             Lawn & Landscaping Services
           </h1>
-          <p className="text-lg max-w-xl mx-auto mb-6" style={{ color: "oklch(0.85 0.04 145)", fontFamily: "'Nunito Sans', sans-serif" }}>
+          <p className="text-lg max-w-xl mx-auto mb-6" style={{ color: "oklch(0.85 0.03 255)", fontFamily: "'Nunito Sans', sans-serif" }}>
             Professional outdoor services for homeowners and businesses throughout Yulee, Amelia Island, and surrounding Northeast Florida communities.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <a
               href="tel:+18563713971"
               className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-md font-bold text-base transition-all duration-200 hover:shadow-xl hover:-translate-y-0.5"
-              style={{ backgroundColor: "oklch(0.72 0.15 75)", color: "oklch(0.18 0.01 60)", fontFamily: "'Nunito Sans', sans-serif" }}
+              style={{ backgroundColor: "oklch(0.75 0.16 75)", color: "oklch(0.18 0.02 255)", fontFamily: "'Nunito Sans', sans-serif" }}
             >
               <Phone className="w-4 h-4" />
               Call or Text: 856-371-3971
@@ -136,30 +136,30 @@ export default function DiamondCutzPage() {
                   <div className="p-6 flex-1">
                     <div className="flex items-start justify-between mb-4">
                       <div className="w-12 h-12 rounded-xl flex items-center justify-center" style={{ backgroundColor: "oklch(0.35 0.10 145 / 0.1)" }}>
-                        <Icon className="w-6 h-6" style={{ color: "oklch(0.35 0.10 145)" }} />
+                        <Icon className="w-6 h-6" style={{ color: "oklch(0.45 0.14 145)" }} />
                       </div>
                       {service.badge && (
                         <span
                           className="text-xs font-bold px-2.5 py-0.5 rounded-full uppercase tracking-wide"
-                          style={{ backgroundColor: "oklch(0.72 0.15 75)", color: "oklch(0.18 0.01 60)", fontFamily: "'Nunito Sans', sans-serif" }}
+                          style={{ backgroundColor: "oklch(0.75 0.16 75)", color: "oklch(0.18 0.02 255)", fontFamily: "'Nunito Sans', sans-serif" }}
                         >
                           {service.badge}
                         </span>
                       )}
                     </div>
-                    <h3 className="text-xl font-bold mb-2" style={{ color: "oklch(0.18 0.01 60)", fontFamily: "'Lora', serif" }}>{service.title}</h3>
-                    <p className="text-sm leading-relaxed mb-4" style={{ color: "oklch(0.45 0.03 80)", fontFamily: "'Nunito Sans', sans-serif" }}>{service.description}</p>
+                    <h3 className="text-xl font-bold mb-2" style={{ color: "oklch(0.18 0.02 255)", fontFamily: "'Lora', serif" }}>{service.title}</h3>
+                    <p className="text-sm leading-relaxed mb-4" style={{ color: "oklch(0.45 0.03 255)", fontFamily: "'Nunito Sans', sans-serif" }}>{service.description}</p>
                     <div className="space-y-2 mb-4">
                       {service.includes.map((item) => (
                         <div key={item} className="flex items-center gap-2">
-                          <CheckCircle2 className="w-4 h-4 flex-shrink-0" style={{ color: "oklch(0.35 0.10 145)" }} />
-                          <span className="text-xs font-semibold" style={{ color: "oklch(0.35 0.04 70)", fontFamily: "'Nunito Sans', sans-serif" }}>{item}</span>
+                          <CheckCircle2 className="w-4 h-4 flex-shrink-0" style={{ color: "oklch(0.45 0.14 145)" }} />
+                          <span className="text-xs font-semibold" style={{ color: "oklch(0.35 0.04 255)", fontFamily: "'Nunito Sans', sans-serif" }}>{item}</span>
                         </div>
                       ))}
                     </div>
                     <div
                       className="inline-flex items-center gap-1.5 text-xs font-bold px-2.5 py-1 rounded-full"
-                      style={{ backgroundColor: "oklch(0.35 0.10 145 / 0.08)", color: "oklch(0.35 0.10 145)", fontFamily: "'Nunito Sans', sans-serif" }}
+                      style={{ backgroundColor: "oklch(0.35 0.10 145 / 0.08)", color: "oklch(0.45 0.14 145)", fontFamily: "'Nunito Sans', sans-serif" }}
                     >
                       {service.frequency}
                     </div>
@@ -168,7 +168,7 @@ export default function DiamondCutzPage() {
                     <a
                       href="tel:+18563713971"
                       className="w-full flex items-center justify-center gap-2 py-2.5 rounded-md font-bold text-sm transition-all duration-200 hover:shadow-md"
-                      style={{ backgroundColor: "oklch(0.35 0.10 145)", color: "white", fontFamily: "'Nunito Sans', sans-serif" }}
+                      style={{ backgroundColor: "oklch(0.45 0.14 145)", color: "white", fontFamily: "'Nunito Sans', sans-serif" }}
                     >
                       <Phone className="w-4 h-4" />
                       Call for a Quote
@@ -182,19 +182,19 @@ export default function DiamondCutzPage() {
       </section>
 
       {/* Business CTA */}
-      <section className="py-16" style={{ backgroundColor: "oklch(0.93 0.03 85)" }}>
+      <section className="py-16" style={{ backgroundColor: "oklch(0.93 0.02 255)" }}>
         <div className="container text-center">
-          <h2 className="text-4xl font-bold mb-4" style={{ color: "oklch(0.18 0.01 60)", fontFamily: "'Lora', serif" }}>
+          <h2 className="text-4xl font-bold mb-4" style={{ color: "oklch(0.18 0.02 255)", fontFamily: "'Lora', serif" }}>
             Not Sure What You Need?
           </h2>
-          <p className="text-lg mb-8 max-w-lg mx-auto" style={{ color: "oklch(0.35 0.04 70)", fontFamily: "'Nunito Sans', sans-serif" }}>
+          <p className="text-lg mb-8 max-w-lg mx-auto" style={{ color: "oklch(0.35 0.04 255)", fontFamily: "'Nunito Sans', sans-serif" }}>
             Call or text us for a free estimate. We'll assess your property and recommend the best services for your budget and goals.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <a
               href="tel:+18563713971"
               className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-md font-bold text-base transition-all duration-200 hover:shadow-lg hover:-translate-y-0.5"
-              style={{ backgroundColor: "oklch(0.35 0.10 145)", color: "white", fontFamily: "'Nunito Sans', sans-serif" }}
+              style={{ backgroundColor: "oklch(0.45 0.14 145)", color: "white", fontFamily: "'Nunito Sans', sans-serif" }}
             >
               <Phone className="w-4 h-4" />
               Call or Text: 856-371-3971
@@ -202,7 +202,7 @@ export default function DiamondCutzPage() {
             <Link
               href="/about"
               className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-md font-bold text-base transition-all duration-200 hover:-translate-y-0.5"
-              style={{ backgroundColor: "white", color: "oklch(0.35 0.10 145)", border: "1px solid oklch(0.35 0.10 145)", fontFamily: "'Nunito Sans', sans-serif" }}
+              style={{ backgroundColor: "white", color: "oklch(0.45 0.14 145)", border: "1px solid oklch(0.45 0.14 145)", fontFamily: "'Nunito Sans', sans-serif" }}
             >
               Learn About Us <ArrowRight className="w-4 h-4" />
             </Link>

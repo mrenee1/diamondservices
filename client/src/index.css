@@ -1,7 +1,7 @@
 /* ============================================================
-   TRIBUTARY LAWN & LANDSCAPE — Design System
-   Theme: "Tributary Roots" — New American Vernacular
-   Colors: Moss Green + Warm Cream + Golden Amber + Deep Charcoal
+   DIAMOND HOME SERVICES LLC — Design System
+   Theme: "Diamond Standard" — Bold, sporty, family-owned
+   Colors: Deep Navy + Field Green + Gold + White (matched to hero image)
    Fonts: Lora (serif display) + Nunito Sans (body)
    ============================================================ */
 
@@ -48,52 +48,55 @@
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
 
-  /* Brand color tokens */
-  --color-moss: oklch(0.35 0.10 145);
-  --color-moss-light: oklch(0.45 0.10 145);
-  --color-moss-dark: oklch(0.25 0.10 145);
-  --color-amber: oklch(0.72 0.15 75);
-  --color-amber-light: oklch(0.82 0.12 80);
-  --color-cream: oklch(0.97 0.02 90);
-  --color-cream-dark: oklch(0.93 0.03 85);
-  --color-charcoal: oklch(0.18 0.01 60);
+  /* Brand color tokens — Diamond Home Services palette */
+  --color-navy: oklch(0.22 0.08 255);          /* deep stadium navy */
+  --color-navy-light: oklch(0.30 0.08 255);    /* lighter navy */
+  --color-navy-dark: oklch(0.14 0.06 255);     /* darkest navy */
+  --color-green: oklch(0.45 0.14 145);         /* bright field green */
+  --color-green-light: oklch(0.55 0.14 145);   /* lighter field green */
+  --color-green-dark: oklch(0.30 0.12 145);    /* dark green */
+  --color-gold: oklch(0.75 0.16 75);           /* diamond gold */
+  --color-gold-light: oklch(0.85 0.13 80);     /* light gold */
+  --color-white: oklch(1 0 0);
+  --color-offwhite: oklch(0.97 0.01 255);      /* cool off-white */
+  --color-charcoal: oklch(0.18 0.02 255);      /* near-black navy */
 }
 
 :root {
-  /* Tributary Roots — Light Theme */
+  /* Diamond Standard — Light Theme (navy + green + gold) */
   --radius: 0.5rem;
-  --background: oklch(0.97 0.02 90);       /* warm cream */
-  --foreground: oklch(0.18 0.01 60);        /* deep charcoal */
+  --background: oklch(0.97 0.01 255);       /* cool off-white */
+  --foreground: oklch(0.18 0.02 255);       /* near-black navy */
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.18 0.01 60);
+  --card-foreground: oklch(0.18 0.02 255);
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.18 0.01 60);
-  --primary: oklch(0.35 0.10 145);          /* moss green */
-  --primary-foreground: oklch(0.97 0.02 90); /* cream */
-  --secondary: oklch(0.93 0.03 85);         /* cream-dark */
-  --secondary-foreground: oklch(0.25 0.10 145); /* moss-dark */
-  --muted: oklch(0.93 0.02 88);
-  --muted-foreground: oklch(0.50 0.04 80);
-  --accent: oklch(0.72 0.15 75);            /* golden amber */
-  --accent-foreground: oklch(0.18 0.01 60);
+  --popover-foreground: oklch(0.18 0.02 255);
+  --primary: oklch(0.22 0.08 255);          /* deep navy */
+  --primary-foreground: oklch(1 0 0);       /* white */
+  --secondary: oklch(0.45 0.14 145);        /* field green */
+  --secondary-foreground: oklch(1 0 0);     /* white */
+  --muted: oklch(0.93 0.02 255);
+  --muted-foreground: oklch(0.50 0.04 255);
+  --accent: oklch(0.75 0.16 75);            /* diamond gold */
+  --accent-foreground: oklch(0.18 0.02 255);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.985 0 0);
-  --border: oklch(0.88 0.03 85);
-  --input: oklch(0.88 0.03 85);
-  --ring: oklch(0.35 0.10 145);
-  --chart-1: oklch(0.35 0.10 145);
-  --chart-2: oklch(0.45 0.10 145);
-  --chart-3: oklch(0.72 0.15 75);
-  --chart-4: oklch(0.82 0.12 80);
-  --chart-5: oklch(0.25 0.10 145);
-  --sidebar: oklch(0.25 0.10 145);
-  --sidebar-foreground: oklch(0.97 0.02 90);
-  --sidebar-primary: oklch(0.72 0.15 75);
-  --sidebar-primary-foreground: oklch(0.18 0.01 60);
-  --sidebar-accent: oklch(0.35 0.10 145);
-  --sidebar-accent-foreground: oklch(0.97 0.02 90);
-  --sidebar-border: oklch(0.30 0.10 145);
-  --sidebar-ring: oklch(0.72 0.15 75);
+  --border: oklch(0.88 0.02 255);
+  --input: oklch(0.88 0.02 255);
+  --ring: oklch(0.45 0.14 145);
+  --chart-1: oklch(0.22 0.08 255);
+  --chart-2: oklch(0.45 0.14 145);
+  --chart-3: oklch(0.75 0.16 75);
+  --chart-4: oklch(0.30 0.08 255);
+  --chart-5: oklch(0.30 0.12 145);
+  --sidebar: oklch(0.22 0.08 255);
+  --sidebar-foreground: oklch(1 0 0);
+  --sidebar-primary: oklch(0.75 0.16 75);
+  --sidebar-primary-foreground: oklch(0.18 0.02 255);
+  --sidebar-accent: oklch(0.45 0.14 145);
+  --sidebar-accent-foreground: oklch(1 0 0);
+  --sidebar-border: oklch(0.30 0.08 255);
+  --sidebar-ring: oklch(0.75 0.16 75);
 }
 
 @layer base {

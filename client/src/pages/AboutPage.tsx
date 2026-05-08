@@ -49,48 +49,48 @@ const familyPhotos = [
 
 export default function AboutPage() {
   return (
-    <div className="min-h-screen" style={{ backgroundColor: "oklch(0.97 0.02 90)" }}>
+    <div className="min-h-screen" style={{ backgroundColor: "oklch(0.97 0.01 255)" }}>
       <Navbar />
 
       {/* Hero */}
-      <section className="relative pt-28 pb-20 overflow-hidden" style={{ backgroundColor: "oklch(0.22 0.08 145)" }}>
+      <section className="relative pt-28 pb-20 overflow-hidden" style={{ backgroundColor: "oklch(0.22 0.08 255)" }}>
         <div className="absolute inset-0 opacity-20">
           <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1600&q=80" alt="Family home" className="w-full h-full object-cover" />
         </div>
         <div className="absolute inset-0" style={{ background: "linear-gradient(to bottom, oklch(0.22 0.08 145 / 0.92), oklch(0.22 0.08 145 / 0.97))" }} />
         <div className="container relative z-10 text-center">
-          <span className="inline-block text-xs font-bold uppercase tracking-widest mb-4 px-3 py-1 rounded-full" style={{ backgroundColor: "oklch(0.72 0.15 75 / 0.2)", color: "oklch(0.82 0.12 80)", fontFamily: "'Nunito Sans', sans-serif" }}>
+          <span className="inline-block text-xs font-bold uppercase tracking-widest mb-4 px-3 py-1 rounded-full" style={{ backgroundColor: "oklch(0.72 0.15 75 / 0.2)", color: "oklch(0.85 0.13 80)", fontFamily: "'Nunito Sans', sans-serif" }}>
             Our Story
           </span>
           <h1 className="text-5xl font-bold text-white mb-4" style={{ fontFamily: "'Lora', serif" }}>
             About Diamond Home Services
           </h1>
-          <p className="text-lg max-w-xl mx-auto" style={{ color: "oklch(0.85 0.04 145)", fontFamily: "'Nunito Sans', sans-serif" }}>
+          <p className="text-lg max-w-xl mx-auto" style={{ color: "oklch(0.85 0.03 255)", fontFamily: "'Nunito Sans', sans-serif" }}>
             A family who bet on themselves — and built something beautiful in Nassau County, Florida.
           </p>
         </div>
       </section>
 
       {/* Story Section */}
-      <section className="py-20" style={{ backgroundColor: "oklch(0.97 0.02 90)" }}>
+      <section className="py-20" style={{ backgroundColor: "oklch(0.97 0.01 255)" }}>
         <div className="container">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-start">
             {/* Story Text */}
             <div>
               <div className="flex items-center gap-3 mb-6">
-                <div className="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0" style={{ backgroundColor: "oklch(0.35 0.10 145)" }}>
+                <div className="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0" style={{ backgroundColor: "oklch(0.45 0.14 145)" }}>
                   <Heart className="w-5 h-5 text-white" />
                 </div>
-                <span className="text-xs font-bold uppercase tracking-widest" style={{ color: "oklch(0.35 0.10 145)", fontFamily: "'Nunito Sans', sans-serif" }}>
+                <span className="text-xs font-bold uppercase tracking-widest" style={{ color: "oklch(0.45 0.14 145)", fontFamily: "'Nunito Sans', sans-serif" }}>
                   The American Dream
                 </span>
               </div>
 
-              <h2 className="text-4xl font-bold mb-8 leading-tight" style={{ color: "oklch(0.18 0.01 60)", fontFamily: "'Lora', serif" }}>
+              <h2 className="text-4xl font-bold mb-8 leading-tight" style={{ color: "oklch(0.18 0.02 255)", fontFamily: "'Lora', serif" }}>
                 From South Jersey to Nassau County — Built from the Ground Up
               </h2>
 
-              <div className="space-y-6 text-base leading-relaxed" style={{ color: "oklch(0.35 0.04 70)", fontFamily: "'Nunito Sans', sans-serif" }}>
+              <div className="space-y-6 text-base leading-relaxed" style={{ color: "oklch(0.35 0.04 255)", fontFamily: "'Nunito Sans', sans-serif" }}>
                 <p>
                   We're a hardworking husband-and-wife team who made a bold decision: to pack up our lives in South Jersey and move our family down to the Yulee, Florida area with one goal in mind — to give our youngest son a better opportunity for his future.
                 </p>
@@ -116,10 +116,10 @@ export default function AboutPage() {
                   return (
                     <div key={v.title} className="bg-white rounded-2xl p-5 shadow-sm border border-border">
                       <div className="w-10 h-10 rounded-xl flex items-center justify-center mb-3" style={{ backgroundColor: "oklch(0.35 0.10 145 / 0.1)" }}>
-                        <Icon className="w-5 h-5" style={{ color: "oklch(0.35 0.10 145)" }} />
+                        <Icon className="w-5 h-5" style={{ color: "oklch(0.45 0.14 145)" }} />
                       </div>
-                      <h4 className="font-bold text-base mb-1" style={{ color: "oklch(0.18 0.01 60)", fontFamily: "'Lora', serif" }}>{v.title}</h4>
-                      <p className="text-sm" style={{ color: "oklch(0.45 0.03 80)", fontFamily: "'Nunito Sans', sans-serif" }}>{v.desc}</p>
+                      <h4 className="font-bold text-base mb-1" style={{ color: "oklch(0.18 0.02 255)", fontFamily: "'Lora', serif" }}>{v.title}</h4>
+                      <p className="text-sm" style={{ color: "oklch(0.45 0.03 255)", fontFamily: "'Nunito Sans', sans-serif" }}>{v.desc}</p>
                     </div>
                   );
                 })}
@@ -129,8 +129,8 @@ export default function AboutPage() {
             {/* Photo Grid */}
             <div>
               <div className="flex items-center gap-2 mb-5">
-                <Users className="w-5 h-5" style={{ color: "oklch(0.35 0.10 145)" }} />
-                <span className="text-xs font-bold uppercase tracking-widest" style={{ color: "oklch(0.35 0.10 145)", fontFamily: "'Nunito Sans', sans-serif" }}>
+                <Users className="w-5 h-5" style={{ color: "oklch(0.45 0.14 145)" }} />
+                <span className="text-xs font-bold uppercase tracking-widest" style={{ color: "oklch(0.45 0.14 145)", fontFamily: "'Nunito Sans', sans-serif" }}>
                   Meet the Team
                 </span>
               </div>
@@ -155,28 +155,28 @@ export default function AboutPage() {
       </section>
 
       {/* Our Businesses */}
-      <section className="py-16" style={{ backgroundColor: "oklch(0.93 0.03 85)" }}>
+      <section className="py-16" style={{ backgroundColor: "oklch(0.93 0.02 255)" }}>
         <div className="container">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold" style={{ color: "oklch(0.18 0.01 60)", fontFamily: "'Lora', serif" }}>Our Two Businesses</h2>
+            <h2 className="text-4xl font-bold" style={{ color: "oklch(0.18 0.02 255)", fontFamily: "'Lora', serif" }}>Our Two Businesses</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
             <div className="bg-white rounded-2xl p-8 shadow-sm border border-border text-center hover:shadow-lg transition-all duration-300">
               <img src={DIAMOND_CUTZ_LOGO} alt="Diamond Cutz" className="h-24 w-auto object-contain mx-auto mb-4" />
-              <h3 className="text-xl font-bold mb-1" style={{ color: "oklch(0.18 0.01 60)", fontFamily: "'Lora', serif" }}>Diamond Cutz</h3>
-              <p className="text-sm mb-1" style={{ color: "oklch(0.45 0.03 80)", fontFamily: "'Nunito Sans', sans-serif" }}>Lawn & Landscaping Services</p>
-              <p className="text-xs font-semibold mb-4" style={{ color: "oklch(0.35 0.10 145)", fontFamily: "'Nunito Sans', sans-serif" }}>Owner: Mike Petrutz</p>
-              <a href="tel:+18563713971" className="flex items-center justify-center gap-2 font-bold text-sm mb-4" style={{ color: "oklch(0.35 0.10 145)", fontFamily: "'Nunito Sans', sans-serif" }}>
+              <h3 className="text-xl font-bold mb-1" style={{ color: "oklch(0.18 0.02 255)", fontFamily: "'Lora', serif" }}>Diamond Cutz</h3>
+              <p className="text-sm mb-1" style={{ color: "oklch(0.45 0.03 255)", fontFamily: "'Nunito Sans', sans-serif" }}>Lawn & Landscaping Services</p>
+              <p className="text-xs font-semibold mb-4" style={{ color: "oklch(0.45 0.14 145)", fontFamily: "'Nunito Sans', sans-serif" }}>Owner: Mike Petrutz</p>
+              <a href="tel:+18563713971" className="flex items-center justify-center gap-2 font-bold text-sm mb-4" style={{ color: "oklch(0.45 0.14 145)", fontFamily: "'Nunito Sans', sans-serif" }}>
                 <Phone className="w-4 h-4" /> 856-371-3971
               </a>
-              <Link href="/diamond-cutz" className="inline-flex items-center gap-1.5 text-sm font-bold" style={{ color: "oklch(0.35 0.10 145)", fontFamily: "'Nunito Sans', sans-serif" }}>
+              <Link href="/diamond-cutz" className="inline-flex items-center gap-1.5 text-sm font-bold" style={{ color: "oklch(0.45 0.14 145)", fontFamily: "'Nunito Sans', sans-serif" }}>
                 View Services <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
             <div className="bg-white rounded-2xl p-8 shadow-sm border border-border text-center hover:shadow-lg transition-all duration-300">
               <img src={DIAMOND_GIRL_LOGO} alt="A Diamond Girl" className="h-24 w-auto object-contain mx-auto mb-4" />
-              <h3 className="text-xl font-bold mb-1" style={{ color: "oklch(0.18 0.01 60)", fontFamily: "'Lora', serif" }}>A Diamond Girl</h3>
-              <p className="text-sm mb-1" style={{ color: "oklch(0.45 0.03 80)", fontFamily: "'Nunito Sans', sans-serif" }}>Home Cleaning Service</p>
+              <h3 className="text-xl font-bold mb-1" style={{ color: "oklch(0.18 0.02 255)", fontFamily: "'Lora', serif" }}>A Diamond Girl</h3>
+              <p className="text-sm mb-1" style={{ color: "oklch(0.45 0.03 255)", fontFamily: "'Nunito Sans', sans-serif" }}>Home Cleaning Service</p>
               <p className="text-xs font-semibold mb-4" style={{ color: "oklch(0.45 0.15 340)", fontFamily: "'Nunito Sans', sans-serif" }}>Owner: Lidone Petrutz</p>
               <a href="tel:+18569810930" className="flex items-center justify-center gap-2 font-bold text-sm mb-4" style={{ color: "oklch(0.45 0.15 340)", fontFamily: "'Nunito Sans', sans-serif" }}>
                 <Phone className="w-4 h-4" /> 856-981-0930
@@ -190,15 +190,15 @@ export default function AboutPage() {
       </section>
 
       {/* Contact */}
-      <section id="contact" className="py-20" style={{ backgroundColor: "oklch(0.97 0.02 90)" }}>
+      <section id="contact" className="py-20" style={{ backgroundColor: "oklch(0.97 0.01 255)" }}>
         <div className="container">
           <div className="max-w-2xl mx-auto">
             <div className="text-center mb-10">
-              <span className="inline-block text-xs font-bold uppercase tracking-widest mb-3 px-3 py-1 rounded-full" style={{ backgroundColor: "oklch(0.35 0.10 145 / 0.1)", color: "oklch(0.35 0.10 145)", fontFamily: "'Nunito Sans', sans-serif" }}>
+              <span className="inline-block text-xs font-bold uppercase tracking-widest mb-3 px-3 py-1 rounded-full" style={{ backgroundColor: "oklch(0.35 0.10 145 / 0.1)", color: "oklch(0.45 0.14 145)", fontFamily: "'Nunito Sans', sans-serif" }}>
                 Get In Touch
               </span>
-              <h2 className="text-4xl font-bold" style={{ color: "oklch(0.18 0.01 60)", fontFamily: "'Lora', serif" }}>Contact Us</h2>
-              <p className="text-base mt-3" style={{ color: "oklch(0.40 0.04 70)", fontFamily: "'Nunito Sans', sans-serif" }}>
+              <h2 className="text-4xl font-bold" style={{ color: "oklch(0.18 0.02 255)", fontFamily: "'Lora', serif" }}>Contact Us</h2>
+              <p className="text-base mt-3" style={{ color: "oklch(0.40 0.04 255)", fontFamily: "'Nunito Sans', sans-serif" }}>
                 Have questions or ready to get started? Reach out and we'll get back to you promptly. Free estimates always available throughout Nassau County.
               </p>
             </div>
@@ -206,12 +206,12 @@ export default function AboutPage() {
             <div className="bg-white rounded-2xl shadow-lg p-8">
               <div className="space-y-6">
                 <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0" style={{ backgroundColor: "oklch(0.35 0.10 145)" }}>
+                  <div className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0" style={{ backgroundColor: "oklch(0.45 0.14 145)" }}>
                     <Phone className="w-5 h-5 text-white" />
                   </div>
                   <div>
-                    <p className="text-xs font-bold uppercase tracking-wide mb-1" style={{ color: "oklch(0.50 0.04 80)", fontFamily: "'Nunito Sans', sans-serif" }}>Lawn & Landscaping (Mike)</p>
-                    <a href="tel:+18563713971" className="font-bold text-lg" style={{ color: "oklch(0.18 0.01 60)", fontFamily: "'Nunito Sans', sans-serif" }}>856-371-3971</a>
+                    <p className="text-xs font-bold uppercase tracking-wide mb-1" style={{ color: "oklch(0.50 0.04 255)", fontFamily: "'Nunito Sans', sans-serif" }}>Lawn & Landscaping (Mike)</p>
+                    <a href="tel:+18563713971" className="font-bold text-lg" style={{ color: "oklch(0.18 0.02 255)", fontFamily: "'Nunito Sans', sans-serif" }}>856-371-3971</a>
                     <p className="text-xs mt-0.5" style={{ color: "oklch(0.55 0.04 80)", fontFamily: "'Nunito Sans', sans-serif" }}>Call or text for a free estimate</p>
                   </div>
                 </div>
@@ -220,36 +220,36 @@ export default function AboutPage() {
                     <Phone className="w-5 h-5 text-white" />
                   </div>
                   <div>
-                    <p className="text-xs font-bold uppercase tracking-wide mb-1" style={{ color: "oklch(0.50 0.04 80)", fontFamily: "'Nunito Sans', sans-serif" }}>Home Cleaning (Lidone)</p>
-                    <a href="tel:+18569810930" className="font-bold text-lg" style={{ color: "oklch(0.18 0.01 60)", fontFamily: "'Nunito Sans', sans-serif" }}>856-981-0930</a>
+                    <p className="text-xs font-bold uppercase tracking-wide mb-1" style={{ color: "oklch(0.50 0.04 255)", fontFamily: "'Nunito Sans', sans-serif" }}>Home Cleaning (Lidone)</p>
+                    <a href="tel:+18569810930" className="font-bold text-lg" style={{ color: "oklch(0.18 0.02 255)", fontFamily: "'Nunito Sans', sans-serif" }}>856-981-0930</a>
                     <p className="text-xs mt-0.5" style={{ color: "oklch(0.55 0.04 80)", fontFamily: "'Nunito Sans', sans-serif" }}>Call or text to schedule a cleaning</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0" style={{ backgroundColor: "oklch(0.35 0.10 145)" }}>
+                  <div className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0" style={{ backgroundColor: "oklch(0.45 0.14 145)" }}>
                     <Mail className="w-5 h-5 text-white" />
                   </div>
                   <div>
-                    <p className="text-xs font-bold uppercase tracking-wide mb-1" style={{ color: "oklch(0.50 0.04 80)", fontFamily: "'Nunito Sans', sans-serif" }}>Email</p>
-                    <a href="mailto:mpetrutz@yahoo.com" className="font-bold text-lg" style={{ color: "oklch(0.18 0.01 60)", fontFamily: "'Nunito Sans', sans-serif" }}>mpetrutz@yahoo.com</a>
+                    <p className="text-xs font-bold uppercase tracking-wide mb-1" style={{ color: "oklch(0.50 0.04 255)", fontFamily: "'Nunito Sans', sans-serif" }}>Email</p>
+                    <a href="mailto:mpetrutz@yahoo.com" className="font-bold text-lg" style={{ color: "oklch(0.18 0.02 255)", fontFamily: "'Nunito Sans', sans-serif" }}>mpetrutz@yahoo.com</a>
                   </div>
                 </div>
                 <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0" style={{ backgroundColor: "oklch(0.35 0.10 145)" }}>
+                  <div className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0" style={{ backgroundColor: "oklch(0.45 0.14 145)" }}>
                     <MapPin className="w-5 h-5 text-white" />
                   </div>
                   <div>
-                    <p className="text-xs font-bold uppercase tracking-wide mb-1" style={{ color: "oklch(0.50 0.04 80)", fontFamily: "'Nunito Sans', sans-serif" }}>Service Area</p>
-                    <p className="font-bold text-base" style={{ color: "oklch(0.18 0.01 60)", fontFamily: "'Nunito Sans', sans-serif" }}>
+                    <p className="text-xs font-bold uppercase tracking-wide mb-1" style={{ color: "oklch(0.50 0.04 255)", fontFamily: "'Nunito Sans', sans-serif" }}>Service Area</p>
+                    <p className="font-bold text-base" style={{ color: "oklch(0.18 0.02 255)", fontFamily: "'Nunito Sans', sans-serif" }}>
                       Nassau County, FL<br />
-                      <span className="text-sm font-normal" style={{ color: "oklch(0.45 0.03 80)" }}>Rooted in the Tributary Community, Yulee</span>
+                      <span className="text-sm font-normal" style={{ color: "oklch(0.45 0.03 255)" }}>Rooted in the Tributary Community, Yulee</span>
                     </p>
                   </div>
                 </div>
               </div>
               <div className="mt-6 pt-5 border-t border-border">
-                <p className="text-xs font-bold uppercase tracking-wide mb-2" style={{ color: "oklch(0.50 0.04 80)", fontFamily: "'Nunito Sans', sans-serif" }}>Business Hours</p>
-                <p className="text-sm" style={{ color: "oklch(0.35 0.04 70)", fontFamily: "'Nunito Sans', sans-serif" }}>
+                <p className="text-xs font-bold uppercase tracking-wide mb-2" style={{ color: "oklch(0.50 0.04 255)", fontFamily: "'Nunito Sans', sans-serif" }}>Business Hours</p>
+                <p className="text-sm" style={{ color: "oklch(0.35 0.04 255)", fontFamily: "'Nunito Sans', sans-serif" }}>
                   Mon–Fri: 7:00 AM – 6:00 PM &nbsp;|&nbsp; Sat: 8:00 AM – 4:00 PM &nbsp;|&nbsp; Sun: Closed
                 </p>
               </div>

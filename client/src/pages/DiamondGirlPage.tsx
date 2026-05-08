@@ -82,7 +82,7 @@ const catchphrases = [
 
 export default function DiamondGirlPage() {
   return (
-    <div className="min-h-screen" style={{ backgroundColor: "oklch(0.97 0.02 90)" }}>
+    <div className="min-h-screen" style={{ backgroundColor: "oklch(0.97 0.01 255)" }}>
       <Navbar />
 
       {/* Hero */}
@@ -96,7 +96,7 @@ export default function DiamondGirlPage() {
           <h1 className="text-5xl font-bold text-white mb-3" style={{ fontFamily: "'Lora', serif" }}>
             Diamond-Level Home Cleaning
           </h1>
-          <p className="text-xl font-semibold mb-4" style={{ color: "oklch(0.82 0.12 80)", fontFamily: "'Lora', serif", fontStyle: "italic" }}>
+          <p className="text-xl font-semibold mb-4" style={{ color: "oklch(0.85 0.13 80)", fontFamily: "'Lora', serif", fontStyle: "italic" }}>
             "We Don't Just Clean — We Transform."
           </p>
           <p className="text-base max-w-xl mx-auto mb-6" style={{ color: "oklch(0.90 0.04 340)", fontFamily: "'Nunito Sans', sans-serif" }}>
@@ -106,7 +106,7 @@ export default function DiamondGirlPage() {
             <a
               href="tel:+18569810930"
               className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-md font-bold text-base transition-all duration-200 hover:shadow-xl hover:-translate-y-0.5"
-              style={{ backgroundColor: "oklch(0.72 0.15 75)", color: "oklch(0.18 0.01 60)", fontFamily: "'Nunito Sans', sans-serif" }}
+              style={{ backgroundColor: "oklch(0.75 0.16 75)", color: "oklch(0.18 0.02 255)", fontFamily: "'Nunito Sans', sans-serif" }}
             >
               <Phone className="w-4 h-4" />
               Call or Text Lidone: 856-981-0930
@@ -124,7 +124,7 @@ export default function DiamondGirlPage() {
       </section>
 
       {/* Catchphrases Banner */}
-      <section className="py-8 overflow-hidden" style={{ backgroundColor: "oklch(0.72 0.15 75)" }}>
+      <section className="py-8 overflow-hidden" style={{ backgroundColor: "oklch(0.75 0.16 75)" }}>
         <div className="container">
           <div className="flex flex-wrap justify-center gap-6 md:gap-10">
             {catchphrases.map((phrase) => {
@@ -132,7 +132,7 @@ export default function DiamondGirlPage() {
               return (
                 <div key={phrase.text} className="flex items-center gap-2">
                   <Icon className="w-4 h-4 flex-shrink-0" style={{ color: "oklch(0.28 0.12 340)" }} />
-                  <span className="text-sm font-bold uppercase tracking-wide" style={{ color: "oklch(0.18 0.01 60)", fontFamily: "'Nunito Sans', sans-serif" }}>
+                  <span className="text-sm font-bold uppercase tracking-wide" style={{ color: "oklch(0.18 0.02 255)", fontFamily: "'Nunito Sans', sans-serif" }}>
                     {phrase.text}
                   </span>
                 </div>
@@ -149,10 +149,10 @@ export default function DiamondGirlPage() {
             <span className="inline-block text-xs font-bold uppercase tracking-widest mb-3 px-3 py-1 rounded-full" style={{ backgroundColor: "oklch(0.45 0.15 340 / 0.1)", color: "oklch(0.45 0.15 340)", fontFamily: "'Nunito Sans', sans-serif" }}>
               Our Services
             </span>
-            <h2 className="text-4xl font-bold" style={{ color: "oklch(0.18 0.01 60)", fontFamily: "'Lora', serif" }}>
+            <h2 className="text-4xl font-bold" style={{ color: "oklch(0.18 0.02 255)", fontFamily: "'Lora', serif" }}>
               The Diamond Clean Difference
             </h2>
-            <p className="text-base mt-3 max-w-lg mx-auto" style={{ color: "oklch(0.40 0.04 70)", fontFamily: "'Nunito Sans', sans-serif" }}>
+            <p className="text-base mt-3 max-w-lg mx-auto" style={{ color: "oklch(0.40 0.04 255)", fontFamily: "'Nunito Sans', sans-serif" }}>
               Every service Lidone offers is built around one standard: diamond-level results. No shortcuts. No skipped corners. Just a spotlessly clean home.
             </p>
           </div>
@@ -173,20 +173,20 @@ export default function DiamondGirlPage() {
                       {service.badge && (
                         <span
                           className="text-xs font-bold px-2.5 py-0.5 rounded-full uppercase tracking-wide"
-                          style={{ backgroundColor: "oklch(0.72 0.15 75)", color: "oklch(0.18 0.01 60)", fontFamily: "'Nunito Sans', sans-serif" }}
+                          style={{ backgroundColor: "oklch(0.75 0.16 75)", color: "oklch(0.18 0.02 255)", fontFamily: "'Nunito Sans', sans-serif" }}
                         >
                           {service.badge}
                         </span>
                       )}
                     </div>
-                    <h3 className="text-xl font-bold mb-1" style={{ color: "oklch(0.18 0.01 60)", fontFamily: "'Lora', serif" }}>{service.title}</h3>
+                    <h3 className="text-xl font-bold mb-1" style={{ color: "oklch(0.18 0.02 255)", fontFamily: "'Lora', serif" }}>{service.title}</h3>
                     <p className="text-xs font-semibold italic mb-3" style={{ color: "oklch(0.45 0.15 340)", fontFamily: "'Lora', serif" }}>{service.tagline}</p>
-                    <p className="text-sm leading-relaxed mb-4" style={{ color: "oklch(0.45 0.03 80)", fontFamily: "'Nunito Sans', sans-serif" }}>{service.description}</p>
+                    <p className="text-sm leading-relaxed mb-4" style={{ color: "oklch(0.45 0.03 255)", fontFamily: "'Nunito Sans', sans-serif" }}>{service.description}</p>
                     <div className="space-y-2 mb-4">
                       {service.includes.map((item) => (
                         <div key={item} className="flex items-center gap-2">
                           <CheckCircle2 className="w-4 h-4 flex-shrink-0" style={{ color: "oklch(0.45 0.15 340)" }} />
-                          <span className="text-xs font-semibold" style={{ color: "oklch(0.35 0.04 70)", fontFamily: "'Nunito Sans', sans-serif" }}>{item}</span>
+                          <span className="text-xs font-semibold" style={{ color: "oklch(0.35 0.04 255)", fontFamily: "'Nunito Sans', sans-serif" }}>{item}</span>
                         </div>
                       ))}
                     </div>
@@ -215,14 +215,14 @@ export default function DiamondGirlPage() {
       </section>
 
       {/* What We Don't Do Note */}
-      <section className="py-10" style={{ backgroundColor: "oklch(0.93 0.03 85)" }}>
+      <section className="py-10" style={{ backgroundColor: "oklch(0.93 0.02 255)" }}>
         <div className="container max-w-2xl text-center">
           <div className="bg-white rounded-2xl p-7 shadow-sm border border-border">
             <Gem className="w-8 h-8 mx-auto mb-3" style={{ color: "oklch(0.45 0.15 340)" }} />
-            <h3 className="text-xl font-bold mb-2" style={{ color: "oklch(0.18 0.01 60)", fontFamily: "'Lora', serif" }}>
+            <h3 className="text-xl font-bold mb-2" style={{ color: "oklch(0.18 0.02 255)", fontFamily: "'Lora', serif" }}>
               Specialized Deep Cleaning — Not Household Chores
             </h3>
-            <p className="text-sm leading-relaxed" style={{ color: "oklch(0.40 0.04 70)", fontFamily: "'Nunito Sans', sans-serif" }}>
+            <p className="text-sm leading-relaxed" style={{ color: "oklch(0.40 0.04 255)", fontFamily: "'Nunito Sans', sans-serif" }}>
               A Diamond Girl specializes in <strong>professional deep cleaning services</strong> — not basic household tasks like laundry or dishes. Our focus is delivering a thorough, detailed clean that transforms your home from top to bottom. Have questions about what's included? Just call or text Lidone!
             </p>
           </div>
@@ -233,8 +233,8 @@ export default function DiamondGirlPage() {
       <section className="py-16" style={{ backgroundColor: "oklch(0.28 0.12 340)" }}>
         <div className="container">
           <div className="max-w-2xl mx-auto text-center">
-            <div className="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-5" style={{ backgroundColor: "oklch(0.72 0.15 75)" }}>
-              <Briefcase className="w-8 h-8" style={{ color: "oklch(0.18 0.01 60)" }} />
+            <div className="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-5" style={{ backgroundColor: "oklch(0.75 0.16 75)" }}>
+              <Briefcase className="w-8 h-8" style={{ color: "oklch(0.18 0.02 255)" }} />
             </div>
             <span className="inline-block text-xs font-bold uppercase tracking-widest mb-3 px-3 py-1 rounded-full" style={{ backgroundColor: "oklch(0.72 0.15 75 / 0.2)", color: "oklch(0.88 0.12 80)", fontFamily: "'Nunito Sans', sans-serif" }}>
               Now Hiring
@@ -248,7 +248,7 @@ export default function DiamondGirlPage() {
             <a
               href="mailto:lidone@adiamondhomeservices.com"
               className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-md font-bold text-base transition-all duration-200 hover:shadow-xl hover:-translate-y-0.5"
-              style={{ backgroundColor: "oklch(0.72 0.15 75)", color: "oklch(0.18 0.01 60)", fontFamily: "'Nunito Sans', sans-serif" }}
+              style={{ backgroundColor: "oklch(0.75 0.16 75)", color: "oklch(0.18 0.02 255)", fontFamily: "'Nunito Sans', sans-serif" }}
             >
               <Mail className="w-4 h-4" />
               Email Lidone to Apply
@@ -261,12 +261,12 @@ export default function DiamondGirlPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-16" style={{ backgroundColor: "oklch(0.97 0.02 90)" }}>
+      <section className="py-16" style={{ backgroundColor: "oklch(0.97 0.01 255)" }}>
         <div className="container text-center">
-          <h2 className="text-4xl font-bold mb-4" style={{ color: "oklch(0.18 0.01 60)", fontFamily: "'Lora', serif" }}>
+          <h2 className="text-4xl font-bold mb-4" style={{ color: "oklch(0.18 0.02 255)", fontFamily: "'Lora', serif" }}>
             Ready for a Diamond-Level Clean?
           </h2>
-          <p className="text-lg mb-8 max-w-lg mx-auto" style={{ color: "oklch(0.35 0.04 70)", fontFamily: "'Nunito Sans', sans-serif" }}>
+          <p className="text-lg mb-8 max-w-lg mx-auto" style={{ color: "oklch(0.35 0.04 255)", fontFamily: "'Nunito Sans', sans-serif" }}>
             Call or text Lidone to schedule your first cleaning. Free estimates always available throughout Nassau County.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
