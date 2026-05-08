@@ -16,7 +16,7 @@ import Footer from "@/components/Footer";
 
 const DIAMOND_CUTZ_LOGO = "/manus-storage/diamond-cutz-logo_7523a9b6.png";
 const DIAMOND_GIRL_LOGO = "/manus-storage/diamond-girl-logo_26e7435d.png";
-const HERO_IMAGE = "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1600&q=80";
+const HERO_IMAGE = "/manus-storage/diamond-home-hero_15ba2efb.png";
 const LAWN_IMAGE = "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=800&q=80";
 const CLEAN_IMAGE = "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=800&q=80";
 
@@ -88,9 +88,9 @@ export default function Home() {
       {/* ── HERO ── */}
       <section className="relative min-h-screen flex items-center overflow-hidden">
         <div ref={heroRef} className="absolute inset-0 will-change-transform">
-          <img src={HERO_IMAGE} alt="Beautiful Florida home exterior" className="w-full h-full object-cover" />
+          <img src={HERO_IMAGE} alt="Diamond Home Services LLC" className="w-full h-full object-cover object-center" />
         </div>
-        <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, oklch(0.15 0.08 145 / 0.88) 0%, oklch(0.20 0.08 145 / 0.70) 60%, oklch(0.15 0.05 145 / 0.50) 100%)" }} />
+        <div className="absolute inset-0" style={{ background: "linear-gradient(to right, oklch(0.10 0.06 145 / 0.82) 0%, oklch(0.10 0.06 145 / 0.55) 55%, oklch(0.05 0.03 145 / 0.15) 100%)" }} />
 
         <div className="container relative z-10 pt-24 pb-16">
           <div className="max-w-2xl">
