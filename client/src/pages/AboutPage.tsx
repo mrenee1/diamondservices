@@ -1,6 +1,6 @@
 /* ============================================================
    About Us Page — Diamond Home Services LLC
-   Family story: Mike & Lidone, South Jersey to Yulee FL
+   Family story: Mike & Lydine, South Jersey to Yulee FL
    Nassau County service area — no home address
    Mock family/team photos included
    ============================================================ */
@@ -33,7 +33,7 @@ const familyPhotos = [
   {
     src: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=600&q=80",
     alt: "Sparkling clean home interior",
-    caption: "Lidone's Diamond-level clean",
+    caption: "Lydine's Diamond-level clean",
   },
   {
     src: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80",
@@ -98,10 +98,10 @@ export default function AboutPage() {
                   What started on a whim, with just a lawnmower and a single house to clean, quickly turned into something much bigger than we ever imagined. Through hard work, word of mouth, and a genuine commitment to doing every job right, our small start has grown rapidly throughout the Tributary community and the greater Nassau County area.
                 </p>
                 <p>
-                  Mike handles the outdoors — lawn mowing, landscaping, fertilization, and everything in between — under the <strong style={{ color: "oklch(0.25 0.08 145)" }}>Diamond Cutz</strong> brand. Lidone handles the indoors — thorough, professional deep cleaning services — under <strong style={{ color: "oklch(0.40 0.15 340)" }}>A Diamond Girl</strong>. Together, we cover it all.
+                  Mike handles the outdoors — lawn mowing, landscaping, fertilization, and everything in between — under the <strong style={{ color: "oklch(0.25 0.08 145)" }}>Diamond Cutz</strong> brand. Lydine handles the indoors — thorough, professional deep cleaning services — under <strong style={{ color: "oklch(0.40 0.15 340)" }}>A Diamond Girl</strong>. Together, we cover it all.
                 </p>
                 <p>
-                  We truly enjoy helping our neighbors and take pride in making our community a cleaner, more beautiful place to live. Every lawn Mike mows, every home Lidone deep cleans — it means something to us. This has been a true American Dream, and we're just getting started.
+                  We truly enjoy helping our neighbors and take pride in making our community a cleaner, more beautiful place to live. Every lawn Mike mows, every home Lydine deep cleans — it means something to us. This has been a true American Dream, and we're just getting started.
                 </p>
               </div>
 
@@ -177,7 +177,7 @@ export default function AboutPage() {
               <img src={DIAMOND_GIRL_LOGO} alt="A Diamond Girl" className="h-24 w-auto object-contain mx-auto mb-4" />
               <h3 className="text-xl font-bold mb-1" style={{ color: "oklch(0.18 0.02 255)", fontFamily: "'Lora', serif" }}>A Diamond Girl</h3>
               <p className="text-sm mb-1" style={{ color: "oklch(0.45 0.03 255)", fontFamily: "'Nunito Sans', sans-serif" }}>Home Cleaning Service</p>
-              <p className="text-xs font-semibold mb-4" style={{ color: "oklch(0.45 0.15 340)", fontFamily: "'Nunito Sans', sans-serif" }}>Owner: Lidone Petrutz</p>
+              <p className="text-xs font-semibold mb-4" style={{ color: "oklch(0.45 0.15 340)", fontFamily: "'Nunito Sans', sans-serif" }}>Owner: Lydine Petrutz</p>
               <a href="tel:+18569810930" className="flex items-center justify-center gap-2 font-bold text-sm mb-4" style={{ color: "oklch(0.45 0.15 340)", fontFamily: "'Nunito Sans', sans-serif" }}>
                 <Phone className="w-4 h-4" /> 856-981-0930
               </a>
@@ -220,7 +220,7 @@ export default function AboutPage() {
                     <Phone className="w-5 h-5 text-white" />
                   </div>
                   <div>
-                    <p className="text-xs font-bold uppercase tracking-wide mb-1" style={{ color: "oklch(0.50 0.04 255)", fontFamily: "'Nunito Sans', sans-serif" }}>Home Cleaning (Lidone)</p>
+                    <p className="text-xs font-bold uppercase tracking-wide mb-1" style={{ color: "oklch(0.50 0.04 255)", fontFamily: "'Nunito Sans', sans-serif" }}>Home Cleaning (Lydine)</p>
                     <a href="tel:+18569810930" className="font-bold text-lg" style={{ color: "oklch(0.18 0.02 255)", fontFamily: "'Nunito Sans', sans-serif" }}>856-981-0930</a>
                     <p className="text-xs mt-0.5" style={{ color: "oklch(0.55 0.04 80)", fontFamily: "'Nunito Sans', sans-serif" }}>Call or text to schedule a cleaning</p>
                   </div>
@@ -231,7 +231,7 @@ export default function AboutPage() {
                   </div>
                   <div>
                     <p className="text-xs font-bold uppercase tracking-wide mb-1" style={{ color: "oklch(0.50 0.04 255)", fontFamily: "'Nunito Sans', sans-serif" }}>Email</p>
-                    <a href="mailto:mpetrutz@yahoo.com" className="font-bold text-lg" style={{ color: "oklch(0.18 0.02 255)", fontFamily: "'Nunito Sans', sans-serif" }}>mpetrutz@yahoo.com</a>
+                    <a href="mailto:diamondhomeservicesofflorida@gmail.com" className="font-bold text-lg" style={{ color: "oklch(0.18 0.02 255)", fontFamily: "'Nunito Sans', sans-serif" }}>diamondhomeservicesofflorida@gmail.com</a>
                   </div>
                 </div>
                 <div className="flex items-center gap-4">

@@ -139,7 +139,7 @@ export default function Navbar() {
                 style={{ color: GOLD_LT, fontFamily: "'Nunito Sans', sans-serif" }}
               >
                 <Phone className="w-4 h-4" />
-                Cleaning (Lidone): 856-981-0930
+                Cleaning (Lydine): 856-981-0930
               </a>
             </div>
           </div>

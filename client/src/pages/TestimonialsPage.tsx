@@ -83,7 +83,7 @@ const testimonials = [
     name: "Michelle W.",
     location: "Tributary, Yulee FL",
     rating: 5,
-    text: "Lidone is an absolute gem! She did a deep clean on our home before we moved in and I was blown away. Every corner, every cabinet, every surface — spotless. She has an eye for detail that I've never seen from any cleaning service before. Diamond-level is the perfect name for it.",
+    text: "Lydine is an absolute gem! She did a deep clean on our home before we moved in and I was blown away. Every corner, every cabinet, every surface — spotless. She has an eye for detail that I've never seen from any cleaning service before. Diamond-level is the perfect name for it.",
     service: "Move-In Deep Clean",
     business: "A Diamond Girl",
   },
@@ -93,7 +93,7 @@ const testimonials = [
     name: "Ashley P.",
     location: "Yulee, FL",
     rating: 5,
-    text: "I've tried several cleaning services over the years and nobody compares to A Diamond Girl. Lidone is thorough, trustworthy, and my house literally sparkles after she's done. I don't know how she does it, but I'm never going back to anyone else.",
+    text: "I've tried several cleaning services over the years and nobody compares to A Diamond Girl. Lydine is thorough, trustworthy, and my house literally sparkles after she's done. I don't know how she does it, but I'm never going back to anyone else.",
     service: "Recurring Bi-Weekly Clean",
     business: "A Diamond Girl",
   },
@@ -103,7 +103,7 @@ const testimonials = [
     name: "Jennifer & Mark S.",
     location: "Fernandina Beach, FL",
     rating: 5,
-    text: "We hired Lidone for a post-renovation clean after our kitchen remodel and she was phenomenal. Construction dust gets everywhere and she got it all. The kitchen looked brand new when she was done. We've since signed up for monthly service and couldn't be happier.",
+    text: "We hired Lydine for a post-renovation clean after our kitchen remodel and she was phenomenal. Construction dust gets everywhere and she got it all. The kitchen looked brand new when she was done. We've since signed up for monthly service and couldn't be happier.",
     service: "Post-Construction Clean",
     business: "A Diamond Girl",
   },
@@ -113,7 +113,7 @@ const testimonials = [
     name: "Carol H.",
     location: "Tributary, Yulee FL",
     rating: 5,
-    text: "Lidone is the real deal. She's prompt, professional, and incredibly detail-oriented. I've been using A Diamond Girl for six months now and every single time she leaves my home looking and smelling absolutely amazing. Worth every dollar — I can't recommend her enough.",
+    text: "Lydine is the real deal. She's prompt, professional, and incredibly detail-oriented. I've been using A Diamond Girl for six months now and every single time she leaves my home looking and smelling absolutely amazing. Worth every dollar — I can't recommend her enough.",
     service: "Monthly Deep Clean",
     business: "A Diamond Girl",
   },
@@ -123,7 +123,7 @@ const testimonials = [
     name: "Nancy G.",
     location: "Nassau County, FL",
     rating: 5,
-    text: "I hired Lidone to clean before a big holiday gathering and she made my home look better than it ever has. My guests kept asking who cleaned my house! She's reliable, kind, and does exceptional work. I've already booked her for the next three months.",
+    text: "I hired Lydine to clean before a big holiday gathering and she made my home look better than it ever has. My guests kept asking who cleaned my house! She's reliable, kind, and does exceptional work. I've already booked her for the next three months.",
     service: "Special Occasion Clean",
     business: "A Diamond Girl",
   },
@@ -133,7 +133,7 @@ const testimonials = [
     name: "Lisa & Tom F.",
     location: "Callahan, FL",
     rating: 5,
-    text: "We needed a move-out clean on a tight timeline and Lidone came through for us perfectly. She was flexible with scheduling, incredibly thorough, and left the property in better shape than when we moved in. Our landlord was impressed. Highly recommend!",
+    text: "We needed a move-out clean on a tight timeline and Lydine came through for us perfectly. She was flexible with scheduling, incredibly thorough, and left the property in better shape than when we moved in. Our landlord was impressed. Highly recommend!",
     service: "Move-Out Clean",
     business: "A Diamond Girl",
   },
@@ -250,7 +250,7 @@ export default function TestimonialsPage() {
               </div>
               <div>
                 <h2 className="text-2xl font-bold" style={{ color: "oklch(0.18 0.02 255)", fontFamily: "'Lora', serif" }}>A Diamond Girl Reviews</h2>
-                <p className="text-sm" style={{ color: "oklch(0.45 0.03 255)", fontFamily: "'Nunito Sans', sans-serif" }}>Home Cleaning Service · Call Lidone: 856-981-0930</p>
+                <p className="text-sm" style={{ color: "oklch(0.45 0.03 255)", fontFamily: "'Nunito Sans', sans-serif" }}>Home Cleaning Service · Call Lydine: 856-981-0930</p>
               </div>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

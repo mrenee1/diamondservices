@@ -1,8 +1,8 @@
 /* ============================================================
    A Diamond Girl Page — Home Cleaning Service
-   Owner: Lidone | Phone: 856-981-0930
+   Owner: Lydine | Phone: 856-981-0930
    Deep cleaning focus — catchy diamond-themed phrases
-   Employment contact: email Lidone
+   Employment contact: email Lydine
    ============================================================ */
 
 import { Link } from "wouter";
@@ -30,7 +30,7 @@ const services = [
     icon: Home,
     title: "Recurring Diamond Shine",
     tagline: "Keep your home sparkling, always.",
-    description: "Maintain that just-deep-cleaned feeling all year long. Lidone works around your schedule to keep your home consistently spotless — so you never have to worry about it.",
+    description: "Maintain that just-deep-cleaned feeling all year long. Lydine works around your schedule to keep your home consistently spotless — so you never have to worry about it.",
     includes: ["Full kitchen & bathroom cleaning", "Vacuuming & mopping all floors", "Dusting all surfaces & décor", "Sanitizing high-touch areas", "Customized checklist for your home"],
     frequency: "Weekly / Bi-Weekly / Monthly",
     badge: "Most Popular",
@@ -39,7 +39,7 @@ const services = [
     icon: Star,
     title: "Move-In / Move-Out Clean",
     tagline: "Start fresh. Leave spotless.",
-    description: "Moving is stressful enough. Let Lidone handle the clean so you can focus on the move. We leave every inch of the property sparkling — whether you're arriving or departing.",
+    description: "Moving is stressful enough. Let Lydine handle the clean so you can focus on the move. We leave every inch of the property sparkling — whether you're arriving or departing.",
     includes: ["Full property deep clean", "Inside all cabinets & drawers", "All appliances cleaned inside & out", "Bathrooms scrubbed & sanitized", "Windows & window sills"],
     frequency: "One-Time",
     badge: null,
@@ -57,7 +57,7 @@ const services = [
     icon: Shield,
     title: "Post-Construction Clean",
     tagline: "Built beautiful. Now let's make it spotless.",
-    description: "Construction and renovation leave behind dust, debris, and residue that requires specialized cleaning. Lidone gets your newly renovated space truly ready to enjoy.",
+    description: "Construction and renovation leave behind dust, debris, and residue that requires specialized cleaning. Lydine gets your newly renovated space truly ready to enjoy.",
     includes: ["Construction dust removal", "Surface & floor deep cleaning", "Window & fixture cleaning", "Debris removal", "Final polish & inspection"],
     frequency: "One-Time",
     badge: null,
@@ -100,7 +100,7 @@ export default function DiamondGirlPage() {
             "We Don't Just Clean — We Transform."
           </p>
           <p className="text-base max-w-xl mx-auto mb-6" style={{ color: "oklch(0.90 0.04 340)", fontFamily: "'Nunito Sans', sans-serif" }}>
-            Lidone delivers a deep, thorough clean that goes far beyond the surface. Serving Nassau County homeowners and businesses with pride, right from the Tributary community.
+            Lydine delivers a deep, thorough clean that goes far beyond the surface. Serving Nassau County homeowners and businesses with pride, right from the Tributary community.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <a
@@ -109,15 +109,15 @@ export default function DiamondGirlPage() {
               style={{ backgroundColor: "oklch(0.75 0.16 75)", color: "oklch(0.18 0.02 255)", fontFamily: "'Nunito Sans', sans-serif" }}
             >
               <Phone className="w-4 h-4" />
-              Call or Text Lidone: 856-981-0930
+              Call or Text Lydine: 856-981-0930
             </a>
             <a
-              href="mailto:mpetrutz@yahoo.com"
+              href="mailto:diamondhomeservicesofflorida@gmail.com"
               className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-md font-bold text-base transition-all duration-200 hover:-translate-y-0.5"
               style={{ backgroundColor: "oklch(1 0 0 / 0.12)", color: "white", border: "1px solid oklch(1 0 0 / 0.3)", fontFamily: "'Nunito Sans', sans-serif" }}
             >
               <Mail className="w-4 h-4" />
-              mpetrutz@yahoo.com
+              diamondhomeservicesofflorida@gmail.com
             </a>
           </div>
         </div>
@@ -153,7 +153,7 @@ export default function DiamondGirlPage() {
               The Diamond Clean Difference
             </h2>
             <p className="text-base mt-3 max-w-lg mx-auto" style={{ color: "oklch(0.40 0.04 255)", fontFamily: "'Nunito Sans', sans-serif" }}>
-              Every service Lidone offers is built around one standard: diamond-level results. No shortcuts. No skipped corners. Just a spotlessly clean home.
+              Every service Lydine offers is built around one standard: diamond-level results. No shortcuts. No skipped corners. Just a spotlessly clean home.
             </p>
           </div>
 
@@ -204,7 +204,7 @@ export default function DiamondGirlPage() {
                       style={{ backgroundColor: "oklch(0.45 0.15 340)", color: "white", fontFamily: "'Nunito Sans', sans-serif" }}
                     >
                       <Phone className="w-4 h-4" />
-                      Call Lidone for a Quote
+                      Call Lydine for a Quote
                     </a>
                   </div>
                 </div>
@@ -223,7 +223,7 @@ export default function DiamondGirlPage() {
               Specialized Deep Cleaning — Not Household Chores
             </h3>
             <p className="text-sm leading-relaxed" style={{ color: "oklch(0.40 0.04 255)", fontFamily: "'Nunito Sans', sans-serif" }}>
-              A Diamond Girl specializes in <strong>professional deep cleaning services</strong> — not basic household tasks like laundry or dishes. Our focus is delivering a thorough, detailed clean that transforms your home from top to bottom. Have questions about what's included? Just call or text Lidone!
+              A Diamond Girl specializes in <strong>professional deep cleaning services</strong> — not basic household tasks like laundry or dishes. Our focus is delivering a thorough, detailed clean that transforms your home from top to bottom. Have questions about what's included? Just call or text Lydine!
             </p>
           </div>
         </div>
@@ -243,15 +243,15 @@ export default function DiamondGirlPage() {
               Want to Join the Diamond Team?
             </h3>
             <p className="text-base mb-6" style={{ color: "oklch(0.88 0.04 340)", fontFamily: "'Nunito Sans', sans-serif" }}>
-              We're always looking for reliable, detail-oriented people who take pride in their work. If you're interested in joining the A Diamond Girl family, reach out to Lidone directly by email.
+              We're always looking for reliable, detail-oriented people who take pride in their work. If you're interested in joining the A Diamond Girl family, reach out to Lydine directly by email.
             </p>
             <a
-              href="mailto:lidone@adiamondhomeservices.com"
+              href="mailto:diamondhomeservicesofflorida@gmail.com"
               className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-md font-bold text-base transition-all duration-200 hover:shadow-xl hover:-translate-y-0.5"
               style={{ backgroundColor: "oklch(0.75 0.16 75)", color: "oklch(0.18 0.02 255)", fontFamily: "'Nunito Sans', sans-serif" }}
             >
               <Mail className="w-4 h-4" />
-              Email Lidone to Apply
+              Email Lydine to Apply
             </a>
             <p className="text-xs mt-3" style={{ color: "oklch(0.75 0.05 340)", fontFamily: "'Nunito Sans', sans-serif" }}>
               Nassau County, FL · Flexible scheduling available
@@ -267,7 +267,7 @@ export default function DiamondGirlPage() {
             Ready for a Diamond-Level Clean?
           </h2>
           <p className="text-lg mb-8 max-w-lg mx-auto" style={{ color: "oklch(0.35 0.04 255)", fontFamily: "'Nunito Sans', sans-serif" }}>
-            Call or text Lidone to schedule your first cleaning. Free estimates always available throughout Nassau County.
+            Call or text Lydine to schedule your first cleaning. Free estimates always available throughout Nassau County.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <a

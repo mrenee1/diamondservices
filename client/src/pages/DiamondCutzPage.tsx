@@ -111,12 +111,12 @@ export default function DiamondCutzPage() {
               Call or Text: 856-371-3971
             </a>
             <a
-              href="mailto:mpetrutz@yahoo.com"
+              href="mailto:diamondhomeservicesofflorida@gmail.com"
               className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-md font-bold text-base transition-all duration-200 hover:-translate-y-0.5"
               style={{ backgroundColor: "oklch(1 0 0 / 0.12)", color: "white", border: "1px solid oklch(1 0 0 / 0.3)", fontFamily: "'Nunito Sans', sans-serif" }}
             >
               <Mail className="w-4 h-4" />
-              mpetrutz@yahoo.com
+              diamondhomeservicesofflorida@gmail.com
             </a>
           </div>
         </div>

@@ -2,7 +2,7 @@
    Footer — Diamond Home Services LLC
    6-page site: no social media, no booking
    Phone: 856-371-3971 (lawn) | 856-981-0930 (cleaning)
-   Email: mpetrutz@yahoo.com
+   Email: diamondhomeservicesofflorida@gmail.com
    Nassau County, FL — no home address
    ============================================================ */
 
@@ -100,8 +100,8 @@ export default function Footer() {
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="w-4 h-4 flex-shrink-0" style={{ color: "oklch(0.75 0.16 75)" }} />
-                <a href="mailto:mpetrutz@yahoo.com" className="text-sm transition-colors hover:text-white" style={{ color: "oklch(0.80 0.03 255)", fontFamily: "'Nunito Sans', sans-serif" }}>
-                  mpetrutz@yahoo.com
+                <a href="mailto:diamondhomeservicesofflorida@gmail.com" className="text-sm transition-colors hover:text-white" style={{ color: "oklch(0.80 0.03 255)", fontFamily: "'Nunito Sans', sans-serif" }}>
+                  diamondhomeservicesofflorida@gmail.com
                 </a>
               </li>
             </ul>

@@ -3,7 +3,7 @@
    Theme: Diamond Standard — Navy + Field Green + Gold + White
    Hero: full-width image at top, text in navy band below (no overlap)
    Service area: Nassau County, rooted in the Tributary community
-   Phone: 856-371-3971 (Mike) | 856-981-0930 (Lidone)
+   Phone: 856-371-3971 (Mike) | 856-981-0930 (Lydine)
    ============================================================ */
 
 import { useEffect, useRef } from "react";
@@ -69,7 +69,7 @@ const services = [
     icon: Sparkles,
     title: "A Diamond Girl",
     subtitle: "Home Cleaning Service",
-    description: "Lidone delivers a diamond-level deep clean every time. From top-to-bottom deep cleans to move-in/move-out services — she makes every home shine like new.",
+    description: "Lydine delivers a diamond-level deep clean every time. From top-to-bottom deep cleans to move-in/move-out services — she makes every home shine like new.",
     href: "/diamond-girl",
     logo: DIAMOND_GIRL_LOGO,
     phone: "856-981-0930",
@@ -125,7 +125,7 @@ export default function Home() {
                 className="text-base md:text-lg max-w-xl"
                 style={{ color: "oklch(0.82 0.03 255)", fontFamily: "'Nunito Sans', sans-serif" }}
               >
-                Your trusted family-owned home services team. From a perfectly manicured lawn to a spotlessly clean home — Mike and Lidone handle it all with pride, right here in Nassau County, Florida.
+                Your trusted family-owned home services team. From a perfectly manicured lawn to a spotlessly clean home — Mike and Lydine handle it all with pride, right here in Nassau County, Florida.
               </p>
             </div>
             <div className="flex flex-col gap-3 flex-shrink-0">
@@ -174,7 +174,7 @@ export default function Home() {
               Two Businesses, One Family
             </h2>
             <p className="text-base mt-3 max-w-xl mx-auto" style={{ color: "oklch(0.40 0.04 255)", fontFamily: "'Nunito Sans', sans-serif" }}>
-              Mike handles the outdoors. Lidone handles the indoors. Together, they've built something special for the Nassau County community.
+              Mike handles the outdoors. Lydine handles the indoors. Together, they've built something special for the Nassau County community.
             </p>
           </div>
 
@@ -257,12 +257,12 @@ export default function Home() {
                 Call or Text for a Quote
               </a>
               <a
-                href="mailto:mpetrutz@yahoo.com"
+                href="mailto:diamondhomeservicesofflorida@gmail.com"
                 className="flex items-center justify-center gap-2 px-6 py-3 rounded-md font-bold text-sm transition-all duration-200 hover:-translate-y-0.5 whitespace-nowrap"
                 style={{ backgroundColor: "oklch(1 0 0 / 0.10)", color: WHITE, border: "1px solid oklch(1 0 0 / 0.25)", fontFamily: "'Nunito Sans', sans-serif" }}
               >
                 <Mail className="w-4 h-4" />
-                mpetrutz@yahoo.com
+                diamondhomeservicesofflorida@gmail.com
               </a>
             </div>
           </div>
@@ -284,7 +284,7 @@ export default function Home() {
                 Proudly Serving Nassau County, Florida
               </h2>
               <p className="text-base leading-relaxed mb-6" style={{ color: "oklch(0.35 0.04 255)", fontFamily: "'Nunito Sans', sans-serif" }}>
-                Based right here in the Tributary community of Yulee, Mike and Lidone serve homeowners and businesses throughout Nassau County. If you're not sure whether we cover your area, just give us a call — we're always happy to help.
+                Based right here in the Tributary community of Yulee, Mike and Lydine serve homeowners and businesses throughout Nassau County. If you're not sure whether we cover your area, just give us a call — we're always happy to help.
               </p>
               <div className="grid grid-cols-2 gap-3">
                 {["Tributary Community", "Yulee, FL 32097", "Fernandina Beach", "Callahan", "Nassau County", "Surrounding Areas"].map((area) => (
@@ -312,7 +312,7 @@ export default function Home() {
                     <Phone className="w-5 h-5 text-white" />
                   </div>
                   <div>
-                    <p className="text-xs font-bold uppercase tracking-wide mb-0.5" style={{ color: "oklch(0.50 0.04 255)", fontFamily: "'Nunito Sans', sans-serif" }}>Home Cleaning (Lidone)</p>
+                    <p className="text-xs font-bold uppercase tracking-wide mb-0.5" style={{ color: "oklch(0.50 0.04 255)", fontFamily: "'Nunito Sans', sans-serif" }}>Home Cleaning (Lydine)</p>
                     <a href="tel:+18569810930" className="font-bold text-base" style={{ color: CHARCOAL, fontFamily: "'Nunito Sans', sans-serif" }}>856-981-0930</a>
                   </div>
                 </div>
@@ -322,7 +322,7 @@ export default function Home() {
                   </div>
                   <div>
                     <p className="text-xs font-bold uppercase tracking-wide mb-0.5" style={{ color: "oklch(0.50 0.04 255)", fontFamily: "'Nunito Sans', sans-serif" }}>Email</p>
-                    <a href="mailto:mpetrutz@yahoo.com" className="font-bold text-base" style={{ color: CHARCOAL, fontFamily: "'Nunito Sans', sans-serif" }}>mpetrutz@yahoo.com</a>
+                    <a href="mailto:diamondhomeservicesofflorida@gmail.com" className="font-bold text-base" style={{ color: CHARCOAL, fontFamily: "'Nunito Sans', sans-serif" }}>diamondhomeservicesofflorida@gmail.com</a>
                   </div>
                 </div>
                 <div className="flex items-center gap-4">
