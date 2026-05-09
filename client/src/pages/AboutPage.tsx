@@ -12,13 +12,14 @@ import Footer from "@/components/Footer";
 
 const DIAMOND_CUTZ_LOGO = "/manus-storage/diamond-cutz-logo_7523a9b6.png";
 const DIAMOND_GIRL_LOGO = "/manus-storage/diamond-girl-logo_26e7435d.png";
+const COUPLE_PHOTO = "/manus-storage/mike-lydine-couple_d892a85f.png";
 
-// Mock family/team photos — warm, community-oriented imagery
+// Family/team photos
 const familyPhotos = [
   {
-    src: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=600&q=80",
-    alt: "Family working together outdoors",
-    caption: "Built on family values",
+    src: COUPLE_PHOTO,
+    alt: "Mike and Lydine Petrutz — Diamond Home Services LLC",
+    caption: "Mike & Lydine — The Team Behind It All",
   },
   {
     src: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&q=80",
@@ -134,8 +135,21 @@ export default function AboutPage() {
                   Meet the Team
                 </span>
               </div>
+              {/* Hero couple photo — spans full width */}
+              <div className="mb-4 overflow-hidden rounded-2xl shadow-lg">
+                <img
+                  src={COUPLE_PHOTO}
+                  alt="Mike and Lydine Petrutz — Diamond Home Services LLC"
+                  className="w-full object-cover object-top"
+                  style={{ maxHeight: 420 }}
+                />
+                <div className="bg-white px-4 py-3 border-t border-border">
+                  <p className="font-bold text-sm" style={{ color: "oklch(0.18 0.02 255)", fontFamily: "'Lora', serif" }}>Mike &amp; Lydine Petrutz</p>
+                  <p className="text-xs" style={{ color: "oklch(0.45 0.03 255)", fontFamily: "'Nunito Sans', sans-serif" }}>Founders · Diamond Home Services LLC · Nassau County, FL</p>
+                </div>
+              </div>
               <div className="grid grid-cols-2 gap-4">
-                {familyPhotos.map((photo, i) => (
+                {familyPhotos.slice(1).map((photo, i) => (
                   <div key={i} className="group relative overflow-hidden rounded-2xl shadow-md hover:shadow-xl transition-all duration-300">
                     <img
                       src={photo.src}
