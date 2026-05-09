@@ -1,10 +1,9 @@
-/* ================================================================
-   DIAMOND HOME SERVICES — DESIGN SYSTEM
-   ================================================================
-   PARENT (Diamond Home Services LLC): Navy #081838 / #0F2244 / #18305C + Gold #C8A24A / #EBD08A
-   CUTZ  (Diamond Cutz Lawn & Landscaping): Green #0E3A1C / #185E2C / #2E8B10 + Earth #6B4A28 / #A87A48
-   GIRL  (A Diamond Girl Home Cleaning): Wine #5C1432 / #7A1B42 + Magenta #C2185B + Pink #EC4B99 / #FCE4EC
-   ================================================================ */
+/* ============================================================
+   DIAMOND HOME SERVICES LLC — Design System
+   Theme: "Diamond Standard" — Bold, sporty, family-owned
+   Colors: Deep Navy + Field Green + Gold + White (matched to hero image)
+   Fonts: Lora (serif display) + Nunito Sans (body)
+   ============================================================ */
 
 @import "tailwindcss";
 @import "tw-animate-css";
@@ -48,161 +47,57 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
+
+  /* Brand color tokens — Diamond Home Services palette */
+  --color-navy: oklch(0.22 0.08 255);          /* deep stadium navy */
+  --color-navy-light: oklch(0.30 0.08 255);    /* lighter navy */
+  --color-navy-dark: oklch(0.14 0.06 255);     /* darkest navy */
+  --color-green: oklch(0.45 0.14 145);         /* bright field green */
+  --color-green-light: oklch(0.55 0.14 145);   /* lighter field green */
+  --color-green-dark: oklch(0.30 0.12 145);    /* dark green */
+  --color-gold: oklch(0.75 0.16 75);           /* diamond gold */
+  --color-gold-light: oklch(0.85 0.13 80);     /* light gold */
+  --color-white: oklch(1 0 0);
+  --color-offwhite: oklch(0.97 0.01 255);      /* cool off-white */
+  --color-charcoal: oklch(0.18 0.02 255);      /* near-black navy */
 }
 
-/* ── PARENT brand tokens ── */
 :root {
-  /* Navy scale */
-  --navy-900: #081838;
-  --navy-800: #0F2244;
-  --navy-700: #18305C;
-  --navy-500: #2F4D8A;
-  --navy-300: #6B8CC4;
-  /* Gold scale */
-  --gold-600: #8B7228;
-  --gold-500: #C8A24A;
-  --gold-300: #EBD08A;
-  /* Cutz green scale */
-  --green-900: #0E3A1C;
-  --green-700: #185E2C;
-  --green-500: #2E8B10;
-  --green-300: #7FB342;
-  /* Cutz earth scale */
-  --earth-700: #6B4A28;
-  --earth-500: #A87A48;
-  /* Girl wine/pink scale */
-  --wine-800: #5C1432;
-  --wine-700: #7A1B42;
-  --magenta-500: #C2185B;
-  --pink-400: #EC4B99;
-  --blush-100: #FCE4EC;
-  --aqua-300: #7FD7E8;
-
-  /* Shadcn tokens — light mode (Parent palette) */
+  /* Diamond Standard — Light Theme (navy + green + gold) */
   --radius: 0.5rem;
-  --background: #F5F3EE;
-  --foreground: #0F2244;
-  --card: #FFFFFF;
-  --card-foreground: #0F2244;
-  --popover: #FFFFFF;
-  --popover-foreground: #0F2244;
-  --primary: #0F2244;
-  --primary-foreground: #FFFFFF;
-  --secondary: #EBD08A;
-  --secondary-foreground: #081838;
-  --muted: #EAE8E2;
-  --muted-foreground: #5A6070;
-  --accent: #C8A24A;
-  --accent-foreground: #081838;
+  --background: oklch(0.97 0.01 255);       /* cool off-white */
+  --foreground: oklch(0.18 0.02 255);       /* near-black navy */
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.18 0.02 255);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.18 0.02 255);
+  --primary: oklch(0.22 0.08 255);          /* deep navy */
+  --primary-foreground: oklch(1 0 0);       /* white */
+  --secondary: oklch(0.45 0.14 145);        /* field green */
+  --secondary-foreground: oklch(1 0 0);     /* white */
+  --muted: oklch(0.93 0.02 255);
+  --muted-foreground: oklch(0.50 0.04 255);
+  --accent: oklch(0.75 0.16 75);            /* diamond gold */
+  --accent-foreground: oklch(0.18 0.02 255);
   --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: #FFFFFF;
-  --border: #D8D4CA;
-  --input: #D8D4CA;
-  --ring: #C8A24A;
-  --chart-1: #2E8B10;
-  --chart-2: #C8A24A;
-  --chart-3: #18305C;
-  --chart-4: #C2185B;
-  --chart-5: #7FB342;
-  --sidebar: #081838;
-  --sidebar-foreground: #FFFFFF;
-  --sidebar-primary: #C8A24A;
-  --sidebar-primary-foreground: #081838;
-  --sidebar-accent: #0F2244;
-  --sidebar-accent-foreground: #EBD08A;
-  --sidebar-border: rgba(255,255,255,0.1);
-  --sidebar-ring: #C8A24A;
+  --destructive-foreground: oklch(0.985 0 0);
+  --border: oklch(0.88 0.02 255);
+  --input: oklch(0.88 0.02 255);
+  --ring: oklch(0.45 0.14 145);
+  --chart-1: oklch(0.22 0.08 255);
+  --chart-2: oklch(0.45 0.14 145);
+  --chart-3: oklch(0.75 0.16 75);
+  --chart-4: oklch(0.30 0.08 255);
+  --chart-5: oklch(0.30 0.12 145);
+  --sidebar: oklch(0.22 0.08 255);
+  --sidebar-foreground: oklch(1 0 0);
+  --sidebar-primary: oklch(0.75 0.16 75);
+  --sidebar-primary-foreground: oklch(0.18 0.02 255);
+  --sidebar-accent: oklch(0.45 0.14 145);
+  --sidebar-accent-foreground: oklch(1 0 0);
+  --sidebar-border: oklch(0.30 0.08 255);
+  --sidebar-ring: oklch(0.75 0.16 75);
 }
-
-/* ── CSS PATTERNS ── */
-
-/* Diamond Grid (Parent — navy header surfaces) */
-.pattern-diamond-grid {
-  background-color: var(--navy-900);
-  background-image:
-    linear-gradient(45deg, rgba(200,162,74,0.12) 25%, transparent 25%),
-    linear-gradient(-45deg, rgba(200,162,74,0.12) 25%, transparent 25%),
-    linear-gradient(45deg, transparent 75%, rgba(200,162,74,0.12) 75%),
-    linear-gradient(-45deg, transparent 75%, rgba(200,162,74,0.12) 75%);
-  background-size: 20px 20px;
-  background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
-}
-
-/* Chalk Baseline (Parent — light page backdrop) */
-.pattern-chalk {
-  background-color: #F5F3EE;
-  background-image:
-    linear-gradient(rgba(15,34,68,0.06) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(15,34,68,0.06) 1px, transparent 1px);
-  background-size: 40px 40px;
-}
-
-/* Field Stripes (Cutz — hero strips) */
-.pattern-field-stripes {
-  background-color: var(--green-700);
-  background-image: repeating-linear-gradient(
-    85deg,
-    rgba(0,0,0,0.10) 0px,
-    rgba(0,0,0,0.10) 40px,
-    transparent 40px,
-    transparent 80px
-  );
-}
-
-/* Grass Mesh (Cutz — primary surfaces) */
-.pattern-grass-mesh {
-  background-color: var(--green-900);
-  background-image:
-    radial-gradient(circle, rgba(46,139,16,0.25) 1px, transparent 1px);
-  background-size: 18px 18px;
-}
-
-/* Earth Bands (Cutz — alternate, mulch tone) */
-.pattern-earth-bands {
-  background-color: var(--earth-700);
-  background-image: repeating-linear-gradient(
-    85deg,
-    rgba(255,255,255,0.06) 0px,
-    rgba(255,255,255,0.06) 30px,
-    transparent 30px,
-    transparent 60px
-  );
-}
-
-/* Sparkle Dust (Girl — pink sparkle dots) */
-.pattern-sparkle {
-  background-color: var(--blush-100);
-  background-image:
-    radial-gradient(circle, #EC4B99 1px, transparent 1px),
-    radial-gradient(circle, #C2185B 1px, transparent 1px);
-  background-size: 40px 40px, 80px 80px;
-  background-position: 0 0, 20px 20px;
-}
-
-/* Bubble Dots (Girl — larger bubbles) */
-.pattern-bubbles {
-  background-color: #F8BBD0;
-  background-image: radial-gradient(circle, rgba(255,255,255,0.7) 4px, transparent 4px);
-  background-size: 30px 30px;
-}
-
-/* Aqua Dots (Girl — aqua accent) */
-.pattern-aqua-dots {
-  background-color: #E0F7FA;
-  background-image: radial-gradient(circle, rgba(127,215,232,0.6) 2px, transparent 2px);
-  background-size: 24px 24px;
-}
-
-/* Gold Ribbon (Parent — feature dividers) */
-.gold-ribbon {
-  background: linear-gradient(180deg, var(--navy-700) 0%, var(--navy-700) 45%, var(--gold-500) 45%, var(--gold-500) 55%, var(--navy-700) 55%, var(--navy-700) 100%);
-}
-
-/* ── TYPOGRAPHY ── */
-/* Anton: display/headings for Parent & Cutz */
-/* Playfair Display: editorial for Girl */
-/* Oswald: labels, nav, tags */
-/* Manrope: body copy */
 
 @layer base {
   * {
@@ -210,7 +105,10 @@
   }
   body {
     @apply bg-background text-foreground;
-    font-family: 'Manrope', 'Nunito Sans', system-ui, sans-serif;
+    font-family: 'Nunito Sans', sans-serif;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Lora', serif;
   }
   button:not(:disabled),
   [role="button"]:not([aria-disabled="true"]),
@@ -233,16 +131,19 @@
     padding-left: 1rem;
     padding-right: 1rem;
   }
+
   .flex {
     min-height: 0;
     min-width: 0;
   }
+
   @media (min-width: 640px) {
     .container {
       padding-left: 1.5rem;
       padding-right: 1.5rem;
     }
   }
+
   @media (min-width: 1024px) {
     .container {
       padding-left: 2rem;
@@ -251,191 +152,77 @@
     }
   }
 
-  /* ── PARENT BUTTONS ── */
-  .btn-parent-primary {
-    background: var(--gold-500);
-    color: var(--navy-800);
-    border: none;
-    padding: 14px 28px;
-    font-family: 'Oswald', sans-serif;
-    font-weight: 700;
-    font-size: 13px;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background 0.2s, transform 0.15s;
-    box-shadow: 0 6px 20px rgba(200,162,74,0.30);
-  }
-  .btn-parent-primary:hover { background: var(--gold-300); transform: translateY(-1px); }
-
-  .btn-parent-outline {
-    background: transparent;
-    color: #fff;
-    border: 1.5px solid rgba(255,255,255,0.4);
-    padding: 14px 28px;
-    font-family: 'Oswald', sans-serif;
-    font-weight: 600;
-    font-size: 13px;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: border-color 0.2s, transform 0.15s;
-  }
-  .btn-parent-outline:hover { border-color: rgba(255,255,255,0.8); transform: translateY(-1px); }
-
-  /* ── CUTZ BUTTONS ── */
-  .btn-cutz-primary {
-    background: var(--green-500);
-    color: var(--green-900);
-    border: none;
-    padding: 14px 28px;
-    font-family: 'Oswald', sans-serif;
-    font-weight: 700;
-    font-size: 13px;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background 0.2s, transform 0.15s;
-  }
-  .btn-cutz-primary:hover { background: var(--green-300); transform: translateY(-1px); }
-
-  .btn-cutz-outline {
-    background: transparent;
-    color: #fff;
-    border: 1.5px solid rgba(255,255,255,0.4);
-    padding: 14px 28px;
-    font-family: 'Oswald', sans-serif;
-    font-weight: 600;
-    font-size: 13px;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: border-color 0.2s;
+  /* Brand-specific utilities */
+  .section-divider-down {
+    clip-path: polygon(0 0, 100% 0, 100% 88%, 0 100%);
+    padding-bottom: 6rem;
   }
 
-  /* ── GIRL BUTTONS ── */
-  .btn-girl-primary {
-    background: var(--wine-800);
-    color: #fff;
-    border: none;
-    padding: 14px 28px;
-    font-family: 'Oswald', sans-serif;
-    font-weight: 700;
-    font-size: 13px;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background 0.2s, transform 0.15s;
-  }
-  .btn-girl-primary:hover { background: var(--magenta-500); transform: translateY(-1px); }
-
-  .btn-girl-magenta {
-    background: var(--magenta-500);
-    color: #fff;
-    border: none;
-    padding: 14px 28px;
-    font-family: 'Oswald', sans-serif;
-    font-weight: 700;
-    font-size: 13px;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background 0.2s, transform 0.15s;
-  }
-  .btn-girl-magenta:hover { background: var(--pink-400); transform: translateY(-1px); }
-
-  /* ── TAGS ── */
-  .tag-insured {
-    background: rgba(255,255,255,0.15);
-    color: rgba(255,255,255,0.85);
-    border: 1px solid rgba(255,255,255,0.25);
-    padding: 4px 12px;
-    font-family: 'Oswald', sans-serif;
-    font-size: 11px;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    border-radius: 20px;
-  }
-  .tag-featured {
-    background: var(--gold-500);
-    color: var(--navy-800);
-    padding: 4px 12px;
-    font-family: 'Oswald', sans-serif;
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    border-radius: 20px;
-  }
-  .tag-featured-girl {
-    background: var(--magenta-500);
-    color: #fff;
-    padding: 4px 12px;
-    font-family: 'Oswald', sans-serif;
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    border-radius: 20px;
+  .section-divider-up {
+    clip-path: polygon(0 0, 100% 5%, 100% 100%, 0 100%);
+    margin-top: -3rem;
+    padding-top: 5rem;
   }
 
-  /* ── SECTION LABELS ── */
-  .section-eyebrow {
-    font-family: 'Oswald', sans-serif;
-    font-weight: 600;
-    font-size: 12px;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
+  .btn-primary {
+    @apply bg-primary text-primary-foreground font-bold px-6 py-3 rounded-md transition-all duration-200 hover:bg-[oklch(0.30_0.10_145)] hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0;
   }
 
-  /* ── DISPLAY HEADINGS ── */
-  .heading-display {
-    font-family: 'Anton', 'Oswald', sans-serif;
-    letter-spacing: -0.01em;
-    line-height: 0.93;
+  .btn-amber {
+    background-color: oklch(0.72 0.15 75);
+    color: oklch(0.18 0.01 60);
+    @apply font-bold px-6 py-3 rounded-md transition-all duration-200 hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0;
+  }
+  .btn-amber:hover {
+    background-color: oklch(0.65 0.15 75);
   }
 
-  /* ── CARD BASE ── */
-  .service-card {
-    background: #fff;
-    border-radius: 6px;
-    padding: 24px;
-    border: 1px solid #E8E4DC;
-    transition: box-shadow 0.2s, transform 0.2s;
-  }
-  .service-card:hover {
-    box-shadow: 0 8px 32px rgba(0,0,0,0.10);
-    transform: translateY(-2px);
+  .card-service {
+    @apply bg-white rounded-xl shadow-sm border border-border overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1;
   }
 
-  /* ── FORM INPUTS ── */
-  .form-input {
-    width: 100%;
-    border: 1px solid #D8D4CA;
-    border-radius: 4px;
-    padding: 12px 16px;
-    font-family: 'Manrope', sans-serif;
-    font-size: 14px;
-    color: #0F2244;
-    background: #FAFAF8;
-    transition: border-color 0.2s;
-    outline: none;
+  .badge-amber {
+    background-color: oklch(0.72 0.15 75);
+    color: oklch(0.18 0.01 60);
+    @apply text-xs font-bold px-2.5 py-0.5 rounded-full uppercase tracking-wide;
   }
-  .form-input:focus { border-color: var(--gold-500); }
-  .form-label {
-    font-family: 'Oswald', sans-serif;
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: #5A6070;
-    display: block;
-    margin-bottom: 6px;
+
+  /* Scroll animations */
+  .fade-up {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+
+  .fade-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* react-day-picker v9 custom styles */
+  .rdp-root {
+    --rdp-accent-color: oklch(0.35 0.10 145);
+    --rdp-accent-background-color: oklch(0.35 0.10 145 / 0.12);
+    --rdp-today-color: oklch(0.35 0.10 145);
+    font-family: 'Nunito Sans', sans-serif;
+  }
+
+  .rdp-day_button:hover {
+    background-color: oklch(0.93 0.03 85) !important;
+  }
+
+  .rdp-selected .rdp-day_button {
+    background-color: oklch(0.35 0.10 145) !important;
+    color: white !important;
+    border-radius: 8px;
+  }
+
+  .rdp-today .rdp-day_button {
+    font-weight: 800;
+    color: oklch(0.35 0.10 145);
+  }
+
+  .rdp-nav_button:hover {
+    background-color: oklch(0.93 0.03 85) !important;
   }
 }

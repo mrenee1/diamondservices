@@ -1,252 +1,140 @@
-/* ================================================================
-   A Diamond Girl — Home Cleaning Service
-   Design System: Girl palette
-     Wine 800 #5C1432 | Wine 700 #7A1B42 | Magenta 500 #C21B6B
-     Pink 400 #EC4B99 | Blush 100 #FCE4EC | Aqua 300 #7FD7E8
-   Patterns: sparkle-dots (hero), bubble-float (sections)
-   Fonts: Anton (display), Oswald (labels), Manrope (body)
-   Owner: Lydine | Phone: 856-981-0930
-   Email: diamondhomeservicesofflorida@gmail.com
-   ================================================================ */
+/* ============================================================
+   A Diamond Girl Page — Home Cleaning Service
+   Owner: Lidone | Phone: 856-981-0930
+   Deep cleaning focus — catchy diamond-themed phrases
+   Employment contact: email Lidone
+   ============================================================ */
 
-import { Sparkles, Star, Home, Wind, Layers, Brush, CheckCircle2, Phone, Mail, ArrowRight, Gem, Shield, Zap } from "lucide-react";
+import { Link } from "wouter";
+import {
+  Sparkles, Home, Star, Shield, Clock, Heart,
+  CheckCircle2, Phone, Mail, ArrowRight, Briefcase, Gem, Zap
+} from "lucide-react";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
-const DIAMOND_GIRL_LOGO = "/manus-storage/diamond-girl-logo-clean_4f2c96f8.png";
+const DIAMOND_GIRL_LOGO = "/manus-storage/diamond-girl-logo_26e7435d.png";
+const HERO_IMAGE = "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=1600&q=80";
 
 const services = [
   {
     icon: Sparkles,
     title: "The Diamond Deep Clean",
     tagline: "When good enough isn't good enough.",
-    desc: "Our signature service. Top-to-bottom deep cleaning that reaches every surface, every corner, every forgotten spot. We don't just clean — we restore.",
-    includes: ["Inside appliances & cabinets", "Baseboards & window sills", "Behind & under furniture", "Full bathroom deep scrub", "Ceiling fans & light fixtures"],
+    description: "Our signature service. A thorough, top-to-bottom deep clean that reaches every surface, every corner, every forgotten spot. We don't just clean — we restore your home to its absolute best.",
+    includes: ["Inside appliances & cabinets", "Baseboards & window sills", "Behind & under furniture", "Full bathroom deep scrub", "Ceiling fans & light fixtures", "Detailed kitchen degreasing"],
+    frequency: "One-Time / Seasonal",
+    badge: "Signature Service",
   },
   {
     icon: Home,
     title: "Recurring Diamond Shine",
     tagline: "Keep your home sparkling, always.",
-    desc: "Maintain that just-deep-cleaned feeling all year long. Weekly, bi-weekly, or monthly — customized to your home and schedule.",
-    includes: ["Full kitchen & bathroom clean", "Vacuuming & mopping", "Dusting all surfaces", "Sanitizing high-touch areas", "Custom checklist"],
+    description: "Maintain that just-deep-cleaned feeling all year long. Lidone works around your schedule to keep your home consistently spotless — so you never have to worry about it.",
+    includes: ["Full kitchen & bathroom cleaning", "Vacuuming & mopping all floors", "Dusting all surfaces & décor", "Sanitizing high-touch areas", "Customized checklist for your home"],
+    frequency: "Weekly / Bi-Weekly / Monthly",
+    badge: "Most Popular",
   },
   {
     icon: Star,
-    title: "Move-In / Move-Out",
+    title: "Move-In / Move-Out Clean",
     tagline: "Start fresh. Leave spotless.",
-    desc: "Moving is stressful enough. Let Lydine handle the clean so you can focus on the move. Deposit-back guaranteed.",
-    includes: ["Full property deep clean", "Inside all cabinets & drawers", "All appliances inside & out", "Bathrooms scrubbed & sanitized", "Windows & sills"],
+    description: "Moving is stressful enough. Let Lidone handle the clean so you can focus on the move. We leave every inch of the property sparkling — whether you're arriving or departing.",
+    includes: ["Full property deep clean", "Inside all cabinets & drawers", "All appliances cleaned inside & out", "Bathrooms scrubbed & sanitized", "Windows & window sills"],
+    frequency: "One-Time",
+    badge: null,
   },
   {
-    icon: Wind,
-    title: "Airbnb Turnover",
-    tagline: "Guest-Ready in 90 Minutes.",
-    desc: "Linens restocked, surfaces wiped, photo-ready staging. We make your rental shine between guests — fast.",
-    includes: ["Linen change & restock", "Full clean & sanitize", "Photo-ready staging", "Trash removal"],
+    icon: Gem,
+    title: "Diamond-Level Kitchen Clean",
+    tagline: "The heart of your home, treated like a gem.",
+    description: "A dedicated, intensive kitchen cleaning service. We degrease, sanitize, and polish every surface until your kitchen truly shines. From the stovetop to the backsplash to inside the fridge.",
+    includes: ["Full appliance degreasing & cleaning", "Cabinet fronts & hardware", "Backsplash & countertop polish", "Sink & faucet deep scrub", "Inside refrigerator & oven"],
+    frequency: "One-Time / Add-On",
+    badge: null,
   },
   {
     icon: Shield,
     title: "Post-Construction Clean",
-    tagline: "From Dust to Diamond.",
-    desc: "After renovations or new builds, we remove all construction dust, debris, and residue for a move-in ready finish.",
-    includes: ["Dust & debris removal", "Surface polish", "Floor cleaning", "Window & fixture wipe"],
+    tagline: "Built beautiful. Now let's make it spotless.",
+    description: "Construction and renovation leave behind dust, debris, and residue that requires specialized cleaning. Lidone gets your newly renovated space truly ready to enjoy.",
+    includes: ["Construction dust removal", "Surface & floor deep cleaning", "Window & fixture cleaning", "Debris removal", "Final polish & inspection"],
+    frequency: "One-Time",
+    badge: null,
   },
   {
-    icon: Gem,
+    icon: Zap,
     title: "Special Occasion Shine",
     tagline: "Because your guests deserve diamond clean.",
-    desc: "Hosting a gathering or holiday party? We'll get your home guest-ready before and clean up after.",
-    includes: ["Pre-event deep clean", "Post-event cleanup", "Kitchen & bathroom focus", "Quick turnaround available"],
+    description: "Hosting a gathering, holiday party, or special event? We'll get your home guest-ready before the occasion and clean up after — so you can enjoy every moment without lifting a finger.",
+    includes: ["Pre-event deep clean", "Post-event cleanup", "Kitchen & bathroom focus", "Quick turnaround available", "Customized to your event needs"],
+    frequency: "As Needed",
+    badge: null,
   },
+];
+
+const catchphrases = [
+  { text: "Diamond Shine, Every Time", icon: Gem },
+  { text: "We Don't Just Clean — We Transform", icon: Sparkles },
+  { text: "Your Home Deserves Diamond-Level Care", icon: Star },
+  { text: "Deep Clean. Spotless. Guaranteed.", icon: Shield },
 ];
 
 export default function DiamondGirlPage() {
   return (
-    <div style={{ fontFamily: "'Manrope', sans-serif", backgroundColor: "#FCE4EC" }}>
+    <div className="min-h-screen" style={{ backgroundColor: "oklch(0.97 0.01 255)" }}>
+      <Navbar />
 
-      {/* ── HERO: wine-to-magenta gradient with sparkle dots ── */}
-      <section style={{
-        background: "linear-gradient(135deg, #5C1432 0%, #7A1B42 40%, #C21B6B 100%)",
-        paddingTop: 80,
-        paddingBottom: 64,
-        position: "relative",
-        overflow: "hidden",
-      }}>
-        {/* Sparkle dots */}
-        {[
-          { top: "10%", left: "7%", size: 7, opacity: 0.6 },
-          { top: "28%", right: "5%", size: 11, opacity: 0.45 },
-          { top: "58%", left: "14%", size: 5, opacity: 0.55 },
-          { top: "78%", right: "18%", size: 9, opacity: 0.4 },
-          { top: "42%", left: "44%", size: 4, opacity: 0.5 },
-          { top: "18%", right: "28%", size: 13, opacity: 0.28 },
-          { top: "88%", left: "58%", size: 6, opacity: 0.55 },
-          { top: "52%", right: "7%", size: 5, opacity: 0.65 },
-        ].map((dot, i) => (
-          <div key={i} style={{
-            position: "absolute",
-            top: dot.top,
-            left: (dot as any).left,
-            right: (dot as any).right,
-            width: dot.size,
-            height: dot.size,
-            borderRadius: "50%",
-            background: "#FCE4EC",
-            opacity: dot.opacity,
-            pointerEvents: "none",
-          }} />
-        ))}
-
-        <div className="container" style={{ position: "relative", zIndex: 2 }}>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 40, alignItems: "center" }}>
-            <div>
-              <p style={{ fontFamily: "'Oswald', sans-serif", fontWeight: 400, fontSize: 11, letterSpacing: "0.22em", textTransform: "uppercase", color: "#EC4B99", marginBottom: 14 }}>
-                Home Cleaning · Move-Out · Deep Clean
-              </p>
-              <h1 style={{ fontFamily: "'Anton', sans-serif", fontSize: "clamp(48px, 7vw, 84px)", lineHeight: 0.92, color: "#fff", letterSpacing: "-0.01em", margin: "0 0 8px" }}>
-                EVERY HOME
-              </h1>
-              <p style={{ fontFamily: "'Playfair Display', serif", fontStyle: "italic", fontSize: "clamp(32px, 5vw, 58px)", lineHeight: 1.1, color: "#EC4B99", margin: "0 0 8px" }}>
-                deserves to
-              </p>
-              <h1 style={{ fontFamily: "'Anton', sans-serif", fontSize: "clamp(48px, 7vw, 84px)", lineHeight: 0.92, color: "#fff", letterSpacing: "-0.01em", margin: "0 0 22px" }}>
-                SPARKLE.
-              </h1>
-              <p style={{ color: "rgba(255,255,255,0.82)", fontSize: 15, lineHeight: 1.75, maxWidth: 440, margin: "0 0 28px" }}>
-                Move-in ready cleans, weekly maintenance, and detailed deep-cleans — done by a small team you'll actually recognize. Serving Nassau County from the Tributary community.
-              </p>
-              <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
-                <a href="tel:+18569810930" style={{
-                  display: "inline-flex", alignItems: "center", gap: 8,
-                  background: "#C21B6B", color: "#fff",
-                  padding: "12px 24px", borderRadius: 3,
-                  fontFamily: "'Oswald', sans-serif", fontWeight: 600,
-                  fontSize: 13, letterSpacing: "0.14em", textTransform: "uppercase",
-                  textDecoration: "none",
-                }}>
-                  <Phone size={14} /> Book a Clean
-                </a>
-                <a href="tel:+18569810930" style={{
-                  display: "inline-flex", alignItems: "center", gap: 8,
-                  background: "transparent", color: "#EC4B99",
-                  padding: "12px 24px", borderRadius: 3,
-                  fontFamily: "'Oswald', sans-serif", fontWeight: 600,
-                  fontSize: 13, letterSpacing: "0.14em", textTransform: "uppercase",
-                  textDecoration: "none", border: "1.5px solid #EC4B99",
-                }}>
-                  Get a Quote →
-                </a>
-              </div>
-              <div style={{ display: "flex", gap: 10, flexWrap: "wrap", marginTop: 20 }}>
-                {["Insured", "Nassau County", "Deep Clean Specialists"].map(tag => (
-                  <span key={tag} style={{
-                    background: "rgba(255,255,255,0.12)", color: "rgba(255,255,255,0.85)",
-                    padding: "4px 12px", borderRadius: 20,
-                    fontFamily: "'Oswald', sans-serif", fontSize: 11,
-                    fontWeight: 600, letterSpacing: "0.18em", textTransform: "uppercase",
-                  }}>{tag}</span>
-                ))}
-              </div>
-            </div>
-            <div style={{ display: "flex", justifyContent: "center" }}>
-              <div style={{
-                width: "min(300px, 100%)",
-                height: "min(300px, 100%)",
-                borderRadius: "50%",
-                background: "rgba(252,228,236,0.12)",
-                border: "2px solid rgba(236,75,153,0.35)",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                padding: 20,
-              }}>
-                <img src={DIAMOND_GIRL_LOGO} alt="A Diamond Girl Home Cleaning Service"
-                  style={{ width: "100%", height: "auto", filter: "drop-shadow(0 16px 32px rgba(0,0,0,0.3))" }} />
-              </div>
-            </div>
+      {/* Hero */}
+      <section className="relative pt-28 pb-20 overflow-hidden" style={{ backgroundColor: "oklch(0.28 0.12 340)" }}>
+        <div className="absolute inset-0 opacity-20">
+          <img src={HERO_IMAGE} alt="Home cleaning" className="w-full h-full object-cover" />
+        </div>
+        <div className="absolute inset-0" style={{ background: "linear-gradient(to bottom, oklch(0.28 0.12 340 / 0.92), oklch(0.28 0.12 340 / 0.97))" }} />
+        <div className="container relative z-10 text-center">
+          <img src={DIAMOND_GIRL_LOGO} alt="A Diamond Girl Home Cleaning Service" className="h-28 md:h-36 w-auto object-contain mx-auto mb-6 drop-shadow-2xl" />
+          <h1 className="text-5xl font-bold text-white mb-3" style={{ fontFamily: "'Lora', serif" }}>
+            Diamond-Level Home Cleaning
+          </h1>
+          <p className="text-xl font-semibold mb-4" style={{ color: "oklch(0.85 0.13 80)", fontFamily: "'Lora', serif", fontStyle: "italic" }}>
+            "We Don't Just Clean — We Transform."
+          </p>
+          <p className="text-base max-w-xl mx-auto mb-6" style={{ color: "oklch(0.90 0.04 340)", fontFamily: "'Nunito Sans', sans-serif" }}>
+            Lidone delivers a deep, thorough clean that goes far beyond the surface. Serving Nassau County homeowners and businesses with pride, right from the Tributary community.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-3 justify-center">
+            <a
+              href="tel:+18569810930"
+              className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-md font-bold text-base transition-all duration-200 hover:shadow-xl hover:-translate-y-0.5"
+              style={{ backgroundColor: "oklch(0.75 0.16 75)", color: "oklch(0.18 0.02 255)", fontFamily: "'Nunito Sans', sans-serif" }}
+            >
+              <Phone className="w-4 h-4" />
+              Call or Text Lidone: 856-981-0930
+            </a>
+            <a
+              href="mailto:mpetrutz@yahoo.com"
+              className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-md font-bold text-base transition-all duration-200 hover:-translate-y-0.5"
+              style={{ backgroundColor: "oklch(1 0 0 / 0.12)", color: "white", border: "1px solid oklch(1 0 0 / 0.3)", fontFamily: "'Nunito Sans', sans-serif" }}
+            >
+              <Mail className="w-4 h-4" />
+              mpetrutz@yahoo.com
+            </a>
           </div>
         </div>
       </section>
 
-      {/* ── PINK RIBBON DIVIDER ── */}
-      <div style={{ height: 5, background: "linear-gradient(90deg, #5C1432, #C21B6B, #EC4B99, #C21B6B, #5C1432)" }} />
-
-      {/* ── CATCHPHRASES BAND ── */}
-      <div style={{ background: "#7A1B42", padding: "14px 0" }}>
+      {/* Catchphrases Banner */}
+      <section className="py-8 overflow-hidden" style={{ backgroundColor: "oklch(0.75 0.16 75)" }}>
         <div className="container">
-          <div style={{ display: "flex", flexWrap: "wrap", gap: 24, justifyContent: "center" }}>
-            {["✦ Diamond Shine, Every Time.", "✦ We Don't Just Clean — We Transform.", "✦ Your Home Deserves to Sparkle.", "✦ From Dusty to Dazzling."].map((phrase, i) => (
-              <span key={i} style={{
-                fontFamily: "'Oswald', sans-serif", fontWeight: 600,
-                fontSize: 12, letterSpacing: "0.16em", textTransform: "uppercase",
-                color: i % 2 === 0 ? "#EC4B99" : "#FCE4EC",
-              }}>{phrase}</span>
-            ))}
-          </div>
-        </div>
-      </div>
-
-      {/* ── SERVICES GRID: blush with sparkle dot pattern ── */}
-      <section style={{
-        background: "#FCE4EC",
-        backgroundImage: "radial-gradient(circle, rgba(194,27,107,0.08) 1px, transparent 1px)",
-        backgroundSize: "28px 28px",
-        padding: "80px 0",
-      }}>
-        <div className="container">
-          <div style={{ textAlign: "center", marginBottom: 52 }}>
-            <p style={{ fontFamily: "'Oswald', sans-serif", fontWeight: 400, fontSize: 11, letterSpacing: "0.22em", textTransform: "uppercase", color: "#C21B6B", marginBottom: 12 }}>
-              Full Service Menu · Crew Indoors
-            </p>
-            <h2 style={{ fontFamily: "'Anton', sans-serif", fontSize: "clamp(36px, 5vw, 60px)", color: "#5C1432", margin: 0, lineHeight: 1 }}>
-              THE DIAMOND CLEAN DIFFERENCE
-            </h2>
-            <p style={{ color: "#7A1B42", fontSize: 15, maxWidth: 520, margin: "16px auto 0", lineHeight: 1.7 }}>
-              We specialize in deep, thorough cleaning — not basic tidying. Every visit leaves your home genuinely transformed.
-            </p>
-          </div>
-
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))", gap: 22 }}>
-            {services.map((service) => {
-              const Icon = service.icon;
+          <div className="flex flex-wrap justify-center gap-6 md:gap-10">
+            {catchphrases.map((phrase) => {
+              const Icon = phrase.icon;
               return (
-                <div key={service.title} style={{
-                  background: "#fff",
-                  border: "1px solid rgba(194,27,107,0.15)",
-                  borderRadius: 4,
-                  padding: 24,
-                  display: "flex",
-                  flexDirection: "column",
-                }}>
-                  <div style={{ width: 44, height: 44, borderRadius: 6, background: "#FCE4EC", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 12 }}>
-                    <Icon size={22} style={{ color: "#C21B6B" }} />
-                  </div>
-                  <p style={{ fontFamily: "'Playfair Display', serif", fontStyle: "italic", fontSize: 12, color: "#EC4B99", margin: "0 0 4px" }}>
-                    {service.tagline}
-                  </p>
-                  <h3 style={{ fontFamily: "'Oswald', sans-serif", fontWeight: 700, fontSize: 16, letterSpacing: "0.06em", textTransform: "uppercase", color: "#5C1432", margin: "0 0 8px" }}>
-                    {service.title}
-                  </h3>
-                  <p style={{ color: "#6B3050", fontSize: 13.5, lineHeight: 1.65, margin: "0 0 14px", flex: 1 }}>
-                    {service.desc}
-                  </p>
-                  <ul style={{ listStyle: "none", padding: 0, margin: "0 0 18px", display: "flex", flexDirection: "column", gap: 5 }}>
-                    {service.includes.map(item => (
-                      <li key={item} style={{ display: "flex", alignItems: "center", gap: 7, fontSize: 12.5, color: "#5C1432" }}>
-                        <CheckCircle2 size={13} style={{ color: "#C21B6B", flexShrink: 0 }} />
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                  <a href="tel:+18569810930" style={{
-                    display: "flex", alignItems: "center", justifyContent: "space-between",
-                    background: "#FCE4EC", color: "#C21B6B",
-                    padding: "9px 14px", borderRadius: 3,
-                    fontFamily: "'Oswald', sans-serif", fontWeight: 600,
-                    fontSize: 11, letterSpacing: "0.14em", textTransform: "uppercase",
-                    textDecoration: "none",
-                  }}>
-                    <span>Call Lydine for Pricing</span>
-                    <Phone size={13} />
-                  </a>
+                <div key={phrase.text} className="flex items-center gap-2">
+                  <Icon className="w-4 h-4 flex-shrink-0" style={{ color: "oklch(0.28 0.12 340)" }} />
+                  <span className="text-sm font-bold uppercase tracking-wide" style={{ color: "oklch(0.18 0.02 255)", fontFamily: "'Nunito Sans', sans-serif" }}>
+                    {phrase.text}
+                  </span>
                 </div>
               );
             })}
@@ -254,101 +142,154 @@ export default function DiamondGirlPage() {
         </div>
       </section>
 
-      {/* ── EMPLOYMENT CALLOUT: aqua accent on wine ── */}
-      <section style={{
-        background: "linear-gradient(135deg, #5C1432 0%, #7A1B42 100%)",
-        padding: "60px 0",
-        position: "relative",
-        overflow: "hidden",
-      }}>
-        {[
-          { top: "18%", left: "4%", size: 9 },
-          { top: "72%", right: "7%", size: 13 },
-          { top: "38%", right: "24%", size: 6 },
-          { top: "60%", left: "30%", size: 8 },
-        ].map((dot, i) => (
-          <div key={i} style={{
-            position: "absolute",
-            top: dot.top,
-            left: (dot as any).left,
-            right: (dot as any).right,
-            width: dot.size,
-            height: dot.size,
-            borderRadius: "50%",
-            background: "#7FD7E8",
-            opacity: 0.45,
-            pointerEvents: "none",
-          }} />
-        ))}
-        <div className="container" style={{ position: "relative", zIndex: 2, textAlign: "center" }}>
-          <div style={{
-            display: "inline-flex", alignItems: "center", gap: 8,
-            background: "rgba(127,215,232,0.15)", color: "#7FD7E8",
-            padding: "6px 16px", borderRadius: 20,
-            fontFamily: "'Oswald', sans-serif", fontSize: 11,
-            fontWeight: 600, letterSpacing: "0.2em", textTransform: "uppercase",
-            marginBottom: 20,
-          }}>
-            <Sparkles size={12} /> Now Hiring
+      {/* Services Grid */}
+      <section className="py-20">
+        <div className="container">
+          <div className="text-center mb-12">
+            <span className="inline-block text-xs font-bold uppercase tracking-widest mb-3 px-3 py-1 rounded-full" style={{ backgroundColor: "oklch(0.45 0.15 340 / 0.1)", color: "oklch(0.45 0.15 340)", fontFamily: "'Nunito Sans', sans-serif" }}>
+              Our Services
+            </span>
+            <h2 className="text-4xl font-bold" style={{ color: "oklch(0.18 0.02 255)", fontFamily: "'Lora', serif" }}>
+              The Diamond Clean Difference
+            </h2>
+            <p className="text-base mt-3 max-w-lg mx-auto" style={{ color: "oklch(0.40 0.04 255)", fontFamily: "'Nunito Sans', sans-serif" }}>
+              Every service Lidone offers is built around one standard: diamond-level results. No shortcuts. No skipped corners. Just a spotlessly clean home.
+            </p>
           </div>
-          <h2 style={{ fontFamily: "'Anton', sans-serif", fontSize: "clamp(32px, 5vw, 52px)", color: "#fff", margin: "0 0 14px", lineHeight: 1 }}>
-            JOIN OUR TEAM
-          </h2>
-          <p style={{ color: "rgba(255,255,255,0.78)", fontSize: 15, maxWidth: 480, margin: "0 auto 28px", lineHeight: 1.75 }}>
-            Interested in working with A Diamond Girl Home Cleaning Service? We're always looking for reliable, detail-oriented cleaners who take pride in their work. Reach out to Lydine directly.
-          </p>
-          <a href="mailto:diamondhomeservicesofflorida@gmail.com" style={{
-            display: "inline-flex", alignItems: "center", gap: 8,
-            background: "#C21B6B", color: "#fff",
-            padding: "13px 28px", borderRadius: 3,
-            fontFamily: "'Oswald', sans-serif", fontWeight: 600,
-            fontSize: 14, letterSpacing: "0.14em", textTransform: "uppercase",
-            textDecoration: "none",
-          }}>
-            <Mail size={15} /> Email Lydine to Apply
-          </a>
-          <p style={{ color: "rgba(255,255,255,0.4)", fontSize: 12, marginTop: 12, fontFamily: "'Manrope', sans-serif" }}>
-            diamondhomeservicesofflorida@gmail.com
-          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7">
+            {services.map((service) => {
+              const Icon = service.icon;
+              return (
+                <div
+                  key={service.title}
+                  className="bg-white rounded-2xl shadow-sm border border-border overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 flex flex-col"
+                >
+                  <div className="p-6 flex-1">
+                    <div className="flex items-start justify-between mb-4">
+                      <div className="w-12 h-12 rounded-xl flex items-center justify-center" style={{ backgroundColor: "oklch(0.45 0.15 340 / 0.1)" }}>
+                        <Icon className="w-6 h-6" style={{ color: "oklch(0.45 0.15 340)" }} />
+                      </div>
+                      {service.badge && (
+                        <span
+                          className="text-xs font-bold px-2.5 py-0.5 rounded-full uppercase tracking-wide"
+                          style={{ backgroundColor: "oklch(0.75 0.16 75)", color: "oklch(0.18 0.02 255)", fontFamily: "'Nunito Sans', sans-serif" }}
+                        >
+                          {service.badge}
+                        </span>
+                      )}
+                    </div>
+                    <h3 className="text-xl font-bold mb-1" style={{ color: "oklch(0.18 0.02 255)", fontFamily: "'Lora', serif" }}>{service.title}</h3>
+                    <p className="text-xs font-semibold italic mb-3" style={{ color: "oklch(0.45 0.15 340)", fontFamily: "'Lora', serif" }}>{service.tagline}</p>
+                    <p className="text-sm leading-relaxed mb-4" style={{ color: "oklch(0.45 0.03 255)", fontFamily: "'Nunito Sans', sans-serif" }}>{service.description}</p>
+                    <div className="space-y-2 mb-4">
+                      {service.includes.map((item) => (
+                        <div key={item} className="flex items-center gap-2">
+                          <CheckCircle2 className="w-4 h-4 flex-shrink-0" style={{ color: "oklch(0.45 0.15 340)" }} />
+                          <span className="text-xs font-semibold" style={{ color: "oklch(0.35 0.04 255)", fontFamily: "'Nunito Sans', sans-serif" }}>{item}</span>
+                        </div>
+                      ))}
+                    </div>
+                    <div
+                      className="inline-flex items-center gap-1.5 text-xs font-bold px-2.5 py-1 rounded-full"
+                      style={{ backgroundColor: "oklch(0.45 0.15 340 / 0.08)", color: "oklch(0.45 0.15 340)", fontFamily: "'Nunito Sans', sans-serif" }}
+                    >
+                      {service.frequency}
+                    </div>
+                  </div>
+                  <div className="px-6 pb-6">
+                    <a
+                      href="tel:+18569810930"
+                      className="w-full flex items-center justify-center gap-2 py-2.5 rounded-md font-bold text-sm transition-all duration-200 hover:shadow-md"
+                      style={{ backgroundColor: "oklch(0.45 0.15 340)", color: "white", fontFamily: "'Nunito Sans', sans-serif" }}
+                    >
+                      <Phone className="w-4 h-4" />
+                      Call Lidone for a Quote
+                    </a>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
         </div>
       </section>
 
-      {/* ── CONTACT CTA ── */}
-      <section style={{ background: "#fff", padding: "64px 0" }}>
-        <div className="container" style={{ textAlign: "center" }}>
-          <p style={{ fontFamily: "'Oswald', sans-serif", fontWeight: 400, fontSize: 11, letterSpacing: "0.22em", textTransform: "uppercase", color: "#C21B6B", marginBottom: 14 }}>
-            Ready for a Diamond-Clean Home?
-          </p>
-          <h2 style={{ fontFamily: "'Anton', sans-serif", fontSize: "clamp(32px, 5vw, 52px)", color: "#5C1432", margin: "0 0 16px", lineHeight: 1 }}>
-            CALL LYDINE TODAY
-          </h2>
-          <p style={{ color: "#7A1B42", fontSize: 15, maxWidth: 440, margin: "0 auto 28px", lineHeight: 1.7 }}>
-            Free estimates, no pressure. Serving Nassau County from the Tributary community.
-          </p>
-          <div style={{ display: "flex", gap: 12, justifyContent: "center", flexWrap: "wrap" }}>
-            <a href="tel:+18569810930" style={{
-              display: "inline-flex", alignItems: "center", gap: 8,
-              background: "#C21B6B", color: "#fff",
-              padding: "13px 28px", borderRadius: 3,
-              fontFamily: "'Oswald', sans-serif", fontWeight: 600,
-              fontSize: 14, letterSpacing: "0.14em", textTransform: "uppercase",
-              textDecoration: "none",
-            }}>
-              <Phone size={15} /> 856-981-0930
-            </a>
-            <a href="mailto:diamondhomeservicesofflorida@gmail.com" style={{
-              display: "inline-flex", alignItems: "center", gap: 8,
-              background: "transparent", color: "#C21B6B",
-              padding: "13px 28px", borderRadius: 3,
-              fontFamily: "'Oswald', sans-serif", fontWeight: 600,
-              fontSize: 14, letterSpacing: "0.14em", textTransform: "uppercase",
-              textDecoration: "none", border: "1.5px solid #C21B6B",
-            }}>
-              Email Us <ArrowRight size={14} />
-            </a>
+      {/* What We Don't Do Note */}
+      <section className="py-10" style={{ backgroundColor: "oklch(0.93 0.02 255)" }}>
+        <div className="container max-w-2xl text-center">
+          <div className="bg-white rounded-2xl p-7 shadow-sm border border-border">
+            <Gem className="w-8 h-8 mx-auto mb-3" style={{ color: "oklch(0.45 0.15 340)" }} />
+            <h3 className="text-xl font-bold mb-2" style={{ color: "oklch(0.18 0.02 255)", fontFamily: "'Lora', serif" }}>
+              Specialized Deep Cleaning — Not Household Chores
+            </h3>
+            <p className="text-sm leading-relaxed" style={{ color: "oklch(0.40 0.04 255)", fontFamily: "'Nunito Sans', sans-serif" }}>
+              A Diamond Girl specializes in <strong>professional deep cleaning services</strong> — not basic household tasks like laundry or dishes. Our focus is delivering a thorough, detailed clean that transforms your home from top to bottom. Have questions about what's included? Just call or text Lidone!
+            </p>
           </div>
         </div>
       </section>
+
+      {/* Employment Callout */}
+      <section className="py-16" style={{ backgroundColor: "oklch(0.28 0.12 340)" }}>
+        <div className="container">
+          <div className="max-w-2xl mx-auto text-center">
+            <div className="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-5" style={{ backgroundColor: "oklch(0.75 0.16 75)" }}>
+              <Briefcase className="w-8 h-8" style={{ color: "oklch(0.18 0.02 255)" }} />
+            </div>
+            <span className="inline-block text-xs font-bold uppercase tracking-widest mb-3 px-3 py-1 rounded-full" style={{ backgroundColor: "oklch(0.72 0.15 75 / 0.2)", color: "oklch(0.88 0.12 80)", fontFamily: "'Nunito Sans', sans-serif" }}>
+              Now Hiring
+            </span>
+            <h3 className="text-3xl font-bold text-white mb-3" style={{ fontFamily: "'Lora', serif" }}>
+              Want to Join the Diamond Team?
+            </h3>
+            <p className="text-base mb-6" style={{ color: "oklch(0.88 0.04 340)", fontFamily: "'Nunito Sans', sans-serif" }}>
+              We're always looking for reliable, detail-oriented people who take pride in their work. If you're interested in joining the A Diamond Girl family, reach out to Lidone directly by email.
+            </p>
+            <a
+              href="mailto:lidone@adiamondhomeservices.com"
+              className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-md font-bold text-base transition-all duration-200 hover:shadow-xl hover:-translate-y-0.5"
+              style={{ backgroundColor: "oklch(0.75 0.16 75)", color: "oklch(0.18 0.02 255)", fontFamily: "'Nunito Sans', sans-serif" }}
+            >
+              <Mail className="w-4 h-4" />
+              Email Lidone to Apply
+            </a>
+            <p className="text-xs mt-3" style={{ color: "oklch(0.75 0.05 340)", fontFamily: "'Nunito Sans', sans-serif" }}>
+              Nassau County, FL · Flexible scheduling available
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="py-16" style={{ backgroundColor: "oklch(0.97 0.01 255)" }}>
+        <div className="container text-center">
+          <h2 className="text-4xl font-bold mb-4" style={{ color: "oklch(0.18 0.02 255)", fontFamily: "'Lora', serif" }}>
+            Ready for a Diamond-Level Clean?
+          </h2>
+          <p className="text-lg mb-8 max-w-lg mx-auto" style={{ color: "oklch(0.35 0.04 255)", fontFamily: "'Nunito Sans', sans-serif" }}>
+            Call or text Lidone to schedule your first cleaning. Free estimates always available throughout Nassau County.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-3 justify-center">
+            <a
+              href="tel:+18569810930"
+              className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-md font-bold text-base transition-all duration-200 hover:shadow-lg hover:-translate-y-0.5"
+              style={{ backgroundColor: "oklch(0.45 0.15 340)", color: "white", fontFamily: "'Nunito Sans', sans-serif" }}
+            >
+              <Phone className="w-4 h-4" />
+              Call or Text: 856-981-0930
+            </a>
+            <Link
+              href="/testimonials"
+              className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-md font-bold text-base transition-all duration-200 hover:-translate-y-0.5"
+              style={{ backgroundColor: "white", color: "oklch(0.45 0.15 340)", border: "1px solid oklch(0.45 0.15 340)", fontFamily: "'Nunito Sans', sans-serif" }}
+            >
+              See What Customers Say <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <Footer />
     </div>
   );
 }
