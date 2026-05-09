@@ -1,179 +1,204 @@
-/* ============================================================
-   Diamond Cutz Page — Lawn & Landscaping
-   Phone: 856-371-3971 | Owner: Mike Petrutz
-   Service area: Yulee, Amelia Island & surrounding areas
-   ============================================================ */
+/* ================================================================
+   Diamond Cutz — Lawn & Landscaping
+   Design System: Cutz palette
+     Green 900 #0E3A1C | Green 700 #185E2C | Green 500 #2E8B10
+     Green 300 #7FB342 | Earth 700 #6B4A28 | Earth 500 #A87A48
+   Patterns: field-stripes (hero), grass-mesh (sections), earth-bands (CTA)
+   Fonts: Anton (display), Oswald (labels/subheads), Manrope (body)
+   ================================================================ */
 
 import { Link } from "wouter";
 import {
-  Scissors, Leaf, Sprout, Droplets, Layers,
-  Flower2, Shovel, Wrench, ArrowRight, CheckCircle2, Phone, Mail
+  Phone, Scissors, Leaf, Sprout, Layers,
+  Droplets, Flower2, Shovel, Wrench, CheckCircle2, ArrowRight
 } from "lucide-react";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
 
 const DIAMOND_CUTZ_LOGO = "/manus-storage/diamond-cutz-logo_7523a9b6.png";
-const HERO_IMAGE = "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=1600&q=80";
 
 const services = [
   {
     icon: Scissors,
-    title: "Lawn Mowing & Edging",
-    description: "Precision cutting at the ideal height for Florida grass varieties, crisp edging along all borders and driveways, trimming around obstacles, and a thorough blow-off of all hard surfaces.",
-    includes: ["Mow, edge, trim & blow", "St. Augustine & Zoysia specialists", "Driveway & sidewalk edging", "Debris cleanup"],
-    frequency: "Weekly or Bi-Weekly",
-    badge: "Most Popular",
-  },
-  {
-    icon: Leaf,
-    title: "Landscape Design & Installation",
-    description: "Transform your outdoor space with a custom Florida-friendly landscape design using native plants, tropical accents, and thoughtful design principles suited to Northeast Florida.",
-    includes: ["Custom design consultation", "Plant selection & sourcing", "Full installation", "Post-install care instructions"],
-    frequency: "One-Time / Seasonal",
-    badge: null,
+    title: "Weekly Mowing",
+    desc: "Edged, blown, bagged or mulched. Consistent cuts every week so your lawn always looks sharp.",
+    includes: ["Mow & edge", "Blow clippings", "Bag or mulch", "Trim borders"],
   },
   {
     icon: Sprout,
-    title: "Fertilization & Weed Control",
-    description: "Seasonal fertilization programs formulated for North Florida's climate and soil conditions, paired with targeted pre- and post-emergent weed control.",
-    includes: ["Soil analysis", "Seasonal fertilization program", "Pre & post-emergent weed control", "Lawn health monitoring"],
-    frequency: "Seasonal Program",
-    badge: null,
+    title: "Mulch & Beds",
+    desc: "Hardwood mulch, dyed black or brown. Bed edging and fresh mulch installation per yard.",
+    includes: ["Bed edging", "Weed removal", "Mulch install", "Clean borders"],
+  },
+  {
+    icon: Flower2,
+    title: "Hedge & Trim",
+    desc: "Quarterly shaping for shrubs and ornamentals. Keeps your landscaping looking intentional.",
+    includes: ["Shrub shaping", "Ornamental trim", "Debris removal", "Clean finish"],
+  },
+  {
+    icon: Leaf,
+    title: "Leaf Cleanup",
+    desc: "Fall and spring full-property clears. We haul everything away and leave it spotless.",
+    includes: ["Full property clear", "Haul away", "Bed cleanup", "Gutter clear"],
+  },
+  {
+    icon: Wrench,
+    title: "Seasonal Cleanup",
+    desc: "Pre-season and post-season property prep. Fertilization, aeration, and overseed packages.",
+    includes: ["Fertilization", "Aeration", "Overseed", "Seasonal prep"],
   },
   {
     icon: Layers,
-    title: "Sod Installation",
-    description: "Get the lush, instant lawn you deserve with professional sod installation. We source premium St. Augustine, Zoysia, and Bahia sod and handle everything from ground prep to final installation.",
-    includes: ["Site preparation & grading", "Premium sod sourcing", "Professional installation", "Watering & care instructions"],
-    frequency: "One-Time",
-    badge: null,
+    title: "Landscape Design",
+    desc: "Full landscape design and installation. From concept to curb appeal — we build it right.",
+    includes: ["Design consult", "Plant selection", "Installation", "Irrigation check"],
   },
   {
     icon: Droplets,
     title: "Irrigation Services",
-    description: "Proper watering is essential in Florida's climate. We install, repair, and adjust irrigation systems to ensure efficient, even coverage without waste.",
-    includes: ["System installation & repair", "Head adjustment & replacement", "Timer programming", "Leak detection"],
-    frequency: "As Needed",
-    badge: null,
-  },
-  {
-    icon: Flower2,
-    title: "Shrub & Hedge Trimming",
-    description: "Keep your shrubs, hedges, and ornamental plants looking sharp and healthy with professional trimming and shaping tailored to each plant's natural growth pattern.",
-    includes: ["Precise shaping & trimming", "Overgrowth removal", "Plant health assessment", "Debris cleanup"],
-    frequency: "Monthly / Seasonal",
-    badge: null,
+    desc: "Install, repair, and adjust irrigation systems for efficient, even coverage without waste.",
+    includes: ["System install", "Head adjustment", "Timer programming", "Leak detection"],
   },
   {
     icon: Shovel,
-    title: "Mulching & Bed Care",
-    description: "Fresh mulch transforms the look of your landscape while protecting plant roots and suppressing weeds. We refresh beds, define borders, and keep everything looking polished.",
-    includes: ["Bed edging & definition", "Old mulch removal", "Fresh mulch installation", "Weed barrier placement"],
-    frequency: "Seasonal",
-    badge: null,
-  },
-  {
-    icon: Wrench,
-    title: "Seasonal Clean-Up",
-    description: "After storm season or heading into spring, a thorough clean-up makes all the difference. We remove debris, trim back overgrowth, and get your yard ready for the season ahead.",
-    includes: ["Debris & leaf removal", "Storm damage cleanup", "Overgrowth trimming", "Haul-away available"],
-    frequency: "Seasonal",
-    badge: null,
+    title: "Sod Installation",
+    desc: "Fresh sod laid and watered in. We prep the ground, lay the sod, and walk you through care.",
+    includes: ["Ground prep", "Sod layout", "Initial water", "Care instructions"],
   },
 ];
 
 export default function DiamondCutzPage() {
   return (
-    <div className="min-h-screen" style={{ backgroundColor: "oklch(0.97 0.01 255)" }}>
-      <Navbar />
+    <div style={{ fontFamily: "'Manrope', sans-serif", backgroundColor: "#F5F3EE" }}>
 
-      {/* Hero */}
-      <section className="relative pt-28 pb-20 overflow-hidden" style={{ backgroundColor: "oklch(0.22 0.10 145)" }}>
-        <div className="absolute inset-0 opacity-25">
-          <img src={HERO_IMAGE} alt="Lawn care" className="w-full h-full object-cover" />
-        </div>
-        <div className="absolute inset-0" style={{ background: "linear-gradient(to bottom, oklch(0.22 0.10 145 / 0.92), oklch(0.22 0.10 145 / 0.97))" }} />
-        <div className="container relative z-10 text-center">
-          <img src={DIAMOND_CUTZ_LOGO} alt="Diamond Cutz" className="h-28 md:h-36 w-auto object-contain mx-auto mb-6 drop-shadow-2xl" />
-          <h1 className="text-5xl font-bold text-white mb-4" style={{ fontFamily: "'Lora', serif" }}>
-            Lawn & Landscaping Services
-          </h1>
-          <p className="text-lg max-w-xl mx-auto mb-6" style={{ color: "oklch(0.85 0.03 255)", fontFamily: "'Nunito Sans', sans-serif" }}>
-            Professional outdoor services for homeowners and businesses throughout Yulee, Amelia Island, and surrounding Northeast Florida communities.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            <a
-              href="tel:+18563713971"
-              className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-md font-bold text-base transition-all duration-200 hover:shadow-xl hover:-translate-y-0.5"
-              style={{ backgroundColor: "oklch(0.75 0.16 75)", color: "oklch(0.18 0.02 255)", fontFamily: "'Nunito Sans', sans-serif" }}
-            >
-              <Phone className="w-4 h-4" />
-              Call or Text: 856-371-3971
-            </a>
-            <a
-              href="mailto:mpetrutz@yahoo.com"
-              className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-md font-bold text-base transition-all duration-200 hover:-translate-y-0.5"
-              style={{ backgroundColor: "oklch(1 0 0 / 0.12)", color: "white", border: "1px solid oklch(1 0 0 / 0.3)", fontFamily: "'Nunito Sans', sans-serif" }}
-            >
-              <Mail className="w-4 h-4" />
-              mpetrutz@yahoo.com
-            </a>
+      {/* ── HERO: field-stripes pattern ── */}
+      <section style={{
+        background: "repeating-linear-gradient(160deg, #0E3A1C 0px, #0E3A1C 40px, #185E2C 40px, #185E2C 80px)",
+        paddingTop: 80,
+        paddingBottom: 64,
+        position: "relative",
+        overflow: "hidden",
+      }}>
+        {/* Subtle vignette overlay */}
+        <div style={{ position: "absolute", inset: 0, background: "radial-gradient(ellipse at 50% 50%, transparent 40%, rgba(0,0,0,0.35) 100%)", pointerEvents: "none" }} />
+        <div className="container" style={{ position: "relative", zIndex: 2 }}>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 40, alignItems: "center" }}>
+            <div>
+              <p style={{ fontFamily: "'Oswald', sans-serif", fontWeight: 400, fontSize: 11, letterSpacing: "0.22em", textTransform: "uppercase", color: "#7FB342", marginBottom: 14 }}>
+                Lawn · Landscaping · Nassau County
+              </p>
+              <h1 style={{ fontFamily: "'Anton', sans-serif", fontSize: "clamp(52px, 8vw, 88px)", lineHeight: 0.92, color: "#fff", letterSpacing: "-0.01em", margin: "0 0 20px" }}>
+                SHARPER<br />
+                <span style={{ fontFamily: "'Playfair Display', serif", fontStyle: "italic", fontSize: "0.72em", color: "#7FB342" }}>cuts,</span><br />
+                BIGGER YARDS.
+              </h1>
+              <p style={{ color: "rgba(255,255,255,0.80)", fontSize: 15, lineHeight: 1.75, maxWidth: 460, margin: "0 0 28px" }}>
+                Weekly mows, full-service landscaping, and seasonal lawn care plans across Nassau County. Mike and his crew deliver diamond-standard results every visit.
+              </p>
+              <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
+                <a href="tel:+18563713971" style={{
+                  display: "inline-flex", alignItems: "center", gap: 8,
+                  background: "#2E8B10", color: "#fff",
+                  padding: "12px 24px", borderRadius: 3,
+                  fontFamily: "'Oswald', sans-serif", fontWeight: 600,
+                  fontSize: 13, letterSpacing: "0.14em", textTransform: "uppercase",
+                  textDecoration: "none", transition: "background 0.2s",
+                }}>
+                  <Phone size={15} /> Book Mowing
+                </a>
+                <a href="tel:+18563713971" style={{
+                  display: "inline-flex", alignItems: "center", gap: 8,
+                  background: "transparent", color: "#7FB342",
+                  padding: "12px 24px", borderRadius: 3,
+                  fontFamily: "'Oswald', sans-serif", fontWeight: 600,
+                  fontSize: 13, letterSpacing: "0.14em", textTransform: "uppercase",
+                  textDecoration: "none", border: "1.5px solid #7FB342",
+                }}>
+                  Get an Estimate →
+                </a>
+              </div>
+              <div style={{ display: "flex", gap: 10, flexWrap: "wrap", marginTop: 20 }}>
+                {["Licensed", "Insured", "Nassau County"].map(tag => (
+                  <span key={tag} style={{
+                    background: "rgba(255,255,255,0.12)", color: "rgba(255,255,255,0.85)",
+                    padding: "4px 12px", borderRadius: 20,
+                    fontFamily: "'Oswald', sans-serif", fontSize: 11,
+                    fontWeight: 600, letterSpacing: "0.18em", textTransform: "uppercase",
+                  }}>{tag}</span>
+                ))}
+              </div>
+            </div>
+            <div style={{ display: "flex", justifyContent: "center" }}>
+              <img src={DIAMOND_CUTZ_LOGO} alt="Diamond Cutz Lawn and Landscaping"
+                style={{ width: "min(300px, 100%)", height: "auto", filter: "drop-shadow(0 20px 40px rgba(0,0,0,0.5))" }} />
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Services Grid */}
-      <section className="py-20">
+      {/* ── GREEN RIBBON DIVIDER ── */}
+      <div style={{ height: 5, background: "linear-gradient(90deg, #0E3A1C, #2E8B10, #7FB342, #2E8B10, #0E3A1C)" }} />
+
+      {/* ── SERVICES GRID: chalk/cream background ── */}
+      <section style={{
+        background: "#F5F3EE",
+        backgroundImage: "linear-gradient(rgba(14,58,28,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(14,58,28,0.04) 1px, transparent 1px)",
+        backgroundSize: "32px 32px",
+        padding: "80px 0",
+      }}>
         <div className="container">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7">
+          <div style={{ textAlign: "center", marginBottom: 52 }}>
+            <p style={{ fontFamily: "'Oswald', sans-serif", fontWeight: 400, fontSize: 11, letterSpacing: "0.22em", textTransform: "uppercase", color: "#2E8B10", marginBottom: 12 }}>
+              Full Service Menu · Crew Outdoors
+            </p>
+            <h2 style={{ fontFamily: "'Anton', sans-serif", fontSize: "clamp(36px, 5vw, 60px)", color: "#081838", margin: 0, lineHeight: 1 }}>
+              EVERYTHING WE DO
+            </h2>
+            <p style={{ color: "#5A6070", fontSize: 15, maxWidth: 500, margin: "16px auto 0", lineHeight: 1.7 }}>
+              One number, one crew. Bundle lawn care with cleaning and save 10% off the smaller invoice.
+            </p>
+          </div>
+
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))", gap: 22 }}>
             {services.map((service) => {
               const Icon = service.icon;
               return (
-                <div
-                  key={service.title}
-                  className="bg-white rounded-2xl shadow-sm border border-border overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 flex flex-col"
-                >
-                  <div className="p-6 flex-1">
-                    <div className="flex items-start justify-between mb-4">
-                      <div className="w-12 h-12 rounded-xl flex items-center justify-center" style={{ backgroundColor: "oklch(0.35 0.10 145 / 0.1)" }}>
-                        <Icon className="w-6 h-6" style={{ color: "oklch(0.45 0.14 145)" }} />
-                      </div>
-                      {service.badge && (
-                        <span
-                          className="text-xs font-bold px-2.5 py-0.5 rounded-full uppercase tracking-wide"
-                          style={{ backgroundColor: "oklch(0.75 0.16 75)", color: "oklch(0.18 0.02 255)", fontFamily: "'Nunito Sans', sans-serif" }}
-                        >
-                          {service.badge}
-                        </span>
-                      )}
-                    </div>
-                    <h3 className="text-xl font-bold mb-2" style={{ color: "oklch(0.18 0.02 255)", fontFamily: "'Lora', serif" }}>{service.title}</h3>
-                    <p className="text-sm leading-relaxed mb-4" style={{ color: "oklch(0.45 0.03 255)", fontFamily: "'Nunito Sans', sans-serif" }}>{service.description}</p>
-                    <div className="space-y-2 mb-4">
-                      {service.includes.map((item) => (
-                        <div key={item} className="flex items-center gap-2">
-                          <CheckCircle2 className="w-4 h-4 flex-shrink-0" style={{ color: "oklch(0.45 0.14 145)" }} />
-                          <span className="text-xs font-semibold" style={{ color: "oklch(0.35 0.04 255)", fontFamily: "'Nunito Sans', sans-serif" }}>{item}</span>
-                        </div>
-                      ))}
-                    </div>
-                    <div
-                      className="inline-flex items-center gap-1.5 text-xs font-bold px-2.5 py-1 rounded-full"
-                      style={{ backgroundColor: "oklch(0.35 0.10 145 / 0.08)", color: "oklch(0.45 0.14 145)", fontFamily: "'Nunito Sans', sans-serif" }}
-                    >
-                      {service.frequency}
-                    </div>
+                <div key={service.title} style={{
+                  background: "#fff",
+                  border: "1px solid rgba(14,58,28,0.1)",
+                  borderRadius: 4,
+                  padding: 24,
+                  display: "flex",
+                  flexDirection: "column",
+                  transition: "box-shadow 0.2s, transform 0.2s",
+                }}>
+                  <div style={{ width: 44, height: 44, borderRadius: 6, background: "#F0F7EC", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 14 }}>
+                    <Icon size={22} style={{ color: "#185E2C" }} />
                   </div>
-                  <div className="px-6 pb-6">
-                    <a
-                      href="tel:+18563713971"
-                      className="w-full flex items-center justify-center gap-2 py-2.5 rounded-md font-bold text-sm transition-all duration-200 hover:shadow-md"
-                      style={{ backgroundColor: "oklch(0.45 0.14 145)", color: "white", fontFamily: "'Nunito Sans', sans-serif" }}
-                    >
-                      <Phone className="w-4 h-4" />
-                      Call for a Quote
-                    </a>
-                  </div>
+                  <h3 style={{ fontFamily: "'Oswald', sans-serif", fontWeight: 700, fontSize: 17, letterSpacing: "0.06em", textTransform: "uppercase", color: "#0E3A1C", margin: "0 0 8px" }}>
+                    {service.title}
+                  </h3>
+                  <p style={{ color: "#5A6070", fontSize: 13.5, lineHeight: 1.65, margin: "0 0 14px", flex: 1 }}>
+                    {service.desc}
+                  </p>
+                  <ul style={{ listStyle: "none", padding: 0, margin: "0 0 18px", display: "flex", flexDirection: "column", gap: 5 }}>
+                    {service.includes.map(item => (
+                      <li key={item} style={{ display: "flex", alignItems: "center", gap: 7, fontSize: 12.5, color: "#3A4A3A" }}>
+                        <CheckCircle2 size={13} style={{ color: "#2E8B10", flexShrink: 0 }} />
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                  <a href="tel:+18563713971" style={{
+                    display: "flex", alignItems: "center", justifyContent: "space-between",
+                    background: "#F0F7EC", color: "#185E2C",
+                    padding: "9px 14px", borderRadius: 3,
+                    fontFamily: "'Oswald', sans-serif", fontWeight: 600,
+                    fontSize: 11, letterSpacing: "0.14em", textTransform: "uppercase",
+                    textDecoration: "none",
+                  }}>
+                    <span>Call for Pricing</span>
+                    <Phone size={13} />
+                  </a>
                 </div>
               );
             })}
@@ -181,36 +206,45 @@ export default function DiamondCutzPage() {
         </div>
       </section>
 
-      {/* Business CTA */}
-      <section className="py-16" style={{ backgroundColor: "oklch(0.93 0.02 255)" }}>
-        <div className="container text-center">
-          <h2 className="text-4xl font-bold mb-4" style={{ color: "oklch(0.18 0.02 255)", fontFamily: "'Lora', serif" }}>
-            Not Sure What You Need?
-          </h2>
-          <p className="text-lg mb-8 max-w-lg mx-auto" style={{ color: "oklch(0.35 0.04 255)", fontFamily: "'Nunito Sans', sans-serif" }}>
-            Call or text us for a free estimate. We'll assess your property and recommend the best services for your budget and goals.
+      {/* ── EARTH BANDS CTA ── */}
+      <section style={{
+        background: "repeating-linear-gradient(135deg, #6B4A28 0px, #6B4A28 30px, #5A3D20 30px, #5A3D20 60px)",
+        padding: "64px 0",
+      }}>
+        <div className="container" style={{ textAlign: "center" }}>
+          <p style={{ fontFamily: "'Oswald', sans-serif", fontWeight: 400, fontSize: 11, letterSpacing: "0.22em", textTransform: "uppercase", color: "#A87A48", marginBottom: 14 }}>
+            Ready to Get Started?
           </p>
-          <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            <a
-              href="tel:+18563713971"
-              className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-md font-bold text-base transition-all duration-200 hover:shadow-lg hover:-translate-y-0.5"
-              style={{ backgroundColor: "oklch(0.45 0.14 145)", color: "white", fontFamily: "'Nunito Sans', sans-serif" }}
-            >
-              <Phone className="w-4 h-4" />
-              Call or Text: 856-371-3971
+          <h2 style={{ fontFamily: "'Anton', sans-serif", fontSize: "clamp(36px, 5vw, 60px)", color: "#fff", margin: "0 0 16px", lineHeight: 1 }}>
+            CALL MIKE TODAY
+          </h2>
+          <p style={{ color: "rgba(255,255,255,0.75)", fontSize: 15, maxWidth: 460, margin: "0 auto 28px", lineHeight: 1.7 }}>
+            Free estimates, no pressure. We serve the Tributary community and all of Nassau County.
+          </p>
+          <div style={{ display: "flex", gap: 12, justifyContent: "center", flexWrap: "wrap" }}>
+            <a href="tel:+18563713971" style={{
+              display: "inline-flex", alignItems: "center", gap: 8,
+              background: "#2E8B10", color: "#fff",
+              padding: "13px 28px", borderRadius: 3,
+              fontFamily: "'Oswald', sans-serif", fontWeight: 600,
+              fontSize: 14, letterSpacing: "0.14em", textTransform: "uppercase",
+              textDecoration: "none",
+            }}>
+              <Phone size={15} /> 856-371-3971
             </a>
-            <Link
-              href="/about"
-              className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-md font-bold text-base transition-all duration-200 hover:-translate-y-0.5"
-              style={{ backgroundColor: "white", color: "oklch(0.45 0.14 145)", border: "1px solid oklch(0.45 0.14 145)", fontFamily: "'Nunito Sans', sans-serif" }}
-            >
-              Learn About Us <ArrowRight className="w-4 h-4" />
-            </Link>
+            <a href="mailto:diamondhomeservicesofflorida@gmail.com" style={{
+              display: "inline-flex", alignItems: "center", gap: 8,
+              background: "transparent", color: "#A87A48",
+              padding: "13px 28px", borderRadius: 3,
+              fontFamily: "'Oswald', sans-serif", fontWeight: 600,
+              fontSize: 14, letterSpacing: "0.14em", textTransform: "uppercase",
+              textDecoration: "none", border: "1.5px solid #A87A48",
+            }}>
+              Email Us <ArrowRight size={14} />
+            </a>
           </div>
         </div>
       </section>
-
-      <Footer />
     </div>
   );
 }

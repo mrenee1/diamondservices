@@ -1,371 +1,341 @@
-/* ============================================================
-   Home Page — Diamond Home Services LLC
-   Theme: Diamond Standard — Navy + Field Green + Gold + White
-   Hero: full-width image at top, text in navy band below (no overlap)
-   Service area: Nassau County, rooted in the Tributary community
-   Phone: 856-371-3971 (Mike) | 856-981-0930 (Lidone)
-   ============================================================ */
+/* ================================================================
+   Home — Diamond Home Services LLC
+   Design System: Parent palette — Navy + Gold
+   Background patterns: diamond-grid (navy sections), chalk (light sections), gold-ribbon (dividers)
+   Fonts: Anton (display), Oswald (labels/nav), Manrope (body)
+   ================================================================ */
 
-import { useEffect, useRef } from "react";
 import { Link } from "wouter";
-import {
-  Phone, Mail, MapPin, ArrowRight, CheckCircle2,
-  Scissors, Sparkles, Wrench, Star, ChevronRight
-} from "lucide-react";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+import { Phone, Mail, MapPin, Star, Scissors, Sparkles, Wrench, ChevronRight, Shield, Award, Users } from "lucide-react";
 
+const HERO_IMAGE = "/manus-storage/DiamondHomeServicesHero_2e0d0f0e.png";
 const DIAMOND_CUTZ_LOGO = "/manus-storage/diamond-cutz-logo_7523a9b6.png";
-const DIAMOND_GIRL_LOGO = "/manus-storage/diamond-girl-logo_26e7435d.png";
-const HERO_IMAGE = "/manus-storage/diamond-home-hero_15ba2efb.png";
-const LAWN_IMAGE = "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=800&q=80";
-const CLEAN_IMAGE = "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=800&q=80";
-
-// Brand colors from hero image
-const NAVY      = "oklch(0.22 0.08 255)";
-const NAVY_DARK = "oklch(0.14 0.06 255)";
-const NAVY_MID  = "oklch(0.28 0.08 255)";
-const GREEN     = "oklch(0.45 0.14 145)";
-const GREEN_DK  = "oklch(0.30 0.12 145)";
-const GOLD      = "oklch(0.75 0.16 75)";
-const GOLD_LT   = "oklch(0.85 0.13 80)";
-const WHITE     = "oklch(1 0 0)";
-const OFFWHITE  = "oklch(0.97 0.01 255)";
-const CHARCOAL  = "oklch(0.18 0.02 255)";
-
-function useFadeUp() {
-  const ref = useRef<HTMLDivElement>(null);
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    const obs = new IntersectionObserver(
-      ([entry]) => { if (entry.isIntersecting) { el.style.opacity = "1"; el.style.transform = "translateY(0)"; } },
-      { threshold: 0.12 }
-    );
-    el.style.opacity = "0";
-    el.style.transform = "translateY(28px)";
-    el.style.transition = "opacity 0.6s ease, transform 0.6s ease";
-    obs.observe(el);
-    return () => obs.disconnect();
-  }, []);
-  return ref;
-}
-
-const services = [
-  {
-    icon: Scissors,
-    title: "Diamond Cutz",
-    subtitle: "Lawn & Landscaping",
-    description: "Professional lawn mowing, edging, landscape design, fertilization, sod installation, and more. Mike keeps your outdoor spaces looking resort-ready year-round throughout Nassau County.",
-    href: "/diamond-cutz",
-    logo: DIAMOND_CUTZ_LOGO,
-    phone: "856-371-3971",
-    phoneHref: "tel:+18563713971",
-    image: LAWN_IMAGE,
-    accent: GREEN,
-    accentDark: GREEN_DK,
-  },
-  {
-    icon: Sparkles,
-    title: "A Diamond Girl",
-    subtitle: "Home Cleaning Service",
-    description: "Lidone delivers a diamond-level deep clean every time. From top-to-bottom deep cleans to move-in/move-out services — she makes every home shine like new.",
-    href: "/diamond-girl",
-    logo: DIAMOND_GIRL_LOGO,
-    phone: "856-981-0930",
-    phoneHref: "tel:+18569810930",
-    image: CLEAN_IMAGE,
-    accent: "oklch(0.45 0.15 340)",
-    accentDark: "oklch(0.30 0.12 340)",
-  },
-];
+const DIAMOND_GIRL_LOGO = "/manus-storage/diamond-girl-logo-clean_fcc55d40.png";
 
 export default function Home() {
-  const s1 = useFadeUp();
-  const s2 = useFadeUp();
-  const s3 = useFadeUp();
-  const s4 = useFadeUp();
-  const s5 = useFadeUp();
-
   return (
-    <div className="min-h-screen" style={{ backgroundColor: OFFWHITE }}>
-      <Navbar />
+    <div style={{ fontFamily: "'Manrope', sans-serif", backgroundColor: "#F5F3EE" }}>
 
-      {/* ── HERO IMAGE — full width, no text overlay ── */}
-      <section className="w-full pt-16" style={{ backgroundColor: NAVY_DARK }}>
-        <img
-          src={HERO_IMAGE}
-          alt="Diamond Home Services LLC — Lawn & Landscaping and Home Cleaning"
-          className="w-full block"
-          style={{ maxHeight: "640px", objectFit: "cover", objectPosition: "center top" }}
-        />
+      {/* ── HERO: Full-width image, no text overlay ── */}
+      <section style={{ paddingTop: 67 }}>
+        <div style={{ position: "relative", width: "100%", lineHeight: 0 }}>
+          <img
+            src={HERO_IMAGE}
+            alt="Diamond Home Services LLC — Nassau County, FL"
+            style={{ width: "100%", height: "auto", display: "block", maxHeight: 620, objectFit: "cover", objectPosition: "center top" }}
+          />
+        </div>
       </section>
 
-      {/* ── HERO TEXT BAND — navy bar below image ── */}
-      <section style={{ backgroundColor: NAVY }}>
-        <div className="container py-10">
-          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
-            <div>
-              <div
-                className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest mb-3 px-3 py-1 rounded-full"
-                style={{ backgroundColor: `${GOLD}22`, color: GOLD_LT, border: `1px solid ${GOLD}44`, fontFamily: "'Nunito Sans', sans-serif" }}
-              >
-                <MapPin className="w-3.5 h-3.5" />
-                Nassau County · Rooted in the Tributary Community
-              </div>
-              <h1
-                className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-3"
-                style={{ color: WHITE, fontFamily: "'Lora', serif" }}
-              >
-                Diamond{" "}
-                <span style={{ color: GOLD }}>Home</span>{" "}
-                Services LLC
-              </h1>
-              <p
-                className="text-base md:text-lg max-w-xl"
-                style={{ color: "oklch(0.82 0.03 255)", fontFamily: "'Nunito Sans', sans-serif" }}
-              >
-                Your trusted family-owned home services team. From a perfectly manicured lawn to a spotlessly clean home — Mike and Lidone handle it all with pride, right here in Nassau County, Florida.
-              </p>
+      {/* ── HERO BAND: Text + CTAs below image ── */}
+      <section className="pattern-diamond-grid" style={{ padding: "48px 0" }}>
+        <div className="container">
+          <div style={{ display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center", gap: 20 }}>
+            <div className="section-eyebrow" style={{ color: "#C8A24A" }}>
+              Nassau County · Rooted in Tributary · Licensed &amp; Insured
             </div>
-            <div className="flex flex-col gap-3 flex-shrink-0">
-              <Link
-                href="/diamond-cutz"
-                className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-md font-bold text-base transition-all duration-200 hover:shadow-xl hover:-translate-y-0.5 whitespace-nowrap"
-                style={{ backgroundColor: GREEN, color: WHITE, fontFamily: "'Nunito Sans', sans-serif" }}
-              >
-                Lawn & Landscaping
-                <ArrowRight className="w-4 h-4" />
+            <h1 style={{ fontFamily: "'Anton', sans-serif", fontSize: "clamp(48px, 8vw, 96px)", lineHeight: 0.93, color: "#fff", letterSpacing: "-0.01em", margin: 0 }}>
+              BUILT FOR THE{" "}
+              <span style={{ background: "linear-gradient(180deg, #fff 0%, #C8A24A 50%, #8B7228 51%, #C8A24A 100%)", WebkitBackgroundClip: "text", backgroundClip: "text", WebkitTextFillColor: "transparent" }}>
+                BIG LEAGUES.
+              </span>
+            </h1>
+            <p style={{ color: "rgba(255,255,255,0.80)", fontSize: 18, lineHeight: 1.6, maxWidth: 600, margin: 0 }}>
+              Two specialist crews, one trusted name. <strong style={{ color: "#C8A24A" }}>Diamond Cutz</strong> keeps your yard sharp.{" "}
+              <strong style={{ color: "#EC4B99" }}>A Diamond Girl</strong> makes your home shine. Call either — or both.
+            </p>
+            <div style={{ display: "flex", gap: 12, flexWrap: "wrap", justifyContent: "center", marginTop: 8 }}>
+              <a href="tel:+18563713971" className="btn-parent-primary" style={{ textDecoration: "none" }}>
+                Get a Free Quote
+              </a>
+              <Link href="/diamond-cutz" className="btn-parent-outline" style={{ textDecoration: "none" }}>
+                See Our Services →
               </Link>
-              <Link
-                href="/diamond-girl"
-                className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-md font-bold text-base transition-all duration-200 hover:-translate-y-0.5 whitespace-nowrap"
-                style={{ backgroundColor: GOLD, color: CHARCOAL, fontFamily: "'Nunito Sans', sans-serif" }}
-              >
-                Home Cleaning
-                <ArrowRight className="w-4 h-4" />
-              </Link>
+            </div>
+            <div style={{ display: "flex", gap: 16, flexWrap: "wrap", justifyContent: "center", marginTop: 4 }}>
+              <span className="tag-insured">Licensed</span>
+              <span className="tag-insured">Insured</span>
+              <span className="tag-featured">Nassau County</span>
+              <span className="tag-insured">Family-Owned</span>
             </div>
           </div>
+        </div>
+      </section>
 
-          {/* Trust badges */}
-          <div className="flex flex-wrap gap-6 mt-6 pt-6" style={{ borderTop: `1px solid oklch(1 0 0 / 0.12)` }}>
-            {["Licensed & Insured", "Free Estimates", "Family Owned", "Satisfaction Guaranteed"].map((b) => (
-              <div key={b} className="flex items-center gap-1.5">
-                <CheckCircle2 className="w-4 h-4" style={{ color: GOLD }} />
-                <span className="text-sm font-semibold" style={{ color: "oklch(0.88 0.02 255)", fontFamily: "'Nunito Sans', sans-serif" }}>{b}</span>
+      {/* ── GOLD RIBBON DIVIDER ── */}
+      <div style={{ height: 6, background: "linear-gradient(90deg, #8B7228, #C8A24A, #EBD08A, #C8A24A, #8B7228)" }} />
+
+      {/* ── STATS BAR ── */}
+      <section style={{ backgroundColor: "#0F2244", padding: "28px 0" }}>
+        <div className="container">
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(140px, 1fr))", gap: 24, textAlign: "center" }}>
+            {[
+              { value: "500+", label: "Homes Served" },
+              { value: "2", label: "Specialist Crews" },
+              { value: "5★", label: "Avg. Rating" },
+              { value: "Nassau", label: "County, FL" },
+            ].map((stat) => (
+              <div key={stat.label}>
+                <div style={{ fontFamily: "'Anton', sans-serif", fontSize: 36, color: "#C8A24A", lineHeight: 1 }}>{stat.value}</div>
+                <div className="section-eyebrow" style={{ color: "rgba(255,255,255,0.60)", marginTop: 6 }}>{stat.label}</div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ── OUR SERVICES ── */}
-      <section className="py-20" style={{ backgroundColor: OFFWHITE }}>
+      {/* ── GOLD RIBBON DIVIDER ── */}
+      <div style={{ height: 6, background: "linear-gradient(90deg, #8B7228, #C8A24A, #EBD08A, #C8A24A, #8B7228)" }} />
+
+      {/* ── TWO CREW CARDS ── */}
+      <section className="pattern-chalk" style={{ padding: "80px 0" }}>
         <div className="container">
-          <div ref={s1} className="text-center mb-14">
-            <span
-              className="inline-block text-xs font-bold uppercase tracking-widest mb-3 px-3 py-1 rounded-full"
-              style={{ backgroundColor: `${GREEN}18`, color: GREEN, fontFamily: "'Nunito Sans', sans-serif" }}
-            >
-              What We Do
-            </span>
-            <h2 className="text-4xl md:text-5xl font-bold" style={{ color: CHARCOAL, fontFamily: "'Lora', serif" }}>
-              Two Businesses, One Family
+          <div style={{ textAlign: "center", marginBottom: 52 }}>
+            <div className="section-eyebrow" style={{ color: "#C8A24A", marginBottom: 12 }}>Our Two Crews</div>
+            <h2 style={{ fontFamily: "'Anton', sans-serif", fontSize: "clamp(36px, 5vw, 60px)", color: "#081838", margin: 0, lineHeight: 1 }}>
+              ONE CALL. TWO SPECIALISTS.
             </h2>
-            <p className="text-base mt-3 max-w-xl mx-auto" style={{ color: "oklch(0.40 0.04 255)", fontFamily: "'Nunito Sans', sans-serif" }}>
-              Mike handles the outdoors. Lidone handles the indoors. Together, they've built something special for the Nassau County community.
-            </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {services.map((svc, i) => {
-              const Icon = svc.icon;
-              return (
-                <div
-                  key={svc.title}
-                  ref={i === 0 ? s2 : s3}
-                  className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 flex flex-col"
-                  style={{ border: `1px solid oklch(0.88 0.02 255)` }}
-                >
-                  <div className="relative h-52 overflow-hidden">
-                    <img src={svc.image} alt={svc.title} className="w-full h-full object-cover" />
-                    <div className="absolute inset-0" style={{ background: `linear-gradient(to top, ${svc.accentDark} 0%, transparent 60%)` }} />
-                    <div className="absolute bottom-4 left-5">
-                      <img src={svc.logo} alt={svc.title} className="h-16 w-auto object-contain drop-shadow-lg" />
-                    </div>
-                  </div>
-                  <div className="p-6 flex-1 flex flex-col">
-                    <div className="flex items-center gap-2 mb-2">
-                      <Icon className="w-5 h-5" style={{ color: svc.accent }} />
-                      <span className="text-xs font-bold uppercase tracking-widest" style={{ color: svc.accent, fontFamily: "'Nunito Sans', sans-serif" }}>{svc.subtitle}</span>
-                    </div>
-                    <h3 className="text-2xl font-bold mb-3" style={{ color: CHARCOAL, fontFamily: "'Lora', serif" }}>{svc.title}</h3>
-                    <p className="text-sm leading-relaxed mb-5 flex-1" style={{ color: "oklch(0.40 0.04 255)", fontFamily: "'Nunito Sans', sans-serif" }}>{svc.description}</p>
-                    <div className="flex flex-col sm:flex-row gap-3">
-                      <Link
-                        href={svc.href}
-                        className="flex-1 flex items-center justify-center gap-2 py-2.5 rounded-md font-bold text-sm transition-all duration-200 hover:shadow-md"
-                        style={{ backgroundColor: svc.accent, color: WHITE, fontFamily: "'Nunito Sans', sans-serif" }}
-                      >
-                        Learn More <ChevronRight className="w-4 h-4" />
-                      </Link>
-                      <a
-                        href={svc.phoneHref}
-                        className="flex-1 flex items-center justify-center gap-2 py-2.5 rounded-md font-bold text-sm transition-all duration-200"
-                        style={{ backgroundColor: "oklch(0.93 0.02 255)", color: CHARCOAL, fontFamily: "'Nunito Sans', sans-serif" }}
-                      >
-                        <Phone className="w-4 h-4" /> {svc.phone}
-                      </a>
-                    </div>
-                  </div>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: 32 }}>
+            {/* Diamond Cutz Card */}
+            <div style={{ background: "#fff", borderRadius: 8, overflow: "hidden", boxShadow: "0 4px 24px rgba(0,0,0,0.08)", border: "1px solid #E8E4DC" }}>
+              <div className="pattern-field-stripes" style={{ padding: "32px 28px 24px" }}>
+                <img src={DIAMOND_CUTZ_LOGO} alt="Diamond Cutz" style={{ height: 72, width: "auto", objectFit: "contain", marginBottom: 16 }} />
+                <div className="section-eyebrow" style={{ color: "#7FB342", marginBottom: 8 }}>Crew · Outdoors</div>
+                <h3 style={{ fontFamily: "'Anton', sans-serif", fontSize: 36, color: "#fff", margin: 0, lineHeight: 1 }}>DIAMOND CUTZ</h3>
+                <p style={{ color: "rgba(255,255,255,0.80)", fontSize: 14, marginTop: 10, lineHeight: 1.6 }}>
+                  Lawn mowing, landscaping, mulch &amp; beds, hedge trimming, leaf cleanup, and seasonal lawn care plans.
+                </p>
+              </div>
+              <div style={{ padding: "20px 28px 28px", display: "flex", flexDirection: "column", gap: 12 }}>
+                <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
+                  {["Mowing", "Landscaping", "Mulch & Beds", "Hedge Trim", "Leaf Cleanup"].map(s => (
+                    <span key={s} style={{ background: "#F0F7EC", color: "#185E2C", padding: "3px 10px", borderRadius: 20, fontSize: 12, fontFamily: "'Oswald', sans-serif", letterSpacing: "0.1em" }}>{s}</span>
+                  ))}
                 </div>
-              );
-            })}
+                <div style={{ display: "flex", gap: 10, marginTop: 4 }}>
+                  <Link href="/diamond-cutz" className="btn-cutz-primary" style={{ textDecoration: "none", flex: 1, textAlign: "center" }}>
+                    View Services
+                  </Link>
+                  <a href="tel:+18563713971" style={{ display: "flex", alignItems: "center", gap: 6, color: "#185E2C", fontFamily: "'Oswald', sans-serif", fontWeight: 600, fontSize: 13, letterSpacing: "0.12em", textDecoration: "none", border: "1.5px solid #185E2C", padding: "12px 16px", borderRadius: 4 }}>
+                    <Phone className="w-4 h-4" /> Call Mike
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            {/* A Diamond Girl Card */}
+            <div style={{ background: "#fff", borderRadius: 8, overflow: "hidden", boxShadow: "0 4px 24px rgba(0,0,0,0.08)", border: "1px solid #E8E4DC" }}>
+              <div className="pattern-sparkle" style={{ padding: "32px 28px 24px" }}>
+                <img src={DIAMOND_GIRL_LOGO} alt="A Diamond Girl" style={{ height: 72, width: "auto", objectFit: "contain", marginBottom: 16 }} />
+                <div className="section-eyebrow" style={{ color: "#EC4B99", marginBottom: 8 }}>Crew · Indoors</div>
+                <h3 style={{ fontFamily: "'Anton', sans-serif", fontSize: 36, color: "#5C1432", margin: 0, lineHeight: 1 }}>A DIAMOND GIRL</h3>
+                <p style={{ color: "rgba(92,20,50,0.75)", fontSize: 14, marginTop: 10, lineHeight: 1.6 }}>
+                  Deep cleaning, move-out cleans, window cleaning, and Airbnb turnover — done to diamond standards.
+                </p>
+              </div>
+              <div style={{ padding: "20px 28px 28px", display: "flex", flexDirection: "column", gap: 12 }}>
+                <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
+                  {["Deep Clean", "Move-Out", "Windows", "Airbnb", "Polish"].map(s => (
+                    <span key={s} style={{ background: "#FCE4EC", color: "#7A1B42", padding: "3px 10px", borderRadius: 20, fontSize: 12, fontFamily: "'Oswald', sans-serif", letterSpacing: "0.1em" }}>{s}</span>
+                  ))}
+                </div>
+                <div style={{ display: "flex", gap: 10, marginTop: 4 }}>
+                  <Link href="/diamond-girl" className="btn-girl-primary" style={{ textDecoration: "none", flex: 1, textAlign: "center" }}>
+                    View Services
+                  </Link>
+                  <a href="tel:+18569810930" style={{ display: "flex", alignItems: "center", gap: 6, color: "#7A1B42", fontFamily: "'Oswald', sans-serif", fontWeight: 600, fontSize: 13, letterSpacing: "0.12em", textDecoration: "none", border: "1.5px solid #7A1B42", padding: "12px 16px", borderRadius: 4 }}>
+                    <Phone className="w-4 h-4" /> Call Lydine
+                  </a>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* ── BUSINESS CLIENT CALLOUT ── */}
-      <section className="py-16" style={{ backgroundColor: NAVY }}>
+      {/* ── BUNDLE PROMO RIBBON ── */}
+      <section style={{ backgroundColor: "#C8A24A", padding: "20px 0" }}>
+        <div className="container" style={{ textAlign: "center" }}>
+          <p style={{ fontFamily: "'Oswald', sans-serif", fontWeight: 700, fontSize: 16, letterSpacing: "0.16em", textTransform: "uppercase", color: "#081838", margin: 0 }}>
+            ✦ Bundle a clean with a mow and save 10% off the smaller invoice ✦
+          </p>
+        </div>
+      </section>
+
+      {/* ── BUSINESS CALLOUT ── */}
+      <section style={{ backgroundColor: "#0F2244", padding: "64px 0" }}>
         <div className="container">
-          <div ref={s4} className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
-            <div className="flex-shrink-0 w-16 h-16 rounded-2xl flex items-center justify-center" style={{ backgroundColor: GOLD }}>
-              <Wrench className="w-8 h-8" style={{ color: CHARCOAL }} />
-            </div>
-            <div className="flex-1 text-center md:text-left">
-              <span
-                className="inline-block text-xs font-bold uppercase tracking-widest mb-2 px-3 py-1 rounded-full"
-                style={{ backgroundColor: `${GOLD}22`, color: GOLD_LT, fontFamily: "'Nunito Sans', sans-serif" }}
-              >
-                Commercial Services
-              </span>
-              <h3 className="text-2xl md:text-3xl font-bold text-white mb-2" style={{ fontFamily: "'Lora', serif" }}>
-                We Also Work With Businesses
-              </h3>
-              <p className="text-base" style={{ color: "oklch(0.80 0.03 255)", fontFamily: "'Nunito Sans', sans-serif" }}>
-                Offices, retail spaces, commercial properties, and more throughout Nassau County. Whether it's regular lawn maintenance or recurring cleaning contracts — we'd love to partner with your business. Call or text us for a custom quote.
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 40, alignItems: "center" }}>
+            <div>
+              <div className="section-eyebrow" style={{ color: "#C8A24A", marginBottom: 14 }}>Commercial &amp; Business Services</div>
+              <h2 style={{ fontFamily: "'Anton', sans-serif", fontSize: "clamp(32px, 4vw, 52px)", color: "#fff", margin: "0 0 16px", lineHeight: 1 }}>
+                WE ALSO WORK WITH BUSINESSES
+              </h2>
+              <p style={{ color: "rgba(255,255,255,0.75)", fontSize: 16, lineHeight: 1.7, margin: "0 0 24px" }}>
+                From office parks and retail properties to HOA common areas and commercial landscaping — Diamond Home Services LLC serves businesses across Nassau County. Call or text for a custom quote.
               </p>
+              <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
+                <a href="tel:+18563713971" className="btn-parent-primary" style={{ textDecoration: "none" }}>
+                  Call for a Quote
+                </a>
+                <a href="sms:+18563713971" className="btn-parent-outline" style={{ textDecoration: "none" }}>
+                  Text Us
+                </a>
+              </div>
             </div>
-            <div className="flex-shrink-0 flex flex-col gap-3">
-              <a
-                href="tel:+18563713971"
-                className="flex items-center justify-center gap-2 px-6 py-3 rounded-md font-bold text-sm transition-all duration-200 hover:shadow-lg hover:-translate-y-0.5 whitespace-nowrap"
-                style={{ backgroundColor: GOLD, color: CHARCOAL, fontFamily: "'Nunito Sans', sans-serif" }}
-              >
-                <Phone className="w-4 h-4" />
-                Call or Text for a Quote
-              </a>
-              <a
-                href="mailto:mpetrutz@yahoo.com"
-                className="flex items-center justify-center gap-2 px-6 py-3 rounded-md font-bold text-sm transition-all duration-200 hover:-translate-y-0.5 whitespace-nowrap"
-                style={{ backgroundColor: "oklch(1 0 0 / 0.10)", color: WHITE, border: "1px solid oklch(1 0 0 / 0.25)", fontFamily: "'Nunito Sans', sans-serif" }}
-              >
-                <Mail className="w-4 h-4" />
-                mpetrutz@yahoo.com
-              </a>
+            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16 }}>
+              {[
+                { icon: Shield, title: "Licensed & Insured", desc: "Full coverage for commercial properties" },
+                { icon: Award, title: "Quality Guaranteed", desc: "We stand behind every job we do" },
+                { icon: Users, title: "Reliable Crews", desc: "Same team, consistent results" },
+                { icon: Wrench, title: "Flexible Scheduling", desc: "We work around your business hours" },
+              ].map(({ icon: Icon, title, desc }) => (
+                <div key={title} style={{ background: "rgba(255,255,255,0.06)", borderRadius: 8, padding: "20px 16px", border: "1px solid rgba(200,162,74,0.15)" }}>
+                  <Icon className="w-6 h-6" style={{ color: "#C8A24A", marginBottom: 10 }} />
+                  <div style={{ fontFamily: "'Oswald', sans-serif", fontWeight: 600, fontSize: 13, letterSpacing: "0.1em", textTransform: "uppercase", color: "#fff", marginBottom: 6 }}>{title}</div>
+                  <div style={{ fontSize: 12, color: "rgba(255,255,255,0.55)", lineHeight: 1.5 }}>{desc}</div>
+                </div>
+              ))}
             </div>
           </div>
         </div>
       </section>
 
       {/* ── SERVICE AREA ── */}
-      <section className="py-20" style={{ backgroundColor: "oklch(0.93 0.02 255)" }}>
-        <div className="container">
-          <div ref={s5} className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <span
-                className="inline-block text-xs font-bold uppercase tracking-widest mb-3 px-3 py-1 rounded-full"
-                style={{ backgroundColor: `${GREEN}18`, color: GREEN, fontFamily: "'Nunito Sans', sans-serif" }}
-              >
-                Where We Serve
-              </span>
-              <h2 className="text-4xl font-bold mb-5 leading-tight" style={{ color: CHARCOAL, fontFamily: "'Lora', serif" }}>
-                Proudly Serving Nassau County, Florida
-              </h2>
-              <p className="text-base leading-relaxed mb-6" style={{ color: "oklch(0.35 0.04 255)", fontFamily: "'Nunito Sans', sans-serif" }}>
-                Based right here in the Tributary community of Yulee, Mike and Lidone serve homeowners and businesses throughout Nassau County. If you're not sure whether we cover your area, just give us a call — we're always happy to help.
-              </p>
-              <div className="grid grid-cols-2 gap-3">
-                {["Tributary Community", "Yulee, FL 32097", "Fernandina Beach", "Callahan", "Nassau County", "Surrounding Areas"].map((area) => (
-                  <div key={area} className="flex items-center gap-2">
-                    <MapPin className="w-4 h-4 flex-shrink-0" style={{ color: GREEN }} />
-                    <span className="text-sm font-semibold" style={{ color: "oklch(0.25 0.04 255)", fontFamily: "'Nunito Sans', sans-serif" }}>{area}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-            <div className="bg-white rounded-2xl shadow-lg p-8" style={{ border: `1px solid oklch(0.88 0.02 255)` }}>
-              <h3 className="text-2xl font-bold mb-5" style={{ color: CHARCOAL, fontFamily: "'Lora', serif" }}>Get in Touch</h3>
-              <div className="space-y-5">
-                <div className="flex items-center gap-4">
-                  <div className="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0" style={{ backgroundColor: GREEN }}>
-                    <Phone className="w-5 h-5 text-white" />
-                  </div>
-                  <div>
-                    <p className="text-xs font-bold uppercase tracking-wide mb-0.5" style={{ color: "oklch(0.50 0.04 255)", fontFamily: "'Nunito Sans', sans-serif" }}>Lawn & Landscaping (Mike)</p>
-                    <a href="tel:+18563713971" className="font-bold text-base" style={{ color: CHARCOAL, fontFamily: "'Nunito Sans', sans-serif" }}>856-371-3971</a>
-                  </div>
-                </div>
-                <div className="flex items-center gap-4">
-                  <div className="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0" style={{ backgroundColor: "oklch(0.45 0.15 340)" }}>
-                    <Phone className="w-5 h-5 text-white" />
-                  </div>
-                  <div>
-                    <p className="text-xs font-bold uppercase tracking-wide mb-0.5" style={{ color: "oklch(0.50 0.04 255)", fontFamily: "'Nunito Sans', sans-serif" }}>Home Cleaning (Lidone)</p>
-                    <a href="tel:+18569810930" className="font-bold text-base" style={{ color: CHARCOAL, fontFamily: "'Nunito Sans', sans-serif" }}>856-981-0930</a>
-                  </div>
-                </div>
-                <div className="flex items-center gap-4">
-                  <div className="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0" style={{ backgroundColor: NAVY }}>
-                    <Mail className="w-5 h-5 text-white" />
-                  </div>
-                  <div>
-                    <p className="text-xs font-bold uppercase tracking-wide mb-0.5" style={{ color: "oklch(0.50 0.04 255)", fontFamily: "'Nunito Sans', sans-serif" }}>Email</p>
-                    <a href="mailto:mpetrutz@yahoo.com" className="font-bold text-base" style={{ color: CHARCOAL, fontFamily: "'Nunito Sans', sans-serif" }}>mpetrutz@yahoo.com</a>
-                  </div>
-                </div>
-                <div className="flex items-center gap-4">
-                  <div className="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0" style={{ backgroundColor: NAVY }}>
-                    <MapPin className="w-5 h-5 text-white" />
-                  </div>
-                  <div>
-                    <p className="text-xs font-bold uppercase tracking-wide mb-0.5" style={{ color: "oklch(0.50 0.04 255)", fontFamily: "'Nunito Sans', sans-serif" }}>Service Area</p>
-                    <p className="font-bold text-base" style={{ color: CHARCOAL, fontFamily: "'Nunito Sans', sans-serif" }}>Nassau County, FL<br />Rooted in Tributary, Yulee</p>
-                  </div>
-                </div>
-              </div>
-              <div className="mt-6 pt-5 border-t border-border">
-                <p className="text-xs font-bold uppercase tracking-wide mb-1" style={{ color: "oklch(0.50 0.04 255)", fontFamily: "'Nunito Sans', sans-serif" }}>Hours</p>
-                <p className="text-sm" style={{ color: "oklch(0.35 0.04 255)", fontFamily: "'Nunito Sans', sans-serif" }}>
-                  Mon–Fri: 7:00 AM – 6:00 PM &nbsp;|&nbsp; Sat: 8:00 AM – 4:00 PM &nbsp;|&nbsp; Sun: Closed
-                </p>
-              </div>
-            </div>
+      <section className="pattern-chalk" style={{ padding: "64px 0" }}>
+        <div className="container" style={{ textAlign: "center" }}>
+          <div className="section-eyebrow" style={{ color: "#C8A24A", marginBottom: 12 }}>Where We Work</div>
+          <h2 style={{ fontFamily: "'Anton', sans-serif", fontSize: "clamp(32px, 4vw, 52px)", color: "#081838", margin: "0 0 16px", lineHeight: 1 }}>
+            NASSAU COUNTY, FLORIDA
+          </h2>
+          <p style={{ color: "#5A6070", fontSize: 16, maxWidth: 560, margin: "0 auto 32px", lineHeight: 1.7 }}>
+            Based in the Tributary community in Yulee, FL. We proudly serve our neighbors throughout Nassau County and surrounding areas.
+          </p>
+          <div style={{ display: "flex", gap: 12, flexWrap: "wrap", justifyContent: "center" }}>
+            {["Tributary", "Yulee", "Fernandina Beach", "Callahan", "Hilliard", "Nassau County"].map(area => (
+              <span key={area} style={{ background: "#081838", color: "#C8A24A", padding: "8px 18px", borderRadius: 4, fontFamily: "'Oswald', sans-serif", fontSize: 13, fontWeight: 600, letterSpacing: "0.14em", textTransform: "uppercase" }}>{area}</span>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* ── STAR RATINGS STRIP ── */}
-      <section className="py-8" style={{ backgroundColor: NAVY_DARK }}>
+      {/* ── TESTIMONIALS TEASER ── */}
+      <section style={{ backgroundColor: "#081838", padding: "64px 0" }}>
         <div className="container">
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-            <div className="flex items-center gap-2">
-              {[1,2,3,4,5].map(i => <Star key={i} className="w-5 h-5 fill-current" style={{ color: GOLD }} />)}
-              <span className="ml-2 font-bold text-white text-sm" style={{ fontFamily: "'Nunito Sans', sans-serif" }}>5.0 Average Rating · 100+ Happy Customers</span>
-            </div>
-            <Link
-              href="/testimonials"
-              className="text-sm font-bold transition-colors hover:underline"
-              style={{ color: GOLD_LT, fontFamily: "'Nunito Sans', sans-serif" }}
-            >
-              Read Our Reviews →
+          <div style={{ textAlign: "center", marginBottom: 40 }}>
+            <div className="section-eyebrow" style={{ color: "#C8A24A", marginBottom: 12 }}>What Our Neighbors Say</div>
+            <h2 style={{ fontFamily: "'Anton', sans-serif", fontSize: "clamp(32px, 4vw, 52px)", color: "#fff", margin: 0, lineHeight: 1 }}>
+              DIAMOND STANDARD RESULTS
+            </h2>
+          </div>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: 24 }}>
+            {[
+              { name: "Sarah M.", area: "Tributary", service: "Diamond Cutz", text: "Mike transformed our yard completely. The mowing patterns are incredible and he's always on time. Best lawn in the neighborhood!" },
+              { name: "James T.", area: "Yulee", service: "A Diamond Girl", text: "Lydine's team did our move-out clean and got our full deposit back. Absolutely spotless. Worth every penny." },
+              { name: "Rachel K.", area: "Fernandina Beach", service: "Both Services", text: "We use both crews — lawn every week and cleaning twice a month. The bundle discount is a great deal. Highly recommend!" },
+            ].map((t) => (
+              <div key={t.name} style={{ background: "rgba(255,255,255,0.05)", borderRadius: 8, padding: "28px 24px", border: "1px solid rgba(200,162,74,0.15)" }}>
+                <div style={{ display: "flex", gap: 4, marginBottom: 14 }}>
+                  {[...Array(5)].map((_, i) => <Star key={i} className="w-4 h-4" style={{ fill: "#C8A24A", color: "#C8A24A" }} />)}
+                </div>
+                <p style={{ color: "rgba(255,255,255,0.82)", fontSize: 14, lineHeight: 1.7, margin: "0 0 16px", fontStyle: "italic" }}>"{t.text}"</p>
+                <div style={{ fontFamily: "'Oswald', sans-serif", fontWeight: 600, fontSize: 13, color: "#C8A24A", letterSpacing: "0.1em" }}>{t.name}</div>
+                <div style={{ fontSize: 12, color: "rgba(255,255,255,0.45)", marginTop: 2 }}>{t.area} · {t.service}</div>
+              </div>
+            ))}
+          </div>
+          <div style={{ textAlign: "center", marginTop: 36 }}>
+            <Link href="/testimonials" className="btn-parent-outline" style={{ textDecoration: "none" }}>
+              Read All Reviews →
             </Link>
           </div>
         </div>
       </section>
 
-      <Footer />
+      {/* ── GOLD RIBBON DIVIDER ── */}
+      <div style={{ height: 6, background: "linear-gradient(90deg, #8B7228, #C8A24A, #EBD08A, #C8A24A, #8B7228)" }} />
+
+      {/* ── CONTACT / QUOTE FORM ── */}
+      <section className="pattern-chalk" style={{ padding: "80px 0" }}>
+        <div className="container">
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: 56, alignItems: "start" }}>
+            {/* Left: Contact info */}
+            <div>
+              <div className="section-eyebrow" style={{ color: "#C8A24A", marginBottom: 14 }}>Get in Touch</div>
+              <h2 style={{ fontFamily: "'Anton', sans-serif", fontSize: "clamp(36px, 5vw, 64px)", color: "#081838", margin: "0 0 20px", lineHeight: 0.95 }}>
+                LET'S<br />TALK.
+              </h2>
+              <p style={{ color: "#5A6070", fontSize: 15, lineHeight: 1.7, marginBottom: 32 }}>
+                Free quotes, no pressure. Pick the crew you need or call the main line and we'll route you.
+              </p>
+              <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
+                <div style={{ borderLeft: "3px solid #2E8B10", paddingLeft: 16 }}>
+                  <div className="section-eyebrow" style={{ color: "#185E2C", marginBottom: 4 }}>Lawn &amp; Landscaping</div>
+                  <div style={{ fontFamily: "'Anton', sans-serif", fontSize: 22, color: "#0F2244" }}>Diamond Cutz</div>
+                  <a href="tel:+18563713971" style={{ color: "#185E2C", fontWeight: 700, fontSize: 18, textDecoration: "none", display: "block", marginTop: 4 }}>(856) 371-3971</a>
+                </div>
+                <div style={{ borderLeft: "3px solid #C2185B", paddingLeft: 16 }}>
+                  <div className="section-eyebrow" style={{ color: "#7A1B42", marginBottom: 4 }}>Home Cleaning</div>
+                  <div style={{ fontFamily: "'Anton', sans-serif", fontSize: 22, color: "#0F2244" }}>A Diamond Girl</div>
+                  <a href="tel:+18569810930" style={{ color: "#C2185B", fontWeight: 700, fontSize: 18, textDecoration: "none", display: "block", marginTop: 4 }}>(856) 981-0930</a>
+                </div>
+                <div>
+                  <div className="section-eyebrow" style={{ color: "#5A6070", marginBottom: 4 }}>Email</div>
+                  <a href="mailto:diamondhomeservicesofflorida@gmail.com" style={{ color: "#0F2244", fontSize: 14, textDecoration: "none" }}>diamondhomeservicesofflorida@gmail.com</a>
+                </div>
+                <div>
+                  <div className="section-eyebrow" style={{ color: "#5A6070", marginBottom: 4 }}>Service Area</div>
+                  <div style={{ color: "#0F2244", fontSize: 14 }}>Nassau County, FL · Tributary Community, Yulee</div>
+                </div>
+                <div>
+                  <div className="section-eyebrow" style={{ color: "#5A6070", marginBottom: 4 }}>Hours</div>
+                  <div style={{ color: "#0F2244", fontSize: 14 }}>Mon–Sat: 7:00 AM – 6:00 PM</div>
+                </div>
+              </div>
+            </div>
+
+            {/* Right: Quote form */}
+            <div style={{ background: "#fff", borderRadius: 8, padding: "36px 32px", boxShadow: "0 8px 32px rgba(0,0,0,0.08)", border: "1px solid #E8E4DC" }}>
+              <div className="section-eyebrow" style={{ color: "#C8A24A", marginBottom: 8 }}>Free Quote</div>
+              <h3 style={{ fontFamily: "'Anton', sans-serif", fontSize: 28, color: "#081838", margin: "0 0 24px", lineHeight: 1 }}>TELL US ABOUT THE JOB</h3>
+              <form onSubmit={(e) => { e.preventDefault(); alert("Thank you! We'll be in touch within 24 hours."); }} style={{ display: "flex", flexDirection: "column", gap: 16 }}>
+                <div>
+                  <label className="form-label">Your Name</label>
+                  <input className="form-input" type="text" placeholder="Jane Smith" required />
+                </div>
+                <div>
+                  <label className="form-label">Phone</label>
+                  <input className="form-input" type="tel" placeholder="(904) 555-0100" required />
+                </div>
+                <div>
+                  <label className="form-label">Email</label>
+                  <input className="form-input" type="email" placeholder="jane@example.com" />
+                </div>
+                <div>
+                  <label className="form-label">Service Type</label>
+                  <div style={{ display: "flex", gap: 8, flexWrap: "wrap", marginTop: 4 }}>
+                    {["Mowing", "Landscaping", "Deep Clean", "Move-Out", "Both", "Other"].map((s) => (
+                      <label key={s} style={{ display: "flex", alignItems: "center", gap: 6, cursor: "pointer" }}>
+                        <input type="radio" name="service" value={s} style={{ accentColor: "#C8A24A" }} />
+                        <span style={{ fontFamily: "'Oswald', sans-serif", fontSize: 12, letterSpacing: "0.1em", textTransform: "uppercase", color: "#0F2244" }}>{s}</span>
+                      </label>
+                    ))}
+                  </div>
+                </div>
+                <div>
+                  <label className="form-label">Notes</label>
+                  <textarea className="form-input" rows={3} placeholder="Tell us about your home or yard..." style={{ resize: "vertical" }} />
+                </div>
+                <button type="submit" className="btn-parent-primary" style={{ width: "100%", marginTop: 4 }}>
+                  Send Free Quote Request →
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
