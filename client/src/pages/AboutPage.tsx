@@ -6,7 +6,7 @@
    ============================================================ */
 
 import { Link } from "wouter";
-import { Phone, Mail, MapPin, Heart, Star, ArrowRight, Users } from "lucide-react";
+import { Phone, Mail, MapPin, Heart, Star, ArrowRight } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
@@ -127,41 +127,18 @@ export default function AboutPage() {
               </div>
             </div>
 
-            {/* Photo Grid */}
+            {/* Couple Photo */}
             <div>
-              <div className="flex items-center gap-2 mb-5">
-                <Users className="w-5 h-5" style={{ color: "oklch(0.45 0.14 145)" }} />
-                <span className="text-xs font-bold uppercase tracking-widest" style={{ color: "oklch(0.45 0.14 145)", fontFamily: "'Nunito Sans', sans-serif" }}>
-                  Meet the Team
-                </span>
-              </div>
-              {/* Hero couple photo — spans full width */}
-              <div className="mb-4 overflow-hidden rounded-2xl shadow-lg">
+              <div className="overflow-hidden rounded-2xl shadow-lg">
                 <img
                   src={COUPLE_PHOTO}
                   alt="Mike and Lydine Petrutz — Diamond Home Services LLC"
                   className="w-full object-cover object-top"
-                  style={{ maxHeight: 420 }}
                 />
                 <div className="bg-white px-4 py-3 border-t border-border">
                   <p className="font-bold text-sm" style={{ color: "oklch(0.18 0.02 255)", fontFamily: "'Lora', serif" }}>Mike &amp; Lydine Petrutz</p>
                   <p className="text-xs" style={{ color: "oklch(0.45 0.03 255)", fontFamily: "'Nunito Sans', sans-serif" }}>Founders · Diamond Home Services LLC · Nassau County, FL</p>
                 </div>
-              </div>
-              <div className="grid grid-cols-2 gap-4">
-                {familyPhotos.slice(1).map((photo, i) => (
-                  <div key={i} className="group relative overflow-hidden rounded-2xl shadow-md hover:shadow-xl transition-all duration-300">
-                    <img
-                      src={photo.src}
-                      alt={photo.alt}
-                      className="w-full h-44 object-cover group-hover:scale-105 transition-transform duration-500"
-                      loading="lazy"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-3">
-                      <p className="text-white text-xs font-semibold" style={{ fontFamily: "'Nunito Sans', sans-serif" }}>{photo.caption}</p>
-                    </div>
-                  </div>
-                ))}
               </div>
             </div>
           </div>
