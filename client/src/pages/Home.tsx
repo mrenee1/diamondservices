@@ -249,135 +249,148 @@ export default function Home() {
       {/* HERO */}
       <section
         className="relative w-full overflow-hidden"
-        style={{
-          background: `linear-gradient(175deg, ${NAVY_900} 0%, ${NAVY_800} 60%, #0A2040 100%)`,
-          minHeight: "680px",
-        }}
+        style={{ minHeight: "600px" }}
       >
-        <Starfield />
+        {/* Full-bleed headline image as hero background */}
+        <div className="absolute inset-0">
+          <img
+            src="/manus-storage/pasted_file_IEPMIh_image_c6e19ee0.png"
+            alt=""
+            aria-hidden="true"
+            className="w-full h-full object-cover object-center"
+            style={{ display: "block" }}
+          />
+          {/* Dark overlay on left half so text stays readable */}
+          <div
+            className="absolute inset-0"
+            style={{
+              background: "linear-gradient(90deg, rgba(8,24,48,0.72) 0%, rgba(8,24,48,0.45) 50%, rgba(8,24,48,0.10) 100%)",
+            }}
+          />
+        </div>
 
-        {/* Subtle radial glow behind content */}
-        <div
-          className="absolute inset-0 pointer-events-none"
-          style={{
-            background: "radial-gradient(ellipse 80% 60% at 50% 40%, rgba(200,162,74,0.07) 0%, transparent 70%)",
-          }}
-        />
+        <Starfield />
 
         {/* Grass curve at bottom */}
         <div
           className="absolute bottom-0 left-0 right-0 pointer-events-none"
           aria-hidden="true"
-          style={{ height: "140px" }}
+          style={{ height: "130px", zIndex: 2 }}
         >
           <svg
-            viewBox="0 0 1440 140"
+            viewBox="0 0 1440 130"
             preserveAspectRatio="none"
             className="w-full h-full"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              d="M0,140 L0,90 Q180,30 360,70 Q540,110 720,60 Q900,10 1080,55 Q1260,100 1440,50 L1440,140 Z"
+              d="M0,130 L0,80 Q180,20 360,60 Q540,100 720,50 Q900,0 1080,45 Q1260,90 1440,40 L1440,130 Z"
               fill="#185E2C"
             />
             <path
-              d="M0,140 L0,105 Q200,55 400,85 Q600,115 800,75 Q1000,35 1200,70 Q1350,95 1440,65 L1440,140 Z"
+              d="M0,130 L0,95 Q200,45 400,75 Q600,105 800,65 Q1000,25 1200,60 Q1350,85 1440,55 L1440,130 Z"
               fill="#2E8B3D"
               opacity="0.7"
             />
           </svg>
         </div>
 
-        {/* Hero content — centered, full-width */}
-        <div className="relative z-10 flex flex-col items-center justify-center text-center px-6" style={{ minHeight: "680px", paddingBottom: "120px" }}>
+        {/* Hero content: left text + right logo */}
+        <div
+          className="relative z-10 container flex flex-col lg:flex-row items-center"
+          style={{ minHeight: "600px", paddingBottom: "110px" }}
+        >
+          {/* LEFT — subtext + CTAs */}
+          <div className="flex-1 py-16 lg:py-20 flex flex-col justify-center">
+            <p
+              className="mb-3"
+              style={{
+                color: GOLD_300,
+                fontFamily: "'Oswald', sans-serif",
+                fontSize: "0.8rem",
+                letterSpacing: "0.22em",
+                fontWeight: 600,
+                textTransform: "uppercase",
+              }}
+            >
+              South Jersey &middot; Family-Owned &middot; Est. 2019
+            </p>
+            <p
+              className="mb-8"
+              style={{
+                color: WHITE,
+                fontFamily: "'Oswald', sans-serif",
+                fontSize: "clamp(1rem, 2.2vw, 1.35rem)",
+                letterSpacing: "0.05em",
+                fontWeight: 400,
+                maxWidth: 480,
+                lineHeight: 1.5,
+              }}
+            >
+              Two specialist crews, one trusted name.
+              {" "}<span style={{ color: GOLD_300 }}>Diamond Cutz</span> keeps your yard sharp.
+              {" "}<span style={{ color: GOLD_300 }}>A Diamond Girl</span> makes your home shine.
+              {" "}Book either — or both.
+            </p>
 
-          {/* Big bold logo */}
-          <div className="mb-6">
+            {/* CTA buttons */}
+            <div className="flex flex-wrap gap-4 mb-8">
+              <Link
+                href="/contact"
+                className="inline-flex items-center justify-center gap-2 font-bold uppercase tracking-wide transition-all duration-200 hover:shadow-2xl hover:-translate-y-1"
+                style={{
+                  backgroundColor: GOLD_500,
+                  color: NAVY_900,
+                  fontFamily: "'Oswald', sans-serif",
+                  letterSpacing: "0.1em",
+                  fontSize: "0.95rem",
+                  padding: "13px 32px",
+                }}
+              >
+                GET A FREE QUOTE
+              </Link>
+              <Link
+                href="/diamond-cutz"
+                className="inline-flex items-center justify-center gap-2 font-bold uppercase tracking-wide transition-all duration-200 hover:-translate-y-1"
+                style={{
+                  backgroundColor: "transparent",
+                  color: WHITE,
+                  border: `2px solid rgba(255,255,255,0.65)`,
+                  fontFamily: "'Oswald', sans-serif",
+                  letterSpacing: "0.1em",
+                  fontSize: "0.95rem",
+                  padding: "13px 32px",
+                }}
+              >
+                SEE OUR SERVICES <ArrowRight className="w-4 h-4 ml-1" />
+              </Link>
+            </div>
+
+            <p
+              style={{
+                color: "rgba(255,255,255,0.35)",
+                fontFamily: "'Oswald', sans-serif",
+                fontSize: "0.7rem",
+                letterSpacing: "0.22em",
+                textTransform: "uppercase",
+              }}
+            >
+              Licensed &middot; Insured &middot; Bonded
+            </p>
+          </div>
+
+          {/* RIGHT — Big bold logo */}
+          <div
+            className="flex-shrink-0 flex items-center justify-center lg:justify-end"
+            style={{ width: "clamp(220px, 32vw, 420px)", paddingBottom: "60px" }}
+          >
             <img
               src="/manus-storage/diamond-home-services-logo_99065079.png"
-              alt="Diamond Home Services"
-              className="h-auto object-contain drop-shadow-2xl"
-              style={{ width: "clamp(180px, 28vw, 340px)" }}
+              alt="Diamond Home Services LLC"
+              className="w-full h-auto object-contain drop-shadow-2xl"
+              style={{ filter: "drop-shadow(0 8px 32px rgba(200,162,74,0.35))" }}
             />
           </div>
-
-          {/* Headline image — client-provided, blended into navy */}
-          <div className="mb-8" style={{ maxWidth: "min(860px, 90vw)" }}>
-            <img
-              src="/manus-storage/pasted_file_IEPMIh_image_c6e19ee0.png"
-              alt="BUILT FOR THE BIG LEAGUES."
-              className="w-full h-auto object-contain"
-              style={{
-                display: "block",
-                mixBlendMode: "lighten",
-                filter: "brightness(1.08) contrast(1.05)",
-              }}
-            />
-          </div>
-
-          {/* Subtext */}
-          <p
-            className="mb-10"
-            style={{
-              color: "rgba(255,255,255,0.88)",
-              fontFamily: "'Oswald', sans-serif",
-              fontSize: "clamp(1.1rem, 2.5vw, 1.45rem)",
-              letterSpacing: "0.06em",
-              fontWeight: 400,
-              maxWidth: 620,
-              textTransform: "uppercase",
-            }}
-          >
-            Two specialist crews, one trusted name.
-            <br />
-            <span style={{ color: GOLD_300 }}>Diamond Cutz</span> keeps your yard sharp.
-            {" "}<span style={{ color: GOLD_300 }}>A Diamond Girl</span> makes your home shine.
-          </p>
-
-          {/* CTA buttons */}
-          <div className="flex flex-wrap justify-center gap-5 mb-10">
-            <Link
-              href="/contact"
-              className="inline-flex items-center justify-center gap-2 font-bold uppercase tracking-wide transition-all duration-200 hover:shadow-2xl hover:-translate-y-1"
-              style={{
-                backgroundColor: GOLD_500,
-                color: NAVY_900,
-                fontFamily: "'Oswald', sans-serif",
-                letterSpacing: "0.1em",
-                fontSize: "1rem",
-                padding: "14px 36px",
-              }}
-            >
-              GET A FREE QUOTE
-            </Link>
-            <Link
-              href="/diamond-cutz"
-              className="inline-flex items-center justify-center gap-2 font-bold uppercase tracking-wide transition-all duration-200 hover:-translate-y-1"
-              style={{
-                backgroundColor: "transparent",
-                color: WHITE,
-                border: `2px solid rgba(255,255,255,0.6)`,
-                fontFamily: "'Oswald', sans-serif",
-                letterSpacing: "0.1em",
-                fontSize: "1rem",
-                padding: "14px 36px",
-              }}
-            >
-              SEE OUR SERVICES <ArrowRight className="w-4 h-4 ml-1" />
-            </Link>
-          </div>
-
-          {/* Licensed · Insured · Bonded */}
-          <p
-            className="text-xs uppercase tracking-widest"
-            style={{
-              color: "rgba(255,255,255,0.35)",
-              fontFamily: "'Oswald', sans-serif",
-              letterSpacing: "0.22em",
-            }}
-          >
-            Licensed &middot; Insured &middot; Bonded
-          </p>
         </div>
       </section>
 
