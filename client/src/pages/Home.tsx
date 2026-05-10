@@ -289,48 +289,15 @@ export default function Home() {
 
             {/* LEFT — text */}
             <div className="flex-1 py-16 lg:py-20 pr-0 lg:pr-8">
-              {/* Badge */}
-              <div
-                className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest mb-5"
-                style={{
-                  color: GOLD_300,
-                  fontFamily: "'Oswald', sans-serif",
-                  letterSpacing: "0.18em",
-                }}
-              >
-                South Jersey · Family-Owned · Est. 2019
+              {/* Headline image — exact reference provided by client */}
+              <div className="mb-6">
+                <img
+                  src="/manus-storage/pasted_file_IEPMIh_image_c6e19ee0.png"
+                  alt="BUILT FOR THE BIG LEAGUES."
+                  className="w-full max-w-lg h-auto object-contain"
+                  style={{ display: "block" }}
+                />
               </div>
-
-              {/* Headline */}
-              <h1
-                className="font-black leading-none mb-6"
-                style={{
-                  fontFamily: "'Anton', sans-serif",
-                  fontSize: "clamp(3.4rem, 8vw, 6.2rem)",
-                  letterSpacing: "-0.01em",
-                  lineHeight: 0.92,
-                  textTransform: "uppercase",
-                }}
-              >
-                <span
-                  style={{
-                    display: "block",
-                    color: WHITE,
-                    textShadow: "0 2px 12px rgba(0,0,0,0.35)",
-                  }}
-                >
-                  BUILT FOR THE
-                </span>
-                <span
-                  style={{
-                    display: "block",
-                    color: GOLD_500,
-                    textShadow: "0 2px 16px rgba(200,162,74,0.4)",
-                  }}
-                >
-                  BIG LEAGUES.
-                </span>
-              </h1>
 
               {/* Subtext */}
               <p
