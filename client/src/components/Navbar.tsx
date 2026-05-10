@@ -9,7 +9,7 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
 import { Menu, X, Phone } from "lucide-react";
 
-const DIAMOND_CUTZ_LOGO = "/manus-storage/diamond-cutz-logo_7523a9b6.png";
+const DIAMOND_CUTZ_LOGO = "/manus-storage/pasted_file_MwGanH_image_7f7a812c.png";
 
 const NAVY      = "oklch(0.22 0.08 255)";
 const NAVY_DARK = "oklch(0.16 0.07 255)";

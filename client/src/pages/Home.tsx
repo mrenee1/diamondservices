@@ -15,7 +15,7 @@ import {
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-const DIAMOND_CUTZ_LOGO = "/manus-storage/diamond-cutz-logo_7523a9b6.png";
+const DIAMOND_CUTZ_LOGO = "/manus-storage/pasted_file_MwGanH_image_7f7a812c.png";
 const DIAMOND_GIRL_LOGO = "/manus-storage/diamond-girl-logo_26e7435d.png";
 const HERO_IMAGE = "/manus-storage/diamond-home-hero_15ba2efb.png";
 const LAWN_IMAGE = "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=800&q=80";
@@ -91,14 +91,35 @@ export default function Home() {
     <div className="min-h-screen" style={{ backgroundColor: OFFWHITE }}>
       <Navbar />
 
-      {/* ── HERO IMAGE — full width, no text overlay ── */}
-      <section className="w-full pt-16" style={{ backgroundColor: NAVY_DARK }}>
+      {/* ── HERO — full-width stadium photo with the official logo centered on top ── */}
+      <section className="relative w-full pt-16 overflow-hidden" style={{ backgroundColor: NAVY_DARK }}>
+        {/* Stadium scene background */}
         <img
           src={HERO_IMAGE}
-          alt="Diamond Home Services LLC — Lawn & Landscaping and Home Cleaning"
+          alt=""
+          aria-hidden="true"
           className="w-full block"
           style={{ maxHeight: "640px", objectFit: "cover", objectPosition: "center top" }}
         />
+        {/* Soft dark vignette so the logo pops */}
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            background: "radial-gradient(ellipse 70% 60% at center, rgba(0,0,0,0.0) 0%, rgba(0,0,0,0.45) 100%)",
+          }}
+        />
+        {/* Centered official Diamond Home Services logo */}
+        <div className="absolute inset-0 flex items-center justify-center px-6" style={{ paddingTop: "4rem" }}>
+          <img
+            src="/manus-storage/pasted_file_MwGanH_image_7f7a812c.png"
+            alt="Diamond Home Services LLC"
+            className="h-auto object-contain"
+            style={{
+              width: "clamp(280px, 55vw, 720px)",
+              filter: "drop-shadow(0 12px 40px rgba(0,0,0,0.55))",
+            }}
+          />
+        </div>
       </section>
 
       {/* ── HERO TEXT BAND — navy bar below image ── */}
