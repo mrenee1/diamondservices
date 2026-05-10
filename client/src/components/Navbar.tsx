@@ -1,23 +1,14 @@
-/* ============================================================
+/* ================================================================
    Navbar — Diamond Home Services LLC
-   Theme: Diamond Standard — Navy + Green + Gold + White
-   6-page nav: Home | Diamond Cutz | A Diamond Girl | About Us | Gallery | Testimonials
-   Phone: 856-371-3971 (lawn) | 856-981-0930 (cleaning)
-   ============================================================ */
+   Design System: Parent palette — Navy #081838 / Gold #C8A24A
+   Font: Anton (brand name) + Oswald (nav links) + Manrope (body)
+   ================================================================ */
 
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
 import { Menu, X, Phone } from "lucide-react";
 
 const DIAMOND_CUTZ_LOGO = "/manus-storage/diamond-cutz-logo_7523a9b6.png";
-
-const NAVY      = "oklch(0.22 0.08 255)";
-const NAVY_DARK = "oklch(0.16 0.07 255)";
-const GOLD      = "oklch(0.75 0.16 75)";
-const GOLD_LT   = "oklch(0.85 0.13 80)";
-const GREEN     = "oklch(0.45 0.14 145)";
-const WHITE     = "oklch(1 0 0)";
-const CHARCOAL  = "oklch(0.18 0.02 255)";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -43,32 +34,46 @@ export default function Navbar() {
     <nav
       className="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
       style={{
-        backgroundColor: scrolled ? NAVY_DARK : NAVY,
-        boxShadow: scrolled ? "0 2px 16px oklch(0 0 0 / 0.35)" : "none",
+        backgroundColor: scrolled ? "#06122B" : "#081838",
+        borderBottom: "1px solid rgba(200,162,74,0.20)",
+        boxShadow: scrolled ? "0 2px 20px rgba(0,0,0,0.40)" : "none",
       }}
     >
+      {/* Gold top ribbon */}
+      <div style={{ height: 3, background: "linear-gradient(90deg, #8B7228, #C8A24A, #EBD08A, #C8A24A, #8B7228)" }} />
+
       <div className="container">
-        <div className="flex items-center justify-between h-16 md:h-18">
+        <div className="flex items-center justify-between" style={{ height: 64 }}>
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2 group">
+          <Link href="/" className="flex items-center gap-3 group">
             <img
               src={DIAMOND_CUTZ_LOGO}
               alt="Diamond Home Services LLC"
-              className="h-10 md:h-12 w-auto object-contain"
+              style={{ height: 44, width: "auto", objectFit: "contain" }}
             />
+            <div style={{ display: "none" }} className="md:block">
+              <div style={{ fontFamily: "'Anton', sans-serif", fontSize: 14, letterSpacing: "0.06em", color: "#fff", lineHeight: 1.1 }}>DIAMOND HOME SERVICES</div>
+              <div style={{ fontFamily: "'Oswald', sans-serif", fontSize: 10, letterSpacing: "0.25em", color: "#C8A24A", textTransform: "uppercase" }}>Nassau County, FL</div>
+            </div>
           </Link>
 
           {/* Desktop Nav */}
-          <div className="hidden xl:flex items-center gap-5">
+          <div className="hidden xl:flex items-center gap-6">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-sm font-semibold transition-all duration-200 pb-0.5"
                 style={{
-                  color: location === link.href ? GOLD : "oklch(0.88 0.02 255)",
-                  borderBottom: location === link.href ? `2px solid ${GOLD}` : "2px solid transparent",
-                  fontFamily: "'Nunito Sans', sans-serif",
+                  fontFamily: "'Oswald', sans-serif",
+                  fontSize: 13,
+                  fontWeight: 500,
+                  letterSpacing: "0.16em",
+                  textTransform: "uppercase",
+                  color: location === link.href ? "#C8A24A" : "rgba(255,255,255,0.82)",
+                  borderBottom: location === link.href ? "2px solid #C8A24A" : "2px solid transparent",
+                  paddingBottom: 2,
+                  transition: "color 0.2s, border-color 0.2s",
+                  textDecoration: "none",
                 }}
               >
                 {link.label}
@@ -80,19 +85,27 @@ export default function Navbar() {
           <div className="flex items-center gap-3">
             <a
               href="tel:+18563713971"
-              className="hidden xl:flex items-center gap-1.5 text-sm font-bold px-4 py-2 rounded-md transition-all duration-200 hover:-translate-y-0.5"
+              className="hidden xl:flex items-center gap-2 transition-all duration-200 hover:-translate-y-0.5"
               style={{
-                backgroundColor: GOLD,
-                color: CHARCOAL,
-                fontFamily: "'Nunito Sans', sans-serif",
+                background: "#C8A24A",
+                color: "#081838",
+                padding: "9px 18px",
+                borderRadius: 4,
+                fontFamily: "'Oswald', sans-serif",
+                fontWeight: 700,
+                fontSize: 13,
+                letterSpacing: "0.14em",
+                textTransform: "uppercase",
+                textDecoration: "none",
+                boxShadow: "0 4px 14px rgba(200,162,74,0.30)",
               }}
             >
-              <Phone className="w-4 h-4" />
-              856-371-3971
+              <Phone className="w-3.5 h-3.5" />
+              Get a Quote
             </a>
             <button
-              className="xl:hidden p-2 rounded-md transition-colors"
-              style={{ color: WHITE }}
+              className="xl:hidden p-2 rounded"
+              style={{ color: "#fff" }}
               onClick={() => setOpen(!open)}
               aria-label="Toggle menu"
             >
@@ -105,8 +118,8 @@ export default function Navbar() {
       {/* Mobile Menu */}
       {open && (
         <div
-          className="xl:hidden border-t"
-          style={{ backgroundColor: NAVY_DARK, borderColor: "oklch(1 0 0 / 0.10)" }}
+          className="xl:hidden"
+          style={{ backgroundColor: "#06122B", borderTop: "1px solid rgba(200,162,74,0.15)" }}
         >
           <div className="container py-4 flex flex-col gap-1">
             {navLinks.map((link) => (
@@ -114,32 +127,31 @@ export default function Navbar() {
                 key={link.href}
                 href={link.href}
                 onClick={() => setOpen(false)}
-                className="font-semibold text-sm py-2.5 px-3 rounded-md transition-colors"
                 style={{
-                  color: location === link.href ? GOLD : "oklch(0.88 0.02 255)",
-                  backgroundColor: location === link.href ? "oklch(1 0 0 / 0.06)" : "transparent",
-                  fontFamily: "'Nunito Sans', sans-serif",
+                  fontFamily: "'Oswald', sans-serif",
+                  fontSize: 14,
+                  fontWeight: 500,
+                  letterSpacing: "0.16em",
+                  textTransform: "uppercase",
+                  color: location === link.href ? "#C8A24A" : "rgba(255,255,255,0.82)",
+                  padding: "10px 12px",
+                  borderRadius: 4,
+                  backgroundColor: location === link.href ? "rgba(200,162,74,0.08)" : "transparent",
+                  textDecoration: "none",
+                  display: "block",
                 }}
               >
                 {link.label}
               </Link>
             ))}
-            <div className="pt-3 mt-1 flex flex-col gap-2" style={{ borderTop: "1px solid oklch(1 0 0 / 0.12)" }}>
-              <a
-                href="tel:+18563713971"
-                className="flex items-center gap-2 font-bold text-sm py-2 px-3 rounded-md"
-                style={{ color: GOLD, fontFamily: "'Nunito Sans', sans-serif" }}
-              >
+            <div style={{ borderTop: "1px solid rgba(200,162,74,0.15)", marginTop: 8, paddingTop: 12, display: "flex", flexDirection: "column", gap: 8 }}>
+              <a href="tel:+18563713971" style={{ display: "flex", alignItems: "center", gap: 8, color: "#C8A24A", fontFamily: "'Oswald', sans-serif", fontWeight: 600, fontSize: 13, letterSpacing: "0.12em", padding: "8px 12px", textDecoration: "none" }}>
                 <Phone className="w-4 h-4" />
                 Lawn (Mike): 856-371-3971
               </a>
-              <a
-                href="tel:+18569810930"
-                className="flex items-center gap-2 font-bold text-sm py-2 px-3 rounded-md"
-                style={{ color: GOLD_LT, fontFamily: "'Nunito Sans', sans-serif" }}
-              >
+              <a href="tel:+18569810930" style={{ display: "flex", alignItems: "center", gap: 8, color: "#EC4B99", fontFamily: "'Oswald', sans-serif", fontWeight: 600, fontSize: 13, letterSpacing: "0.12em", padding: "8px 12px", textDecoration: "none" }}>
                 <Phone className="w-4 h-4" />
-                Cleaning (Lidone): 856-981-0930
+                Cleaning (Lydine): 856-981-0930
               </a>
             </div>
           </div>
