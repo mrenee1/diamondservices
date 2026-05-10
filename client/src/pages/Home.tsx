@@ -291,27 +291,45 @@ export default function Home() {
             <div className="flex-1 py-16 lg:py-20 pr-0 lg:pr-8">
               {/* Badge */}
               <div
-                className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest mb-6"
+                className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest mb-5"
                 style={{
                   color: GOLD_300,
                   fontFamily: "'Oswald', sans-serif",
                   letterSpacing: "0.18em",
                 }}
               >
-                Nassau County · Family-Owned · Est. 2019
+                South Jersey · Family-Owned · Est. 2019
               </div>
 
               {/* Headline */}
               <h1
                 className="font-black leading-none mb-6"
                 style={{
-                  fontFamily: "'Anton', 'Oswald', sans-serif",
-                  fontSize: "clamp(3rem, 7vw, 5.5rem)",
+                  fontFamily: "'Anton', sans-serif",
+                  fontSize: "clamp(3.4rem, 8vw, 6.2rem)",
+                  letterSpacing: "-0.01em",
+                  lineHeight: 0.92,
+                  textTransform: "uppercase",
                 }}
               >
-                <span style={{ color: WHITE }}>BUILT FOR THE</span>
-                <br />
-                <span style={{ color: GOLD_500 }}>BIG LEAGUES.</span>
+                <span
+                  style={{
+                    display: "block",
+                    color: WHITE,
+                    textShadow: "0 2px 12px rgba(0,0,0,0.35)",
+                  }}
+                >
+                  BUILT FOR THE
+                </span>
+                <span
+                  style={{
+                    display: "block",
+                    color: GOLD_500,
+                    textShadow: "0 2px 16px rgba(200,162,74,0.4)",
+                  }}
+                >
+                  BIG LEAGUES.
+                </span>
               </h1>
 
               {/* Subtext */}
