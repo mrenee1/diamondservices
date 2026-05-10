@@ -1,15 +1,35 @@
-/* ================================================================
-   DIAMOND HOME SERVICES — DESIGN SYSTEM
-   ================================================================
-   PARENT (Diamond Home Services LLC): Navy #081838 / #0F2244 / #18305C + Gold #C8A24A / #EBD08A
-   CUTZ  (Diamond Cutz Lawn & Landscaping): Green #0E3A1C / #185E2C / #2E8B10 + Earth #6B4A28 / #A87A48
-   GIRL  (A Diamond Girl Home Cleaning): Wine #5C1432 / #7A1B42 + Magenta #C2185B + Pink #EC4B99 / #FCE4EC
-   ================================================================ */
-
 @import "tailwindcss";
 @import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
+
+/* ============================================================
+   DIAMOND HOME SERVICES LLC — DESIGN SYSTEM
+   ============================================================
+   PARENT palette  · navy + gold
+     Navy 900: #081830  (primary surfaces, deep backgrounds)
+     Navy 800: #0F2244  (header, card chrome)
+     Navy 700: #18305C  (hover, accents)
+     Navy 500: #2F408A  (mid-tone blue)
+     Gold 500: #C8A24A  (primary gold)
+     Gold 300: #E8D08A  (light gold tint)
+
+   CUTZ palette  · greens + earth
+     Green 900: #0E3A1C  (headlines, type on light)
+     Green 700: #185E2C  (primary brand surface)
+     Green 500: #2E8B3D  (buttons, fills)
+     Green 300: #7FB342  (light accent)
+     Earth 700: #6B4A28  (mulch tone)
+     Earth 500: #A87A4B  (warm accent)
+
+   GIRL palette  · wine + pink
+     Wine 800:   #5C1432  (type on light, deep accents)
+     Wine 700:   #7A1B42  (ribbons, primary surface)
+     Magenta 500:#C21B6B  (buttons, CTAs)
+     Pink 400:   #EC4B99  (bright accent)
+     Blush 100:  #FCE4EC  (light background)
+     Aqua 300:   #7FD7E8  (contrast pop)
+   ============================================================ */
 
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
@@ -48,161 +68,69 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
-}
 
-/* ── PARENT brand tokens ── */
-:root {
-  /* Navy scale */
-  --navy-900: #081838;
+  /* Brand tokens — Parent */
+  --navy-900: #081830;
   --navy-800: #0F2244;
   --navy-700: #18305C;
-  --navy-500: #2F4D8A;
-  --navy-300: #6B8CC4;
-  /* Gold scale */
-  --gold-600: #8B7228;
+  --navy-500: #2F408A;
   --gold-500: #C8A24A;
-  --gold-300: #EBD08A;
-  /* Cutz green scale */
+  --gold-300: #E8D08A;
+
+  /* Brand tokens — Cutz */
   --green-900: #0E3A1C;
   --green-700: #185E2C;
-  --green-500: #2E8B10;
+  --green-500: #2E8B3D;
   --green-300: #7FB342;
-  /* Cutz earth scale */
   --earth-700: #6B4A28;
-  --earth-500: #A87A48;
-  /* Girl wine/pink scale */
+  --earth-500: #A87A4B;
+
+  /* Brand tokens — Girl */
   --wine-800: #5C1432;
   --wine-700: #7A1B42;
-  --magenta-500: #C2185B;
+  --magenta-500: #C21B6B;
   --pink-400: #EC4B99;
   --blush-100: #FCE4EC;
   --aqua-300: #7FD7E8;
+}
 
-  /* Shadcn tokens — light mode (Parent palette) */
+:root {
   --radius: 0.5rem;
+
+  /* Shadcn/Tailwind semantic tokens — light theme (Parent palette) */
   --background: #F5F3EE;
-  --foreground: #0F2244;
+  --foreground: #081830;
   --card: #FFFFFF;
-  --card-foreground: #0F2244;
+  --card-foreground: #081830;
   --popover: #FFFFFF;
-  --popover-foreground: #0F2244;
-  --primary: #0F2244;
-  --primary-foreground: #FFFFFF;
-  --secondary: #EBD08A;
-  --secondary-foreground: #081838;
-  --muted: #EAE8E2;
-  --muted-foreground: #5A6070;
-  --accent: #C8A24A;
-  --accent-foreground: #081838;
+  --popover-foreground: #081830;
+  --primary: #C8A24A;
+  --primary-foreground: #081830;
+  --secondary: #0F2244;
+  --secondary-foreground: #FFFFFF;
+  --muted: #EDE9E0;
+  --muted-foreground: #4A5568;
+  --accent: #E8D08A;
+  --accent-foreground: #081830;
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: #FFFFFF;
-  --border: #D8D4CA;
-  --input: #D8D4CA;
+  --border: #D4CDB8;
+  --input: #D4CDB8;
   --ring: #C8A24A;
-  --chart-1: #2E8B10;
-  --chart-2: #C8A24A;
-  --chart-3: #18305C;
-  --chart-4: #C2185B;
+  --chart-1: #C8A24A;
+  --chart-2: #2E8B3D;
+  --chart-3: #7A1B42;
+  --chart-4: #18305C;
   --chart-5: #7FB342;
-  --sidebar: #081838;
+  --sidebar: #0F2244;
   --sidebar-foreground: #FFFFFF;
   --sidebar-primary: #C8A24A;
-  --sidebar-primary-foreground: #081838;
-  --sidebar-accent: #0F2244;
-  --sidebar-accent-foreground: #EBD08A;
-  --sidebar-border: rgba(255,255,255,0.1);
+  --sidebar-primary-foreground: #081830;
+  --sidebar-accent: #18305C;
+  --sidebar-accent-foreground: #FFFFFF;
+  --sidebar-border: #18305C;
   --sidebar-ring: #C8A24A;
 }
-
-/* ── CSS PATTERNS ── */
-
-/* Diamond Grid (Parent — navy header surfaces) */
-.pattern-diamond-grid {
-  background-color: var(--navy-900);
-  background-image:
-    linear-gradient(45deg, rgba(200,162,74,0.12) 25%, transparent 25%),
-    linear-gradient(-45deg, rgba(200,162,74,0.12) 25%, transparent 25%),
-    linear-gradient(45deg, transparent 75%, rgba(200,162,74,0.12) 75%),
-    linear-gradient(-45deg, transparent 75%, rgba(200,162,74,0.12) 75%);
-  background-size: 20px 20px;
-  background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
-}
-
-/* Chalk Baseline (Parent — light page backdrop) */
-.pattern-chalk {
-  background-color: #F5F3EE;
-  background-image:
-    linear-gradient(rgba(15,34,68,0.06) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(15,34,68,0.06) 1px, transparent 1px);
-  background-size: 40px 40px;
-}
-
-/* Field Stripes (Cutz — hero strips) */
-.pattern-field-stripes {
-  background-color: var(--green-700);
-  background-image: repeating-linear-gradient(
-    85deg,
-    rgba(0,0,0,0.10) 0px,
-    rgba(0,0,0,0.10) 40px,
-    transparent 40px,
-    transparent 80px
-  );
-}
-
-/* Grass Mesh (Cutz — primary surfaces) */
-.pattern-grass-mesh {
-  background-color: var(--green-900);
-  background-image:
-    radial-gradient(circle, rgba(46,139,16,0.25) 1px, transparent 1px);
-  background-size: 18px 18px;
-}
-
-/* Earth Bands (Cutz — alternate, mulch tone) */
-.pattern-earth-bands {
-  background-color: var(--earth-700);
-  background-image: repeating-linear-gradient(
-    85deg,
-    rgba(255,255,255,0.06) 0px,
-    rgba(255,255,255,0.06) 30px,
-    transparent 30px,
-    transparent 60px
-  );
-}
-
-/* Sparkle Dust (Girl — pink sparkle dots) */
-.pattern-sparkle {
-  background-color: var(--blush-100);
-  background-image:
-    radial-gradient(circle, #EC4B99 1px, transparent 1px),
-    radial-gradient(circle, #C2185B 1px, transparent 1px);
-  background-size: 40px 40px, 80px 80px;
-  background-position: 0 0, 20px 20px;
-}
-
-/* Bubble Dots (Girl — larger bubbles) */
-.pattern-bubbles {
-  background-color: #F8BBD0;
-  background-image: radial-gradient(circle, rgba(255,255,255,0.7) 4px, transparent 4px);
-  background-size: 30px 30px;
-}
-
-/* Aqua Dots (Girl — aqua accent) */
-.pattern-aqua-dots {
-  background-color: #E0F7FA;
-  background-image: radial-gradient(circle, rgba(127,215,232,0.6) 2px, transparent 2px);
-  background-size: 24px 24px;
-}
-
-/* Gold Ribbon (Parent — feature dividers) */
-.gold-ribbon {
-  background: linear-gradient(180deg, var(--navy-700) 0%, var(--navy-700) 45%, var(--gold-500) 45%, var(--gold-500) 55%, var(--navy-700) 55%, var(--navy-700) 100%);
-}
-
-/* ── TYPOGRAPHY ── */
-/* Anton: display/headings for Parent & Cutz */
-/* Playfair Display: editorial for Girl */
-/* Oswald: labels, nav, tags */
-/* Manrope: body copy */
 
 @layer base {
   * {
@@ -210,7 +138,7 @@
   }
   body {
     @apply bg-background text-foreground;
-    font-family: 'Manrope', 'Nunito Sans', system-ui, sans-serif;
+    font-family: 'Manrope', 'Nunito Sans', sans-serif;
   }
   button:not(:disabled),
   [role="button"]:not([aria-disabled="true"]),
@@ -223,6 +151,9 @@
   input[type="radio"]:not(:disabled) {
     @apply cursor-pointer;
   }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Oswald', 'Anton', sans-serif;
+  }
 }
 
 @layer components {
@@ -233,16 +164,19 @@
     padding-left: 1rem;
     padding-right: 1rem;
   }
+
   .flex {
     min-height: 0;
     min-width: 0;
   }
+
   @media (min-width: 640px) {
     .container {
       padding-left: 1.5rem;
       padding-right: 1.5rem;
     }
   }
+
   @media (min-width: 1024px) {
     .container {
       padding-left: 2rem;
@@ -251,191 +185,102 @@
     }
   }
 
-  /* ── PARENT BUTTONS ── */
-  .btn-parent-primary {
-    background: var(--gold-500);
-    color: var(--navy-800);
-    border: none;
-    padding: 14px 28px;
-    font-family: 'Oswald', sans-serif;
-    font-weight: 700;
-    font-size: 13px;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background 0.2s, transform 0.15s;
-    box-shadow: 0 6px 20px rgba(200,162,74,0.30);
-  }
-  .btn-parent-primary:hover { background: var(--gold-300); transform: translateY(-1px); }
+  /* ── Parent brand patterns ── */
 
-  .btn-parent-outline {
-    background: transparent;
-    color: #fff;
-    border: 1.5px solid rgba(255,255,255,0.4);
-    padding: 14px 28px;
-    font-family: 'Oswald', sans-serif;
-    font-weight: 600;
-    font-size: 13px;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: border-color 0.2s, transform 0.15s;
-  }
-  .btn-parent-outline:hover { border-color: rgba(255,255,255,0.8); transform: translateY(-1px); }
-
-  /* ── CUTZ BUTTONS ── */
-  .btn-cutz-primary {
-    background: var(--green-500);
-    color: var(--green-900);
-    border: none;
-    padding: 14px 28px;
-    font-family: 'Oswald', sans-serif;
-    font-weight: 700;
-    font-size: 13px;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background 0.2s, transform 0.15s;
-  }
-  .btn-cutz-primary:hover { background: var(--green-300); transform: translateY(-1px); }
-
-  .btn-cutz-outline {
-    background: transparent;
-    color: #fff;
-    border: 1.5px solid rgba(255,255,255,0.4);
-    padding: 14px 28px;
-    font-family: 'Oswald', sans-serif;
-    font-weight: 600;
-    font-size: 13px;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: border-color 0.2s;
+  /* Diamond grid — navy header surfaces */
+  .bg-diamond-grid {
+    background-color: #081830;
+    background-image:
+      linear-gradient(45deg, rgba(200,162,74,0.12) 25%, transparent 25%),
+      linear-gradient(-45deg, rgba(200,162,74,0.12) 25%, transparent 25%),
+      linear-gradient(45deg, transparent 75%, rgba(200,162,74,0.12) 75%),
+      linear-gradient(-45deg, transparent 75%, rgba(200,162,74,0.12) 75%);
+    background-size: 20px 20px;
+    background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
   }
 
-  /* ── GIRL BUTTONS ── */
-  .btn-girl-primary {
-    background: var(--wine-800);
-    color: #fff;
-    border: none;
-    padding: 14px 28px;
-    font-family: 'Oswald', sans-serif;
-    font-weight: 700;
-    font-size: 13px;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background 0.2s, transform 0.15s;
-  }
-  .btn-girl-primary:hover { background: var(--magenta-500); transform: translateY(-1px); }
-
-  .btn-girl-magenta {
-    background: var(--magenta-500);
-    color: #fff;
-    border: none;
-    padding: 14px 28px;
-    font-family: 'Oswald', sans-serif;
-    font-weight: 700;
-    font-size: 13px;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background 0.2s, transform 0.15s;
-  }
-  .btn-girl-magenta:hover { background: var(--pink-400); transform: translateY(-1px); }
-
-  /* ── TAGS ── */
-  .tag-insured {
-    background: rgba(255,255,255,0.15);
-    color: rgba(255,255,255,0.85);
-    border: 1px solid rgba(255,255,255,0.25);
-    padding: 4px 12px;
-    font-family: 'Oswald', sans-serif;
-    font-size: 11px;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    border-radius: 20px;
-  }
-  .tag-featured {
-    background: var(--gold-500);
-    color: var(--navy-800);
-    padding: 4px 12px;
-    font-family: 'Oswald', sans-serif;
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    border-radius: 20px;
-  }
-  .tag-featured-girl {
-    background: var(--magenta-500);
-    color: #fff;
-    padding: 4px 12px;
-    font-family: 'Oswald', sans-serif;
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    border-radius: 20px;
-  }
-
-  /* ── SECTION LABELS ── */
-  .section-eyebrow {
-    font-family: 'Oswald', sans-serif;
-    font-weight: 600;
-    font-size: 12px;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-  }
-
-  /* ── DISPLAY HEADINGS ── */
-  .heading-display {
-    font-family: 'Anton', 'Oswald', sans-serif;
-    letter-spacing: -0.01em;
-    line-height: 0.93;
-  }
-
-  /* ── CARD BASE ── */
-  .service-card {
-    background: #fff;
-    border-radius: 6px;
-    padding: 24px;
-    border: 1px solid #E8E4DC;
-    transition: box-shadow 0.2s, transform 0.2s;
-  }
-  .service-card:hover {
-    box-shadow: 0 8px 32px rgba(0,0,0,0.10);
-    transform: translateY(-2px);
-  }
-
-  /* ── FORM INPUTS ── */
-  .form-input {
+  /* Gold ribbon divider */
+  .gold-ribbon {
+    background: linear-gradient(135deg, #C8A24A 0%, #E8D08A 50%, #C8A24A 100%);
+    height: 4px;
     width: 100%;
-    border: 1px solid #D8D4CA;
-    border-radius: 4px;
-    padding: 12px 16px;
-    font-family: 'Manrope', sans-serif;
-    font-size: 14px;
-    color: #0F2244;
-    background: #FAFAF8;
-    transition: border-color 0.2s;
-    outline: none;
   }
-  .form-input:focus { border-color: var(--gold-500); }
-  .form-label {
+
+  /* ── Cutz brand patterns ── */
+
+  /* Field stripes — hero strips */
+  .bg-field-stripes {
+    background-color: #185E2C;
+    background-image: repeating-linear-gradient(
+      135deg,
+      rgba(255,255,255,0.04) 0px,
+      rgba(255,255,255,0.04) 20px,
+      transparent 20px,
+      transparent 40px
+    );
+  }
+
+  /* Grass mesh — primary surfaces */
+  .bg-grass-mesh {
+    background-color: #0E3A1C;
+    background-image:
+      radial-gradient(circle, rgba(46,139,61,0.3) 1px, transparent 1px);
+    background-size: 16px 16px;
+  }
+
+  /* Earth bands — alternate sections */
+  .bg-earth-bands {
+    background-color: #6B4A28;
+    background-image: repeating-linear-gradient(
+      135deg,
+      rgba(255,255,255,0.05) 0px,
+      rgba(255,255,255,0.05) 20px,
+      transparent 20px,
+      transparent 40px
+    );
+  }
+
+  /* ── Girl brand patterns ── */
+
+  /* Sparkle dots — pink hero */
+  .bg-sparkle-pink {
+    background-color: #F9A8C9;
+    background-image:
+      radial-gradient(circle, rgba(255,255,255,0.6) 1px, transparent 1px),
+      radial-gradient(circle, rgba(194,27,107,0.15) 2px, transparent 2px);
+    background-size: 32px 32px, 64px 64px;
+    background-position: 0 0, 16px 16px;
+  }
+
+  /* Blush bubbles */
+  .bg-blush-bubbles {
+    background-color: #FCE4EC;
+    background-image:
+      radial-gradient(circle at 20% 30%, rgba(236,75,153,0.08) 40px, transparent 40px),
+      radial-gradient(circle at 80% 70%, rgba(194,27,107,0.06) 60px, transparent 60px);
+  }
+
+  /* ── Utility classes ── */
+  .font-display {
+    font-family: 'Anton', 'Oswald', sans-serif;
+  }
+  .font-heading {
     font-family: 'Oswald', sans-serif;
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: #5A6070;
-    display: block;
-    margin-bottom: 6px;
+  }
+  .font-body {
+    font-family: 'Manrope', 'Nunito Sans', sans-serif;
+  }
+  .font-script {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+  }
+
+  /* Chalk baseline — light page backdrop */
+  .bg-chalk {
+    background-color: #F5F3EE;
+    background-image:
+      linear-gradient(rgba(200,162,74,0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(200,162,74,0.06) 1px, transparent 1px);
+    background-size: 32px 32px;
   }
 }

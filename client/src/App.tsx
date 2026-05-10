@@ -10,6 +10,7 @@ import DiamondGirlPage from "./pages/DiamondGirlPage";
 import AboutPage from "./pages/AboutPage";
 import GalleryPage from "./pages/GalleryPage";
 import TestimonialsPage from "./pages/TestimonialsPage";
+import ContactPage from "./pages/ContactPage";
 
 function Router() {
   return (
@@ -20,6 +21,7 @@ function Router() {
       <Route path="/about" component={AboutPage} />
       <Route path="/gallery" component={GalleryPage} />
       <Route path="/testimonials" component={TestimonialsPage} />
+      <Route path="/contact" component={ContactPage} />
       <Route path="/404" component={NotFound} />
       <Route component={NotFound} />
     </Switch>

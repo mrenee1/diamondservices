@@ -1,153 +1,248 @@
-/* ================================================================
+/* ============================================================
    Footer — Diamond Home Services LLC
-   Design System: Parent palette — Navy #081838 + Gold #C8A24A
-   Fonts: Anton (display), Oswald (labels), Manrope (body)
+   Palette: Parent navy+gold (#081830, #0F2244, #C8A24A, #E8D08A)
+   7-page site: no social media, no booking
+   Phone: 856-371-3971 (Mike/lawn) | 856-981-0930 (Lydine/cleaning)
    Email: diamondhomeservicesofflorida@gmail.com
-   ================================================================ */
+   Nassau County, FL — no home address
+   ============================================================ */
 
-import { Phone, Mail, MapPin, Clock, Gem, Star } from "lucide-react";
+import { Phone, Mail, MapPin, Star } from "lucide-react";
 import { Link } from "wouter";
 
 const DIAMOND_CUTZ_LOGO = "/manus-storage/diamond-cutz-logo_7523a9b6.png";
-const DIAMOND_GIRL_LOGO = "/manus-storage/diamond-girl-logo-clean_4f2c96f8.png";
+const DIAMOND_GIRL_LOGO = "/manus-storage/diamond-girl-logo_26e7435d.png";
+
+// Parent palette hex tokens
+const NAVY_900  = "#081830";
+const NAVY_800  = "#0F2244";
+const NAVY_700  = "#18305C";
+const GOLD_500  = "#C8A24A";
+const GOLD_300  = "#E8D08A";
+const GREEN_500 = "#2E8B3D";
+const MAGENTA   = "#C21B6B";
+const WHITE     = "#FFFFFF";
 
 export default function Footer() {
-  const year = new Date().getFullYear();
-
   return (
-    <footer style={{
-      background: "#081838",
-      backgroundImage: "linear-gradient(rgba(200,162,74,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(200,162,74,0.06) 1px, transparent 1px)",
-      backgroundSize: "48px 48px",
-      fontFamily: "'Manrope', sans-serif",
-    }}>
-      {/* Gold ribbon top */}
-      <div style={{ height: 4, background: "linear-gradient(90deg, #081838, #C8A24A, #EBD08A, #C8A24A, #081838)" }} />
+    <footer style={{ backgroundColor: NAVY_900 }} className="text-white">
+      <div className="container py-14">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
 
-      <div className="container" style={{ paddingTop: 56, paddingBottom: 40 }}>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: 40 }}>
-
-          {/* Brand column */}
-          <div>
-            <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 14 }}>
-              <Gem size={18} style={{ color: "#C8A24A" }} />
-              <div>
-                <p style={{ fontFamily: "'Anton', sans-serif", fontSize: 14, color: "#fff", margin: 0, letterSpacing: "0.04em" }}>DIAMOND HOME SERVICES</p>
-                <p style={{ fontFamily: "'Oswald', sans-serif", fontSize: 9, color: "#C8A24A", margin: 0, letterSpacing: "0.2em", textTransform: "uppercase" }}>Nassau County · Licensed & Insured</p>
-              </div>
+          {/* Brand */}
+          <div className="lg:col-span-1">
+            <div className="mb-3">
+              <img
+                src={DIAMOND_CUTZ_LOGO}
+                alt="Diamond Cutz Lawn and Landscaping"
+                className="h-16 w-auto object-contain mb-3"
+              />
+              <img
+                src={DIAMOND_GIRL_LOGO}
+                alt="A Diamond Girl Home Cleaning Service"
+                className="h-16 w-auto object-contain"
+              />
             </div>
-            <p style={{ color: "rgba(255,255,255,0.55)", fontSize: 13, lineHeight: 1.7, margin: "0 0 20px", maxWidth: 220 }}>
-              A family-owned operation running two specialist crews across Nassau County, FL — rooted in the Tributary community.
+            <p
+              className="text-sm leading-relaxed mt-4"
+              style={{ color: "rgba(255,255,255,0.68)", fontFamily: "'Manrope', sans-serif" }}
+            >
+              Family-owned and operated home services proudly serving Nassau County, Florida — rooted right here in the Tributary community of Yulee.
             </p>
-            <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
-              <a href="tel:+18563713971" style={{ display: "flex", alignItems: "center", gap: 8, color: "#EBD08A", fontSize: 13, textDecoration: "none" }}>
-                <Phone size={13} style={{ color: "#C8A24A", flexShrink: 0 }} /> 856-371-3971 (Lawn)
-              </a>
-              <a href="tel:+18569810930" style={{ display: "flex", alignItems: "center", gap: 8, color: "#EBD08A", fontSize: 13, textDecoration: "none" }}>
-                <Phone size={13} style={{ color: "#C21B6B", flexShrink: 0 }} /> 856-981-0930 (Cleaning)
-              </a>
-              <a href="mailto:diamondhomeservicesofflorida@gmail.com" style={{ display: "flex", alignItems: "flex-start", gap: 8, color: "#EBD08A", fontSize: 12, textDecoration: "none", wordBreak: "break-all" }}>
-                <Mail size={13} style={{ color: "#C8A24A", flexShrink: 0, marginTop: 2 }} /> diamondhomeservicesofflorida@gmail.com
-              </a>
-              <div style={{ display: "flex", alignItems: "flex-start", gap: 8, color: "rgba(255,255,255,0.5)", fontSize: 12 }}>
-                <MapPin size={13} style={{ color: "#C8A24A", flexShrink: 0, marginTop: 2 }} /> Nassau County, FL · Yulee 32097
-              </div>
-              <div style={{ display: "flex", alignItems: "center", gap: 8, color: "rgba(255,255,255,0.5)", fontSize: 12 }}>
-                <Clock size={13} style={{ color: "#C8A24A", flexShrink: 0 }} /> Mon–Sat 7AM–6PM
-              </div>
-            </div>
           </div>
 
-          {/* Diamond Cutz column */}
+          {/* Services */}
           <div>
-            <div style={{ marginBottom: 16 }}>
-              <img src={DIAMOND_CUTZ_LOGO} alt="Diamond Cutz" style={{ height: 40, width: "auto", objectFit: "contain" }} />
-            </div>
-            <p style={{ fontFamily: "'Oswald', sans-serif", fontSize: 9, letterSpacing: "0.2em", textTransform: "uppercase", color: "#2E8B10", marginBottom: 12 }}>
-              Lawn & Landscaping
-            </p>
-            <div style={{ display: "flex", flexDirection: "column", gap: 7 }}>
-              {["Lawn Mowing & Edging", "Landscaping Design", "Mulch & Beds", "Hedge & Trim", "Sod Installation", "Seasonal Cleanup"].map(item => (
-                <Link key={item} href="/diamond-cutz" style={{ color: "rgba(255,255,255,0.6)", fontSize: 13, textDecoration: "none" }}>
-                  {item}
-                </Link>
-              ))}
-            </div>
-            <a href="tel:+18563713971" style={{
-              display: "inline-flex", alignItems: "center", gap: 6, marginTop: 16,
-              background: "#0E3A1C", color: "#fff", padding: "8px 14px", borderRadius: 3,
-              fontFamily: "'Oswald', sans-serif", fontWeight: 600, fontSize: 11,
-              letterSpacing: "0.14em", textTransform: "uppercase", textDecoration: "none",
-            }}>
-              <Phone size={11} /> Call Mike
-            </a>
-          </div>
-
-          {/* A Diamond Girl column */}
-          <div>
-            <div style={{ marginBottom: 16 }}>
-              <img src={DIAMOND_GIRL_LOGO} alt="A Diamond Girl" style={{ height: 40, width: "auto", objectFit: "contain" }} />
-            </div>
-            <p style={{ fontFamily: "'Oswald', sans-serif", fontSize: 9, letterSpacing: "0.2em", textTransform: "uppercase", color: "#C21B6B", marginBottom: 12 }}>
-              Home Cleaning Service
-            </p>
-            <div style={{ display: "flex", flexDirection: "column", gap: 7 }}>
-              {["Diamond Deep Clean", "Recurring Shine", "Move-In / Move-Out", "Airbnb Turnover", "Post-Construction", "Special Occasion"].map(item => (
-                <Link key={item} href="/diamond-girl" style={{ color: "rgba(255,255,255,0.6)", fontSize: 13, textDecoration: "none" }}>
-                  {item}
-                </Link>
-              ))}
-            </div>
-            <a href="tel:+18569810930" style={{
-              display: "inline-flex", alignItems: "center", gap: 6, marginTop: 16,
-              background: "#5C1432", color: "#fff", padding: "8px 14px", borderRadius: 3,
-              fontFamily: "'Oswald', sans-serif", fontWeight: 600, fontSize: 11,
-              letterSpacing: "0.14em", textTransform: "uppercase", textDecoration: "none",
-            }}>
-              <Phone size={11} /> Call Lydine
-            </a>
-          </div>
-
-          {/* Company column */}
-          <div>
-            <p style={{ fontFamily: "'Oswald', sans-serif", fontWeight: 700, fontSize: 11, letterSpacing: "0.18em", textTransform: "uppercase", color: "#C8A24A", marginBottom: 16 }}>
-              Company
-            </p>
-            <div style={{ display: "flex", flexDirection: "column", gap: 7 }}>
+            <h4
+              className="font-bold text-white mb-4 text-base uppercase tracking-wide"
+              style={{ fontFamily: "'Oswald', sans-serif", letterSpacing: "0.10em" }}
+            >
+              Our Services
+            </h4>
+            <ul className="space-y-2.5">
+              <li>
+                <p
+                  className="text-xs font-bold uppercase tracking-wide mb-1.5"
+                  style={{ color: GOLD_500, fontFamily: "'Oswald', sans-serif" }}
+                >
+                  Diamond Cutz
+                </p>
+              </li>
               {[
-                { label: "Home", href: "/" },
-                { label: "Diamond Cutz", href: "/diamond-cutz" },
-                { label: "A Diamond Girl", href: "/diamond-girl" },
-                { label: "About Us", href: "/about" },
-                { label: "Gallery", href: "/gallery" },
-                { label: "Testimonials", href: "/testimonials" },
-              ].map(link => (
-                <Link key={link.href} href={link.href} style={{ color: "rgba(255,255,255,0.6)", fontSize: 13, textDecoration: "none" }}>
-                  {link.label}
-                </Link>
+                "Lawn Mowing & Edging",
+                "Landscape Design",
+                "Fertilization & Weed Control",
+                "Sod Installation",
+                "Shrub & Hedge Trimming",
+                "Mulching & Bed Care",
+              ].map((s) => (
+                <li key={s}>
+                  <Link
+                    href="/diamond-cutz"
+                    className="text-sm transition-colors hover:text-white"
+                    style={{ color: "rgba(255,255,255,0.65)", fontFamily: "'Manrope', sans-serif" }}
+                  >
+                    {s}
+                  </Link>
+                </li>
               ))}
-            </div>
-            <div style={{ marginTop: 20, padding: "14px 16px", background: "rgba(200,162,74,0.1)", borderRadius: 3, border: "1px solid rgba(200,162,74,0.2)" }}>
-              <p style={{ fontFamily: "'Oswald', sans-serif", fontSize: 10, letterSpacing: "0.16em", textTransform: "uppercase", color: "#C8A24A", margin: "0 0 6px" }}>
-                Business Inquiries
+              <li className="pt-2">
+                <p
+                  className="text-xs font-bold uppercase tracking-wide mb-1.5"
+                  style={{ color: MAGENTA, fontFamily: "'Oswald', sans-serif" }}
+                >
+                  A Diamond Girl
+                </p>
+              </li>
+              {[
+                "Diamond Deep Clean",
+                "Recurring Diamond Shine",
+                "Move-In / Move-Out",
+                "Post-Construction Clean",
+              ].map((s) => (
+                <li key={s}>
+                  <Link
+                    href="/diamond-girl"
+                    className="text-sm transition-colors hover:text-white"
+                    style={{ color: "rgba(255,255,255,0.65)", fontFamily: "'Manrope', sans-serif" }}
+                  >
+                    {s}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Quick Links */}
+          <div>
+            <h4
+              className="font-bold text-white mb-4 text-base uppercase tracking-wide"
+              style={{ fontFamily: "'Oswald', sans-serif", letterSpacing: "0.10em" }}
+            >
+              Quick Links
+            </h4>
+            <ul className="space-y-2.5">
+              {[
+                { label: "Home",           href: "/" },
+                { label: "Diamond Cutz",   href: "/diamond-cutz" },
+                { label: "A Diamond Girl", href: "/diamond-girl" },
+                { label: "About Us",       href: "/about" },
+                { label: "Photo Gallery",  href: "/gallery" },
+                { label: "Testimonials",   href: "/testimonials" },
+                { label: "Contact",        href: "/contact" },
+              ].map((link) => (
+                <li key={link.label}>
+                  <Link
+                    href={link.href}
+                    className="text-sm transition-colors hover:text-white"
+                    style={{ color: "rgba(255,255,255,0.65)", fontFamily: "'Manrope', sans-serif" }}
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Contact */}
+          <div>
+            <h4
+              className="font-bold text-white mb-4 text-base uppercase tracking-wide"
+              style={{ fontFamily: "'Oswald', sans-serif", letterSpacing: "0.10em" }}
+            >
+              Contact Us
+            </h4>
+            <ul className="space-y-3.5">
+              <li className="flex items-start gap-3">
+                <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: GOLD_500 }} />
+                <span
+                  className="text-sm"
+                  style={{ color: "rgba(255,255,255,0.72)", fontFamily: "'Manrope', sans-serif" }}
+                >
+                  Nassau County, FL
+                  <br />
+                  <span style={{ color: "rgba(255,255,255,0.45)" }}>
+                    Rooted in the Tributary Community, Yulee
+                  </span>
+                </span>
+              </li>
+              <li className="flex items-start gap-3">
+                <Phone className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: GOLD_500 }} />
+                <div>
+                  <a
+                    href="tel:+18563713971"
+                    className="text-sm block transition-colors hover:text-white"
+                    style={{ color: "rgba(255,255,255,0.72)", fontFamily: "'Manrope', sans-serif" }}
+                  >
+                    856-371-3971{" "}
+                    <span style={{ color: "rgba(255,255,255,0.40)" }}>(Lawn — Mike)</span>
+                  </a>
+                  <a
+                    href="tel:+18569810930"
+                    className="text-sm block transition-colors hover:text-white"
+                    style={{ color: "rgba(255,255,255,0.72)", fontFamily: "'Manrope', sans-serif" }}
+                  >
+                    856-981-0930{" "}
+                    <span style={{ color: "rgba(255,255,255,0.40)" }}>(Cleaning — Lydine)</span>
+                  </a>
+                </div>
+              </li>
+              <li className="flex items-center gap-3">
+                <Mail className="w-4 h-4 flex-shrink-0" style={{ color: GOLD_500 }} />
+                <a
+                  href="mailto:diamondhomeservicesofflorida@gmail.com"
+                  className="text-sm transition-colors hover:text-white break-all"
+                  style={{ color: "rgba(255,255,255,0.72)", fontFamily: "'Manrope', sans-serif" }}
+                >
+                  diamondhomeservicesofflorida@gmail.com
+                </a>
+              </li>
+            </ul>
+            <div
+              className="mt-5 p-3"
+              style={{ backgroundColor: NAVY_700 }}
+            >
+              <p
+                className="text-xs font-bold uppercase tracking-wide mb-1"
+                style={{ color: GOLD_500, fontFamily: "'Oswald', sans-serif", letterSpacing: "0.12em" }}
+              >
+                Business Hours
               </p>
-              <p style={{ color: "rgba(255,255,255,0.65)", fontSize: 12, margin: 0, lineHeight: 1.6 }}>
-                We work with businesses too. Call or text for a custom quote.
+              <p
+                className="text-sm"
+                style={{ color: "rgba(255,255,255,0.68)", fontFamily: "'Manrope', sans-serif" }}
+              >
+                Mon–Fri: 7:00 AM – 6:00 PM
+                <br />
+                Sat: 8:00 AM – 4:00 PM
+                <br />
+                Sun: Closed
               </p>
             </div>
           </div>
         </div>
 
-        {/* Bottom bar */}
-        <div style={{ marginTop: 40, paddingTop: 20, borderTop: "1px solid rgba(200,162,74,0.15)", display: "flex", flexWrap: "wrap", gap: 12, justifyContent: "space-between", alignItems: "center" }}>
-          <p style={{ color: "rgba(255,255,255,0.35)", fontSize: 12, margin: 0 }}>
-            © {year} Diamond Home Services LLC. All rights reserved. · Yulee, FL 32097
+        {/* Bottom Bar */}
+        <div
+          className="mt-12 pt-6 flex flex-col md:flex-row items-center justify-between gap-3"
+          style={{ borderTop: `1px solid ${NAVY_700}` }}
+        >
+          <p
+            className="text-xs"
+            style={{ color: "rgba(255,255,255,0.38)", fontFamily: "'Manrope', sans-serif" }}
+          >
+            © {new Date().getFullYear()} Diamond Home Services LLC. All rights reserved. · Nassau County, FL
           </p>
-          <div style={{ display: "flex", alignItems: "center", gap: 4 }}>
-            {[1,2,3,4,5].map(i => (
-              <Star key={i} size={12} style={{ color: "#C8A24A", fill: "#C8A24A" }} />
+          <div className="flex items-center gap-1">
+            {[1, 2, 3, 4, 5].map((i) => (
+              <Star key={i} className="w-3.5 h-3.5 fill-current" style={{ color: GOLD_500 }} />
             ))}
-            <span style={{ color: "rgba(255,255,255,0.3)", fontSize: 11, marginLeft: 6 }}>Licensed & Insured</span>
+            <span
+              className="text-xs ml-1.5"
+              style={{ color: "rgba(255,255,255,0.38)", fontFamily: "'Manrope', sans-serif" }}
+            >
+              Licensed & Insured
+            </span>
           </div>
         </div>
       </div>

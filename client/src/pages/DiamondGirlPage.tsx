@@ -1,252 +1,296 @@
-/* ================================================================
-   A Diamond Girl — Home Cleaning Service
-   Design System: Girl palette
-     Wine 800 #5C1432 | Wine 700 #7A1B42 | Magenta 500 #C21B6B
-     Pink 400 #EC4B99 | Blush 100 #FCE4EC | Aqua 300 #7FD7E8
-   Patterns: sparkle-dots (hero), bubble-float (sections)
-   Fonts: Anton (display), Oswald (labels), Manrope (body)
-   Owner: Lydine | Phone: 856-981-0930
-   Email: diamondhomeservicesofflorida@gmail.com
-   ================================================================ */
+import { Link } from "wouter";
+import {
+  Sparkles, Home, Star, Shield, Clock, Heart,
+  CheckCircle2, Phone, Mail, ArrowRight, Briefcase, Gem, Zap
+} from "lucide-react";
+import Footer from "@/components/Footer";
 
-import { Sparkles, Star, Home, Wind, Layers, Brush, CheckCircle2, Phone, Mail, ArrowRight, Gem, Shield, Zap } from "lucide-react";
+const DIAMOND_GIRL_LOGO_FULL = "/manus-storage/diamond-girl-logo_26e7435d.png";
+const MASCOT_IMG = "/manus-storage/diamond-girl-mascot_2e738c0a.png";
 
-const DIAMOND_GIRL_LOGO = "/manus-storage/diamond-girl-logo-clean_4f2c96f8.png";
+// Girl palette hex tokens
+const WINE_800   = "#5C1432";
+const WINE_700   = "#7A1B42";
+const MAGENTA    = "#C21B6B";
+const PINK_400   = "#EC4B99";
+const BLUSH_100  = "#FCE4EC";
+const AQUA_300   = "#7FD7E8";
+const GOLD_500   = "#C8A24A";
+const NAVY_900   = "#081830";
+const WHITE      = "#FFFFFF";
+const OFFWHITE   = "#F5F3EE";
+const CHARCOAL   = "#1A1F2E";
 
 const services = [
   {
     icon: Sparkles,
     title: "The Diamond Deep Clean",
     tagline: "When good enough isn't good enough.",
-    desc: "Our signature service. Top-to-bottom deep cleaning that reaches every surface, every corner, every forgotten spot. We don't just clean — we restore.",
-    includes: ["Inside appliances & cabinets", "Baseboards & window sills", "Behind & under furniture", "Full bathroom deep scrub", "Ceiling fans & light fixtures"],
+    description: "Our signature service. A thorough, top-to-bottom deep clean that reaches every surface, every corner, every detail.",
+    includes: ["Inside appliances & cabinets", "Baseboards & window sills", "Behind & under furniture", "All fixtures polished"],
+    frequency: "One-Time / Seasonal",
+    badge: "Signature Service",
   },
   {
     icon: Home,
     title: "Recurring Diamond Shine",
     tagline: "Keep your home sparkling, always.",
-    desc: "Maintain that just-deep-cleaned feeling all year long. Weekly, bi-weekly, or monthly — customized to your home and schedule.",
-    includes: ["Full kitchen & bathroom clean", "Vacuuming & mopping", "Dusting all surfaces", "Sanitizing high-touch areas", "Custom checklist"],
+    description: "Maintain that just-deep-cleaned feeling all year long. Lydine works around your schedule to keep your home guest-ready.",
+    includes: ["Full kitchen & bathroom cleaning", "Vacuuming & mopping all floors", "Dusting all surfaces & decor", "Sanitizing high-touch areas"],
+    frequency: "Weekly / Bi-Weekly / Monthly",
+    badge: "Most Popular",
   },
   {
     icon: Star,
-    title: "Move-In / Move-Out",
+    title: "Move-In / Move-Out Clean",
     tagline: "Start fresh. Leave spotless.",
-    desc: "Moving is stressful enough. Let Lydine handle the clean so you can focus on the move. Deposit-back guaranteed.",
-    includes: ["Full property deep clean", "Inside all cabinets & drawers", "All appliances inside & out", "Bathrooms scrubbed & sanitized", "Windows & sills"],
+    description: "Moving is stressful enough. Let Lydine handle the clean so you can focus on the move.",
+    includes: ["Full property deep clean", "Inside all cabinets & drawers", "All appliances cleaned inside & out", "Walls & baseboards wiped"],
+    frequency: "One-Time",
+    badge: null,
   },
   {
-    icon: Wind,
-    title: "Airbnb Turnover",
-    tagline: "Guest-Ready in 90 Minutes.",
-    desc: "Linens restocked, surfaces wiped, photo-ready staging. We make your rental shine between guests — fast.",
-    includes: ["Linen change & restock", "Full clean & sanitize", "Photo-ready staging", "Trash removal"],
+    icon: Gem,
+    title: "Diamond-Level Kitchen Clean",
+    tagline: "The heart of your home, treated like a gem.",
+    description: "A dedicated, intensive kitchen cleaning service. We degrease, sanitize, and polish every surface.",
+    includes: ["Full appliance degreasing & cleaning", "Cabinet fronts & hardware", "Backsplash & countertops", "Sink & fixtures polished"],
+    frequency: "One-Time / Add-On",
+    badge: null,
   },
   {
     icon: Shield,
     title: "Post-Construction Clean",
-    tagline: "From Dust to Diamond.",
-    desc: "After renovations or new builds, we remove all construction dust, debris, and residue for a move-in ready finish.",
-    includes: ["Dust & debris removal", "Surface polish", "Floor cleaning", "Window & fixture wipe"],
+    tagline: "Built beautiful. Now let's make it spotless.",
+    description: "Construction and renovation leave behind dust, debris, and residue that requires specialized cleaning.",
+    includes: ["Construction dust removal", "Surface & floor deep cleaning", "Window & fixture cleaning", "Final detail wipe-down"],
+    frequency: "One-Time",
+    badge: null,
   },
   {
-    icon: Gem,
+    icon: Zap,
     title: "Special Occasion Shine",
     tagline: "Because your guests deserve diamond clean.",
-    desc: "Hosting a gathering or holiday party? We'll get your home guest-ready before and clean up after.",
+    description: "Hosting a gathering, holiday party, or special event? We'll get your home guest-ready before and after.",
     includes: ["Pre-event deep clean", "Post-event cleanup", "Kitchen & bathroom focus", "Quick turnaround available"],
+    frequency: "As Needed",
+    badge: null,
   },
+];
+
+const catchphrases = [
+  { text: "Diamond Shine, Every Time", icon: Gem },
+  { text: "We Don't Just Clean -- We Transform", icon: Sparkles },
+  { text: "Your Home Deserves Diamond-Level Care", icon: Star },
+  { text: "Deep Clean. Spotless. Guaranteed.", icon: Shield },
+];
+
+const sparkDots = [
+  { top: "15%", left: "8%",  size: 8,  opacity: 0.45 },
+  { top: "40%", left: "5%",  size: 5,  opacity: 0.35 },
+  { top: "80%", left: "15%", size: 6,  opacity: 0.3  },
+  { top: "12%", left: "42%", size: 5,  opacity: 0.3  },
+  { top: "72%", left: "38%", size: 7,  opacity: 0.35 },
+  { top: "90%", left: "55%", size: 4,  opacity: 0.4  },
+  { top: "5%",  left: "72%", size: 10, opacity: 0.25 },
+  { top: "25%", left: "88%", size: 6,  opacity: 0.3  },
+  { top: "55%", left: "95%", size: 8,  opacity: 0.35 },
+  { top: "85%", left: "82%", size: 5,  opacity: 0.4  },
+];
+
+const sparkStars = [
+  { top: "22%", left: "6%"   },
+  { top: "48%", left: "12%"  },
+  { top: "70%", left: "28%"  },
+  { top: "14%", left: "55%"  },
+  { top: "30%", right: "6%"  },
+  { top: "62%", right: "4%"  },
+  { top: "82%", right: "18%" },
+  { top: "10%", right: "28%" },
 ];
 
 export default function DiamondGirlPage() {
   return (
-    <div style={{ fontFamily: "'Manrope', sans-serif", backgroundColor: "#FCE4EC" }}>
+    <div className="min-h-screen" style={{ backgroundColor: OFFWHITE }}>
 
-      {/* ── HERO: wine-to-magenta gradient with sparkle dots ── */}
-      <section style={{
-        background: "linear-gradient(135deg, #5C1432 0%, #7A1B42 40%, #C21B6B 100%)",
-        paddingTop: 80,
-        paddingBottom: 64,
-        position: "relative",
-        overflow: "hidden",
-      }}>
+      {/* ===== HERO ===== */}
+      <section
+        className="relative overflow-hidden"
+        style={{ background: "#F4A7C3", minHeight: 560 }}
+      >
+        {/* Own navbar row */}
+        <div
+          className="relative flex items-center justify-between px-8 pt-5 pb-2"
+          style={{ zIndex: 10 }}
+        >
+          <Link href="/">
+            <img
+              src={DIAMOND_GIRL_LOGO_FULL}
+              alt="A Diamond Girl Home Cleaning Service"
+              className="h-16 w-auto object-contain drop-shadow-md"
+            />
+          </Link>
+          <div className="hidden md:flex items-center gap-8">
+            {["SERVICES", "PLANS", "REVIEWS"].map((label) => (
+              <a
+                key={label}
+                href={label === "SERVICES" ? "#services" : label === "REVIEWS" ? "/testimonials" : "#pricing"}
+                className="text-sm font-bold tracking-widest transition-colors hover:opacity-70"
+                style={{ color: WINE_800, fontFamily: "'Oswald', sans-serif", letterSpacing: "0.14em" }}
+              >
+                {label}
+              </a>
+            ))}
+            <a
+              href="tel:+18569810930"
+              className="px-5 py-2 font-bold text-sm tracking-wide transition-all hover:opacity-90"
+              style={{
+                backgroundColor: WINE_800,
+                color: WHITE,
+                fontFamily: "'Oswald', sans-serif",
+                letterSpacing: "0.08em",
+                borderRadius: 4,
+              }}
+            >
+              856-981-0930
+            </a>
+          </div>
+        </div>
+
         {/* Sparkle dots */}
-        {[
-          { top: "10%", left: "7%", size: 7, opacity: 0.6 },
-          { top: "28%", right: "5%", size: 11, opacity: 0.45 },
-          { top: "58%", left: "14%", size: 5, opacity: 0.55 },
-          { top: "78%", right: "18%", size: 9, opacity: 0.4 },
-          { top: "42%", left: "44%", size: 4, opacity: 0.5 },
-          { top: "18%", right: "28%", size: 13, opacity: 0.28 },
-          { top: "88%", left: "58%", size: 6, opacity: 0.55 },
-          { top: "52%", right: "7%", size: 5, opacity: 0.65 },
-        ].map((dot, i) => (
-          <div key={i} style={{
-            position: "absolute",
-            top: dot.top,
-            left: (dot as any).left,
-            right: (dot as any).right,
-            width: dot.size,
-            height: dot.size,
-            borderRadius: "50%",
-            background: "#FCE4EC",
-            opacity: dot.opacity,
-            pointerEvents: "none",
-          }} />
-        ))}
+        <div className="absolute inset-0 pointer-events-none" style={{ zIndex: 0 }}>
+          {sparkDots.map((dot, i) => (
+            <div
+              key={i}
+              className="absolute rounded-full"
+              style={{
+                top: dot.top,
+                left: dot.left,
+                width: dot.size,
+                height: dot.size,
+                backgroundColor: `rgba(255,255,255,${dot.opacity})`,
+              }}
+            />
+          ))}
+          {sparkStars.map((pos, i) => (
+            <div
+              key={`star-${i}`}
+              className="absolute"
+              style={{ ...pos, fontSize: i % 2 === 0 ? 22 : 14, color: "rgba(255,255,255,0.60)", lineHeight: 1 }}
+            >
+              *
+            </div>
+          ))}
+        </div>
 
-        <div className="container" style={{ position: "relative", zIndex: 2 }}>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 40, alignItems: "center" }}>
-            <div>
-              <p style={{ fontFamily: "'Oswald', sans-serif", fontWeight: 400, fontSize: 11, letterSpacing: "0.22em", textTransform: "uppercase", color: "#EC4B99", marginBottom: 14 }}>
-                Home Cleaning · Move-Out · Deep Clean
-              </p>
-              <h1 style={{ fontFamily: "'Anton', sans-serif", fontSize: "clamp(48px, 7vw, 84px)", lineHeight: 0.92, color: "#fff", letterSpacing: "-0.01em", margin: "0 0 8px" }}>
+        {/* Hero content: left text + right mascot */}
+        <div
+          className="relative flex flex-col lg:flex-row items-center"
+          style={{ zIndex: 1, minHeight: 440, padding: "0 2rem 2rem" }}
+        >
+          {/* Left: copy */}
+          <div className="flex-1 pt-4 pb-8 lg:pb-0 max-w-lg">
+            <p
+              className="text-xs font-bold uppercase mb-4 tracking-widest"
+              style={{ color: WINE_800, fontFamily: "'Oswald', sans-serif", letterSpacing: "0.18em" }}
+            >
+              Home Cleaning &middot; Move-Out &middot; Airbnb Turnover
+            </p>
+            <div style={{ lineHeight: 1.05 }}>
+              <div
+                className="text-5xl md:text-6xl font-black uppercase"
+                style={{ color: CHARCOAL, fontFamily: "'Oswald', sans-serif" }}
+              >
                 EVERY HOME
-              </h1>
-              <p style={{ fontFamily: "'Playfair Display', serif", fontStyle: "italic", fontSize: "clamp(32px, 5vw, 58px)", lineHeight: 1.1, color: "#EC4B99", margin: "0 0 8px" }}>
-                deserves to
-              </p>
-              <h1 style={{ fontFamily: "'Anton', sans-serif", fontSize: "clamp(48px, 7vw, 84px)", lineHeight: 0.92, color: "#fff", letterSpacing: "-0.01em", margin: "0 0 22px" }}>
-                SPARKLE.
-              </h1>
-              <p style={{ color: "rgba(255,255,255,0.82)", fontSize: 15, lineHeight: 1.75, maxWidth: 440, margin: "0 0 28px" }}>
-                Move-in ready cleans, weekly maintenance, and detailed deep-cleans — done by a small team you'll actually recognize. Serving Nassau County from the Tributary community.
-              </p>
-              <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
-                <a href="tel:+18569810930" style={{
-                  display: "inline-flex", alignItems: "center", gap: 8,
-                  background: "#C21B6B", color: "#fff",
-                  padding: "12px 24px", borderRadius: 3,
-                  fontFamily: "'Oswald', sans-serif", fontWeight: 600,
-                  fontSize: 13, letterSpacing: "0.14em", textTransform: "uppercase",
-                  textDecoration: "none",
-                }}>
-                  <Phone size={14} /> Book a Clean
-                </a>
-                <a href="tel:+18569810930" style={{
-                  display: "inline-flex", alignItems: "center", gap: 8,
-                  background: "transparent", color: "#EC4B99",
-                  padding: "12px 24px", borderRadius: 3,
-                  fontFamily: "'Oswald', sans-serif", fontWeight: 600,
-                  fontSize: 13, letterSpacing: "0.14em", textTransform: "uppercase",
-                  textDecoration: "none", border: "1.5px solid #EC4B99",
-                }}>
-                  Get a Quote →
-                </a>
               </div>
-              <div style={{ display: "flex", gap: 10, flexWrap: "wrap", marginTop: 20 }}>
-                {["Insured", "Nassau County", "Deep Clean Specialists"].map(tag => (
-                  <span key={tag} style={{
-                    background: "rgba(255,255,255,0.12)", color: "rgba(255,255,255,0.85)",
-                    padding: "4px 12px", borderRadius: 20,
-                    fontFamily: "'Oswald', sans-serif", fontSize: 11,
-                    fontWeight: 600, letterSpacing: "0.18em", textTransform: "uppercase",
-                  }}>{tag}</span>
-                ))}
+              <div
+                className="text-4xl md:text-5xl italic font-bold"
+                style={{ color: WINE_800, fontFamily: "'Playfair Display', serif" }}
+              >
+                deserves to
+              </div>
+              <div
+                className="text-5xl md:text-6xl font-black uppercase"
+                style={{ color: CHARCOAL, fontFamily: "'Oswald', sans-serif" }}
+              >
+                SPARKLE.
               </div>
             </div>
-            <div style={{ display: "flex", justifyContent: "center" }}>
-              <div style={{
-                width: "min(300px, 100%)",
-                height: "min(300px, 100%)",
+            <p
+              className="mt-5 text-base leading-relaxed max-w-sm"
+              style={{ color: WINE_800, fontFamily: "'Manrope', sans-serif" }}
+            >
+              Move-in ready cleans, weekly maintenance, and detailed deep-cleans -- done by a small team you'll actually recognize.
+            </p>
+            <div className="flex flex-wrap gap-3 mt-7">
+              <a
+                href="tel:+18569810930"
+                className="px-6 py-3 font-bold text-sm tracking-wide transition-all hover:opacity-90"
+                style={{
+                  backgroundColor: WINE_800,
+                  color: WHITE,
+                  fontFamily: "'Oswald', sans-serif",
+                  letterSpacing: "0.08em",
+                  borderRadius: 4,
+                }}
+              >
+                BOOK A CLEAN
+              </a>
+              <a
+                href="#pricing"
+                className="px-6 py-3 font-bold text-sm tracking-wide transition-all hover:bg-white/20"
+                style={{
+                  border: `2px solid ${WINE_700}`,
+                  color: WINE_700,
+                  fontFamily: "'Oswald', sans-serif",
+                  letterSpacing: "0.06em",
+                  borderRadius: 4,
+                }}
+              >
+                PRICING &rarr;
+              </a>
+            </div>
+          </div>
+
+          {/* Right: mascot in pink circle */}
+          <div className="flex-1 flex items-end justify-center lg:justify-end" style={{ minHeight: 380 }}>
+            <div
+              className="relative flex items-end justify-center"
+              style={{
+                width: 380,
+                height: 380,
                 borderRadius: "50%",
-                background: "rgba(252,228,236,0.12)",
-                border: "2px solid rgba(236,75,153,0.35)",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                padding: 20,
-              }}>
-                <img src={DIAMOND_GIRL_LOGO} alt="A Diamond Girl Home Cleaning Service"
-                  style={{ width: "100%", height: "auto", filter: "drop-shadow(0 16px 32px rgba(0,0,0,0.3))" }} />
-              </div>
+                background: "rgba(255,255,255,0.25)",
+                border: `4px solid ${WINE_700}`,
+                overflow: "hidden",
+              }}
+            >
+              <img
+                src={MASCOT_IMG}
+                alt="A Diamond Girl cleaning mascot"
+                className="w-full h-auto object-contain drop-shadow-2xl"
+                style={{ maxHeight: 480, marginBottom: "-4px" }}
+              />
             </div>
           </div>
         </div>
       </section>
 
-      {/* ── PINK RIBBON DIVIDER ── */}
-      <div style={{ height: 5, background: "linear-gradient(90deg, #5C1432, #C21B6B, #EC4B99, #C21B6B, #5C1432)" }} />
-
-      {/* ── CATCHPHRASES BAND ── */}
-      <div style={{ background: "#7A1B42", padding: "14px 0" }}>
+      {/* ===== CATCHPHRASES BANNER ===== */}
+      <section className="py-8 overflow-hidden" style={{ backgroundColor: GOLD_500 }}>
         <div className="container">
-          <div style={{ display: "flex", flexWrap: "wrap", gap: 24, justifyContent: "center" }}>
-            {["✦ Diamond Shine, Every Time.", "✦ We Don't Just Clean — We Transform.", "✦ Your Home Deserves to Sparkle.", "✦ From Dusty to Dazzling."].map((phrase, i) => (
-              <span key={i} style={{
-                fontFamily: "'Oswald', sans-serif", fontWeight: 600,
-                fontSize: 12, letterSpacing: "0.16em", textTransform: "uppercase",
-                color: i % 2 === 0 ? "#EC4B99" : "#FCE4EC",
-              }}>{phrase}</span>
-            ))}
-          </div>
-        </div>
-      </div>
-
-      {/* ── SERVICES GRID: blush with sparkle dot pattern ── */}
-      <section style={{
-        background: "#FCE4EC",
-        backgroundImage: "radial-gradient(circle, rgba(194,27,107,0.08) 1px, transparent 1px)",
-        backgroundSize: "28px 28px",
-        padding: "80px 0",
-      }}>
-        <div className="container">
-          <div style={{ textAlign: "center", marginBottom: 52 }}>
-            <p style={{ fontFamily: "'Oswald', sans-serif", fontWeight: 400, fontSize: 11, letterSpacing: "0.22em", textTransform: "uppercase", color: "#C21B6B", marginBottom: 12 }}>
-              Full Service Menu · Crew Indoors
-            </p>
-            <h2 style={{ fontFamily: "'Anton', sans-serif", fontSize: "clamp(36px, 5vw, 60px)", color: "#5C1432", margin: 0, lineHeight: 1 }}>
-              THE DIAMOND CLEAN DIFFERENCE
-            </h2>
-            <p style={{ color: "#7A1B42", fontSize: 15, maxWidth: 520, margin: "16px auto 0", lineHeight: 1.7 }}>
-              We specialize in deep, thorough cleaning — not basic tidying. Every visit leaves your home genuinely transformed.
-            </p>
-          </div>
-
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))", gap: 22 }}>
-            {services.map((service) => {
-              const Icon = service.icon;
+          <div className="flex flex-wrap justify-center gap-6 md:gap-10">
+            {catchphrases.map((phrase) => {
+              const Icon = phrase.icon;
               return (
-                <div key={service.title} style={{
-                  background: "#fff",
-                  border: "1px solid rgba(194,27,107,0.15)",
-                  borderRadius: 4,
-                  padding: 24,
-                  display: "flex",
-                  flexDirection: "column",
-                }}>
-                  <div style={{ width: 44, height: 44, borderRadius: 6, background: "#FCE4EC", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 12 }}>
-                    <Icon size={22} style={{ color: "#C21B6B" }} />
-                  </div>
-                  <p style={{ fontFamily: "'Playfair Display', serif", fontStyle: "italic", fontSize: 12, color: "#EC4B99", margin: "0 0 4px" }}>
-                    {service.tagline}
-                  </p>
-                  <h3 style={{ fontFamily: "'Oswald', sans-serif", fontWeight: 700, fontSize: 16, letterSpacing: "0.06em", textTransform: "uppercase", color: "#5C1432", margin: "0 0 8px" }}>
-                    {service.title}
-                  </h3>
-                  <p style={{ color: "#6B3050", fontSize: 13.5, lineHeight: 1.65, margin: "0 0 14px", flex: 1 }}>
-                    {service.desc}
-                  </p>
-                  <ul style={{ listStyle: "none", padding: 0, margin: "0 0 18px", display: "flex", flexDirection: "column", gap: 5 }}>
-                    {service.includes.map(item => (
-                      <li key={item} style={{ display: "flex", alignItems: "center", gap: 7, fontSize: 12.5, color: "#5C1432" }}>
-                        <CheckCircle2 size={13} style={{ color: "#C21B6B", flexShrink: 0 }} />
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                  <a href="tel:+18569810930" style={{
-                    display: "flex", alignItems: "center", justifyContent: "space-between",
-                    background: "#FCE4EC", color: "#C21B6B",
-                    padding: "9px 14px", borderRadius: 3,
-                    fontFamily: "'Oswald', sans-serif", fontWeight: 600,
-                    fontSize: 11, letterSpacing: "0.14em", textTransform: "uppercase",
-                    textDecoration: "none",
-                  }}>
-                    <span>Call Lydine for Pricing</span>
-                    <Phone size={13} />
-                  </a>
+                <div key={phrase.text} className="flex items-center gap-2">
+                  <Icon size={16} color={WINE_800} />
+                  <span
+                    className="text-sm font-bold uppercase tracking-widest"
+                    style={{ color: WINE_800, fontFamily: "'Oswald', sans-serif" }}
+                  >
+                    {phrase.text}
+                  </span>
                 </div>
               );
             })}
@@ -254,101 +298,208 @@ export default function DiamondGirlPage() {
         </div>
       </section>
 
-      {/* ── EMPLOYMENT CALLOUT: aqua accent on wine ── */}
-      <section style={{
-        background: "linear-gradient(135deg, #5C1432 0%, #7A1B42 100%)",
-        padding: "60px 0",
-        position: "relative",
-        overflow: "hidden",
-      }}>
-        {[
-          { top: "18%", left: "4%", size: 9 },
-          { top: "72%", right: "7%", size: 13 },
-          { top: "38%", right: "24%", size: 6 },
-          { top: "60%", left: "30%", size: 8 },
-        ].map((dot, i) => (
-          <div key={i} style={{
-            position: "absolute",
-            top: dot.top,
-            left: (dot as any).left,
-            right: (dot as any).right,
-            width: dot.size,
-            height: dot.size,
-            borderRadius: "50%",
-            background: "#7FD7E8",
-            opacity: 0.45,
-            pointerEvents: "none",
-          }} />
-        ))}
-        <div className="container" style={{ position: "relative", zIndex: 2, textAlign: "center" }}>
-          <div style={{
-            display: "inline-flex", alignItems: "center", gap: 8,
-            background: "rgba(127,215,232,0.15)", color: "#7FD7E8",
-            padding: "6px 16px", borderRadius: 20,
-            fontFamily: "'Oswald', sans-serif", fontSize: 11,
-            fontWeight: 600, letterSpacing: "0.2em", textTransform: "uppercase",
-            marginBottom: 20,
-          }}>
-            <Sparkles size={12} /> Now Hiring
+      {/* ===== SERVICES GRID ===== */}
+      <section id="services" className="py-20" style={{ backgroundColor: OFFWHITE }}>
+        <div className="container">
+          <div className="text-center mb-14">
+            <p
+              className="text-xs font-bold uppercase tracking-widest mb-3"
+              style={{ color: MAGENTA, fontFamily: "'Oswald', sans-serif" }}
+            >
+              What We Offer
+            </p>
+            <h2
+              className="text-4xl md:text-5xl font-black uppercase"
+              style={{ color: CHARCOAL, fontFamily: "'Oswald', sans-serif" }}
+            >
+              Diamond-Level Services
+            </h2>
+            <p
+              className="mt-4 text-base max-w-xl mx-auto"
+              style={{ color: "#4A5568", fontFamily: "'Manrope', sans-serif" }}
+            >
+              Every clean is performed with care, attention to detail, and a commitment to making your home truly sparkle.
+            </p>
           </div>
-          <h2 style={{ fontFamily: "'Anton', sans-serif", fontSize: "clamp(32px, 5vw, 52px)", color: "#fff", margin: "0 0 14px", lineHeight: 1 }}>
-            JOIN OUR TEAM
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {services.map((service) => {
+              const Icon = service.icon;
+              return (
+                <div
+                  key={service.title}
+                  className="relative rounded-lg p-6 flex flex-col gap-3 transition-shadow hover:shadow-lg"
+                  style={{ backgroundColor: WHITE, border: `1px solid #F0E0E8` }}
+                >
+                  {service.badge && (
+                    <span
+                      className="absolute top-4 right-4 text-xs font-bold px-2 py-1 rounded"
+                      style={{ backgroundColor: MAGENTA, color: WHITE, fontFamily: "'Oswald', sans-serif" }}
+                    >
+                      {service.badge}
+                    </span>
+                  )}
+                  <div
+                    className="w-10 h-10 rounded-full flex items-center justify-center"
+                    style={{ backgroundColor: BLUSH_100 }}
+                  >
+                    <Icon size={20} color={MAGENTA} />
+                  </div>
+                  <div>
+                    <h3
+                      className="text-lg font-black uppercase"
+                      style={{ color: CHARCOAL, fontFamily: "'Oswald', sans-serif" }}
+                    >
+                      {service.title}
+                    </h3>
+                    <p
+                      className="text-xs italic mt-0.5"
+                      style={{ color: MAGENTA, fontFamily: "'Playfair Display', serif" }}
+                    >
+                      {service.tagline}
+                    </p>
+                  </div>
+                  <p
+                    className="text-sm leading-relaxed"
+                    style={{ color: "#4A5568", fontFamily: "'Manrope', sans-serif" }}
+                  >
+                    {service.description}
+                  </p>
+                  <ul className="flex flex-col gap-1.5 mt-1">
+                    {service.includes.map((item) => (
+                      <li key={item} className="flex items-start gap-2 text-xs" style={{ color: "#4A5568" }}>
+                        <CheckCircle2 size={13} color={MAGENTA} className="mt-0.5 shrink-0" />
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                  <div
+                    className="mt-auto pt-3 text-xs font-bold uppercase tracking-wide"
+                    style={{ color: WINE_800, fontFamily: "'Oswald', sans-serif", borderTop: `1px solid #F0E0E8` }}
+                  >
+                    <Clock size={11} className="inline mr-1" />
+                    {service.frequency}
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* ===== WHY DIAMOND GIRL ===== */}
+      <section className="py-10" style={{ backgroundColor: BLUSH_100 }}>
+        <div className="container">
+          <div className="max-w-2xl mx-auto text-center">
+            <Sparkles size={28} color={MAGENTA} className="mx-auto mb-4" />
+            <h3
+              className="text-2xl font-black uppercase mb-3"
+              style={{ color: CHARCOAL, fontFamily: "'Oswald', sans-serif" }}
+            >
+              Specialized Deep Cleaning -- Not Household Chores
+            </h3>
+            <p
+              className="text-sm leading-relaxed"
+              style={{ color: "#4A5568", fontFamily: "'Manrope', sans-serif" }}
+            >
+              A Diamond Girl specializes in professional deep cleaning services -- not basic household tasks like laundry or dishes. Our focus is delivering a thorough, detailed clean that transforms your home from top to bottom. Have questions about what's included? Just call or text Lydine!
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* ===== CTA BANNER ===== */}
+      <section
+        className="py-16"
+        style={{ background: `linear-gradient(135deg, ${WINE_800} 0%, ${WINE_700} 100%)` }}
+      >
+        <div className="container text-center">
+          <h2
+            className="text-3xl md:text-4xl font-black uppercase mb-4"
+            style={{ color: WHITE, fontFamily: "'Oswald', sans-serif" }}
+          >
+            Ready for a Diamond-Clean Home?
           </h2>
-          <p style={{ color: "rgba(255,255,255,0.78)", fontSize: 15, maxWidth: 480, margin: "0 auto 28px", lineHeight: 1.75 }}>
-            Interested in working with A Diamond Girl Home Cleaning Service? We're always looking for reliable, detail-oriented cleaners who take pride in their work. Reach out to Lydine directly.
+          <p
+            className="text-base mb-8 max-w-md mx-auto opacity-90"
+            style={{ color: WHITE, fontFamily: "'Manrope', sans-serif" }}
+          >
+            Call or text Lydine directly to schedule your first clean. No contracts, no hassle -- just results.
           </p>
-          <a href="mailto:diamondhomeservicesofflorida@gmail.com" style={{
-            display: "inline-flex", alignItems: "center", gap: 8,
-            background: "#C21B6B", color: "#fff",
-            padding: "13px 28px", borderRadius: 3,
-            fontFamily: "'Oswald', sans-serif", fontWeight: 600,
-            fontSize: 14, letterSpacing: "0.14em", textTransform: "uppercase",
-            textDecoration: "none",
-          }}>
-            <Mail size={15} /> Email Lydine to Apply
-          </a>
-          <p style={{ color: "rgba(255,255,255,0.4)", fontSize: 12, marginTop: 12, fontFamily: "'Manrope', sans-serif" }}>
-            diamondhomeservicesofflorida@gmail.com
+          <div className="flex flex-wrap justify-center gap-4">
+            <a
+              href="tel:+18569810930"
+              className="flex items-center gap-2 px-8 py-3 font-bold text-sm tracking-wide transition-all hover:opacity-90"
+              style={{
+                backgroundColor: GOLD_500,
+                color: WINE_800,
+                fontFamily: "'Oswald', sans-serif",
+                letterSpacing: "0.08em",
+                borderRadius: 4,
+              }}
+            >
+              <Phone size={16} />
+              856-981-0930
+            </a>
+            <Link
+              href="/contact"
+              className="flex items-center gap-2 px-8 py-3 font-bold text-sm tracking-wide transition-all hover:bg-white/10"
+              style={{
+                border: `2px solid ${WHITE}`,
+                color: WHITE,
+                fontFamily: "'Oswald', sans-serif",
+                letterSpacing: "0.08em",
+                borderRadius: 4,
+              }}
+            >
+              GET A FREE QUOTE
+              <ArrowRight size={15} />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ===== TRUST BADGES ===== */}
+      <section className="py-16" style={{ backgroundColor: OFFWHITE }}>
+        <div className="container">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            {[
+              { icon: Shield,    label: "Fully Insured",          sub: "Peace of mind guaranteed"       },
+              { icon: Heart,     label: "Family-Owned",           sub: "South Jersey, Est. 2019"         },
+              { icon: Star,      label: "5-Star Rated",           sub: "Trusted by 100+ homeowners"      },
+              { icon: Briefcase, label: "Flexible Scheduling",    sub: "We work around your life"        },
+            ].map((item) => {
+              const Icon = item.icon;
+              return (
+                <div key={item.label} className="flex flex-col items-center text-center gap-2 p-5 rounded-lg" style={{ backgroundColor: WHITE }}>
+                  <div className="w-10 h-10 rounded-full flex items-center justify-center" style={{ backgroundColor: BLUSH_100 }}>
+                    <Icon size={20} color={MAGENTA} />
+                  </div>
+                  <p className="text-sm font-black uppercase" style={{ color: CHARCOAL, fontFamily: "'Oswald', sans-serif" }}>{item.label}</p>
+                  <p className="text-xs" style={{ color: "#6B7280", fontFamily: "'Manrope', sans-serif" }}>{item.sub}</p>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* ===== SERVICE AREA ===== */}
+      <section className="py-8" style={{ backgroundColor: BLUSH_100 }}>
+        <div className="container text-center">
+          <p className="text-xs font-bold uppercase tracking-widest mb-1" style={{ color: MAGENTA, fontFamily: "'Oswald', sans-serif" }}>
+            Service Area
+          </p>
+          <p className="text-sm" style={{ color: "#4A5568", fontFamily: "'Manrope', sans-serif" }}>
+            Nassau County, FL &middot; Flexible scheduling available
+          </p>
+          <p className="text-xs mt-2" style={{ color: "#6B7280", fontFamily: "'Manrope', sans-serif" }}>
+            Owner: Lydine &middot; <a href="tel:+18569810930" style={{ color: MAGENTA }}>856-981-0930</a> &middot; <a href="mailto:diamondhomeservicesofflorida@gmail.com" style={{ color: MAGENTA }}>diamondhomeservicesofflorida@gmail.com</a>
           </p>
         </div>
       </section>
 
-      {/* ── CONTACT CTA ── */}
-      <section style={{ background: "#fff", padding: "64px 0" }}>
-        <div className="container" style={{ textAlign: "center" }}>
-          <p style={{ fontFamily: "'Oswald', sans-serif", fontWeight: 400, fontSize: 11, letterSpacing: "0.22em", textTransform: "uppercase", color: "#C21B6B", marginBottom: 14 }}>
-            Ready for a Diamond-Clean Home?
-          </p>
-          <h2 style={{ fontFamily: "'Anton', sans-serif", fontSize: "clamp(32px, 5vw, 52px)", color: "#5C1432", margin: "0 0 16px", lineHeight: 1 }}>
-            CALL LYDINE TODAY
-          </h2>
-          <p style={{ color: "#7A1B42", fontSize: 15, maxWidth: 440, margin: "0 auto 28px", lineHeight: 1.7 }}>
-            Free estimates, no pressure. Serving Nassau County from the Tributary community.
-          </p>
-          <div style={{ display: "flex", gap: 12, justifyContent: "center", flexWrap: "wrap" }}>
-            <a href="tel:+18569810930" style={{
-              display: "inline-flex", alignItems: "center", gap: 8,
-              background: "#C21B6B", color: "#fff",
-              padding: "13px 28px", borderRadius: 3,
-              fontFamily: "'Oswald', sans-serif", fontWeight: 600,
-              fontSize: 14, letterSpacing: "0.14em", textTransform: "uppercase",
-              textDecoration: "none",
-            }}>
-              <Phone size={15} /> 856-981-0930
-            </a>
-            <a href="mailto:diamondhomeservicesofflorida@gmail.com" style={{
-              display: "inline-flex", alignItems: "center", gap: 8,
-              background: "transparent", color: "#C21B6B",
-              padding: "13px 28px", borderRadius: 3,
-              fontFamily: "'Oswald', sans-serif", fontWeight: 600,
-              fontSize: 14, letterSpacing: "0.14em", textTransform: "uppercase",
-              textDecoration: "none", border: "1.5px solid #C21B6B",
-            }}>
-              Email Us <ArrowRight size={14} />
-            </a>
-          </div>
-        </div>
-      </section>
+      <Footer />
     </div>
   );
 }
