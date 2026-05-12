@@ -17,7 +17,7 @@ import Footer from "@/components/Footer";
 
 const DIAMOND_CUTZ_LOGO = "/manus-storage/pasted_file_MwGanH_image_7f7a812c.png";
 const DIAMOND_GIRL_LOGO = "/manus-storage/diamond-girl-logo_26e7435d.png";
-const HERO_IMAGE = "/manus-storage/diamond-home-hero_15ba2efb.png";
+const HERO_IMAGE = "/manus-storage/514ED805-30BB-4F65-B28C-DBEDD694640B_59fc3e61.png";
 const LAWN_IMAGE = "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=800&q=80";
 const CLEAN_IMAGE = "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=800&q=80";
 
@@ -91,13 +91,13 @@ export default function Home() {
     <div className="min-h-screen" style={{ backgroundColor: OFFWHITE }}>
       <Navbar />
 
-      {/* ── HERO — full-width stadium photo, no overlay ── */}
+      {/* ── HERO — full-design image with built-in text, logo, and CTAs ── */}
       <section className="w-full pt-16" style={{ backgroundColor: NAVY_DARK }}>
         <img
           src={HERO_IMAGE}
-          alt="Diamond Home Services LLC — Lawn & Landscaping and Home Cleaning"
+          alt="Diamond Home Services LLC — Built for the Big Leagues. Lawn & Landscaping and Home Cleaning in South Jersey."
           className="w-full block"
-          style={{ maxHeight: "640px", objectFit: "cover", objectPosition: "center top" }}
+          style={{ objectFit: "cover", objectPosition: "center center" }}
         />
       </section>
 
