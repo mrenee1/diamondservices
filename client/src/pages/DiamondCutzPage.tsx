@@ -13,7 +13,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 const DIAMOND_CUTZ_LOGO = "/manus-storage/diamond-cutz-logo_7523a9b6.png";
-const HERO_IMAGE = "https://d2xsxph8kpxj0f.cloudfront.net/310519663246754363/VwfaAMsNXt8Vvu7ShFAiqw/diamond-cutz-stadium-hero-4U3PSApXsKwdBUGn4mRwdt.webp";
+const HERO_IMAGE = "/manus-storage/87446CD7-6C0A-4A59-A815-F32109B654F5_2232229c.png";
 
 const services = [
   {
@@ -87,54 +87,13 @@ export default function DiamondCutzPage() {
     <div className="min-h-screen" style={{ backgroundColor: "oklch(0.97 0.01 255)" }}>
       <Navbar />
 
-      {/* HERO IMAGE — full width, matching home page format */}
-      <section className="w-full pt-16" style={{ backgroundColor: "oklch(0.18 0.08 145)" }}>
+      {/* HERO IMAGE — full-design image with built-in text, logo, and CTA */}
+      <section className="w-full pt-16" style={{ backgroundColor: "oklch(0.12 0.06 145)" }}>
         <img
           src={HERO_IMAGE}
-          alt="Diamond Cutz Lawn & Landscaping — professional lawn care in Northeast Florida"
+          alt="Diamond Cutz Lawn and Landscaping — Beautiful Lawns. Diamond Standard."
           className="w-full block"
-          style={{ maxHeight: "640px", objectFit: "cover", objectPosition: "center top" }}
         />
-      </section>
-
-      {/* HERO TEXT BAND — green bar below image, matching home page structure */}
-      <section style={{ backgroundColor: "oklch(0.22 0.10 145)" }}>
-        <div className="container py-10">
-          <div className="flex flex-col items-center text-center">
-            <img
-              src={DIAMOND_CUTZ_LOGO}
-              alt="Diamond Cutz Lawn & Landscaping"
-              className="h-28 md:h-36 w-auto object-contain mb-5 drop-shadow-2xl"
-            />
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-3" style={{ fontFamily: "'Lora', serif" }}>
-              Lawn & Landscaping Services
-            </h1>
-            <p className="text-lg md:text-xl font-semibold mb-4" style={{ color: "oklch(0.85 0.13 80)", fontFamily: "'Lora', serif", fontStyle: "italic" }}>
-              "Crisp Cuts. Healthy Lawns. Diamond Standard."
-            </p>
-            <p className="text-base max-w-2xl mb-6" style={{ color: "oklch(0.92 0.03 145)", fontFamily: "'Nunito Sans', sans-serif" }}>
-              Professional outdoor services for homeowners and businesses throughout Yulee, Amelia Island, and surrounding Northeast Florida communities.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-3 justify-center">
-              <a
-                href="tel:+18563713971"
-                className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-md font-bold text-base transition-all duration-200 hover:shadow-xl hover:-translate-y-0.5"
-                style={{ backgroundColor: "oklch(0.75 0.16 75)", color: "oklch(0.18 0.02 255)", fontFamily: "'Nunito Sans', sans-serif" }}
-              >
-                <Phone className="w-4 h-4" />
-                Call or Text Mike: 856-371-3971
-              </a>
-              <a
-                href="mailto:diamondhomeservicesofflorida@gmail.com"
-                className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-md font-bold text-base transition-all duration-200 hover:-translate-y-0.5"
-                style={{ backgroundColor: "oklch(1 0 0 / 0.12)", color: "white", border: "1px solid oklch(1 0 0 / 0.3)", fontFamily: "'Nunito Sans', sans-serif" }}
-              >
-                <Mail className="w-4 h-4" />
-                diamondhomeservicesofflorida@gmail.com
-              </a>
-            </div>
-          </div>
-        </div>
       </section>
 
       {/* Services Grid */}
