@@ -13,7 +13,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 const DIAMOND_CUTZ_LOGO = "/manus-storage/diamond-cutz-logo_7523a9b6.png";
-const HERO_IMAGE = "/manus-storage/87446CD7-6C0A-4A59-A815-F32109B654F5_2232229c.png";
+const HERO_IMAGE = "/manus-storage/diamond-cutz-hero-cropped_728f233e.png";
 
 const services = [
   {
