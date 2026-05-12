@@ -101,6 +101,11 @@ export default function DiamondCutzPage() {
       <section style={{ backgroundColor: "oklch(0.22 0.10 145)" }}>
         <div className="container py-10">
           <div className="flex flex-col items-center text-center">
+            <img
+              src={DIAMOND_CUTZ_LOGO}
+              alt="Diamond Cutz Lawn & Landscaping"
+              className="h-28 md:h-36 w-auto object-contain mb-5 drop-shadow-2xl"
+            />
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-3" style={{ fontFamily: "'Lora', serif" }}>
               Lawn & Landscaping Services
             </h1>

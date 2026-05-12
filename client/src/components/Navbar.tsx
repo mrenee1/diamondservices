@@ -59,12 +59,6 @@ export default function Navbar() {
                 alt="A Diamond Girl Home Cleaning Service"
                 className="h-10 md:h-12 w-auto object-contain"
               />
-            ) : location === "/diamond-cutz" ? (
-              <img
-                src={DIAMOND_CUTZ_LOGO}
-                alt="Diamond Cutz Lawn & Landscaping"
-                className="h-10 md:h-12 w-auto object-contain"
-              />
             ) : (
               <img
                 src={DHS_LOGO}
