@@ -53,23 +53,13 @@ export default function AboutPage() {
     <div className="min-h-screen" style={{ backgroundColor: "oklch(0.97 0.01 255)" }}>
       <Navbar />
 
-      {/* Hero */}
-      <section className="relative pt-28 pb-20 overflow-hidden" style={{ backgroundColor: "oklch(0.22 0.08 255)" }}>
-        <div className="absolute inset-0 opacity-20">
-          <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1600&q=80" alt="Family home" className="w-full h-full object-cover" />
-        </div>
-        <div className="absolute inset-0" style={{ background: "linear-gradient(to bottom, oklch(0.22 0.08 145 / 0.92), oklch(0.22 0.08 145 / 0.97))" }} />
-        <div className="container relative z-10 text-center">
-          <span className="inline-block text-xs font-bold uppercase tracking-widest mb-4 px-3 py-1 rounded-full" style={{ backgroundColor: "oklch(0.72 0.15 75 / 0.2)", color: "oklch(0.85 0.13 80)", fontFamily: "'Nunito Sans', sans-serif" }}>
-            Our Story
-          </span>
-          <h1 className="text-5xl font-bold text-white mb-4" style={{ fontFamily: "'Lora', serif" }}>
-            About Diamond Home Services
-          </h1>
-          <p className="text-lg max-w-xl mx-auto" style={{ color: "oklch(0.85 0.03 255)", fontFamily: "'Nunito Sans', sans-serif" }}>
-            A family who bet on themselves — and built something beautiful in Nassau County, Florida.
-          </p>
-        </div>
+      {/* Hero — full-design About Us image */}
+      <section className="w-full pt-16" style={{ backgroundColor: "oklch(0.14 0.06 255)" }}>
+        <img
+          src="/manus-storage/E30554CE-B3FB-49F8-9E75-515FEE6A95BB_09584a32.png"
+          alt="About Us — Mike & Lydine, Diamond Home Services LLC — Family. Pride. Diamond Standard."
+          className="w-full block"
+        />
       </section>
 
       {/* Story Section */}
