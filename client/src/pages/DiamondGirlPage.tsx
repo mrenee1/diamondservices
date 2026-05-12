@@ -14,7 +14,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 const DIAMOND_GIRL_LOGO = "/manus-storage/diamond-girl-logo_26e7435d.png";
-const HERO_IMAGE = "https://d2xsxph8kpxj0f.cloudfront.net/310519663246754363/VwfaAMsNXt8Vvu7ShFAiqw/diamond-girl-stadium-hero-FWeSEz5buv8BBJ43hG9BYk.webp";
+const HERO_IMAGE = "/manus-storage/1FF4FDBD-00A7-477C-89BC-36C8611DB049_3ec7f2e3.png";
 
 const services = [
   {
@@ -85,49 +85,13 @@ export default function DiamondGirlPage() {
     <div className="min-h-screen" style={{ backgroundColor: "oklch(0.97 0.01 255)" }}>
       <Navbar />
 
-      {/* HERO IMAGE — full width, matching home page format */}
-      <section className="w-full pt-16" style={{ backgroundColor: "oklch(0.22 0.10 340)" }}>
+      {/* HERO IMAGE — full-design image with built-in text, logo, and CTA */}
+      <section className="w-full pt-16" style={{ backgroundColor: "oklch(0.18 0.08 340)" }}>
         <img
           src={HERO_IMAGE}
-          alt="A Diamond Girl Home Cleaning Service — Diamond-Level Home Cleaning in Nassau County"
+          alt="A Diamond Girl Home Cleaning Service — Diamond Clean. Sparkling Results."
           className="w-full block"
-          style={{ maxHeight: "640px", objectFit: "cover", objectPosition: "center top" }}
         />
-      </section>
-
-      {/* HERO TEXT BAND — pink bar below image, matching home page structure */}
-      <section style={{ backgroundColor: "oklch(0.28 0.12 340)" }}>
-        <div className="container py-10">
-          <div className="flex flex-col items-center text-center">
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-3" style={{ fontFamily: "'Lora', serif" }}>
-              Diamond-Level Home Cleaning
-            </h1>
-            <p className="text-lg md:text-xl font-semibold mb-4" style={{ color: "oklch(0.85 0.13 80)", fontFamily: "'Lora', serif", fontStyle: "italic" }}>
-              "We Don't Just Clean — We Transform."
-            </p>
-            <p className="text-base max-w-2xl mb-6" style={{ color: "oklch(0.92 0.04 340)", fontFamily: "'Nunito Sans', sans-serif" }}>
-              Lydine delivers a deep, thorough clean that goes far beyond the surface. Serving Nassau County homeowners and businesses with pride, right from the Tributary community.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-3 justify-center">
-              <a
-                href="tel:+18569810930"
-                className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-md font-bold text-base transition-all duration-200 hover:shadow-xl hover:-translate-y-0.5"
-                style={{ backgroundColor: "oklch(0.75 0.16 75)", color: "oklch(0.18 0.02 255)", fontFamily: "'Nunito Sans', sans-serif" }}
-              >
-                <Phone className="w-4 h-4" />
-                Call or Text Lydine: 856-981-0930
-              </a>
-              <a
-                href="mailto:diamondhomeservicesofflorida@gmail.com"
-                className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-md font-bold text-base transition-all duration-200 hover:-translate-y-0.5"
-                style={{ backgroundColor: "oklch(1 0 0 / 0.12)", color: "white", border: "1px solid oklch(1 0 0 / 0.3)", fontFamily: "'Nunito Sans', sans-serif" }}
-              >
-                <Mail className="w-4 h-4" />
-                diamondhomeservicesofflorida@gmail.com
-              </a>
-            </div>
-          </div>
-        </div>
       </section>
 
       {/* Catchphrases Banner */}
