@@ -99,7 +99,6 @@ export default function DiamondGirlPage() {
       <section style={{ backgroundColor: "oklch(0.28 0.12 340)" }}>
         <div className="container py-10">
           <div className="flex flex-col items-center text-center">
-            <img src={DIAMOND_GIRL_LOGO} alt="A Diamond Girl Home Cleaning Service" className="h-20 md:h-24 w-auto object-contain mb-5 drop-shadow-2xl" />
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-3" style={{ fontFamily: "'Lora', serif" }}>
               Diamond-Level Home Cleaning
             </h1>

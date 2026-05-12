@@ -9,7 +9,9 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
 import { Menu, X, Phone } from "lucide-react";
 
-const DIAMOND_CUTZ_LOGO = "/manus-storage/pasted_file_MwGanH_image_7f7a812c.png";
+const DHS_LOGO          = "/manus-storage/pasted_file_MwGanH_image_7f7a812c.png";
+const DIAMOND_GIRL_LOGO = "/manus-storage/diamond-girl-logo_26e7435d.png";
+const DIAMOND_CUTZ_LOGO = "/manus-storage/diamond-cutz-logo_7523a9b6.png";
 
 const NAVY      = "oklch(0.22 0.08 255)";
 const NAVY_DARK = "oklch(0.16 0.07 255)";
@@ -49,13 +51,27 @@ export default function Navbar() {
     >
       <div className="container">
         <div className="flex items-center justify-between h-16 md:h-18">
-          {/* Logo */}
+          {/* Logo — swaps based on which page you're on */}
           <Link href="/" className="flex items-center gap-2 group">
-            <img
-              src={DIAMOND_CUTZ_LOGO}
-              alt="Diamond Home Services LLC"
-              className="h-10 md:h-12 w-auto object-contain"
-            />
+            {location === "/diamond-girl" ? (
+              <img
+                src={DIAMOND_GIRL_LOGO}
+                alt="A Diamond Girl Home Cleaning Service"
+                className="h-10 md:h-12 w-auto object-contain"
+              />
+            ) : location === "/diamond-cutz" ? (
+              <img
+                src={DIAMOND_CUTZ_LOGO}
+                alt="Diamond Cutz Lawn & Landscaping"
+                className="h-10 md:h-12 w-auto object-contain"
+              />
+            ) : (
+              <img
+                src={DHS_LOGO}
+                alt="Diamond Home Services LLC"
+                className="h-10 md:h-12 w-auto object-contain"
+              />
+            )}
           </Link>
 
           {/* Desktop Nav */}
