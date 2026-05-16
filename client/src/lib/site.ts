@@ -8,7 +8,7 @@ export const SITE = {
   description:
     "Family-owned lawn & landscaping (Diamond Cutz) and home cleaning (A Diamond Girl) serving Nassau County, Florida.",
   logo: "/logos/diamond-home-services.jpg",
-  ogImage: "/og-hero.jpg",
+  ogImage: "/og-preview.jpg",
 } as const;
 
 export const siteUrl = (path = "") => `${SITE_URL}${path.startsWith("/") ? path : `/${path}`}`;

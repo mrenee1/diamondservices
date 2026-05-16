@@ -13,7 +13,7 @@
   ],
   "rewrites": [
     {
-      "source": "/((?!logos/|family/|assets/|og-hero\\.jpg|__manus__/).*)",
+      "source": "/((?!logos/|family/|assets/|og-preview\\.jpg|__manus__/).*)",
       "destination": "/index.html"
     }
   ]
