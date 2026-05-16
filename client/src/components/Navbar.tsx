@@ -9,9 +9,10 @@ import { Link, useLocation } from "wouter";
 import { Menu, X } from "lucide-react";
 import { BRAND } from "@/lib/brand";
 import { CONTACT } from "@/lib/contact";
+import { SITE } from "@/lib/site";
 import { ContactPhone } from "@/components/ContactPhone";
 
-const DHS_LOGO = "/manus-storage/pasted_file_MwGanH_image_7f7a812c.png";
+const DHS_LOGO = SITE.logo;
 const DIAMOND_CUTZ_LOGO = "/logos/diamond-cutz.png";
 const DIAMOND_GIRL_LOGO = "/manus-storage/diamond-girl-logo_26e7435d.png";
 
@@ -50,9 +51,9 @@ export default function Navbar() {
         boxShadow: scrolled ? "0 2px 16px oklch(0 0 0 / 0.35)" : "none",
       }}
     >
-      <div className="relative flex items-center h-16 md:h-[4.5rem] w-full max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Logo — left */}
-        <Link href="/" className="relative z-10 flex items-center shrink-0 py-1">
+      <div className="relative flex items-center h-16 md:h-[4.5rem] w-full">
+        {/* Logo — flush left */}
+        <Link href="/" className="relative z-10 flex items-center shrink-0 py-1 pl-4 sm:pl-6 lg:pl-8">
           <img
             src={logo.src}
             alt={logo.alt}
@@ -85,7 +86,7 @@ export default function Navbar() {
         </div>
 
         {/* Phone + menu — right */}
-        <div className="relative z-10 flex items-center gap-3 sm:gap-4 shrink-0 ml-auto">
+        <div className="relative z-10 flex items-center gap-3 sm:gap-4 shrink-0 ml-auto pr-4 sm:pr-6 lg:pr-8">
           <ContactPhone
             contact={CONTACT.mike}
             className="hidden xl:flex btn-brand-primary text-sm px-4 py-2"

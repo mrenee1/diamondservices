@@ -6,10 +6,11 @@ import { MapPin, Star } from "lucide-react";
 import { Link } from "wouter";
 import { BRAND } from "@/lib/brand";
 import { CONTACT } from "@/lib/contact";
+import { SITE } from "@/lib/site";
 import { ContactPhone } from "@/components/ContactPhone";
 import ContactEmail from "@/components/ContactEmail";
 
-const DHS_LOGO = "/manus-storage/pasted_file_MwGanH_image_7f7a812c.png";
+const DHS_LOGO = SITE.logo;
 
 export default function Footer() {
   return (
