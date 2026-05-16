@@ -102,7 +102,7 @@ export default function AboutPage() {
             </p>
             <p>
               Our daughter <strong>Mikayla</strong> and her fiancé <strong>Austin</strong> still cheer us on from back
-              home. Gage and our boys are with us in spirit every day we show up to work. When you call us, you&apos;re
+              home. Ian and Gage, our sons, are with us in spirit every day we show up to work. When you call us, you&apos;re
               talking to your neighbors, not a franchise hotline.
             </p>
             <p>
