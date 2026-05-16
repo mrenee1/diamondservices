@@ -35,7 +35,7 @@ import ContactEmail from "@/components/ContactEmail";
 const NAVY_HEX = "#1b2845";
 const GOLD_HEX = "#c4a035";
 
-const HERO_IMAGE = "/og-preview.jpg";
+const HERO_IMAGE = "/manus-storage/514ED805-30BB-4F65-B28C-DBEDD694640B_59fc3e61.png";
 const CUTZ_HERO = "/manus-storage/diamond-cutz-hero-cropped_728f233e.png";
 const GIRL_HERO = "/manus-storage/1FF4FDBD-00A7-477C-89BC-36C8611DB049_3ec7f2e3.png";
 const COUPLE_PHOTO = "/manus-storage/mike-lydine-couple_d892a85f.png";
@@ -174,8 +174,7 @@ export default function Home() {
         <HeroImage
           src={HERO_IMAGE}
           alt="Diamond Home Services LLC — Built for the Big Leagues. Lawn & Landscaping and Home Cleaning."
-          objectFit="cover"
-          objectPosition="center center"
+          objectPosition="48% center"
         />
       </section>
 

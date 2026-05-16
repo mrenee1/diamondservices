@@ -11,10 +11,5 @@
       "statusCode": 307
     }
   ],
-  "rewrites": [
-    {
-      "source": "/((?!logos/|family/|assets/|og-preview\\.jpg|__manus__/).*)",
-      "destination": "/index.html"
-    }
-  ]
+  "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }]
 }
