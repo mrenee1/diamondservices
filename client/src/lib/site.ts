@@ -7,7 +7,7 @@ export const SITE = {
   shortName: "Diamond Home Services",
   description:
     "Family-owned lawn & landscaping (Diamond Cutz) and home cleaning (A Diamond Girl) serving Nassau County, Florida.",
-  logo: "/logos/diamond-home-services.jpg",
+  logo: "/logos/diamond-home-services.png",
   ogImage: "/og-preview.jpg",
 } as const;
 
