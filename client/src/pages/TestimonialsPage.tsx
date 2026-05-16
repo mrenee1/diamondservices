@@ -4,12 +4,13 @@
    Nassau County, FL — Tributary community focus
    ============================================================ */
 
-import { Link } from "wouter";
-import { Star, Quote, Phone, Scissors, Sparkles } from "lucide-react";
+import { Star, Quote, Phone, MessageCircle, Scissors, Sparkles } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { ContactPhone } from "@/components/ContactPhone";
+import { CONTACT } from "@/lib/contact";
 
-const DIAMOND_CUTZ_LOGO = "/manus-storage/diamond-cutz-logo_7523a9b6.png";
+const DIAMOND_CUTZ_LOGO = "/logos/diamond-cutz.png";
 const DIAMOND_GIRL_LOGO = "/manus-storage/diamond-girl-logo_26e7435d.png";
 
 type Category = "all" | "lawn" | "cleaning";
@@ -143,7 +144,7 @@ function StarRating({ count }: { count: number }) {
   return (
     <div className="flex gap-0.5">
       {Array.from({ length: count }).map((_, i) => (
-        <Star key={i} className="w-4 h-4 fill-current" style={{ color: "oklch(0.75 0.16 75)" }} />
+        <Star key={i} className="w-4 h-4 fill-current" style={{ color: "oklch(0.73 0.11 65)" }} />
       ))}
     </div>
   );
@@ -157,7 +158,7 @@ export default function TestimonialsPage() {
       {/* Hero */}
       <section className="pt-28 pb-16" style={{ backgroundColor: "oklch(0.22 0.08 255)" }}>
         <div className="container text-center">
-          <span className="inline-block text-xs font-bold uppercase tracking-widest mb-4 px-3 py-1 rounded-full" style={{ backgroundColor: "oklch(0.72 0.15 75 / 0.2)", color: "oklch(0.85 0.13 80)", fontFamily: "'Nunito Sans', sans-serif" }}>
+          <span className="inline-block text-xs font-bold uppercase tracking-widest mb-4 px-3 py-1 rounded-full" style={{ backgroundColor: "oklch(0.77 0.14 70 / 0.2)", color: "oklch(0.86 0.08 68)", fontFamily: "'Nunito Sans', sans-serif" }}>
             Customer Reviews
           </span>
           <h1 className="text-5xl font-bold text-white mb-4" style={{ fontFamily: "'Lora', serif" }}>
@@ -174,7 +175,7 @@ export default function TestimonialsPage() {
               { value: "Nassau County", label: "Service Area" },
             ].map((stat) => (
               <div key={stat.label} className="text-center">
-                <p className="text-3xl font-bold" style={{ color: "oklch(0.85 0.13 80)", fontFamily: "'Lora', serif" }}>{stat.value}</p>
+                <p className="text-3xl font-bold" style={{ color: "oklch(0.86 0.08 68)", fontFamily: "'Lora', serif" }}>{stat.value}</p>
                 <p className="text-sm" style={{ color: "oklch(0.70 0.04 255)", fontFamily: "'Nunito Sans', sans-serif" }}>{stat.label}</p>
               </div>
             ))}
@@ -216,7 +217,10 @@ export default function TestimonialsPage() {
               </div>
               <div>
                 <h2 className="text-2xl font-bold" style={{ color: "oklch(0.18 0.02 255)", fontFamily: "'Lora', serif" }}>Diamond Cutz Reviews</h2>
-                <p className="text-sm" style={{ color: "oklch(0.45 0.03 255)", fontFamily: "'Nunito Sans', sans-serif" }}>Lawn & Landscaping · Call Mike: 856-371-3971</p>
+                <p className="text-sm flex flex-wrap items-center gap-x-1.5 gap-y-1" style={{ color: "oklch(0.45 0.03 255)", fontFamily: "'Nunito Sans', sans-serif" }}>
+                  Lawn & Landscaping ·
+                  <ContactPhone contact={CONTACT.mike} showNumber linkClassName="hover:underline" />
+                </p>
               </div>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -245,18 +249,21 @@ export default function TestimonialsPage() {
           {/* Cleaning Section */}
           <div>
             <div className="flex items-center gap-3 mb-8">
-              <div className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0" style={{ backgroundColor: "oklch(0.45 0.15 340)" }}>
+              <div className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0" style={{ backgroundColor: "oklch(0.73 0.11 65)" }}>
                 <Sparkles className="w-5 h-5 text-white" />
               </div>
               <div>
                 <h2 className="text-2xl font-bold" style={{ color: "oklch(0.18 0.02 255)", fontFamily: "'Lora', serif" }}>A Diamond Girl Reviews</h2>
-                <p className="text-sm" style={{ color: "oklch(0.45 0.03 255)", fontFamily: "'Nunito Sans', sans-serif" }}>Home Cleaning Service · Call Lydine: 856-981-0930</p>
+                <p className="text-sm flex flex-wrap items-center gap-x-1.5 gap-y-1" style={{ color: "oklch(0.45 0.03 255)", fontFamily: "'Nunito Sans', sans-serif" }}>
+                  Home Cleaning Service ·
+                  <ContactPhone contact={CONTACT.lydine} showNumber linkClassName="hover:underline" />
+                </p>
               </div>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {testimonials.filter(t => t.category === "cleaning").map((t) => (
                 <div key={t.id} className="bg-white rounded-2xl p-6 shadow-sm border border-border hover:shadow-lg transition-all duration-300 flex flex-col">
-                  <Quote className="w-8 h-8 mb-3 opacity-20" style={{ color: "oklch(0.45 0.15 340)" }} />
+                  <Quote className="w-8 h-8 mb-3 opacity-20" style={{ color: "oklch(0.73 0.11 65)" }} />
                   <p className="text-sm leading-relaxed flex-1 mb-5" style={{ color: "oklch(0.35 0.04 255)", fontFamily: "'Nunito Sans', sans-serif" }}>
                     "{t.text}"
                   </p>
@@ -266,7 +273,7 @@ export default function TestimonialsPage() {
                     <p className="text-xs" style={{ color: "oklch(0.50 0.04 255)", fontFamily: "'Nunito Sans', sans-serif" }}>{t.location}</p>
                     <span
                       className="inline-block mt-2 text-xs font-bold px-2.5 py-0.5 rounded-full"
-                      style={{ backgroundColor: "oklch(0.45 0.15 340 / 0.1)", color: "oklch(0.45 0.15 340)", fontFamily: "'Nunito Sans', sans-serif" }}
+                      style={{ backgroundColor: "oklch(0.73 0.11 65 / 0.15)", color: "oklch(0.73 0.11 65)", fontFamily: "'Nunito Sans', sans-serif" }}
                     >
                       {t.service}
                     </span>
@@ -279,7 +286,7 @@ export default function TestimonialsPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-16" style={{ backgroundColor: "oklch(0.30 0.12 145)" }}>
+      <section className="py-16" style={{ backgroundColor: "oklch(0.22 0.08 255)" }}>
         <div className="container text-center">
           <h2 className="text-3xl font-bold text-white mb-3" style={{ fontFamily: "'Lora', serif" }}>
             Ready to Experience the Diamond Difference?
@@ -287,30 +294,23 @@ export default function TestimonialsPage() {
           <p className="text-base mb-8" style={{ color: "oklch(0.82 0.03 255)", fontFamily: "'Nunito Sans', sans-serif" }}>
             Join hundreds of happy Nassau County homeowners. Call or text for a free estimate today.
           </p>
-          <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            <a
-              href="tel:+18563713971"
-              className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-md font-bold text-sm transition-all duration-200 hover:shadow-lg hover:-translate-y-0.5"
-              style={{ backgroundColor: "oklch(0.75 0.16 75)", color: "oklch(0.18 0.02 255)", fontFamily: "'Nunito Sans', sans-serif" }}
-            >
+          <div className="flex flex-col sm:flex-row flex-wrap gap-3 justify-center">
+            <a href={CONTACT.mike.tel} className="btn-brand-primary px-6 py-3 text-sm justify-center">
               <Phone className="w-4 h-4" />
-              Lawn: 856-371-3971
+              Call Lawn: {CONTACT.mike.display}
             </a>
-            <a
-              href="tel:+18569810930"
-              className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-md font-bold text-sm transition-all duration-200 hover:-translate-y-0.5"
-              style={{ backgroundColor: "oklch(1 0 0 / 0.12)", color: "white", border: "1px solid oklch(1 0 0 / 0.3)", fontFamily: "'Nunito Sans', sans-serif" }}
-            >
+            <a href={CONTACT.mike.sms} className="btn-brand-outline-light px-6 py-3 text-sm justify-center">
+              <MessageCircle className="w-4 h-4" />
+              Text Lawn
+            </a>
+            <a href={CONTACT.lydine.tel} className="btn-brand-primary px-6 py-3 text-sm justify-center">
               <Phone className="w-4 h-4" />
-              Cleaning: 856-981-0930
+              Call Cleaning: {CONTACT.lydine.display}
             </a>
-            <Link
-              href="/gallery"
-              className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-md font-bold text-sm transition-all duration-200 hover:-translate-y-0.5"
-              style={{ backgroundColor: "oklch(1 0 0 / 0.12)", color: "white", border: "1px solid oklch(1 0 0 / 0.3)", fontFamily: "'Nunito Sans', sans-serif" }}
-            >
-              View Our Work
-            </Link>
+            <a href={CONTACT.lydine.sms} className="btn-brand-outline-light px-6 py-3 text-sm justify-center">
+              <MessageCircle className="w-4 h-4" />
+              Text Cleaning
+            </a>
           </div>
         </div>
       </section>

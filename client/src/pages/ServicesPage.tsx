@@ -6,10 +6,11 @@
 import { Link } from "wouter";
 import {
   Scissors, Leaf, Sprout, Droplets, Sun, Layers,
-  Flower2, Shovel, Lightbulb, ArrowRight, CheckCircle2
+  Flower2, Shovel, Lightbulb, ArrowRight, CheckCircle2, Phone, MessageCircle
 } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { CONTACT } from "@/lib/contact";
 
 const GARDEN_IMAGE = "https://d2xsxph8kpxj0f.cloudfront.net/310519663246754363/VwfaAMsNXt8Vvu7ShFAiqw/garden-design-fNaQRmt8Z5byScefT7HNRr.webp";
 
@@ -120,8 +121,8 @@ export default function ServicesPage() {
           <span
             className="inline-block text-xs font-bold uppercase tracking-widest mb-4 px-3 py-1 rounded-full"
             style={{
-              backgroundColor: "oklch(0.72 0.15 75 / 0.2)",
-              color: "oklch(0.82 0.12 80)",
+              backgroundColor: "oklch(0.77 0.14 70 / 0.2)",
+              color: "oklch(0.88 0.09 72)",
               fontFamily: "'Nunito Sans', sans-serif",
             }}
           >
@@ -165,7 +166,7 @@ export default function ServicesPage() {
                         <span
                           className="text-xs font-bold px-2.5 py-0.5 rounded-full uppercase tracking-wide"
                           style={{
-                            backgroundColor: "oklch(0.72 0.15 75)",
+                            backgroundColor: "oklch(0.77 0.14 70)",
                             color: "oklch(0.18 0.01 60)",
                             fontFamily: "'Nunito Sans', sans-serif",
                           }}
@@ -260,7 +261,7 @@ export default function ServicesPage() {
               <ArrowRight className="w-4 h-4" />
             </Link>
             <a
-              href="tel:+18563713971"
+              href={CONTACT.mike.tel}
               className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-md font-bold text-base transition-all duration-200 hover:-translate-y-0.5"
               style={{
                 backgroundColor: "white",
@@ -269,7 +270,21 @@ export default function ServicesPage() {
                 fontFamily: "'Nunito Sans', sans-serif",
               }}
             >
-              Call 856-371-3971
+              <Phone className="w-4 h-4" />
+              Call {CONTACT.mike.display}
+            </a>
+            <a
+              href={CONTACT.mike.sms}
+              className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-md font-bold text-base transition-all duration-200 hover:-translate-y-0.5"
+              style={{
+                backgroundColor: "transparent",
+                color: "white",
+                border: "1px solid white",
+                fontFamily: "'Nunito Sans', sans-serif",
+              }}
+            >
+              <MessageCircle className="w-4 h-4" />
+              Text {CONTACT.mike.display}
             </a>
           </div>
         </div>

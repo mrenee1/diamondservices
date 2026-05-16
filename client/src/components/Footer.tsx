@@ -1,75 +1,52 @@
 /* ============================================================
-   Footer — Diamond Home Services LLC
-   6-page site: no social media, no booking
-   Phone: 856-371-3971 (lawn) | 856-981-0930 (cleaning)
-   Email: diamondhomeservicesofflorida@gmail.com
-   Nassau County, FL — no home address
+   Footer — Diamond Home Services LLC (compact)
    ============================================================ */
 
-import { Phone, Mail, MapPin, Star } from "lucide-react";
+import { MapPin, Star } from "lucide-react";
 import { Link } from "wouter";
+import { BRAND } from "@/lib/brand";
+import { CONTACT } from "@/lib/contact";
+import { ContactPhone } from "@/components/ContactPhone";
+import ContactEmail from "@/components/ContactEmail";
 
-const DIAMOND_CUTZ_LOGO = "/manus-storage/diamond-cutz-logo_7523a9b6.png";
-const DIAMOND_GIRL_LOGO = "/manus-storage/diamond-girl-logo_26e7435d.png";
+const DHS_LOGO = "/manus-storage/pasted_file_MwGanH_image_7f7a812c.png";
 
 export default function Footer() {
   return (
-    <footer style={{ backgroundColor: "oklch(0.22 0.08 255)" }} className="text-white">
-      <div className="container py-14">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
-
-          {/* Brand */}
-          <div className="lg:col-span-1">
-            <div className="mb-3">
-              <img src={DIAMOND_CUTZ_LOGO} alt="Diamond Cutz Lawn and Landscaping" className="h-16 w-auto object-contain mb-3" />
-              <img src={DIAMOND_GIRL_LOGO} alt="A Diamond Girl Home Cleaning Service" className="h-16 w-auto object-contain" />
-            </div>
-            <p className="text-sm leading-relaxed mt-4" style={{ color: "oklch(0.80 0.03 255)", fontFamily: "'Nunito Sans', sans-serif" }}>
-              Family-owned and operated home services proudly serving Nassau County, Florida — rooted right here in the Tributary community of Yulee.
+    <footer className="site-footer text-white" style={{ backgroundColor: BRAND.navy }}>
+      <div className="container py-8 md:py-10">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10">
+          <div>
+            <img src={DHS_LOGO} alt="Diamond Home Services LLC" className="h-12 w-auto object-contain mb-3" />
+            <p className="text-sm leading-relaxed text-muted-brand" style={{ color: BRAND.bodyMuted }}>
+              Family-owned home services proudly serving Nassau County, Florida — rooted in the Tributary community of Yulee.
             </p>
+            <div className="mt-4 flex flex-wrap gap-3 text-sm">
+              <Link href="/diamond-cutz" className="font-semibold hover:text-white transition-colors" style={{ color: BRAND.goldLight }}>
+                Diamond Cutz services →
+              </Link>
+              <Link href="/diamond-girl" className="font-semibold hover:text-white transition-colors" style={{ color: BRAND.goldLight }}>
+                A Diamond Girl services →
+              </Link>
+            </div>
           </div>
 
-          {/* Services */}
           <div>
-            <h4 className="font-bold text-white mb-4 text-base" style={{ fontFamily: "'Lora', serif" }}>Our Services</h4>
-            <ul className="space-y-2.5">
-              <li>
-                <p className="text-xs font-bold uppercase tracking-wide mb-1.5" style={{ color: "oklch(0.75 0.16 75)", fontFamily: "'Nunito Sans', sans-serif" }}>Diamond Cutz</p>
-              </li>
-              {["Lawn Mowing & Edging", "Landscape Design", "Fertilization & Weed Control", "Sod Installation", "Shrub & Hedge Trimming", "Mulching & Bed Care"].map((s) => (
-                <li key={s}>
-                  <Link href="/diamond-cutz" className="text-sm transition-colors hover:text-white" style={{ color: "oklch(0.80 0.03 255)", fontFamily: "'Nunito Sans', sans-serif" }}>
-                    {s}
-                  </Link>
-                </li>
-              ))}
-              <li className="pt-2">
-                <p className="text-xs font-bold uppercase tracking-wide mb-1.5" style={{ color: "oklch(0.82 0.12 340)", fontFamily: "'Nunito Sans', sans-serif" }}>A Diamond Girl</p>
-              </li>
-              {["Diamond Deep Clean", "Recurring Diamond Shine", "Move-In / Move-Out", "Post-Construction Clean"].map((s) => (
-                <li key={s}>
-                  <Link href="/diamond-girl" className="text-sm transition-colors hover:text-white" style={{ color: "oklch(0.80 0.03 255)", fontFamily: "'Nunito Sans', sans-serif" }}>
-                    {s}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Quick Links */}
-          <div>
-            <h4 className="font-bold text-white mb-4 text-base" style={{ fontFamily: "'Lora', serif" }}>Quick Links</h4>
-            <ul className="space-y-2.5">
+            <h4 className="font-display font-bold text-white mb-3 text-base">Quick Links</h4>
+            <ul className="space-y-2">
               {[
                 { label: "Home", href: "/" },
                 { label: "Diamond Cutz", href: "/diamond-cutz" },
                 { label: "A Diamond Girl", href: "/diamond-girl" },
-                { label: "About Us", href: "/about" },
-                { label: "Photo Gallery", href: "/gallery" },
                 { label: "Testimonials", href: "/testimonials" },
+                { label: "About Us", href: "/about" },
               ].map((link) => (
                 <li key={link.label}>
-                  <Link href={link.href} className="text-sm transition-colors hover:text-white" style={{ color: "oklch(0.80 0.03 255)", fontFamily: "'Nunito Sans', sans-serif" }}>
+                  <Link
+                    href={link.href}
+                    className="text-sm transition-colors hover:text-white"
+                    style={{ color: BRAND.bodyMuted }}
+                  >
                     {link.label}
                   </Link>
                 </li>
@@ -77,57 +54,51 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Contact */}
           <div>
-            <h4 className="font-bold text-white mb-4 text-base" style={{ fontFamily: "'Lora', serif" }}>Contact Us</h4>
-            <ul className="space-y-3.5">
-              <li className="flex items-start gap-3">
-                <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: "oklch(0.75 0.16 75)" }} />
-                <span className="text-sm" style={{ color: "oklch(0.80 0.03 255)", fontFamily: "'Nunito Sans', sans-serif" }}>
-                  Nassau County, FL<br /><span style={{ color: "oklch(0.55 0.04 255)" }}>Rooted in the Tributary Community, Yulee</span>
+            <h4 className="font-display font-bold text-white mb-3 text-base">Contact</h4>
+            <ul className="space-y-3 text-sm" style={{ color: BRAND.bodyMuted }}>
+              <li className="flex items-start gap-2">
+                <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: BRAND.gold }} />
+                <span>
+                  Nassau County, FL
+                  <br />
+                  <span style={{ color: "oklch(0.55 0.04 255)" }}>Tributary, Yulee</span>
                 </span>
               </li>
-              <li className="flex items-start gap-3">
-                <Phone className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: "oklch(0.75 0.16 75)" }} />
-                <div>
-                  <a href="tel:+18563713971" className="text-sm block transition-colors hover:text-white" style={{ color: "oklch(0.80 0.03 255)", fontFamily: "'Nunito Sans', sans-serif" }}>
-                    856-371-3971 <span style={{ color: "oklch(0.55 0.04 255)" }}>(Lawn)</span>
-                  </a>
-                  <a href="tel:+18569810930" className="text-sm block transition-colors hover:text-white" style={{ color: "oklch(0.80 0.03 255)", fontFamily: "'Nunito Sans', sans-serif" }}>
-                    856-981-0930 <span style={{ color: "oklch(0.55 0.04 255)" }}>(Cleaning)</span>
-                  </a>
-                </div>
+              <li>
+                <p className="text-xs font-bold uppercase tracking-wide mb-1" style={{ color: BRAND.goldLight }}>
+                  Lawn (Mike)
+                </p>
+                <ContactPhone contact={CONTACT.mike} linkClassName="hover:text-white transition-colors" />
               </li>
-              <li className="flex items-center gap-3">
-                <Mail className="w-4 h-4 flex-shrink-0" style={{ color: "oklch(0.75 0.16 75)" }} />
-                <a href="mailto:diamondhomeservicesofflorida@gmail.com" className="text-sm transition-colors hover:text-white" style={{ color: "oklch(0.80 0.03 255)", fontFamily: "'Nunito Sans', sans-serif" }}>
-                  diamondhomeservicesofflorida@gmail.com
-                </a>
+              <li>
+                <p className="text-xs font-bold uppercase tracking-wide mb-1" style={{ color: BRAND.goldLight }}>
+                  Cleaning (Lydine)
+                </p>
+                <ContactPhone contact={CONTACT.lydine} linkClassName="hover:text-white transition-colors" />
+              </li>
+              <li>
+                <ContactEmail className="hover:text-white transition-colors" />
               </li>
             </ul>
-            <div className="mt-5 p-3 rounded-lg" style={{ backgroundColor: "oklch(0.28 0.08 255)" }}>
-              <p className="text-xs font-bold uppercase tracking-wide mb-1" style={{ color: "oklch(0.75 0.16 75)", fontFamily: "'Nunito Sans', sans-serif" }}>
-                Business Hours
-              </p>
-              <p className="text-sm" style={{ color: "oklch(0.80 0.03 255)", fontFamily: "'Nunito Sans', sans-serif" }}>
-                Mon–Fri: 7:00 AM – 6:00 PM<br />
-                Sat: 8:00 AM – 4:00 PM<br />
-                Sun: Closed
-              </p>
-            </div>
+            <p className="mt-4 text-xs" style={{ color: "oklch(0.55 0.04 255)" }}>
+              Mon–Fri 7 AM – 6 PM · Sat 8 AM – 4 PM · Sun Closed
+            </p>
           </div>
         </div>
 
-        {/* Bottom Bar */}
-        <div className="mt-12 pt-6 border-t flex flex-col md:flex-row items-center justify-between gap-3" style={{ borderColor: "oklch(0.30 0.08 255)" }}>
-          <p className="text-xs" style={{ color: "oklch(0.55 0.04 255)", fontFamily: "'Nunito Sans', sans-serif" }}>
-            © {new Date().getFullYear()} Diamond Home Services LLC. All rights reserved. · Nassau County, FL
+        <div
+          className="mt-8 pt-5 border-t flex flex-col sm:flex-row items-center justify-between gap-3"
+          style={{ borderColor: "oklch(0.30 0.08 255)" }}
+        >
+          <p className="text-xs" style={{ color: "oklch(0.55 0.04 255)" }}>
+            © {new Date().getFullYear()} Diamond Home Services LLC · Nassau County, FL
           </p>
           <div className="flex items-center gap-1">
-            {[1,2,3,4,5].map(i => (
-              <Star key={i} className="w-3.5 h-3.5 fill-current" style={{ color: "oklch(0.75 0.16 75)" }} />
+            {[1, 2, 3, 4, 5].map((i) => (
+              <Star key={i} className="w-3.5 h-3.5 fill-current" style={{ color: BRAND.gold }} />
             ))}
-            <span className="text-xs ml-1.5" style={{ color: "oklch(0.55 0.04 255)", fontFamily: "'Nunito Sans', sans-serif" }}>
+            <span className="text-xs ml-1.5" style={{ color: "oklch(0.55 0.04 255)" }}>
               Licensed & Insured
             </span>
           </div>

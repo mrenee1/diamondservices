@@ -164,10 +164,10 @@ export default function BookingPage() {
       >
         <div className="container text-center">
           <div className="flex items-center justify-center gap-2 mb-3">
-            <CalendarDays className="w-5 h-5" style={{ color: "oklch(0.82 0.12 80)" }} />
+            <CalendarDays className="w-5 h-5" style={{ color: "oklch(0.88 0.09 72)" }} />
             <span
               className="text-xs font-bold uppercase tracking-widest"
-              style={{ color: "oklch(0.82 0.12 80)", fontFamily: "'Nunito Sans', sans-serif" }}
+              style={{ color: "oklch(0.88 0.09 72)", fontFamily: "'Nunito Sans', sans-serif" }}
             >
               Online Booking
             </span>
@@ -263,7 +263,7 @@ export default function BookingPage() {
                         <span
                           className="absolute top-2 right-2 text-xs font-bold px-1.5 py-0.5 rounded-full"
                           style={{
-                            backgroundColor: "oklch(0.72 0.15 75)",
+                            backgroundColor: "oklch(0.77 0.14 70)",
                             color: "oklch(0.18 0.01 60)",
                             fontFamily: "'Nunito Sans', sans-serif",
                           }}
@@ -546,7 +546,7 @@ export default function BookingPage() {
                 {/* Service Summary */}
                 <div className="p-6 border-b border-border">
                   <div className="flex items-center gap-3 mb-1">
-                    <Sparkles className="w-5 h-5" style={{ color: "oklch(0.72 0.15 75)" }} />
+                    <Sparkles className="w-5 h-5" style={{ color: "oklch(0.77 0.14 70)" }} />
                     <h3 className="font-700 text-sm uppercase tracking-wide" style={{ color: "oklch(0.50 0.04 80)", fontFamily: "'Nunito Sans', sans-serif" }}>Service</h3>
                   </div>
                   <p className="text-lg font-bold" style={{ color: "oklch(0.18 0.01 60)", fontFamily: "'Lora', serif" }}>
@@ -560,7 +560,7 @@ export default function BookingPage() {
                 {/* Date/Time */}
                 <div className="p-6 border-b border-border">
                   <div className="flex items-center gap-3 mb-1">
-                    <CalendarDays className="w-5 h-5" style={{ color: "oklch(0.72 0.15 75)" }} />
+                    <CalendarDays className="w-5 h-5" style={{ color: "oklch(0.77 0.14 70)" }} />
                     <h3 className="font-700 text-sm uppercase tracking-wide" style={{ color: "oklch(0.50 0.04 80)", fontFamily: "'Nunito Sans', sans-serif" }}>Date & Time</h3>
                   </div>
                   <p className="text-lg font-bold" style={{ color: "oklch(0.18 0.01 60)", fontFamily: "'Lora', serif" }}>
@@ -574,7 +574,7 @@ export default function BookingPage() {
                 {/* Contact */}
                 <div className="p-6">
                   <div className="flex items-center gap-3 mb-3">
-                    <User className="w-5 h-5" style={{ color: "oklch(0.72 0.15 75)" }} />
+                    <User className="w-5 h-5" style={{ color: "oklch(0.77 0.14 70)" }} />
                     <h3 className="font-700 text-sm uppercase tracking-wide" style={{ color: "oklch(0.50 0.04 80)", fontFamily: "'Nunito Sans', sans-serif" }}>Contact Info</h3>
                   </div>
                   <div className="grid grid-cols-2 gap-3 text-sm" style={{ fontFamily: "'Nunito Sans', sans-serif" }}>
@@ -656,7 +656,7 @@ export default function BookingPage() {
                 onClick={handleSubmit}
                 className="inline-flex items-center gap-2 px-7 py-2.5 rounded-md font-bold text-sm transition-all duration-200 hover:shadow-lg hover:-translate-y-0.5"
                 style={{
-                  backgroundColor: "oklch(0.72 0.15 75)",
+                  backgroundColor: "oklch(0.77 0.14 70)",
                   color: "oklch(0.18 0.01 60)",
                   fontFamily: "'Nunito Sans', sans-serif",
                 }}

@@ -7,12 +7,12 @@
 import { Link } from "wouter";
 import {
   Scissors, Leaf, Sprout, Droplets, Layers,
-  Flower2, Shovel, Wrench, ArrowRight, CheckCircle2, Phone, Mail
+  Flower2, Shovel, Wrench, ArrowRight, CheckCircle2, Phone, MessageCircle, Mail
 } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-
-const DIAMOND_CUTZ_LOGO = "/manus-storage/diamond-cutz-logo_7523a9b6.png";
+import HeroImage from "@/components/HeroImage";
+import { CONTACT } from "@/lib/contact";
 const HERO_IMAGE = "/manus-storage/diamond-cutz-hero-cropped_728f233e.png";
 
 const services = [
@@ -88,11 +88,11 @@ export default function DiamondCutzPage() {
       <Navbar />
 
       {/* HERO IMAGE — full-design image with built-in text, logo, and CTA */}
-      <section className="w-full pt-16" style={{ backgroundColor: "oklch(0.12 0.06 145)" }}>
-        <img
+      <section className="w-full pt-16">
+        <HeroImage
           src={HERO_IMAGE}
           alt="Diamond Cutz Lawn and Landscaping — Beautiful Lawns. Diamond Standard."
-          className="w-full block"
+          objectFit="cover"
         />
       </section>
 
@@ -105,7 +105,7 @@ export default function DiamondCutzPage() {
               return (
                 <div
                   key={service.title}
-                  className="bg-white rounded-2xl shadow-sm border border-border overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 flex flex-col"
+                  className="service-card-brand service-card-brand--cutz service-card-brand--no-hover bg-white rounded-2xl shadow-sm flex flex-col"
                 >
                   <div className="p-6 flex-1">
                     <div className="flex items-start justify-between mb-4">
@@ -115,7 +115,7 @@ export default function DiamondCutzPage() {
                       {service.badge && (
                         <span
                           className="text-xs font-bold px-2.5 py-0.5 rounded-full uppercase tracking-wide"
-                          style={{ backgroundColor: "oklch(0.75 0.16 75)", color: "oklch(0.18 0.02 255)", fontFamily: "'Nunito Sans', sans-serif" }}
+                          style={{ backgroundColor: "oklch(0.73 0.11 65)", color: "oklch(0.18 0.02 255)", fontFamily: "'Nunito Sans', sans-serif" }}
                         >
                           {service.badge}
                         </span>
@@ -139,14 +139,16 @@ export default function DiamondCutzPage() {
                     </div>
                   </div>
                   <div className="px-6 pb-6">
-                    <a
-                      href="tel:+18563713971"
-                      className="w-full flex items-center justify-center gap-2 py-2.5 rounded-md font-bold text-sm transition-all duration-200 hover:shadow-md"
-                      style={{ backgroundColor: "oklch(0.45 0.14 145)", color: "white", fontFamily: "'Nunito Sans', sans-serif" }}
-                    >
-                      <Phone className="w-4 h-4" />
-                      Call for a Quote
-                    </a>
+                    <div className="flex gap-2">
+                      <a href={CONTACT.mike.tel} className="btn-brand-primary flex-1 py-2.5 text-sm justify-center">
+                        <Phone className="w-4 h-4" />
+                        Call
+                      </a>
+                      <a href={CONTACT.mike.sms} className="btn-brand-primary flex-1 py-2.5 text-sm justify-center">
+                        <MessageCircle className="w-4 h-4" />
+                        Text
+                      </a>
+                    </div>
                   </div>
                 </div>
               );
@@ -165,19 +167,15 @@ export default function DiamondCutzPage() {
             Call or text us for a free estimate. We'll assess your property and recommend the best services for your budget and goals.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            <a
-              href="tel:+18563713971"
-              className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-md font-bold text-base transition-all duration-200 hover:shadow-lg hover:-translate-y-0.5"
-              style={{ backgroundColor: "oklch(0.45 0.14 145)", color: "white", fontFamily: "'Nunito Sans', sans-serif" }}
-            >
+            <a href={CONTACT.mike.tel} className="btn-brand-primary px-7 py-3.5 text-base justify-center">
               <Phone className="w-4 h-4" />
-              Call or Text: 856-371-3971
+              Call: {CONTACT.mike.display}
             </a>
-            <Link
-              href="/about"
-              className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-md font-bold text-base transition-all duration-200 hover:-translate-y-0.5"
-              style={{ backgroundColor: "white", color: "oklch(0.45 0.14 145)", border: "1px solid oklch(0.45 0.14 145)", fontFamily: "'Nunito Sans', sans-serif" }}
-            >
+            <a href={CONTACT.mike.sms} className="btn-brand-outline px-7 py-3.5 text-base justify-center">
+              <MessageCircle className="w-4 h-4" />
+              Text: {CONTACT.mike.display}
+            </a>
+            <Link href="/about" className="btn-brand-outline px-7 py-3.5 text-base">
               Learn About Us <ArrowRight className="w-4 h-4" />
             </Link>
           </div>

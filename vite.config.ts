@@ -166,8 +166,11 @@ function vitePluginStorageProxy(): Plugin {
         const forgeKey = process.env.BUILT_IN_FORGE_API_KEY;
 
         if (!forgeBaseUrl || !forgeKey) {
-          res.writeHead(500, { "Content-Type": "text/plain" });
-          res.end("Storage proxy not configured");
+          res.writeHead(307, {
+            Location: `https://diamondhome.manus.space/manus-storage/${key}`,
+            "Cache-Control": "public, max-age=3600",
+          });
+          res.end();
           return;
         }
 

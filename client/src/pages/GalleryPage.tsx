@@ -4,13 +4,14 @@
    ============================================================ */
 
 import { useState } from "react";
-import { Camera, Scissors, Sparkles, Phone } from "lucide-react";
+import { Camera, Scissors, Sparkles, Phone, MessageCircle } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { CONTACT } from "@/lib/contact";
 
 type Category = "all" | "lawn" | "cleaning";
 
-const DIAMOND_CUTZ_LOGO = "/manus-storage/diamond-cutz-logo_7523a9b6.png";
+const DIAMOND_CUTZ_LOGO = "/logos/diamond-cutz.png";
 const DIAMOND_GIRL_LOGO = "/manus-storage/diamond-girl-logo_26e7435d.png";
 
 const galleryItems = [
@@ -96,7 +97,7 @@ export default function GalleryPage() {
       {/* Hero */}
       <section className="pt-28 pb-16" style={{ backgroundColor: "oklch(0.22 0.08 255)" }}>
         <div className="container text-center">
-          <span className="inline-block text-xs font-bold uppercase tracking-widest mb-4 px-3 py-1 rounded-full" style={{ backgroundColor: "oklch(0.72 0.15 75 / 0.2)", color: "oklch(0.85 0.13 80)", fontFamily: "'Nunito Sans', sans-serif" }}>
+          <span className="inline-block text-xs font-bold uppercase tracking-widest mb-4 px-3 py-1 rounded-full" style={{ backgroundColor: "oklch(0.77 0.14 70 / 0.2)", color: "oklch(0.86 0.08 68)", fontFamily: "'Nunito Sans', sans-serif" }}>
             Our Work
           </span>
           <h1 className="text-5xl font-bold text-white mb-4" style={{ fontFamily: "'Lora', serif" }}>
@@ -173,8 +174,8 @@ export default function GalleryPage() {
                     <span
                       className="text-xs font-bold px-2.5 py-0.5 rounded-full uppercase tracking-wide"
                       style={{
-                        backgroundColor: item.category === "lawn" ? "oklch(0.35 0.10 145 / 0.1)" : "oklch(0.45 0.15 340 / 0.1)",
-                        color: item.category === "lawn" ? "oklch(0.45 0.14 145)" : "oklch(0.45 0.15 340)",
+                        backgroundColor: item.category === "lawn" ? "oklch(0.35 0.10 145 / 0.1)" : "oklch(0.73 0.11 65 / 0.15)",
+                        color: item.category === "lawn" ? "oklch(0.45 0.14 145)" : "oklch(0.73 0.11 65)",
                         fontFamily: "'Nunito Sans', sans-serif",
                       }}
                     >
@@ -210,7 +211,7 @@ export default function GalleryPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-14" style={{ backgroundColor: "oklch(0.30 0.12 145)" }}>
+      <section className="py-14" style={{ backgroundColor: "oklch(0.22 0.08 255)" }}>
         <div className="container text-center">
           <h2 className="text-3xl font-bold text-white mb-3" style={{ fontFamily: "'Lora', serif" }}>
             Ready for Your Own Diamond Transformation?
@@ -218,22 +219,22 @@ export default function GalleryPage() {
           <p className="text-base mb-6" style={{ color: "oklch(0.82 0.03 255)", fontFamily: "'Nunito Sans', sans-serif" }}>
             Call or text us today for a free estimate. Nassau County's trusted family home services team.
           </p>
-          <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            <a
-              href="tel:+18563713971"
-              className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-md font-bold text-sm transition-all duration-200 hover:shadow-lg hover:-translate-y-0.5"
-              style={{ backgroundColor: "oklch(0.75 0.16 75)", color: "oklch(0.18 0.02 255)", fontFamily: "'Nunito Sans', sans-serif" }}
-            >
+          <div className="flex flex-col sm:flex-row flex-wrap gap-3 justify-center">
+            <a href={CONTACT.mike.tel} className="btn-brand-primary px-6 py-3 text-sm justify-center">
               <Phone className="w-4 h-4" />
-              Lawn: 856-371-3971
+              Call Lawn: {CONTACT.mike.display}
             </a>
-            <a
-              href="tel:+18569810930"
-              className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-md font-bold text-sm transition-all duration-200 hover:-translate-y-0.5"
-              style={{ backgroundColor: "oklch(1 0 0 / 0.12)", color: "white", border: "1px solid oklch(1 0 0 / 0.3)", fontFamily: "'Nunito Sans', sans-serif" }}
-            >
+            <a href={CONTACT.mike.sms} className="btn-brand-outline-light px-6 py-3 text-sm justify-center">
+              <MessageCircle className="w-4 h-4" />
+              Text Lawn
+            </a>
+            <a href={CONTACT.lydine.tel} className="btn-brand-primary px-6 py-3 text-sm justify-center">
               <Phone className="w-4 h-4" />
-              Cleaning: 856-981-0930
+              Call Cleaning: {CONTACT.lydine.display}
+            </a>
+            <a href={CONTACT.lydine.sms} className="btn-brand-outline-light px-6 py-3 text-sm justify-center">
+              <MessageCircle className="w-4 h-4" />
+              Text Cleaning
             </a>
           </div>
         </div>

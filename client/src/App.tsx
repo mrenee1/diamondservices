@@ -8,7 +8,6 @@ import Home from "./pages/Home";
 import DiamondCutzPage from "./pages/DiamondCutzPage";
 import DiamondGirlPage from "./pages/DiamondGirlPage";
 import AboutPage from "./pages/AboutPage";
-import GalleryPage from "./pages/GalleryPage";
 import TestimonialsPage from "./pages/TestimonialsPage";
 
 function Router() {
@@ -18,7 +17,6 @@ function Router() {
       <Route path="/diamond-cutz" component={DiamondCutzPage} />
       <Route path="/diamond-girl" component={DiamondGirlPage} />
       <Route path="/about" component={AboutPage} />
-      <Route path="/gallery" component={GalleryPage} />
       <Route path="/testimonials" component={TestimonialsPage} />
       <Route path="/404" component={NotFound} />
       <Route component={NotFound} />

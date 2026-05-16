@@ -1,37 +1,59 @@
 /* ============================================================
    Home Page — Diamond Home Services LLC
-   Theme: Diamond Standard — Navy + Field Green + Gold + White
-   Hero: full-width image at top, text in navy band below (no overlap)
-   Service area: Nassau County, rooted in the Tributary community
-   Phone: 856-371-3971 (Mike) | 856-981-0930 (Lydine)
+   Theme: Diamond Standard — Navy + Gold (+ green Cutz hint only)
    ============================================================ */
 
 import { useEffect, useRef } from "react";
 import { Link } from "wouter";
 import {
-  Phone, Mail, MapPin, ArrowRight, CheckCircle2,
-  Scissors, Sparkles, Wrench, Star, ChevronRight
+  Phone,
+  MessageCircle,
+  Mail,
+  MapPin,
+  ArrowRight,
+  CheckCircle2,
+  Scissors,
+  Sparkles,
+  Wrench,
+  Star,
+  ChevronRight,
+  Shield,
+  Heart,
+  Users,
 } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import HeroImage from "@/components/HeroImage";
+import BrandShineCard from "@/components/BrandShineCard";
+import BorderGlow from "@/components/BorderGlow";
+import { BRAND } from "@/lib/brand";
+import { CONTACT } from "@/lib/contact";
+import { ContactPhone } from "@/components/ContactPhone";
+import ContactEmail from "@/components/ContactEmail";
 
-const DIAMOND_CUTZ_LOGO = "/manus-storage/pasted_file_MwGanH_image_7f7a812c.png";
-const DIAMOND_GIRL_LOGO = "/manus-storage/diamond-girl-logo_26e7435d.png";
+/** Approximate hex for hero BorderGlow card backgrounds (matches BRAND navy / gold) */
+const NAVY_HEX = "#1b2845";
+const GOLD_HEX = "#c4a035";
+
 const HERO_IMAGE = "/manus-storage/514ED805-30BB-4F65-B28C-DBEDD694640B_59fc3e61.png";
-const LAWN_IMAGE = "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=800&q=80";
-const CLEAN_IMAGE = "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=800&q=80";
+const CUTZ_HERO = "/manus-storage/diamond-cutz-hero-cropped_728f233e.png";
+const GIRL_HERO = "/manus-storage/1FF4FDBD-00A7-477C-89BC-36C8611DB049_3ec7f2e3.png";
+const COUPLE_PHOTO = "/manus-storage/mike-lydine-couple_d892a85f.png";
 
-// Brand colors from hero image
-const NAVY      = "oklch(0.22 0.08 255)";
-const NAVY_DARK = "oklch(0.14 0.06 255)";
-const NAVY_MID  = "oklch(0.28 0.08 255)";
-const GREEN     = "oklch(0.45 0.14 145)";
-const GREEN_DK  = "oklch(0.30 0.12 145)";
-const GOLD      = "oklch(0.75 0.16 75)";
-const GOLD_LT   = "oklch(0.85 0.13 80)";
-const WHITE     = "oklch(1 0 0)";
-const OFFWHITE  = "oklch(0.97 0.01 255)";
-const CHARCOAL  = "oklch(0.18 0.02 255)";
+const {
+  navy: NAVY,
+  navyDark: NAVY_DARK,
+  cutzAccent: CUTZ,
+  girlPink: GIRL_PINK,
+  girlTeal: GIRL_TEAL,
+  gold: GOLD,
+  goldLight: GOLD_LT,
+  white: WHITE,
+  offwhite: OFFWHITE,
+  charcoal: CHARCOAL,
+  bodyMuted: BODY_MUTED,
+  sectionGray: SECTION_GRAY,
+} = BRAND;
 
 function useFadeUp() {
   const ref = useRef<HTMLDivElement>(null);
@@ -39,7 +61,12 @@ function useFadeUp() {
     const el = ref.current;
     if (!el) return;
     const obs = new IntersectionObserver(
-      ([entry]) => { if (entry.isIntersecting) { el.style.opacity = "1"; el.style.transform = "translateY(0)"; } },
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          el.style.opacity = "1";
+          el.style.transform = "translateY(0)";
+        }
+      },
       { threshold: 0.12 }
     );
     el.style.opacity = "0";
@@ -56,27 +83,76 @@ const services = [
     icon: Scissors,
     title: "Diamond Cutz",
     subtitle: "Lawn & Landscaping",
-    description: "Professional lawn mowing, edging, landscape design, fertilization, sod installation, and more. Mike keeps your outdoor spaces looking resort-ready year-round throughout Nassau County.",
+    tagline: "Beautiful Lawns. Diamond Standard.",
+    description:
+      "Professional lawn mowing, edging, landscape design, fertilization, sod installation, and more. Mike keeps your outdoor spaces looking resort-ready year-round throughout Nassau County.",
     href: "/diamond-cutz",
-    logo: DIAMOND_CUTZ_LOGO,
-    phone: "856-371-3971",
-    phoneHref: "tel:+18563713971",
-    image: LAWN_IMAGE,
-    accent: GREEN,
-    accentDark: GREEN_DK,
+    image: CUTZ_HERO,
+    contact: CONTACT.mike,
+    phoneLabel: "Call Mike",
+    cardClass: "service-card-brand service-card-brand--cutz",
+    shineVariant: "cutz" as const,
+    iconColor: CUTZ,
+    subtitleColor: CUTZ,
+    taglineColor: CUTZ,
+    checkColor: CUTZ,
+    learnClass: "btn-brand-primary",
+    phoneClass: "btn-brand-outline",
+    highlights: [
+      "Lawn mowing & edging",
+      "Landscape design & install",
+      "Fertilization & weed control",
+      "Sod installation",
+    ],
   },
   {
     icon: Sparkles,
     title: "A Diamond Girl",
     subtitle: "Home Cleaning Service",
-    description: "Lydine delivers a diamond-level deep clean every time. From top-to-bottom deep cleans to move-in/move-out services — she makes every home shine like new.",
+    tagline: "Diamond Clean. Sparkling Results.",
+    description:
+      "Lydine delivers a diamond-level deep clean every time. From top-to-bottom deep cleans to move-in/move-out services — she makes every home shine like new.",
     href: "/diamond-girl",
-    logo: DIAMOND_GIRL_LOGO,
-    phone: "856-981-0930",
-    phoneHref: "tel:+18569810930",
-    image: CLEAN_IMAGE,
-    accent: "oklch(0.45 0.15 340)",
-    accentDark: "oklch(0.30 0.12 340)",
+    image: GIRL_HERO,
+    contact: CONTACT.lydine,
+    phoneLabel: "Call Lydine",
+    cardClass: "service-card-brand service-card-brand--girl",
+    shineVariant: "girl" as const,
+    iconColor: GIRL_PINK,
+    subtitleColor: GIRL_PINK,
+    taglineColor: GIRL_TEAL,
+    checkColor: GIRL_PINK,
+    learnClass: "btn-brand-girl",
+    phoneClass: "btn-brand-girl-outline",
+    highlights: [
+      "Diamond Deep Clean",
+      "Recurring Diamond Shine",
+      "Move-in / move-out cleans",
+      "Post-construction cleaning",
+    ],
+  },
+];
+
+const whyUs = [
+  { icon: Heart, title: "Family Owned", text: "Mike and Lydine built this business with pride — personal service on every job." },
+  { icon: Shield, title: "Licensed & Insured", text: "Professional, reliable crews you can trust at your home or business." },
+  { icon: MapPin, title: "Nassau County Local", text: "Rooted in the Tributary community of Yulee — we know this area." },
+];
+
+const featuredReviews = [
+  {
+    quote:
+      "Mike does an absolutely incredible job on our lawn. Our yard has never looked better — the neighbors keep asking who does our lawn!",
+    name: "James R.",
+    location: "Tributary, Yulee FL",
+    business: "Diamond Cutz",
+  },
+  {
+    quote:
+      "Lydine is thorough, trustworthy, and my house literally sparkles after she's done. Diamond-level is the perfect name for it.",
+    name: "Ashley P.",
+    location: "Yulee, FL",
+    business: "A Diamond Girl",
   },
 ];
 
@@ -86,94 +162,104 @@ export default function Home() {
   const s3 = useFadeUp();
   const s4 = useFadeUp();
   const s5 = useFadeUp();
+  const s6 = useFadeUp();
+  const s7 = useFadeUp();
+  const s8 = useFadeUp();
 
   return (
     <div className="min-h-screen" style={{ backgroundColor: OFFWHITE }}>
       <Navbar />
 
-      {/* ── HERO — full-design image with built-in text, logo, and CTAs ── */}
       <section className="w-full pt-16" style={{ backgroundColor: NAVY_DARK }}>
-        <img
+        <HeroImage
           src={HERO_IMAGE}
-          alt="Diamond Home Services LLC — Built for the Big Leagues. Lawn & Landscaping and Home Cleaning in South Jersey."
-          className="w-full block"
-          style={{ objectFit: "cover", objectPosition: "center center" }}
+          alt="Diamond Home Services LLC — Built for the Big Leagues. Lawn & Landscaping and Home Cleaning."
+          objectPosition="48% center"
         />
       </section>
 
-      {/* ── HERO TEXT BAND — navy bar below image ── */}
       <section style={{ backgroundColor: NAVY }}>
         <div className="container py-10">
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
             <div>
               <div
-                className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest mb-3 px-3 py-1 rounded-full"
-                style={{ backgroundColor: `${GOLD}22`, color: GOLD_LT, border: `1px solid ${GOLD}44`, fontFamily: "'Nunito Sans', sans-serif" }}
+                className="label-caps inline-flex items-center gap-2 mb-3 px-3 py-1 rounded-full"
+                style={{ backgroundColor: `${GOLD}22`, color: GOLD_LT, border: `1px solid ${GOLD}44` }}
               >
                 <MapPin className="w-3.5 h-3.5" />
                 Nassau County · Rooted in the Tributary Community
               </div>
-              <h1
-                className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-3"
-                style={{ color: WHITE, fontFamily: "'Lora', serif" }}
-              >
-                Diamond{" "}
-                <span style={{ color: GOLD }}>Home</span>{" "}
-                Services LLC
+              <h1 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-3" style={{ color: WHITE }}>
+                Diamond <span style={{ color: GOLD }}>Home</span> Services LLC
               </h1>
-              <p
-                className="text-base md:text-lg max-w-xl"
-                style={{ color: "oklch(0.82 0.03 255)", fontFamily: "'Nunito Sans', sans-serif" }}
-              >
+              <p className="text-base md:text-lg max-w-xl" style={{ color: BODY_MUTED }}>
                 Your trusted family-owned home services team. From a perfectly manicured lawn to a spotlessly clean home — Mike and Lydine handle it all with pride, right here in Nassau County, Florida.
               </p>
             </div>
-            <div className="flex flex-col gap-3 flex-shrink-0">
-              <Link
-                href="/diamond-cutz"
-                className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-md font-bold text-base transition-all duration-200 hover:shadow-xl hover:-translate-y-0.5 whitespace-nowrap"
-                style={{ backgroundColor: GREEN, color: WHITE, fontFamily: "'Nunito Sans', sans-serif" }}
+            <div className="flex flex-col gap-3 flex-shrink-0 w-full md:w-auto min-w-[240px]">
+              <BorderGlow
+                className="border-glow-hero-cta w-full"
+                edgeSensitivity={22}
+                glowColor="48 78 70"
+                backgroundColor={GOLD_HEX}
+                borderRadius={8}
+                glowRadius={22}
+                glowIntensity={1.05}
+                coneSpread={26}
+                colors={["#f0d78c", "#ffffff", "#a88428"]}
+                fillOpacity={0.3}
               >
-                Lawn & Landscaping
-                <ArrowRight className="w-4 h-4" />
-              </Link>
-              <Link
-                href="/diamond-girl"
-                className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-md font-bold text-base transition-all duration-200 hover:-translate-y-0.5 whitespace-nowrap"
-                style={{ backgroundColor: GOLD, color: CHARCOAL, fontFamily: "'Nunito Sans', sans-serif" }}
+                <Link href="/diamond-cutz" className="btn-brand-primary border-glow-hero-btn text-base px-7 py-3.5">
+                  Lawn & Landscaping
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
+              </BorderGlow>
+              <BorderGlow
+                className="border-glow-hero-cta border-glow-hero-cta--outline w-full"
+                edgeSensitivity={22}
+                glowColor="48 78 72"
+                backgroundColor={NAVY_HEX}
+                borderRadius={8}
+                glowRadius={26}
+                glowIntensity={1.2}
+                coneSpread={28}
+                animated
+                colors={["#e8c96a", "#ffffff", "#c4a035"]}
+                fillOpacity={0.4}
               >
-                Home Cleaning
-                <ArrowRight className="w-4 h-4" />
-              </Link>
+                <Link href="/diamond-girl" className="btn-brand-outline-light border-glow-hero-btn text-base px-7 py-3.5">
+                  Home Cleaning
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
+              </BorderGlow>
             </div>
           </div>
 
-          {/* Trust badges */}
-          <div className="flex flex-wrap gap-6 mt-6 pt-6" style={{ borderTop: `1px solid oklch(1 0 0 / 0.12)` }}>
+          <div className="flex flex-wrap gap-6 mt-6 pt-6" style={{ borderTop: "1px solid oklch(1 0 0 / 0.12)" }}>
             {["Licensed & Insured", "Free Estimates", "Family Owned", "Satisfaction Guaranteed"].map((b) => (
               <div key={b} className="flex items-center gap-1.5">
                 <CheckCircle2 className="w-4 h-4" style={{ color: GOLD }} />
-                <span className="text-sm font-semibold" style={{ color: "oklch(0.88 0.02 255)", fontFamily: "'Nunito Sans', sans-serif" }}>{b}</span>
+                <span className="text-sm font-semibold" style={{ color: BRAND.navText }}>{b}</span>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ── OUR SERVICES ── */}
+      {/* Services */}
       <section className="py-20" style={{ backgroundColor: OFFWHITE }}>
         <div className="container">
           <div ref={s1} className="text-center mb-14">
             <span
-              className="inline-block text-xs font-bold uppercase tracking-widest mb-3 px-3 py-1 rounded-full"
-              style={{ backgroundColor: `${GREEN}18`, color: GREEN, fontFamily: "'Nunito Sans', sans-serif" }}
+              className="label-caps inline-block mb-3 px-3 py-1 rounded-full"
+              style={{ backgroundColor: `${GOLD}18`, color: GOLD }}
             >
               What We Do
             </span>
-            <h2 className="text-4xl md:text-5xl font-bold" style={{ color: CHARCOAL, fontFamily: "'Lora', serif" }}>
+            <h2 className="font-display text-4xl md:text-5xl font-bold" style={{ color: CHARCOAL }}>
               Two Businesses, One Family
             </h2>
-            <p className="text-base mt-3 max-w-xl mx-auto" style={{ color: "oklch(0.40 0.04 255)", fontFamily: "'Nunito Sans', sans-serif" }}>
+            <p className="text-base mt-3 max-w-xl mx-auto text-muted-brand">
               Mike handles the outdoors. Lydine handles the indoors. Together, they've built something special for the Nassau County community.
             </p>
           </div>
@@ -182,43 +268,66 @@ export default function Home() {
             {services.map((svc, i) => {
               const Icon = svc.icon;
               return (
-                <div
-                  key={svc.title}
-                  ref={i === 0 ? s2 : s3}
-                  className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 flex flex-col"
-                  style={{ border: `1px solid oklch(0.88 0.02 255)` }}
-                >
-                  <div className="relative h-52 overflow-hidden">
-                    <img src={svc.image} alt={svc.title} className="w-full h-full object-cover" />
-                    <div className="absolute inset-0" style={{ background: `linear-gradient(to top, ${svc.accentDark} 0%, transparent 60%)` }} />
-                    <div className="absolute bottom-4 left-5">
-                      <img src={svc.logo} alt={svc.title} className="h-16 w-auto object-contain drop-shadow-lg" />
-                    </div>
+                <BrandShineCard key={svc.title} variant={svc.shineVariant} className={svc.cardClass}>
+                  <div ref={i === 0 ? s2 : s3} className="flex flex-col h-full">
+                  <div className="relative h-64 md:h-72 overflow-hidden">
+                    <img src={svc.image} alt={svc.title} className="w-full h-full object-cover object-center scale-[1.02]" />
                   </div>
-                  <div className="p-6 flex-1 flex flex-col">
-                    <div className="flex items-center gap-2 mb-2">
-                      <Icon className="w-5 h-5" style={{ color: svc.accent }} />
-                      <span className="text-xs font-bold uppercase tracking-widest" style={{ color: svc.accent, fontFamily: "'Nunito Sans', sans-serif" }}>{svc.subtitle}</span>
+                  <div className="p-6 md:p-8 flex-1 flex flex-col min-h-[300px]">
+                    <div className="flex items-center gap-2 mb-1">
+                      <Icon className="w-5 h-5" style={{ color: svc.iconColor }} />
+                      <span className="label-caps" style={{ color: svc.subtitleColor }}>{svc.subtitle}</span>
                     </div>
-                    <h3 className="text-2xl font-bold mb-3" style={{ color: CHARCOAL, fontFamily: "'Lora', serif" }}>{svc.title}</h3>
-                    <p className="text-sm leading-relaxed mb-5 flex-1" style={{ color: "oklch(0.40 0.04 255)", fontFamily: "'Nunito Sans', sans-serif" }}>{svc.description}</p>
+                    <h3 className="font-display text-2xl font-bold mb-1" style={{ color: CHARCOAL }}>{svc.title}</h3>
+                    <p className="text-sm font-semibold italic mb-3" style={{ color: svc.taglineColor }}>{svc.tagline}</p>
+                    <p className="text-sm leading-relaxed mb-4 text-muted-brand">{svc.description}</p>
+                    <ul className="space-y-2 mb-6 flex-1">
+                      {svc.highlights.map((item) => (
+                        <li key={item} className="flex items-start gap-2 text-sm text-muted-brand">
+                          <CheckCircle2 className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: svc.checkColor }} />
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
                     <div className="flex flex-col sm:flex-row gap-3">
-                      <Link
-                        href={svc.href}
-                        className="flex-1 flex items-center justify-center gap-2 py-2.5 rounded-md font-bold text-sm transition-all duration-200 hover:shadow-md"
-                        style={{ backgroundColor: svc.accent, color: WHITE, fontFamily: "'Nunito Sans', sans-serif" }}
-                      >
+                      <Link href={svc.href} className={`${svc.learnClass} flex-1 py-2.5 text-sm`}>
                         Learn More <ChevronRight className="w-4 h-4" />
                       </Link>
-                      <a
-                        href={svc.phoneHref}
-                        className="flex-1 flex items-center justify-center gap-2 py-2.5 rounded-md font-bold text-sm transition-all duration-200"
-                        style={{ backgroundColor: "oklch(0.93 0.02 255)", color: CHARCOAL, fontFamily: "'Nunito Sans', sans-serif" }}
-                      >
-                        <Phone className="w-4 h-4" /> {svc.phone}
+                      <a href={svc.contact.tel} className={`${svc.phoneClass} flex-1 py-2.5 text-sm justify-center`}>
+                        <Phone className="w-4 h-4" /> {svc.phoneLabel}
+                      </a>
+                      <a href={svc.contact.sms} className={`${svc.phoneClass} flex-1 py-2.5 text-sm justify-center`}>
+                        <MessageCircle className="w-4 h-4" /> Text
                       </a>
                     </div>
                   </div>
+                  </div>
+                </BrandShineCard>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* Why us */}
+      <section className="py-16" style={{ backgroundColor: NAVY }}>
+        <div className="container">
+          <div ref={s6} className="text-center mb-10">
+            <span className="label-caps inline-block mb-3 px-3 py-1 rounded-full" style={{ backgroundColor: `${GOLD}22`, color: GOLD_LT }}>
+              The Diamond Standard
+            </span>
+            <h2 className="font-display text-3xl md:text-4xl font-bold text-white">Why Diamond Home Services</h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {whyUs.map((item) => {
+              const Icon = item.icon;
+              return (
+                <div key={item.title} className="text-center md:text-left p-6 rounded-xl" style={{ backgroundColor: "oklch(1 0 0 / 0.06)" }}>
+                  <div className="w-12 h-12 rounded-xl flex items-center justify-center mx-auto md:mx-0 mb-4" style={{ backgroundColor: GOLD }}>
+                    <Icon className="w-6 h-6" style={{ color: CHARCOAL }} />
+                  </div>
+                  <h3 className="font-display text-xl font-bold text-white mb-2">{item.title}</h3>
+                  <p className="text-sm" style={{ color: BODY_MUTED }}>{item.text}</p>
                 </div>
               );
             })}
@@ -226,7 +335,76 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── BUSINESS CLIENT CALLOUT ── */}
+      {/* Meet Mike & Lydine */}
+      <section className="py-16" style={{ backgroundColor: OFFWHITE }}>
+        <div className="container">
+          <div ref={s7} className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+            <div className="rounded-2xl overflow-hidden border-2" style={{ borderColor: GOLD }}>
+              <img src={COUPLE_PHOTO} alt="Mike and Lydine, owners of Diamond Home Services" className="w-full h-auto object-cover" />
+            </div>
+            <div>
+              <span className="label-caps inline-block mb-3 px-3 py-1 rounded-full" style={{ backgroundColor: `${GOLD}18`, color: GOLD }}>
+                Our Story
+              </span>
+              <h2 className="font-display text-3xl md:text-4xl font-bold mb-4" style={{ color: CHARCOAL }}>
+                Meet Mike & Lydine
+              </h2>
+              <p className="text-base leading-relaxed mb-4 text-muted-brand">
+                We're a hardworking husband-and-wife team serving Nassau County with pride. Mike leads Diamond Cutz lawn and landscaping; Lydine leads A Diamond Girl home cleaning. Two specialist crews, one family name you can trust.
+              </p>
+              <p className="text-base leading-relaxed mb-6 text-muted-brand">
+                Rooted right here in the Tributary community of Yulee, we built this business to give our family a better future — and to bring diamond-level care to every home we serve.
+              </p>
+              <Link href="/about" className="btn-brand-secondary">
+                Read Our Full Story <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials */}
+      <section className="py-16" style={{ backgroundColor: SECTION_GRAY }}>
+        <div className="container">
+          <div ref={s8} className="text-center mb-10">
+            <span className="label-caps inline-block mb-3 px-3 py-1 rounded-full" style={{ backgroundColor: `${GOLD}18`, color: GOLD }}>
+              Customer Love
+            </span>
+            <h2 className="font-display text-3xl md:text-4xl font-bold" style={{ color: CHARCOAL }}>
+              What Neighbors Are Saying
+            </h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+            {featuredReviews.map((review) => (
+              <blockquote
+                key={review.name}
+                className="bg-white rounded-2xl p-6 md:p-8 shadow-sm"
+                style={{ border: `2px solid ${GOLD}` }}
+              >
+                <div className="flex gap-1 mb-3">
+                  {[1, 2, 3, 4, 5].map((i) => (
+                    <Star key={i} className="w-4 h-4 fill-current" style={{ color: GOLD }} />
+                  ))}
+                </div>
+                <p className="text-sm leading-relaxed mb-4 italic text-muted-brand">"{review.quote}"</p>
+                <footer className="text-sm">
+                  <strong style={{ color: CHARCOAL }}>{review.name}</strong>
+                  <span className="text-muted-brand"> · {review.location}</span>
+                  <br />
+                  <span className="label-caps mt-1 inline-block" style={{ color: GOLD }}>{review.business}</span>
+                </footer>
+              </blockquote>
+            ))}
+          </div>
+          <div className="text-center">
+            <Link href="/testimonials" className="btn-brand-primary">
+              Read All Reviews <ChevronRight className="w-4 h-4" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Commercial */}
       <section className="py-16" style={{ backgroundColor: NAVY }}>
         <div className="container">
           <div ref={s4} className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
@@ -234,86 +412,74 @@ export default function Home() {
               <Wrench className="w-8 h-8" style={{ color: CHARCOAL }} />
             </div>
             <div className="flex-1 text-center md:text-left">
-              <span
-                className="inline-block text-xs font-bold uppercase tracking-widest mb-2 px-3 py-1 rounded-full"
-                style={{ backgroundColor: `${GOLD}22`, color: GOLD_LT, fontFamily: "'Nunito Sans', sans-serif" }}
-              >
+              <span className="label-caps inline-block mb-2 px-3 py-1 rounded-full" style={{ backgroundColor: `${GOLD}22`, color: GOLD_LT }}>
                 Commercial Services
               </span>
-              <h3 className="text-2xl md:text-3xl font-bold text-white mb-2" style={{ fontFamily: "'Lora', serif" }}>
-                We Also Work With Businesses
-              </h3>
-              <p className="text-base" style={{ color: "oklch(0.80 0.03 255)", fontFamily: "'Nunito Sans', sans-serif" }}>
-                Offices, retail spaces, commercial properties, and more throughout Nassau County. Whether it's regular lawn maintenance or recurring cleaning contracts — we'd love to partner with your business. Call or text us for a custom quote.
+              <h3 className="font-display text-2xl md:text-3xl font-bold text-white mb-2">We Also Work With Businesses</h3>
+              <p className="text-base" style={{ color: BODY_MUTED }}>
+                Offices, retail spaces, commercial properties, and more throughout Nassau County. Whether it's regular lawn maintenance or recurring cleaning contracts — we'd love to partner with your business.
               </p>
             </div>
             <div className="flex-shrink-0 flex flex-col gap-3">
-              <a
-                href="tel:+18563713971"
-                className="flex items-center justify-center gap-2 px-6 py-3 rounded-md font-bold text-sm transition-all duration-200 hover:shadow-lg hover:-translate-y-0.5 whitespace-nowrap"
-                style={{ backgroundColor: GOLD, color: CHARCOAL, fontFamily: "'Nunito Sans', sans-serif" }}
-              >
+              <a href={CONTACT.mike.tel} className="btn-brand-primary whitespace-nowrap justify-center">
                 <Phone className="w-4 h-4" />
-                Call or Text for a Quote
+                Call for a Quote
               </a>
-              <a
-                href="mailto:diamondhomeservicesofflorida@gmail.com"
-                className="flex items-center justify-center gap-2 px-6 py-3 rounded-md font-bold text-sm transition-all duration-200 hover:-translate-y-0.5 whitespace-nowrap"
-                style={{ backgroundColor: "oklch(1 0 0 / 0.10)", color: WHITE, border: "1px solid oklch(1 0 0 / 0.25)", fontFamily: "'Nunito Sans', sans-serif" }}
-              >
+              <a href={CONTACT.mike.sms} className="btn-brand-outline-light whitespace-nowrap text-sm justify-center">
+                <MessageCircle className="w-4 h-4" />
+                Text for a Quote
+              </a>
+              <a href={CONTACT.mailto} className="btn-brand-outline-light whitespace-nowrap text-sm justify-center">
                 <Mail className="w-4 h-4" />
-                diamondhomeservicesofflorida@gmail.com
+                Email Us
               </a>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ── SERVICE AREA ── */}
-      <section className="py-20" style={{ backgroundColor: "oklch(0.93 0.02 255)" }}>
+      {/* Service area */}
+      <section className="py-20" style={{ backgroundColor: SECTION_GRAY }}>
         <div className="container">
           <div ref={s5} className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <span
-                className="inline-block text-xs font-bold uppercase tracking-widest mb-3 px-3 py-1 rounded-full"
-                style={{ backgroundColor: `${GREEN}18`, color: GREEN, fontFamily: "'Nunito Sans', sans-serif" }}
-              >
+              <span className="label-caps inline-block mb-3 px-3 py-1 rounded-full" style={{ backgroundColor: `${GOLD}18`, color: GOLD }}>
                 Where We Serve
               </span>
-              <h2 className="text-4xl font-bold mb-5 leading-tight" style={{ color: CHARCOAL, fontFamily: "'Lora', serif" }}>
+              <h2 className="font-display text-4xl font-bold mb-5 leading-tight" style={{ color: CHARCOAL }}>
                 Proudly Serving Nassau County, Florida
               </h2>
-              <p className="text-base leading-relaxed mb-6" style={{ color: "oklch(0.35 0.04 255)", fontFamily: "'Nunito Sans', sans-serif" }}>
-                Based right here in the Tributary community of Yulee, Mike and Lydine serve homeowners and businesses throughout Nassau County. If you're not sure whether we cover your area, just give us a call — we're always happy to help.
+              <p className="text-base leading-relaxed mb-6 text-muted-brand">
+                Based right here in the Tributary community of Yulee, Mike and Lydine serve homeowners and businesses throughout Nassau County.
               </p>
               <div className="grid grid-cols-2 gap-3">
                 {["Tributary Community", "Yulee, FL 32097", "Fernandina Beach", "Callahan", "Nassau County", "Surrounding Areas"].map((area) => (
                   <div key={area} className="flex items-center gap-2">
-                    <MapPin className="w-4 h-4 flex-shrink-0" style={{ color: GREEN }} />
-                    <span className="text-sm font-semibold" style={{ color: "oklch(0.25 0.04 255)", fontFamily: "'Nunito Sans', sans-serif" }}>{area}</span>
+                    <MapPin className="w-4 h-4 flex-shrink-0" style={{ color: GOLD }} />
+                    <span className="text-sm font-semibold" style={{ color: CHARCOAL }}>{area}</span>
                   </div>
                 ))}
               </div>
             </div>
-            <div className="bg-white rounded-2xl shadow-lg p-8" style={{ border: `1px solid oklch(0.88 0.02 255)` }}>
-              <h3 className="text-2xl font-bold mb-5" style={{ color: CHARCOAL, fontFamily: "'Lora', serif" }}>Get in Touch</h3>
+            <div className="bg-white rounded-2xl shadow-lg p-8" style={{ border: `2px solid ${GOLD}` }}>
+              <h3 className="font-display text-2xl font-bold mb-5" style={{ color: CHARCOAL }}>Get in Touch</h3>
               <div className="space-y-5">
                 <div className="flex items-center gap-4">
-                  <div className="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0" style={{ backgroundColor: GREEN }}>
+                  <div className="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0" style={{ backgroundColor: NAVY }}>
                     <Phone className="w-5 h-5 text-white" />
                   </div>
                   <div>
-                    <p className="text-xs font-bold uppercase tracking-wide mb-0.5" style={{ color: "oklch(0.50 0.04 255)", fontFamily: "'Nunito Sans', sans-serif" }}>Lawn & Landscaping (Mike)</p>
-                    <a href="tel:+18563713971" className="font-bold text-base" style={{ color: CHARCOAL, fontFamily: "'Nunito Sans', sans-serif" }}>856-371-3971</a>
+                    <p className="label-caps mb-0.5" style={{ color: "oklch(0.50 0.04 255)" }}>Lawn & Landscaping (Mike)</p>
+                    <ContactPhone contact={CONTACT.mike} linkClassName="font-bold text-base hover:underline" style={{ color: CHARCOAL }} />
                   </div>
                 </div>
                 <div className="flex items-center gap-4">
-                  <div className="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0" style={{ backgroundColor: "oklch(0.45 0.15 340)" }}>
+                  <div className="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0" style={{ backgroundColor: NAVY }}>
                     <Phone className="w-5 h-5 text-white" />
                   </div>
                   <div>
-                    <p className="text-xs font-bold uppercase tracking-wide mb-0.5" style={{ color: "oklch(0.50 0.04 255)", fontFamily: "'Nunito Sans', sans-serif" }}>Home Cleaning (Lydine)</p>
-                    <a href="tel:+18569810930" className="font-bold text-base" style={{ color: CHARCOAL, fontFamily: "'Nunito Sans', sans-serif" }}>856-981-0930</a>
+                    <p className="label-caps mb-0.5" style={{ color: "oklch(0.50 0.04 255)" }}>Home Cleaning (Lydine)</p>
+                    <ContactPhone contact={CONTACT.lydine} linkClassName="font-bold text-base hover:underline" style={{ color: CHARCOAL }} />
                   </div>
                 </div>
                 <div className="flex items-center gap-4">
@@ -321,44 +487,29 @@ export default function Home() {
                     <Mail className="w-5 h-5 text-white" />
                   </div>
                   <div>
-                    <p className="text-xs font-bold uppercase tracking-wide mb-0.5" style={{ color: "oklch(0.50 0.04 255)", fontFamily: "'Nunito Sans', sans-serif" }}>Email</p>
-                    <a href="mailto:diamondhomeservicesofflorida@gmail.com" className="font-bold text-base" style={{ color: CHARCOAL, fontFamily: "'Nunito Sans', sans-serif" }}>diamondhomeservicesofflorida@gmail.com</a>
-                  </div>
-                </div>
-                <div className="flex items-center gap-4">
-                  <div className="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0" style={{ backgroundColor: NAVY }}>
-                    <MapPin className="w-5 h-5 text-white" />
-                  </div>
-                  <div>
-                    <p className="text-xs font-bold uppercase tracking-wide mb-0.5" style={{ color: "oklch(0.50 0.04 255)", fontFamily: "'Nunito Sans', sans-serif" }}>Service Area</p>
-                    <p className="font-bold text-base" style={{ color: CHARCOAL, fontFamily: "'Nunito Sans', sans-serif" }}>Nassau County, FL<br />Rooted in Tributary, Yulee</p>
+                    <p className="label-caps mb-0.5" style={{ color: "oklch(0.50 0.04 255)" }}>Email</p>
+                    <ContactEmail className="font-bold text-base hover:underline break-all" style={{ color: CHARCOAL }} />
                   </div>
                 </div>
               </div>
-              <div className="mt-6 pt-5 border-t border-border">
-                <p className="text-xs font-bold uppercase tracking-wide mb-1" style={{ color: "oklch(0.50 0.04 255)", fontFamily: "'Nunito Sans', sans-serif" }}>Hours</p>
-                <p className="text-sm" style={{ color: "oklch(0.35 0.04 255)", fontFamily: "'Nunito Sans', sans-serif" }}>
-                  Mon–Fri: 7:00 AM – 6:00 PM &nbsp;|&nbsp; Sat: 8:00 AM – 4:00 PM &nbsp;|&nbsp; Sun: Closed
-                </p>
-              </div>
+              <p className="text-sm mt-6 pt-5 border-t border-border text-muted-brand">
+                Mon–Fri: 7:00 AM – 6:00 PM · Sat: 8:00 AM – 4:00 PM · Sun: Closed
+              </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ── STAR RATINGS STRIP ── */}
       <section className="py-8" style={{ backgroundColor: NAVY_DARK }}>
         <div className="container">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-2">
-              {[1,2,3,4,5].map(i => <Star key={i} className="w-5 h-5 fill-current" style={{ color: GOLD }} />)}
-              <span className="ml-2 font-bold text-white text-sm" style={{ fontFamily: "'Nunito Sans', sans-serif" }}>5.0 Average Rating · 100+ Happy Customers</span>
+              {[1, 2, 3, 4, 5].map((i) => (
+                <Star key={i} className="w-5 h-5 fill-current" style={{ color: GOLD }} />
+              ))}
+              <span className="ml-2 font-bold text-white text-sm">5.0 Average Rating · 100+ Happy Customers</span>
             </div>
-            <Link
-              href="/testimonials"
-              className="text-sm font-bold transition-colors hover:underline"
-              style={{ color: GOLD_LT, fontFamily: "'Nunito Sans', sans-serif" }}
-            >
+            <Link href="/testimonials" className="text-sm font-bold hover:underline" style={{ color: GOLD_LT }}>
               Read Our Reviews →
             </Link>
           </div>
