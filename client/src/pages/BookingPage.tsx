@@ -19,7 +19,7 @@ import Footer from "@/components/Footer";
 const services = [
   { id: "mowing", icon: Scissors, title: "Lawn Mowing & Edging", duration: "1–2 hrs", popular: true },
   { id: "landscape", icon: Leaf, title: "Landscape Design & Install", duration: "Consultation", popular: false },
-  { id: "fertilization", icon: Sprout, title: "Fertilization & Weed Control", duration: "1–1.5 hrs", popular: false },
+  { id: "fertilization", icon: Sprout, title: "Seasonal Fertilization", duration: "1–1.5 hrs", popular: false },
   { id: "sod", icon: Layers, title: "Sod Installation", duration: "Half/Full Day", popular: false },
   { id: "irrigation", icon: Droplets, title: "Irrigation Services", duration: "2–4 hrs", popular: false },
   { id: "cleanup", icon: Sun, title: "Seasonal Clean-Up", duration: "2–4 hrs", popular: false },

@@ -34,9 +34,9 @@ const services = [
   },
   {
     icon: Sprout,
-    title: "Fertilization & Weed Control",
-    description: "Seasonal fertilization programs formulated for North Florida's climate and soil conditions, paired with targeted pre- and post-emergent weed control.",
-    includes: ["Soil analysis", "Seasonal fertilization program", "Pre & post-emergent weed control", "Lawn health monitoring"],
+    title: "Seasonal Fertilization",
+    description: "Seasonal fertilization programs formulated for North Florida's climate and soil conditions.",
+    includes: ["Soil analysis", "Seasonal fertilization program", "Custom treatment schedule", "Lawn health monitoring"],
     frequency: "Seasonal Program",
     badge: null,
   },
@@ -67,8 +67,8 @@ const services = [
   {
     icon: Shovel,
     title: "Mulching & Bed Care",
-    description: "Fresh mulch transforms the look of your landscape while protecting plant roots and suppressing weeds. We refresh beds, define borders, and keep everything looking polished.",
-    includes: ["Bed edging & definition", "Old mulch removal", "Fresh mulch installation", "Weed barrier placement"],
+    description: "Fresh mulch transforms the look of your landscape while protecting plant roots and retaining moisture. We refresh beds, define borders, and keep everything looking polished.",
+    includes: ["Bed edging & definition", "Old mulch removal", "Fresh mulch installation", "Root moisture retention"],
     frequency: "Seasonal",
     badge: null,
   },
