@@ -16,15 +16,15 @@ import { CONTACT } from "@/lib/contact";
 
 const DIAMOND_CUTZ_LOGO = "/logos/diamond-cutz.png";
 const DIAMOND_GIRL_LOGO = "/manus-storage/diamond-girl-logo_26e7435d.png";
-const COUPLE_PHOTO = "/images/family-crew.jpg";
+const COUPLE_PHOTO = "/manus-storage/mike-lydine-couple_d892a85f.png";
 
 const { gold: GOLD } = BRAND;
 
 const familyPhotos: FamilyPhoto[] = [
   {
     src: COUPLE_PHOTO,
-    alt: "The Petrutz family — Diamond Home Services LLC",
-    caption: "This is the Crew",
+    alt: "Mike and Lydine Petrutz, founders of Diamond Home Services LLC",
+    caption: "Mike & Lydine, founders",
   },
   {
     src: "/family/gage-formal.png",
