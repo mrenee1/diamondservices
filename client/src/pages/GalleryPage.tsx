@@ -100,7 +100,7 @@ export default function GalleryPage() {
           <span className="inline-block text-xs font-bold uppercase tracking-widest mb-4 px-3 py-1 rounded-full" style={{ backgroundColor: "oklch(0.77 0.14 70 / 0.2)", color: "oklch(0.86 0.08 68)", fontFamily: "'Nunito Sans', sans-serif" }}>
             Our Work
           </span>
-          <h1 className="text-5xl font-bold text-white mb-4" style={{ fontFamily: "'Lora', serif" }}>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4" style={{ fontFamily: "'Lora', serif" }}>
             Before & After Gallery
           </h1>
           <p className="text-lg max-w-xl mx-auto" style={{ color: "oklch(0.85 0.03 255)", fontFamily: "'Nunito Sans', sans-serif" }}>

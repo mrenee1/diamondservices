@@ -391,9 +391,11 @@ export default function AboutPage() {
                 >
                   Business Hours
                 </p>
-                <p className="text-sm" style={{ color: "oklch(0.35 0.04 255)", fontFamily: "'Nunito Sans', sans-serif" }}>
-                  Mon–Fri: 7:00 AM – 6:00 PM &nbsp;|&nbsp; Sat: 8:00 AM – 4:00 PM &nbsp;|&nbsp; Sun: Closed
-                </p>
+                <div className="flex flex-wrap gap-x-4 gap-y-1 text-sm" style={{ color: "oklch(0.35 0.04 255)", fontFamily: "'Nunito Sans', sans-serif" }}>
+                  <span>Mon–Fri: 7:00 AM – 6:00 PM</span>
+                  <span>Sat: 8:00 AM – 4:00 PM</span>
+                  <span>Sun: Closed</span>
+                </div>
               </div>
             </div>
           </div>

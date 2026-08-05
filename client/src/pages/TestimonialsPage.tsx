@@ -161,14 +161,14 @@ export default function TestimonialsPage() {
           <span className="inline-block text-xs font-bold uppercase tracking-widest mb-4 px-3 py-1 rounded-full" style={{ backgroundColor: "oklch(0.77 0.14 70 / 0.2)", color: "oklch(0.86 0.08 68)", fontFamily: "'Nunito Sans', sans-serif" }}>
             Customer Reviews
           </span>
-          <h1 className="text-5xl font-bold text-white mb-4" style={{ fontFamily: "'Lora', serif" }}>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4" style={{ fontFamily: "'Lora', serif" }}>
             What Our Customers Say
           </h1>
           <p className="text-lg max-w-xl mx-auto mb-6" style={{ color: "oklch(0.85 0.03 255)", fontFamily: "'Nunito Sans', sans-serif" }}>
             Don't just take our word for it. Here's what Nassau County homeowners and families are saying about Diamond Home Services.
           </p>
           {/* Stats */}
-          <div className="flex flex-wrap justify-center gap-10 mt-8">
+          <div className="flex flex-wrap justify-center gap-6 sm:gap-10 mt-8">
             {[
               { value: "5.0", label: "Average Rating" },
               { value: "100+", label: "Happy Customers" },

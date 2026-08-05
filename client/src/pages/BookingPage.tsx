@@ -173,7 +173,7 @@ export default function BookingPage() {
             </span>
           </div>
           <h1
-            className="text-4xl font-bold text-white mb-3"
+            className="text-3xl sm:text-4xl font-bold text-white mb-3"
             style={{ fontFamily: "'Lora', serif" }}
           >
             Book a Service
@@ -438,7 +438,7 @@ export default function BookingPage() {
               </p>
 
               <div className="bg-white rounded-2xl border border-border p-6 shadow-sm space-y-4">
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
                     <label className="flex items-center gap-1.5 text-xs font-bold uppercase tracking-wide mb-1.5" style={{ color: "oklch(0.35 0.04 70)", fontFamily: "'Nunito Sans', sans-serif" }}>
                       <User className="w-3.5 h-3.5" /> First Name *
@@ -577,7 +577,7 @@ export default function BookingPage() {
                     <User className="w-5 h-5" style={{ color: "oklch(0.77 0.14 70)" }} />
                     <h3 className="font-700 text-sm uppercase tracking-wide" style={{ color: "oklch(0.50 0.04 80)", fontFamily: "'Nunito Sans', sans-serif" }}>Contact Info</h3>
                   </div>
-                  <div className="grid grid-cols-2 gap-3 text-sm" style={{ fontFamily: "'Nunito Sans', sans-serif" }}>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm" style={{ fontFamily: "'Nunito Sans', sans-serif" }}>
                     <div>
                       <span className="text-xs font-bold uppercase tracking-wide block mb-0.5" style={{ color: "oklch(0.55 0.04 80)" }}>Name</span>
                       <span style={{ color: "oklch(0.18 0.01 60)" }}>{booking.firstName} {booking.lastName}</span>

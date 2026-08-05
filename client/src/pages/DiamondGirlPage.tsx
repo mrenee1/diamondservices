@@ -241,7 +241,7 @@ export default function DiamondGirlPage() {
 
       <section className="py-16" style={{ backgroundColor: BRAND.offwhite }}>
         <div className="container text-center">
-          <h2 className="font-display text-4xl font-bold mb-4" style={{ color: BRAND.charcoal }}>
+          <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold mb-4" style={{ color: BRAND.charcoal }}>
             Ready for a Diamond-Level Clean?
           </h2>
           <p className="text-lg mb-8 max-w-lg mx-auto text-muted-brand">

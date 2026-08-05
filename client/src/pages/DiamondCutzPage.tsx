@@ -160,7 +160,7 @@ export default function DiamondCutzPage() {
       {/* Business CTA */}
       <section className="py-16" style={{ backgroundColor: "oklch(0.93 0.02 255)" }}>
         <div className="container text-center">
-          <h2 className="text-4xl font-bold mb-4" style={{ color: "oklch(0.18 0.02 255)", fontFamily: "'Lora', serif" }}>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4" style={{ color: "oklch(0.18 0.02 255)", fontFamily: "'Lora', serif" }}>
             Not Sure What You Need?
           </h2>
           <p className="text-lg mb-8 max-w-lg mx-auto" style={{ color: "oklch(0.35 0.04 255)", fontFamily: "'Nunito Sans', sans-serif" }}>

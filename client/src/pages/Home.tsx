@@ -446,7 +446,7 @@ export default function Home() {
               <span className="label-caps inline-block mb-3 px-3 py-1 rounded-full" style={{ backgroundColor: `${GOLD}18`, color: GOLD }}>
                 Where We Serve
               </span>
-              <h2 className="font-display text-4xl font-bold mb-5 leading-tight" style={{ color: CHARCOAL }}>
+              <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold mb-5 leading-tight" style={{ color: CHARCOAL }}>
                 Proudly Serving Nassau County, Florida
               </h2>
               <p className="text-base leading-relaxed mb-6 text-muted-brand">
