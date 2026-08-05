@@ -101,7 +101,7 @@ const services = [
     highlights: [
       "Lawn mowing & edging",
       "Landscape design & install",
-      "Fertilization & weed control",
+      "Seasonal fertilization",
       "Sod installation",
     ],
   },

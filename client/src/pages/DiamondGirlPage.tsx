@@ -43,7 +43,7 @@ const services = [
     title: "Move-In / Move-Out Clean",
     tagline: "Start fresh. Leave spotless.",
     description: "Moving is stressful enough. Let Lydine handle the clean so you can focus on the move. We leave every inch of the property sparkling — whether you're arriving or departing.",
-    includes: ["Full property deep clean", "Inside all cabinets & drawers", "All appliances cleaned inside & out", "Bathrooms scrubbed & sanitized", "Windows & window sills"],
+    includes: ["Full property deep clean", "Inside all cabinets & drawers", "All appliances cleaned inside & out", "Bathrooms scrubbed & sanitized", "Window sills"],
     frequency: "One-Time",
     badge: null,
   },

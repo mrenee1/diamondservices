@@ -35,9 +35,9 @@ const services = [
   },
   {
     icon: Sprout,
-    title: "Fertilization & Weed Control",
-    description: "A healthy lawn starts with the right nutrition. Our seasonal fertilization programs are specifically formulated for North Florida's climate and soil conditions, paired with targeted pre- and post-emergent weed control.",
-    includes: ["Soil analysis", "Seasonal fertilization program", "Pre & post-emergent weed control", "Lawn health monitoring"],
+    title: "Seasonal Fertilization",
+    description: "A healthy lawn starts with the right nutrition. Our seasonal fertilization programs are specifically formulated for North Florida's climate and soil conditions.",
+    includes: ["Soil analysis", "Seasonal fertilization program", "Custom treatment schedule", "Lawn health monitoring"],
     frequency: "Seasonal Program",
     badge: null,
     color: "oklch(0.35 0.10 145)",
@@ -81,8 +81,8 @@ const services = [
   {
     icon: Shovel,
     title: "Mulching & Bed Care",
-    description: "Fresh mulch enhances curb appeal, retains moisture, and suppresses weeds. We install premium hardwood or pine bark mulch in all landscape beds, along with bed edging and plant care.",
-    includes: ["Bed edging & prep", "Premium mulch installation", "Weed barrier installation", "Plant health check"],
+    description: "Fresh mulch enhances curb appeal and retains moisture. We install premium hardwood or pine bark mulch in all landscape beds, along with bed edging and plant care.",
+    includes: ["Bed edging & prep", "Premium mulch installation", "Root moisture retention", "Plant health check"],
     frequency: "Bi-Annual",
     badge: null,
     color: "oklch(0.35 0.10 145)",
