@@ -14,8 +14,9 @@ import HeroImage from "@/components/HeroImage";
 import BorderGlow from "@/components/BorderGlow";
 import { BRAND } from "@/lib/brand";
 import { CONTACT } from "@/lib/contact";
+import { handleImageError } from "@/lib/imageFallback";
 
-const HERO_IMAGE = "/manus-storage/1FF4FDBD-00A7-477C-89BC-36C8611DB049_3ec7f2e3.png";
+const HERO_IMAGE = "/heroes/diamond-girl-hero.png";
 
 const { girlPink: PINK, girlPinkDark: PINK_DK, girlTeal: TEAL } = BRAND;
 

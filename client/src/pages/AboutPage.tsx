@@ -13,19 +13,14 @@ import { ContactPhone } from "@/components/ContactPhone";
 import ContactEmail from "@/components/ContactEmail";
 import { BRAND } from "@/lib/brand";
 import { CONTACT } from "@/lib/contact";
+import { handleImageError } from "@/lib/imageFallback";
 
 const DIAMOND_CUTZ_LOGO = "/logos/diamond-cutz.png";
-const DIAMOND_GIRL_LOGO = "/manus-storage/diamond-girl-logo_26e7435d.png";
-const COUPLE_PHOTO = "/manus-storage/mike-lydine-couple_d892a85f.png";
+const DIAMOND_GIRL_LOGO = "/logos/diamond-girl.png";
 
 const { gold: GOLD } = BRAND;
 
 const familyPhotos: FamilyPhoto[] = [
-  {
-    src: COUPLE_PHOTO,
-    alt: "Mike and Lydine Petrutz, founders of Diamond Home Services LLC",
-    caption: "Mike & Lydine, founders",
-  },
   {
     src: "/family/gage-formal.png",
     alt: "Mike and Lydine with their youngest son Gage",
@@ -51,8 +46,8 @@ export default function AboutPage() {
 
       <section className="w-full pt-16" style={{ backgroundColor: "oklch(0.14 0.06 255)" }}>
         <HeroImage
-          src="/manus-storage/E30554CE-B3FB-49F8-9E75-515FEE6A95BB_09584a32.png"
-          alt="About Us — Mike & Lydine, Diamond Home Services LLC — Family. Pride. Diamond Standard."
+          src="/heroes/home-hero.png"
+          alt="Diamond Home Services LLC — family-owned lawn care and home cleaning in Nassau County, Florida"
         />
       </section>
 
@@ -202,7 +197,7 @@ export default function AboutPage() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
             <div className="bg-white rounded-2xl p-8 shadow-sm border border-border text-center hover:shadow-lg transition-all duration-300">
-              <img src={DIAMOND_CUTZ_LOGO} alt="Diamond Cutz" className="h-24 w-auto object-contain mx-auto mb-4" />
+              <img src={DIAMOND_CUTZ_LOGO} alt="Diamond Cutz" className="h-24 w-auto object-contain mx-auto mb-4" onError={handleImageError} />
               <h3 className="text-xl font-bold mb-1" style={{ color: "oklch(0.18 0.02 255)", fontFamily: "'Lora', serif" }}>
                 Diamond Cutz
               </h3>
@@ -227,7 +222,7 @@ export default function AboutPage() {
               </Link>
             </div>
             <div className="bg-white rounded-2xl p-8 shadow-sm border border-border text-center hover:shadow-lg transition-all duration-300">
-              <img src={DIAMOND_GIRL_LOGO} alt="A Diamond Girl" className="h-24 w-auto object-contain mx-auto mb-4" />
+              <img src={DIAMOND_GIRL_LOGO} alt="A Diamond Girl" className="h-24 w-auto object-contain mx-auto mb-4" onError={handleImageError} />
               <h3 className="text-xl font-bold mb-1" style={{ color: "oklch(0.18 0.02 255)", fontFamily: "'Lora', serif" }}>
                 A Diamond Girl
               </h3>
