@@ -30,15 +30,16 @@ import { BRAND } from "@/lib/brand";
 import { CONTACT } from "@/lib/contact";
 import { ContactPhone } from "@/components/ContactPhone";
 import ContactEmail from "@/components/ContactEmail";
+import { handleImageError } from "@/lib/imageFallback";
 
 /** Approximate hex for hero BorderGlow card backgrounds (matches BRAND navy / gold) */
 const NAVY_HEX = "#1b2845";
 const GOLD_HEX = "#c4a035";
 
-const HERO_IMAGE = "/manus-storage/514ED805-30BB-4F65-B28C-DBEDD694640B_59fc3e61.png";
-const CUTZ_HERO = "/manus-storage/diamond-cutz-hero-cropped_728f233e.png";
-const GIRL_HERO = "/manus-storage/1FF4FDBD-00A7-477C-89BC-36C8611DB049_3ec7f2e3.png";
-const COUPLE_PHOTO = "/manus-storage/mike-lydine-couple_d892a85f.png";
+const HERO_IMAGE = "/heroes/home-hero.png";
+const CUTZ_HERO = "/heroes/diamond-cutz-hero.png";
+const GIRL_HERO = "/heroes/diamond-girl-hero.png";
+const FAMILY_PHOTO = "/family/petrutz-family.png";
 
 const {
   navy: NAVY,
@@ -271,7 +272,7 @@ export default function Home() {
                 <BrandShineCard key={svc.title} variant={svc.shineVariant} className={svc.cardClass}>
                   <div ref={i === 0 ? s2 : s3} className="flex flex-col h-full">
                   <div className="relative h-64 md:h-72 overflow-hidden">
-                    <img src={svc.image} alt={svc.title} className="w-full h-full object-cover object-center scale-[1.02]" />
+                    <img src={svc.image} alt={svc.title} className="w-full h-full object-cover object-center scale-[1.02]" onError={handleImageError} />
                   </div>
                   <div className="p-6 md:p-8 flex-1 flex flex-col min-h-[300px]">
                     <div className="flex items-center gap-2 mb-1">
@@ -340,7 +341,7 @@ export default function Home() {
         <div className="container">
           <div ref={s7} className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
             <div className="rounded-2xl overflow-hidden border-2" style={{ borderColor: GOLD }}>
-              <img src={COUPLE_PHOTO} alt="Mike and Lydine, owners of Diamond Home Services" className="w-full h-auto object-cover" />
+              <img src={FAMILY_PHOTO} alt="Mike and Lydine Petrutz and family, owners of Diamond Home Services" className="w-full h-auto object-cover" onError={handleImageError} />
             </div>
             <div>
               <span className="label-caps inline-block mb-3 px-3 py-1 rounded-full" style={{ backgroundColor: `${GOLD}18`, color: GOLD }}>

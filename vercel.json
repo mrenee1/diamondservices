@@ -4,12 +4,5 @@
   "outputDirectory": "dist/public",
   "installCommand": "pnpm install",
   "framework": "vite",
-  "redirects": [
-    {
-      "source": "/manus-storage/:path*",
-      "destination": "https://diamondhome.manus.space/manus-storage/:path*",
-      "statusCode": 307
-    }
-  ],
   "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }]
 }
