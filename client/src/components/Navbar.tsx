@@ -10,11 +10,10 @@ import { Menu, X } from "lucide-react";
 import { BRAND } from "@/lib/brand";
 import { CONTACT } from "@/lib/contact";
 import { ContactPhone } from "@/components/ContactPhone";
-import { handleImageError } from "@/lib/imageFallback";
 
-const DHS_LOGO = "/logos/diamond-home-services.png";
+const DHS_LOGO = "/manus-storage/pasted_file_MwGanH_image_7f7a812c.png";
 const DIAMOND_CUTZ_LOGO = "/logos/diamond-cutz.png";
-const DIAMOND_GIRL_LOGO = "/logos/diamond-girl.png";
+const DIAMOND_GIRL_LOGO = "/manus-storage/diamond-girl-logo_26e7435d.png";
 
 function navLogo(location: string) {
   if (location === "/diamond-cutz") return { src: DIAMOND_CUTZ_LOGO, alt: "Diamond Cutz Lawn and Landscaping" };
@@ -58,7 +57,6 @@ export default function Navbar() {
             src={logo.src}
             alt={logo.alt}
             className="h-10 md:h-12 w-auto object-contain max-w-[min(52vw,220px)]"
-            onError={handleImageError}
           />
         </Link>
 

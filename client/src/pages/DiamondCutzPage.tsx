@@ -13,8 +13,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import HeroImage from "@/components/HeroImage";
 import { CONTACT } from "@/lib/contact";
-import { handleImageError } from "@/lib/imageFallback";
-const HERO_IMAGE = "/heroes/diamond-cutz-hero.png";
+const HERO_IMAGE = "/manus-storage/diamond-cutz-hero-cropped_728f233e.png";
 
 const services = [
   {

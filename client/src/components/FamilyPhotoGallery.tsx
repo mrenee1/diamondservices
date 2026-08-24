@@ -1,6 +1,5 @@
 import { cn } from "@/lib/utils";
 import BorderGlow from "@/components/BorderGlow";
-import { handleImageError } from "@/lib/imageFallback";
 
 export type FamilyPhoto = {
   src: string;
@@ -43,7 +42,6 @@ function FamilyPhotoCard({ photo, className }: { photo: FamilyPhoto; className?:
             alt={photo.alt}
             className="h-full w-full object-cover object-top"
             loading="lazy"
-            onError={handleImageError}
           />
         </div>
         <p className="family-gallery-card__caption">{photo.caption}</p>
