@@ -8,9 +8,8 @@ import { BRAND } from "@/lib/brand";
 import { CONTACT } from "@/lib/contact";
 import { ContactPhone } from "@/components/ContactPhone";
 import ContactEmail from "@/components/ContactEmail";
-import { handleImageError } from "@/lib/imageFallback";
 
-const DHS_LOGO = "/logos/diamond-home-services.png";
+const DHS_LOGO = "/manus-storage/pasted_file_MwGanH_image_7f7a812c.png";
 
 export default function Footer() {
   return (
@@ -18,7 +17,7 @@ export default function Footer() {
       <div className="container py-8 md:py-10">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10">
           <div>
-            <img src={DHS_LOGO} alt="Diamond Home Services LLC" className="h-12 w-auto object-contain mb-3" onError={handleImageError} />
+            <img src={DHS_LOGO} alt="Diamond Home Services LLC" className="h-12 w-auto object-contain mb-3" />
             <p className="text-sm leading-relaxed text-muted-brand" style={{ color: BRAND.bodyMuted }}>
               Family-owned home services proudly serving Nassau County, Florida — rooted in the Tributary community of Yulee.
             </p>

@@ -1,4 +1,3 @@
-import { handleImageError } from "@/lib/imageFallback";
 type HeroImageProps = {
   src: string;
   alt: string;
@@ -28,7 +27,6 @@ export default function HeroImage({
         loading="eager"
         fetchPriority="high"
         decoding="async"
-        onError={handleImageError}
       />
     </div>
   );

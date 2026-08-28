@@ -8,12 +8,11 @@ import { Camera, Scissors, Sparkles, Phone, MessageCircle } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { CONTACT } from "@/lib/contact";
-import { handleImageError } from "@/lib/imageFallback";
 
 type Category = "all" | "lawn" | "cleaning";
 
 const DIAMOND_CUTZ_LOGO = "/logos/diamond-cutz.png";
-const DIAMOND_GIRL_LOGO = "/logos/diamond-girl.png";
+const DIAMOND_GIRL_LOGO = "/manus-storage/diamond-girl-logo_26e7435d.png";
 
 const galleryItems = [
   // ── Diamond Cutz — Lawn ──
@@ -115,7 +114,7 @@ export default function GalleryPage() {
         <div className="container">
           <div className="flex flex-col sm:flex-row items-center justify-center gap-8">
             <div className="flex items-center gap-3">
-              <img src={DIAMOND_CUTZ_LOGO} alt="Diamond Cutz" className="h-14 w-auto object-contain" onError={handleImageError} />
+              <img src={DIAMOND_CUTZ_LOGO} alt="Diamond Cutz" className="h-14 w-auto object-contain" />
               <div>
                 <p className="font-bold text-sm" style={{ color: "oklch(0.18 0.02 255)", fontFamily: "'Lora', serif" }}>Diamond Cutz</p>
                 <p className="text-xs" style={{ color: "oklch(0.45 0.03 255)", fontFamily: "'Nunito Sans', sans-serif" }}>Lawn & Landscaping</p>
@@ -123,7 +122,7 @@ export default function GalleryPage() {
             </div>
             <div className="w-px h-10 hidden sm:block" style={{ backgroundColor: "oklch(0.80 0.03 85)" }} />
             <div className="flex items-center gap-3">
-              <img src={DIAMOND_GIRL_LOGO} alt="A Diamond Girl" className="h-14 w-auto object-contain" onError={handleImageError} />
+              <img src={DIAMOND_GIRL_LOGO} alt="A Diamond Girl" className="h-14 w-auto object-contain" />
               <div>
                 <p className="font-bold text-sm" style={{ color: "oklch(0.18 0.02 255)", fontFamily: "'Lora', serif" }}>A Diamond Girl</p>
                 <p className="text-xs" style={{ color: "oklch(0.45 0.03 255)", fontFamily: "'Nunito Sans', sans-serif" }}>Home Cleaning Service</p>
@@ -192,7 +191,6 @@ export default function GalleryPage() {
                         alt={`Before - ${item.label}`}
                         className="w-full h-40 object-cover rounded-xl"
                         loading="lazy"
-                        onError={handleImageError}
                       />
                     </div>
                     <div>
@@ -202,7 +200,6 @@ export default function GalleryPage() {
                         alt={`After - ${item.label}`}
                         className="w-full h-40 object-cover rounded-xl"
                         loading="lazy"
-                        onError={handleImageError}
                       />
                     </div>
                   </div>
