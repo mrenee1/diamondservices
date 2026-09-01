@@ -10,13 +10,11 @@ import {
 } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import HeroImage from "@/components/HeroImage";
+import { DiamondGirlHero } from "@/components/ServiceHeroes";
 import BorderGlow from "@/components/BorderGlow";
 import { BRAND } from "@/lib/brand";
 import { CONTACT } from "@/lib/contact";
 import { handleImageError } from "@/lib/imageFallback";
-
-const HERO_IMAGE = "/heroes/diamond-girl-hero.png";
 
 const { girlPink: PINK, girlPinkDark: PINK_DK, girlTeal: TEAL } = BRAND;
 
@@ -89,14 +87,7 @@ export default function DiamondGirlPage() {
     <div className="min-h-screen" style={{ backgroundColor: BRAND.offwhite }}>
       <Navbar />
 
-      <section className="w-full pt-16">
-        <HeroImage
-          src={HERO_IMAGE}
-          alt="A Diamond Girl Home Cleaning Service — Diamond Clean. Sparkling Results."
-          objectFit="cover"
-          className="hero-banner--girl-bg"
-        />
-      </section>
+      <DiamondGirlHero />
 
       <section className="girl-catchphrase-section">
         <BorderGlow
@@ -132,7 +123,7 @@ export default function DiamondGirlPage() {
         </BorderGlow>
       </section>
 
-      <section className="py-20">
+      <section id="services" className="scroll-mt-20 py-20">
         <div className="container">
           <div className="text-center mb-12">
             <span
