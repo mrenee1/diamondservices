@@ -11,11 +11,9 @@ import {
 } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import HeroImage from "@/components/HeroImage";
+import { DiamondCutzHero } from "@/components/ServiceHeroes";
 import { CONTACT } from "@/lib/contact";
 import { handleImageError } from "@/lib/imageFallback";
-const HERO_IMAGE = "/heroes/diamond-cutz-hero.png";
-
 const services = [
   {
     icon: Scissors,
@@ -88,17 +86,10 @@ export default function DiamondCutzPage() {
     <div className="min-h-screen" style={{ backgroundColor: "oklch(0.97 0.01 255)" }}>
       <Navbar />
 
-      {/* HERO IMAGE — full-design image with built-in text, logo, and CTA */}
-      <section className="w-full pt-16">
-        <HeroImage
-          src={HERO_IMAGE}
-          alt="Diamond Cutz Lawn and Landscaping — Beautiful Lawns. Diamond Standard."
-          objectFit="cover"
-        />
-      </section>
+      <DiamondCutzHero />
 
       {/* Services Grid */}
-      <section className="py-20">
+      <section id="services" className="scroll-mt-20 py-20">
         <div className="container">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7">
             {services.map((service) => {

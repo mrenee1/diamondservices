@@ -23,23 +23,17 @@ import {
 } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import HeroImage from "@/components/HeroImage";
+import HomeLeagueHero from "@/components/HomeLeagueHero";
 import BrandShineCard from "@/components/BrandShineCard";
-import BorderGlow from "@/components/BorderGlow";
 import { BRAND } from "@/lib/brand";
 import { CONTACT } from "@/lib/contact";
 import { ContactPhone } from "@/components/ContactPhone";
 import ContactEmail from "@/components/ContactEmail";
 import { handleImageError } from "@/lib/imageFallback";
 
-/** Approximate hex for hero BorderGlow card backgrounds (matches BRAND navy / gold) */
-const NAVY_HEX = "#1b2845";
-const GOLD_HEX = "#c4a035";
-
-const HERO_IMAGE = "/heroes/home-hero.png";
 const CUTZ_HERO = "/heroes/diamond-cutz-hero.png";
-const GIRL_HERO = "/heroes/diamond-girl-hero.png";
-const FAMILY_PHOTO = "/family/petrutz-family.png";
+const GIRL_HERO = "/brand/diamond-girl-baseball.jpg";
+const FAMILY_PHOTO = "/family/mike-lydine.jpg";
 
 const {
   navy: NAVY,
@@ -171,84 +165,10 @@ export default function Home() {
     <div className="min-h-screen" style={{ backgroundColor: OFFWHITE }}>
       <Navbar />
 
-      <section className="w-full pt-16" style={{ backgroundColor: NAVY_DARK }}>
-        <HeroImage
-          src={HERO_IMAGE}
-          alt="Diamond Home Services LLC — Built for the Big Leagues. Lawn & Landscaping and Home Cleaning."
-          objectPosition="48% center"
-        />
-      </section>
-
-      <section style={{ backgroundColor: NAVY }}>
-        <div className="container py-10">
-          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
-            <div>
-              <div
-                className="label-caps inline-flex items-center gap-2 mb-3 px-3 py-1 rounded-full"
-                style={{ backgroundColor: `${GOLD}22`, color: GOLD_LT, border: `1px solid ${GOLD}44` }}
-              >
-                <MapPin className="w-3.5 h-3.5" />
-                Nassau County · Rooted in the Tributary Community
-              </div>
-              <h1 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-3" style={{ color: WHITE }}>
-                Diamond <span style={{ color: GOLD }}>Home</span> Services LLC
-              </h1>
-              <p className="text-base md:text-lg max-w-xl" style={{ color: BODY_MUTED }}>
-                Your trusted family-owned home services team. From a perfectly manicured lawn to a spotlessly clean home — Mike and Lydine handle it all with pride, right here in Nassau County, Florida.
-              </p>
-            </div>
-            <div className="flex flex-col gap-3 flex-shrink-0 w-full md:w-auto min-w-[240px]">
-              <BorderGlow
-                className="border-glow-hero-cta w-full"
-                edgeSensitivity={22}
-                glowColor="48 78 70"
-                backgroundColor={GOLD_HEX}
-                borderRadius={8}
-                glowRadius={22}
-                glowIntensity={1.05}
-                coneSpread={26}
-                colors={["#f0d78c", "#ffffff", "#a88428"]}
-                fillOpacity={0.3}
-              >
-                <Link href="/diamond-cutz" className="btn-brand-primary border-glow-hero-btn text-base px-7 py-3.5">
-                  Lawn & Landscaping
-                  <ArrowRight className="w-4 h-4" />
-                </Link>
-              </BorderGlow>
-              <BorderGlow
-                className="border-glow-hero-cta border-glow-hero-cta--outline w-full"
-                edgeSensitivity={22}
-                glowColor="48 78 72"
-                backgroundColor={NAVY_HEX}
-                borderRadius={8}
-                glowRadius={26}
-                glowIntensity={1.2}
-                coneSpread={28}
-                animated
-                colors={["#e8c96a", "#ffffff", "#c4a035"]}
-                fillOpacity={0.4}
-              >
-                <Link href="/diamond-girl" className="btn-brand-outline-light border-glow-hero-btn text-base px-7 py-3.5">
-                  Home Cleaning
-                  <ArrowRight className="w-4 h-4" />
-                </Link>
-              </BorderGlow>
-            </div>
-          </div>
-
-          <div className="flex flex-wrap gap-6 mt-6 pt-6" style={{ borderTop: "1px solid oklch(1 0 0 / 0.12)" }}>
-            {["Licensed & Insured", "Free Estimates", "Family Owned", "Satisfaction Guaranteed"].map((b) => (
-              <div key={b} className="flex items-center gap-1.5">
-                <CheckCircle2 className="w-4 h-4" style={{ color: GOLD }} />
-                <span className="text-sm font-semibold" style={{ color: BRAND.navText }}>{b}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <HomeLeagueHero />
 
       {/* Services */}
-      <section className="py-20" style={{ backgroundColor: OFFWHITE }}>
+      <section id="services" className="scroll-mt-20 py-20" style={{ backgroundColor: OFFWHITE }}>
         <div className="container">
           <div ref={s1} className="text-center mb-14">
             <span
@@ -341,7 +261,7 @@ export default function Home() {
         <div className="container">
           <div ref={s7} className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
             <div className="rounded-2xl overflow-hidden border-2" style={{ borderColor: GOLD }}>
-              <img src={FAMILY_PHOTO} alt="Mike and Lydine Petrutz and family, owners of Diamond Home Services" className="w-full h-auto object-cover" onError={handleImageError} />
+              <img src={FAMILY_PHOTO} alt="Mike and Lydine Petrutz, owners of Diamond Home Services" className="w-full h-auto object-cover" onError={handleImageError} />
             </div>
             <div>
               <span className="label-caps inline-block mb-3 px-3 py-1 rounded-full" style={{ backgroundColor: `${GOLD}18`, color: GOLD }}>
@@ -440,7 +360,7 @@ export default function Home() {
       </section>
 
       {/* Service area */}
-      <section className="py-20" style={{ backgroundColor: SECTION_GRAY }}>
+      <section id="contact" className="scroll-mt-20 py-20" style={{ backgroundColor: SECTION_GRAY }}>
         <div className="container">
           <div ref={s5} className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>

@@ -7,7 +7,7 @@ import { Link } from "wouter";
 import { Phone, Mail, MapPin, Heart, Star, ArrowRight, Users } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import HeroImage from "@/components/HeroImage";
+import { AboutHero } from "@/components/ServiceHeroes";
 import FamilyPhotoGallery, { type FamilyPhoto } from "@/components/FamilyPhotoGallery";
 import { ContactPhone } from "@/components/ContactPhone";
 import ContactEmail from "@/components/ContactEmail";
@@ -22,6 +22,12 @@ const { gold: GOLD } = BRAND;
 
 const familyPhotos: FamilyPhoto[] = [
   {
+    src: "/family/mike-lydine.jpg",
+    alt: "Mike and Lydine Petrutz, owners of Diamond Home Services",
+    caption: "Mike & Lydine Petrutz",
+    featured: true,
+  },
+  {
     src: "/family/gage-formal.png",
     alt: "Mike and Lydine with their youngest son Gage",
     caption: "Our youngest, Gage",
@@ -30,10 +36,9 @@ const familyPhotos: FamilyPhoto[] = [
     src: "/family/petrutz-family.png",
     alt: "The Petrutz family with their sons and dog",
     caption: "The whole crew (yes, the dog too)",
-    featured: true,
   },
   {
-    src: "/family/mikayla-austin.png",
+    src: "/family/mikayla-austin.jpg",
     alt: "Mikayla Petrutz and her fiancé Austin",
     caption: "Our daughter Mikayla and fiancé Austin",
   },
@@ -44,12 +49,7 @@ export default function AboutPage() {
     <div className="min-h-screen" style={{ backgroundColor: "oklch(0.97 0.01 255)" }}>
       <Navbar />
 
-      <section className="w-full pt-16" style={{ backgroundColor: "oklch(0.14 0.06 255)" }}>
-        <HeroImage
-          src="/heroes/home-hero.png"
-          alt="Diamond Home Services LLC — family-owned lawn care and home cleaning in Nassau County, Florida"
-        />
-      </section>
+      <AboutHero />
 
       {/* Story */}
       <section className="py-16 md:py-20" style={{ backgroundColor: "oklch(0.97 0.01 255)" }}>
@@ -195,6 +195,13 @@ export default function AboutPage() {
               Our Two Businesses
             </h2>
           </div>
+          <img
+            src="/brand/diamond-home-services-combined.jpg"
+            alt="Diamond Home Services combines lawn care and home cleaning"
+            className="mx-auto mb-10 w-full max-w-md rounded-2xl border-2 object-cover shadow-lg"
+            style={{ borderColor: GOLD }}
+            onError={handleImageError}
+          />
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
             <div className="bg-white rounded-2xl p-8 shadow-sm border border-border text-center hover:shadow-lg transition-all duration-300">
               <img src={DIAMOND_CUTZ_LOGO} alt="Diamond Cutz" className="h-24 w-auto object-contain mx-auto mb-4" onError={handleImageError} />
