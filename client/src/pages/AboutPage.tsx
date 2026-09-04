@@ -25,7 +25,6 @@ const familyPhotos: FamilyPhoto[] = [
     src: "/family/mike-lydine.jpg",
     alt: "Mike and Lydine Petrutz, owners of Diamond Home Services",
     caption: "Mike & Lydine Petrutz",
-    featured: true,
   },
   {
     src: "/family/gage-formal.png",
@@ -36,6 +35,7 @@ const familyPhotos: FamilyPhoto[] = [
     src: "/family/petrutz-family.png",
     alt: "The Petrutz family with their sons and dog",
     caption: "The whole crew (yes, the dog too)",
+    featured: true,
   },
   {
     src: "/family/mikayla-austin.jpg",

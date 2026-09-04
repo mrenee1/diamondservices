@@ -7,7 +7,7 @@ export function DiamondCutzHero() {
   return (
     <section className="bg-[#0e3a1c] pt-16 md:pt-[4.5rem]">
       <HeroImage
-        src="/heroes/diamond-cutz-hero.png"
+        src="/heroes/diamond-cutz-hero.jpg"
         alt="Beautiful Lawns. Diamond Standard. Diamond Cutz lawn and landscaping services."
         objectPosition="center center"
       />
