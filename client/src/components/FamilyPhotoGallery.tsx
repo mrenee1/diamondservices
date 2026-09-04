@@ -35,7 +35,7 @@ function FamilyPhotoCard({ photo, className }: { photo: FamilyPhoto; className?:
         <div
           className={cn(
             "family-gallery-card__image overflow-hidden",
-            photo.featured ? "aspect-[16/10]" : "aspect-[4/5]"
+            photo.featured ? "aspect-[5/4]" : "aspect-[4/5]"
           )}
         >
           <img

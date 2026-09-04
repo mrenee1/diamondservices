@@ -31,7 +31,7 @@ import { ContactPhone } from "@/components/ContactPhone";
 import ContactEmail from "@/components/ContactEmail";
 import { handleImageError } from "@/lib/imageFallback";
 
-const CUTZ_HERO = "/heroes/diamond-cutz-hero.png";
+const CUTZ_HERO = "/heroes/diamond-cutz-hero.jpg";
 const GIRL_HERO = "/heroes/diamond-girl-hero.jpg";
 const FAMILY_PHOTO = "/family/mike-lydine.jpg";
 
