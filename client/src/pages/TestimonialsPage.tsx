@@ -9,9 +9,10 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { ContactPhone } from "@/components/ContactPhone";
 import { CONTACT } from "@/lib/contact";
+import { handleImageError } from "@/lib/imageFallback";
 
 const DIAMOND_CUTZ_LOGO = "/logos/diamond-cutz.png";
-const DIAMOND_GIRL_LOGO = "/manus-storage/diamond-girl-logo_26e7435d.png";
+const DIAMOND_GIRL_LOGO = "/logos/diamond-girl.png";
 
 type Category = "all" | "lawn" | "cleaning";
 
@@ -161,14 +162,14 @@ export default function TestimonialsPage() {
           <span className="inline-block text-xs font-bold uppercase tracking-widest mb-4 px-3 py-1 rounded-full" style={{ backgroundColor: "oklch(0.77 0.14 70 / 0.2)", color: "oklch(0.86 0.08 68)", fontFamily: "'Nunito Sans', sans-serif" }}>
             Customer Reviews
           </span>
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4" style={{ fontFamily: "'Lora', serif" }}>
+          <h1 className="text-5xl font-bold text-white mb-4" style={{ fontFamily: "'Lora', serif" }}>
             What Our Customers Say
           </h1>
           <p className="text-lg max-w-xl mx-auto mb-6" style={{ color: "oklch(0.85 0.03 255)", fontFamily: "'Nunito Sans', sans-serif" }}>
             Don't just take our word for it. Here's what Nassau County homeowners and families are saying about Diamond Home Services.
           </p>
           {/* Stats */}
-          <div className="flex flex-wrap justify-center gap-6 sm:gap-10 mt-8">
+          <div className="flex flex-wrap justify-center gap-10 mt-8">
             {[
               { value: "5.0", label: "Average Rating" },
               { value: "100+", label: "Happy Customers" },
@@ -188,7 +189,7 @@ export default function TestimonialsPage() {
         <div className="container">
           <div className="flex flex-col sm:flex-row items-center justify-center gap-8">
             <div className="flex items-center gap-3">
-              <img src={DIAMOND_CUTZ_LOGO} alt="Diamond Cutz" className="h-12 w-auto object-contain" />
+              <img src={DIAMOND_CUTZ_LOGO} alt="Diamond Cutz" className="h-12 w-auto object-contain" onError={handleImageError} />
               <div>
                 <p className="font-bold text-sm" style={{ color: "oklch(0.18 0.02 255)", fontFamily: "'Lora', serif" }}>Diamond Cutz</p>
                 <p className="text-xs" style={{ color: "oklch(0.45 0.03 255)", fontFamily: "'Nunito Sans', sans-serif" }}>Lawn & Landscaping</p>
@@ -196,7 +197,7 @@ export default function TestimonialsPage() {
             </div>
             <div className="w-px h-10 hidden sm:block" style={{ backgroundColor: "oklch(0.80 0.03 85)" }} />
             <div className="flex items-center gap-3">
-              <img src={DIAMOND_GIRL_LOGO} alt="A Diamond Girl" className="h-12 w-auto object-contain" />
+              <img src={DIAMOND_GIRL_LOGO} alt="A Diamond Girl" className="h-12 w-auto object-contain" onError={handleImageError} />
               <div>
                 <p className="font-bold text-sm" style={{ color: "oklch(0.18 0.02 255)", fontFamily: "'Lora', serif" }}>A Diamond Girl</p>
                 <p className="text-xs" style={{ color: "oklch(0.45 0.03 255)", fontFamily: "'Nunito Sans', sans-serif" }}>Home Cleaning Service</p>

@@ -129,7 +129,7 @@ export default function ServicesPage() {
             Complete Lawn & Landscape Care
           </span>
           <h1
-            className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4"
+            className="text-5xl font-bold text-white mb-4"
             style={{ fontFamily: "'Lora', serif" }}
           >
             Our Services
@@ -236,7 +236,7 @@ export default function ServicesPage() {
       <section className="py-16" style={{ backgroundColor: "oklch(0.93 0.03 85)" }}>
         <div className="container text-center">
           <h2
-            className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4"
+            className="text-4xl font-bold mb-4"
             style={{ color: "oklch(0.18 0.01 60)", fontFamily: "'Lora', serif" }}
           >
             Not Sure What You Need?
@@ -278,8 +278,8 @@ export default function ServicesPage() {
               className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-md font-bold text-base transition-all duration-200 hover:-translate-y-0.5"
               style={{
                 backgroundColor: "transparent",
-                color: "oklch(0.35 0.10 145)",
-                border: "1px solid oklch(0.35 0.10 145)",
+                color: "white",
+                border: "1px solid white",
                 fontFamily: "'Nunito Sans', sans-serif",
               }}
             >

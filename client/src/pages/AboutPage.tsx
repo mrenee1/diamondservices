@@ -7,24 +7,25 @@ import { Link } from "wouter";
 import { Phone, Mail, MapPin, Heart, Star, ArrowRight, Users } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import HeroImage from "@/components/HeroImage";
+import { AboutHero } from "@/components/ServiceHeroes";
 import FamilyPhotoGallery, { type FamilyPhoto } from "@/components/FamilyPhotoGallery";
 import { ContactPhone } from "@/components/ContactPhone";
 import ContactEmail from "@/components/ContactEmail";
 import { BRAND } from "@/lib/brand";
 import { CONTACT } from "@/lib/contact";
+import { handleImageError } from "@/lib/imageFallback";
 
 const DIAMOND_CUTZ_LOGO = "/logos/diamond-cutz.png";
-const DIAMOND_GIRL_LOGO = "/manus-storage/diamond-girl-logo_26e7435d.png";
-const COUPLE_PHOTO = "/manus-storage/mike-lydine-couple_d892a85f.png";
+const DIAMOND_GIRL_LOGO = "/logos/diamond-girl.png";
 
 const { gold: GOLD } = BRAND;
 
 const familyPhotos: FamilyPhoto[] = [
   {
-    src: COUPLE_PHOTO,
-    alt: "Mike and Lydine Petrutz, founders of Diamond Home Services LLC",
-    caption: "Mike & Lydine, founders",
+    src: "/family/mike-lydine.jpg",
+    alt: "Mike and Lydine Petrutz, owners of Diamond Home Services",
+    caption: "Mike & Lydine Petrutz",
+    featured: true,
   },
   {
     src: "/family/gage-formal.png",
@@ -35,10 +36,9 @@ const familyPhotos: FamilyPhoto[] = [
     src: "/family/petrutz-family.png",
     alt: "The Petrutz family with their sons and dog",
     caption: "The whole crew (yes, the dog too)",
-    featured: true,
   },
   {
-    src: "/family/mikayla-austin.png",
+    src: "/family/mikayla-austin.jpg",
     alt: "Mikayla Petrutz and her fiancé Austin",
     caption: "Our daughter Mikayla and fiancé Austin",
   },
@@ -49,12 +49,7 @@ export default function AboutPage() {
     <div className="min-h-screen" style={{ backgroundColor: "oklch(0.97 0.01 255)" }}>
       <Navbar />
 
-      <section className="w-full pt-16" style={{ backgroundColor: "oklch(0.14 0.06 255)" }}>
-        <HeroImage
-          src="/manus-storage/E30554CE-B3FB-49F8-9E75-515FEE6A95BB_09584a32.png"
-          alt="About Us — Mike & Lydine, Diamond Home Services LLC — Family. Pride. Diamond Standard."
-        />
-      </section>
+      <AboutHero />
 
       {/* Story */}
       <section className="py-16 md:py-20" style={{ backgroundColor: "oklch(0.97 0.01 255)" }}>
@@ -200,9 +195,16 @@ export default function AboutPage() {
               Our Two Businesses
             </h2>
           </div>
+          <img
+            src="/brand/diamond-home-services-combined.jpg"
+            alt="Diamond Home Services combines lawn care and home cleaning"
+            className="mx-auto mb-10 w-full max-w-md rounded-2xl border-2 object-cover shadow-lg"
+            style={{ borderColor: GOLD }}
+            onError={handleImageError}
+          />
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
             <div className="bg-white rounded-2xl p-8 shadow-sm border border-border text-center hover:shadow-lg transition-all duration-300">
-              <img src={DIAMOND_CUTZ_LOGO} alt="Diamond Cutz" className="h-24 w-auto object-contain mx-auto mb-4" />
+              <img src={DIAMOND_CUTZ_LOGO} alt="Diamond Cutz" className="h-24 w-auto object-contain mx-auto mb-4" onError={handleImageError} />
               <h3 className="text-xl font-bold mb-1" style={{ color: "oklch(0.18 0.02 255)", fontFamily: "'Lora', serif" }}>
                 Diamond Cutz
               </h3>
@@ -227,7 +229,7 @@ export default function AboutPage() {
               </Link>
             </div>
             <div className="bg-white rounded-2xl p-8 shadow-sm border border-border text-center hover:shadow-lg transition-all duration-300">
-              <img src={DIAMOND_GIRL_LOGO} alt="A Diamond Girl" className="h-24 w-auto object-contain mx-auto mb-4" />
+              <img src={DIAMOND_GIRL_LOGO} alt="A Diamond Girl" className="h-24 w-auto object-contain mx-auto mb-4" onError={handleImageError} />
               <h3 className="text-xl font-bold mb-1" style={{ color: "oklch(0.18 0.02 255)", fontFamily: "'Lora', serif" }}>
                 A Diamond Girl
               </h3>
@@ -391,11 +393,9 @@ export default function AboutPage() {
                 >
                   Business Hours
                 </p>
-                <div className="flex flex-wrap gap-x-4 gap-y-1 text-sm" style={{ color: "oklch(0.35 0.04 255)", fontFamily: "'Nunito Sans', sans-serif" }}>
-                  <span>Mon–Fri: 7:00 AM – 6:00 PM</span>
-                  <span>Sat: 8:00 AM – 4:00 PM</span>
-                  <span>Sun: Closed</span>
-                </div>
+                <p className="text-sm" style={{ color: "oklch(0.35 0.04 255)", fontFamily: "'Nunito Sans', sans-serif" }}>
+                  Mon–Fri: 7:00 AM – 6:00 PM &nbsp;|&nbsp; Sat: 8:00 AM – 4:00 PM &nbsp;|&nbsp; Sun: Closed
+                </p>
               </div>
             </div>
           </div>

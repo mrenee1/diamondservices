@@ -10,12 +10,11 @@ import {
 } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import HeroImage from "@/components/HeroImage";
+import { DiamondGirlHero } from "@/components/ServiceHeroes";
 import BorderGlow from "@/components/BorderGlow";
 import { BRAND } from "@/lib/brand";
 import { CONTACT } from "@/lib/contact";
-
-const HERO_IMAGE = "/manus-storage/1FF4FDBD-00A7-477C-89BC-36C8611DB049_3ec7f2e3.png";
+import { handleImageError } from "@/lib/imageFallback";
 
 const { girlPink: PINK, girlPinkDark: PINK_DK, girlTeal: TEAL } = BRAND;
 
@@ -88,14 +87,7 @@ export default function DiamondGirlPage() {
     <div className="min-h-screen" style={{ backgroundColor: BRAND.offwhite }}>
       <Navbar />
 
-      <section className="w-full pt-16">
-        <HeroImage
-          src={HERO_IMAGE}
-          alt="A Diamond Girl Home Cleaning Service — Diamond Clean. Sparkling Results."
-          objectFit="cover"
-          className="hero-banner--girl-bg"
-        />
-      </section>
+      <DiamondGirlHero />
 
       <section className="girl-catchphrase-section">
         <BorderGlow
@@ -131,7 +123,7 @@ export default function DiamondGirlPage() {
         </BorderGlow>
       </section>
 
-      <section className="py-20">
+      <section id="services" className="scroll-mt-20 py-20">
         <div className="container">
           <div className="text-center mb-12">
             <span
@@ -241,7 +233,7 @@ export default function DiamondGirlPage() {
 
       <section className="py-16" style={{ backgroundColor: BRAND.offwhite }}>
         <div className="container text-center">
-          <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold mb-4" style={{ color: BRAND.charcoal }}>
+          <h2 className="font-display text-4xl font-bold mb-4" style={{ color: BRAND.charcoal }}>
             Ready for a Diamond-Level Clean?
           </h2>
           <p className="text-lg mb-8 max-w-lg mx-auto text-muted-brand">

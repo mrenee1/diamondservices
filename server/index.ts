@@ -6,20 +6,9 @@ import { fileURLToPath } from "url";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const PRODUCTION_STORAGE_ORIGIN = "https://diamondhome.manus.space";
-
 async function startServer() {
   const app = express();
   const server = createServer(app);
-
-  app.get("/manus-storage/*", (req, res) => {
-    const key = req.path.replace(/^\/manus-storage\//, "");
-    if (!key) {
-      res.status(400).send("Missing storage key");
-      return;
-    }
-    res.redirect(307, `${PRODUCTION_STORAGE_ORIGIN}/manus-storage/${key}`);
-  });
 
   // Serve static files from dist/public in production
   const staticPath =

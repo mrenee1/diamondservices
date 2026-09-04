@@ -10,16 +10,9 @@ import { Menu, X } from "lucide-react";
 import { BRAND } from "@/lib/brand";
 import { CONTACT } from "@/lib/contact";
 import { ContactPhone } from "@/components/ContactPhone";
+import { handleImageError } from "@/lib/imageFallback";
 
-const DHS_LOGO = "/manus-storage/pasted_file_MwGanH_image_7f7a812c.png";
-const DIAMOND_CUTZ_LOGO = "/logos/diamond-cutz.png";
-const DIAMOND_GIRL_LOGO = "/manus-storage/diamond-girl-logo_26e7435d.png";
-
-function navLogo(location: string) {
-  if (location === "/diamond-cutz") return { src: DIAMOND_CUTZ_LOGO, alt: "Diamond Cutz Lawn and Landscaping" };
-  if (location === "/diamond-girl") return { src: DIAMOND_GIRL_LOGO, alt: "A Diamond Girl Home Cleaning Service" };
-  return { src: DHS_LOGO, alt: "Diamond Home Services LLC" };
-}
+const DHS_LOGO = "/logos/diamond-home-services.png";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -33,7 +26,6 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [location] = useLocation();
-  const logo = navLogo(location);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 10);
@@ -54,15 +46,16 @@ export default function Navbar() {
         {/* Logo — left */}
         <Link href="/" className="relative z-10 flex items-center shrink-0 py-1">
           <img
-            src={logo.src}
-            alt={logo.alt}
-            className="h-10 md:h-12 w-auto object-contain max-w-[min(52vw,220px)]"
+            src={DHS_LOGO}
+            alt="Diamond Home Services LLC"
+            className="h-10 w-auto object-contain md:h-12"
+            onError={handleImageError}
           />
         </Link>
 
         {/* Nav links — centered in header */}
         <div
-          className="hidden lg:flex absolute inset-x-0 top-0 bottom-0 items-center justify-center pointer-events-none"
+          className="hidden xl:flex absolute inset-x-0 top-0 bottom-0 items-center justify-center pointer-events-none"
           aria-label="Main navigation"
           role="navigation"
         >
@@ -88,14 +81,14 @@ export default function Navbar() {
         <div className="relative z-10 flex items-center gap-3 sm:gap-4 shrink-0 ml-auto">
           <ContactPhone
             contact={CONTACT.mike}
-            className="hidden lg:flex btn-brand-primary text-sm px-4 py-2"
+            className="hidden xl:flex btn-brand-primary px-4 py-2 text-sm"
             linkClassName="text-white hover:text-white"
-            iconClassName="w-4 h-4"
+            iconClassName="h-4 w-4"
           />
 
           <button
             type="button"
-            className="lg:hidden p-2.5 rounded-md transition-colors"
+            className="xl:hidden p-2.5 rounded-md transition-colors"
             style={{ color: BRAND.white }}
             onClick={() => setOpen(!open)}
             aria-label="Toggle menu"
@@ -108,7 +101,7 @@ export default function Navbar() {
 
       {open && (
         <div
-          className="lg:hidden border-t"
+          className="xl:hidden border-t"
           style={{ backgroundColor: BRAND.navyDark, borderColor: `${BRAND.gold}33` }}
         >
           <div className="max-w-[1280px] mx-auto py-4 px-4 sm:px-6 flex flex-col gap-1">
