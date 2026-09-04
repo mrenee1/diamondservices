@@ -15,10 +15,11 @@ import { handleImageError } from "@/lib/imageFallback";
 const DHS_LOGO = "/logos/diamond-home-services.png";
 
 const navLinks = [
-  { href: "/diamond-cutz", label: "Lawn" },
-  { href: "/diamond-girl", label: "Cleaning" },
-  { href: "/about", label: "About" },
-  { href: "/#contact", label: "Contact" },
+  { href: "/", label: "Home" },
+  { href: "/diamond-cutz", label: "Diamond Cutz" },
+  { href: "/diamond-girl", label: "A Diamond Girl" },
+  { href: "/testimonials", label: "Testimonials" },
+  { href: "/about", label: "About Us" },
 ];
 
 export default function Navbar() {
@@ -37,26 +38,19 @@ export default function Navbar() {
       className="site-header fixed top-0 left-0 right-0 z-50 transition-all duration-300"
       style={{
         backgroundColor: scrolled ? BRAND.navyDark : BRAND.navy,
-        borderTop: `3px solid ${BRAND.gold}`,
         borderBottom: `1px solid ${BRAND.gold}`,
         boxShadow: scrolled ? "0 2px 16px oklch(0 0 0 / 0.35)" : "none",
       }}
     >
       <div className="relative flex items-center h-16 md:h-[4.5rem] w-full max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
         {/* Logo — left */}
-        <Link href="/" className="relative z-10 flex items-center shrink-0 gap-2 py-1">
+        <Link href="/" className="relative z-10 flex items-center shrink-0 py-1">
           <img
             src={DHS_LOGO}
             alt="Diamond Home Services LLC"
-            className="h-8 w-auto object-contain md:h-9"
+            className="h-10 w-auto object-contain md:h-12"
             onError={handleImageError}
           />
-          <span
-            className="hidden whitespace-nowrap text-sm font-bold uppercase tracking-[0.06em] text-white sm:block md:text-base"
-            style={{ fontFamily: "'Oswald', sans-serif" }}
-          >
-            Diamond Home Services
-          </span>
         </Link>
 
         {/* Nav links — centered in header */}
@@ -85,9 +79,12 @@ export default function Navbar() {
 
         {/* Phone + menu — right */}
         <div className="relative z-10 flex items-center gap-3 sm:gap-4 shrink-0 ml-auto">
-          <a href="/#contact" className="hidden xl:inline-flex btn-brand-primary px-4 py-2 text-sm uppercase tracking-wider">
-            Get Quote
-          </a>
+          <ContactPhone
+            contact={CONTACT.mike}
+            className="hidden xl:flex btn-brand-primary px-4 py-2 text-sm"
+            linkClassName="text-white hover:text-white"
+            iconClassName="h-4 w-4"
+          />
 
           <button
             type="button"
