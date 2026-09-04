@@ -12,7 +12,7 @@ This repository is the source of truth for production images. The site no longer
 | `00FBC247-BB67-4F48-8683-3A8B1A12B102.jpeg` | `client/public/brand/diamond-home-services-combined.jpg` | About business overview |
 | Original combined stadium composition | `client/public/heroes/home-hero.png` | Home hero artwork behind the live headline and CTA copy |
 | `image_2.png` | `client/public/heroes/home-hero.jpg` | Exact supplied Home hero artwork |
-| Original Diamond Cutz stadium composition | `client/public/heroes/diamond-cutz-hero.jpg` | Diamond Cutz hero artwork (the `image_3.png` upload was truncated and unreadable) |
+| Supplied "Beautiful Lawns. Diamond Standard." artwork | `client/public/heroes/diamond-cutz-hero.jpg` | Exact supplied Diamond Cutz hero artwork |
 | `image_4.png` | `client/public/heroes/diamond-girl-hero.jpg` | Exact supplied A Diamond Girl hero artwork |
 | Original transparent logo | `client/public/logos/diamond-home-services.png` | Diamond Home Services logo (the `image_1.png` upload was truncated and unreadable) |
 
