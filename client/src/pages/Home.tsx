@@ -382,7 +382,7 @@ export default function Home() {
                 ))}
               </div>
             </div>
-            <div className="bg-white rounded-2xl shadow-lg p-8" style={{ border: `2px solid ${GOLD}` }}>
+            <div className="bg-white rounded-2xl shadow-lg p-5 sm:p-8" style={{ border: `2px solid ${GOLD}` }}>
               <h3 className="font-display text-2xl font-bold mb-5" style={{ color: CHARCOAL }}>Get in Touch</h3>
               <div className="space-y-5">
                 <div className="flex items-center gap-4">
@@ -391,7 +391,7 @@ export default function Home() {
                   </div>
                   <div>
                     <p className="label-caps mb-0.5" style={{ color: "oklch(0.50 0.04 255)" }}>Lawn & Landscaping (Mike)</p>
-                    <ContactPhone contact={CONTACT.mike} linkClassName="font-bold text-base hover:underline" style={{ color: CHARCOAL }} />
+                    <ContactPhone contact={CONTACT.mike} linkClassName="font-bold text-base underline decoration-dotted underline-offset-4 decoration-[oklch(0.73_0.11_65)] hover:decoration-solid" style={{ color: CHARCOAL }} />
                   </div>
                 </div>
                 <div className="flex items-center gap-4">
@@ -400,16 +400,22 @@ export default function Home() {
                   </div>
                   <div>
                     <p className="label-caps mb-0.5" style={{ color: "oklch(0.50 0.04 255)" }}>Home Cleaning (Lydine)</p>
-                    <ContactPhone contact={CONTACT.lydine} linkClassName="font-bold text-base hover:underline" style={{ color: CHARCOAL }} />
+                    <ContactPhone contact={CONTACT.lydine} linkClassName="font-bold text-base underline decoration-dotted underline-offset-4 decoration-[oklch(0.73_0.11_65)] hover:decoration-solid" style={{ color: CHARCOAL }} />
                   </div>
                 </div>
-                <div className="flex items-center gap-4">
+                {/* On phones the address drops below the icon so it stays on one line; from sm up it sits beside the icon like the phone rows. */}
+                <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
                   <div className="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0" style={{ backgroundColor: NAVY }}>
                     <Mail className="w-5 h-5 text-white" />
                   </div>
-                  <div>
-                    <p className="label-caps mb-0.5" style={{ color: "oklch(0.50 0.04 255)" }}>Email</p>
-                    <ContactEmail className="font-bold text-base hover:underline break-all" style={{ color: CHARCOAL }} />
+                  <p className="label-caps sm:hidden" style={{ color: "oklch(0.50 0.04 255)" }}>Email</p>
+                  <div className="min-w-0 basis-full sm:basis-auto sm:flex-1">
+                    <p className="label-caps mb-0.5 hidden sm:block" style={{ color: "oklch(0.50 0.04 255)" }}>Email</p>
+                    <ContactEmail
+                      showIcon={false}
+                      className="font-bold text-[clamp(0.7rem,3.3vw,1rem)] sm:text-base underline decoration-dotted underline-offset-4 decoration-[oklch(0.73_0.11_65)] hover:decoration-solid"
+                      style={{ color: CHARCOAL }}
+                    />
                   </div>
                 </div>
               </div>

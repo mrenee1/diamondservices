@@ -20,7 +20,7 @@ export default function ContactEmail({
   return (
     <a
       href={CONTACT.mailto}
-      className={cn("inline-flex items-center gap-2 hover:underline break-all", className)}
+      className={cn("inline-flex items-center gap-2 whitespace-nowrap hover:underline", className)}
       style={style}
     >
       {showIcon && <Mail className={cn("flex-shrink-0", iconClassName)} aria-hidden />}

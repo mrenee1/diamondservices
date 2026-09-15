@@ -339,22 +339,30 @@ export default function AboutPage() {
                     </p>
                   </div>
                 </div>
-                <div className="flex items-center gap-4">
+                {/* On phones the address drops below the icon so it stays on one line; from sm up it sits beside the icon. */}
+                <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
                   <div
                     className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0"
                     style={{ backgroundColor: "oklch(0.45 0.14 145)" }}
                   >
                     <Mail className="w-5 h-5 text-white" />
                   </div>
-                  <div>
+                  <p
+                    className="text-xs font-bold uppercase tracking-wide sm:hidden"
+                    style={{ color: "oklch(0.50 0.04 255)", fontFamily: "'Nunito Sans', sans-serif" }}
+                  >
+                    Email
+                  </p>
+                  <div className="min-w-0 basis-full sm:basis-auto sm:flex-1">
                     <p
-                      className="text-xs font-bold uppercase tracking-wide mb-1"
+                      className="text-xs font-bold uppercase tracking-wide mb-1 hidden sm:block"
                       style={{ color: "oklch(0.50 0.04 255)", fontFamily: "'Nunito Sans', sans-serif" }}
                     >
                       Email
                     </p>
                     <ContactEmail
-                      className="font-bold text-lg hover:underline break-all"
+                      showIcon={false}
+                      className="font-bold text-[clamp(0.7rem,3.3vw,1rem)] sm:text-lg underline decoration-dotted underline-offset-4 decoration-[oklch(0.73_0.11_65)] hover:decoration-solid"
                       style={{ color: "oklch(0.18 0.02 255)", fontFamily: "'Nunito Sans', sans-serif" }}
                     />
                   </div>
