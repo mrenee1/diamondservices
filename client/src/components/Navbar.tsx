@@ -48,7 +48,7 @@ export default function Navbar() {
           <img
             src={DHS_LOGO}
             alt="Diamond Home Services LLC"
-            className="h-10 w-auto object-contain md:h-12"
+            className="h-11 w-auto object-contain md:h-14"
             onError={handleImageError}
           />
         </Link>
