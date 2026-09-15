@@ -55,7 +55,7 @@ export default function Navbar() {
 
         {/* Nav links — centered in header */}
         <div
-          className="hidden xl:flex absolute inset-x-0 top-0 bottom-0 items-center justify-center pointer-events-none"
+          className="hidden lg:flex absolute inset-x-0 top-0 bottom-0 items-center justify-center pointer-events-none"
           aria-label="Main navigation"
           role="navigation"
         >
@@ -81,14 +81,14 @@ export default function Navbar() {
         <div className="relative z-10 flex items-center gap-3 sm:gap-4 shrink-0 ml-auto">
           <ContactPhone
             contact={CONTACT.mike}
-            className="hidden xl:flex btn-brand-primary px-4 py-2 text-sm"
+            className="hidden lg:flex btn-brand-primary px-4 py-2 text-sm"
             linkClassName="text-white hover:text-white"
             iconClassName="h-4 w-4"
           />
 
           <button
             type="button"
-            className="xl:hidden p-2.5 rounded-md transition-colors"
+            className="lg:hidden p-2.5 rounded-md transition-colors"
             style={{ color: BRAND.white }}
             onClick={() => setOpen(!open)}
             aria-label="Toggle menu"
@@ -101,7 +101,7 @@ export default function Navbar() {
 
       {open && (
         <div
-          className="xl:hidden border-t"
+          className="lg:hidden border-t"
           style={{ backgroundColor: BRAND.navyDark, borderColor: `${BRAND.gold}33` }}
         >
           <div className="max-w-[1280px] mx-auto py-4 px-4 sm:px-6 flex flex-col gap-1">
